@@ -1,0 +1,29 @@
+{
+  "excluded_null_listeners": 0,
+  "categories": [
+    {
+      "category": "Half-open",
+      "matches_count": 27,
+      "avg": 22261.07,
+      "median": 18695,
+      "min": 11844,
+      "max": 51757
+    },
+    {
+      "category": "Open",
+      "matches_count": 24,
+      "avg": 39415.96,
+      "median": 40014,
+      "min": 4670,
+      "max": 63480
+    },
+    {
+      "category": "Paid",
+      "matches_count": 34,
+      "avg": 37718.12,
+      "median": 33436,
+      "min": 15686,
+      "max": 78753
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "excluded_null_listeners": 0,
+  "commentators": [
+    {
+      "commentator": "Errol",
+      "matches_count": 1,
+      "min": 51757,
+      "avg": 51757,
+      "median": 51757,
+      "max": 51757
+    },
+    {
+      "commentator": "Bas",
+      "matches_count": 22,
+      "min": 12541,
+      "avg": 37061.82,
+      "median": 39281,
+      "max": 78753
+    },
+    {
+      "commentator": "Sjors",
+      "matches_count": 10,
+      "min": 17763,
+      "avg": 36181.6,
+      "median": 42417,
+      "max": 54094
+    },
+    {
+      "commentator": "Diederik",
+      "matches_count": 76,
+      "min": 4670,
+      "avg": 33452.87,
+      "median": 29797,
+      "max": 78753
+    },
+    {
+      "commentator": "Corné",
+      "matches_count": 32,
+      "min": 11844,
+      "avg": 32648.44,
+      "median": 30029,
+      "max": 70621
+    },
+    {
+      "commentator": "Frank",
+      "matches_count": 7,
+      "min": 14361,
+      "avg": 31686,
+      "median": 23210,
+      "max": 71250
+    },
+    {
+      "commentator": "Daaf",
+      "matches_count": 13,
+      "min": 4670,
+      "avg": 29962.69,
+      "median": 28074,
+      "max": 63480
+    },
+    {
+      "commentator": "Anne",
+      "matches_count": 7,
+      "min": 15802,
+      "avg": 26149.86,
+      "median": 24075,
+      "max": 51928
+    },
+    {
+      "commentator": "Tom",
+      "matches_count": 1,
+      "min": 25240,
+      "avg": 25240,
+      "median": 25240,
+      "max": 25240
+    },
+    {
+      "commentator": "https://vercel.com/diederik-van-zessens-projects/dashboard/FZPG8z118Ujg53aGEq95jdW6M4nh",
+      "matches_count": 1,
+      "min": 23189,
+      "avg": 23189,
+      "median": 23189,
+      "max": 23189
+    }
+  ]
+}

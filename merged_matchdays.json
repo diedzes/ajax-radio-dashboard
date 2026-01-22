@@ -1,0 +1,1277 @@
+[
+  {
+    "date": "2024-07-25",
+    "listeners": 20042,
+    "kickoff": "20:30",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Vojvodina",
+    "home_away": "Thuis",
+    "score": "1-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-08-01",
+    "listeners": 16692,
+    "kickoff": "20:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Vojvodina - Ajax",
+    "home_away": "Uit",
+    "score": "3-1",
+    "result": "L"
+  },
+  {
+    "date": "2024-08-08",
+    "listeners": 17763,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Sjors"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Panathinaikos - Ajax",
+    "home_away": "Uit",
+    "score": "0-1",
+    "result": "W"
+  },
+  {
+    "date": "2024-08-11",
+    "listeners": 51152,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Ajax - Heerenveen",
+    "home_away": "Thuis",
+    "score": "1-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-08-15",
+    "listeners": 30524,
+    "kickoff": "20:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Anne"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Panathinaikos",
+    "home_away": "Thuis",
+    "score": "0-1",
+    "result": "L"
+  },
+  {
+    "date": "2024-08-18",
+    "listeners": 18000,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Anne"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "NAC - Ajax",
+    "home_away": "Uit",
+    "score": "2-1",
+    "result": "L"
+  },
+  {
+    "date": "2024-08-22",
+    "listeners": 17584,
+    "kickoff": "20:45",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Anne"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Jagiellonia BiaÅystok - Ajax",
+    "home_away": "Uit",
+    "score": "1-4",
+    "result": "W"
+  },
+  {
+    "date": "2024-08-29",
+    "listeners": 23189,
+    "kickoff": "20:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Corné",
+      "https://vercel.com/diederik-van-zessens-projects/dashboard/FZPG8z118Ujg53aGEq95jdW6M4nh"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Jagiellonia BiaÅystok",
+    "home_away": "Thuis",
+    "score": "3-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-09-18",
+    "listeners": 51928,
+    "kickoff": "20:00",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Anne"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - Fortuna Sittard",
+    "home_away": "Thuis",
+    "score": "5-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-09-21",
+    "listeners": 12541,
+    "kickoff": "20:00",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Bas",
+      "Diederik"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Go Ahead Eagles - Ajax",
+    "home_away": "Uit",
+    "score": "1-1",
+    "result": "D"
+  },
+  {
+    "date": "2024-09-26",
+    "listeners": 24075,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Anne",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Besiktas",
+    "home_away": "Thuis",
+    "score": "4-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-09-29",
+    "listeners": 47989,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Sjors"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "RKC - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2024-10-03",
+    "listeners": 15802,
+    "kickoff": "18:45",
+    "competition": "Europa League",
+    "commentators": [
+      "Anne",
+      "Diederik"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Slavia Praag - Ajax",
+    "home_away": "Uit",
+    "score": "1-1",
+    "result": "D"
+  },
+  {
+    "date": "2024-10-06",
+    "listeners": 25136,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Anne"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Ajax - Groningen",
+    "home_away": "Thuis",
+    "score": "3-1",
+    "result": "W"
+  },
+  {
+    "date": "2024-10-20",
+    "listeners": 35639,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Heracles - Ajax",
+    "home_away": "Uit",
+    "score": "3-4",
+    "result": "W"
+  },
+  {
+    "date": "2024-10-24",
+    "listeners": 15280,
+    "kickoff": "18:45",
+    "competition": "Europa League",
+    "commentators": [
+      "Bas",
+      "Diederik"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Qarabag - Ajax",
+    "home_away": "Uit",
+    "score": "0-3",
+    "result": "W"
+  },
+  {
+    "date": "2024-10-27",
+    "listeners": 48968,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Sjors"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Ajax - Willem II",
+    "home_away": "Thuis",
+    "score": "1-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-10-30",
+    "listeners": 46557,
+    "kickoff": "18:00",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Sjors"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Feyenoord - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2024-11-02",
+    "listeners": 53728,
+    "kickoff": "18:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - PSV",
+    "home_away": "Thuis",
+    "score": "3-2",
+    "result": "W"
+  },
+  {
+    "date": "2024-11-07",
+    "listeners": 25240,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Tom"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Maccabi Tel Aviv",
+    "home_away": "Thuis",
+    "score": "5-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-11-10",
+    "listeners": 20612,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "EPSN3",
+    "match_name": "FC Twente - Ajax",
+    "home_away": "Uit",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2024-11-17",
+    "listeners": 51757,
+    "kickoff": "15:30",
+    "competition": "Vriendschappelijk",
+    "commentators": [
+      "Diederik",
+      "Errol"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax Legends - Real Madrid Legends",
+    "home_away": "Thuis",
+    "score": "-",
+    "result": "Â"
+  },
+  {
+    "date": "2024-11-24",
+    "listeners": 45101,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Bas",
+      "Sjors"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Ajax - PEC Zwolle",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-11-28",
+    "listeners": 11844,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Real Sociedad - Ajax",
+    "home_away": "Uit",
+    "score": "2-0",
+    "result": "L"
+  },
+  {
+    "date": "2024-12-01",
+    "listeners": 39016,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "NEC - Ajax",
+    "home_away": "Uit",
+    "score": "1-2",
+    "result": "W"
+  },
+  {
+    "date": "2024-12-04",
+    "listeners": 38609,
+    "kickoff": "20:00",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - FC Utrecht",
+    "home_away": "Thuis",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2024-12-08",
+    "listeners": 15686,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "AZ - Ajax",
+    "home_away": "Uit",
+    "score": "2-1",
+    "result": "L"
+  },
+  {
+    "date": "2024-12-12",
+    "listeners": 17436,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Lazio",
+    "home_away": "Thuis",
+    "score": "1-3",
+    "result": "L"
+  },
+  {
+    "date": "2024-12-15",
+    "listeners": 55373,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - Almere",
+    "home_away": "Thuis",
+    "score": "3-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-12-19",
+    "listeners": 20503,
+    "kickoff": "21:00",
+    "competition": "KNVB Beker",
+    "commentators": [
+      "Diederik",
+      "Sjors"
+    ],
+    "tv_channel": "EPSN3",
+    "match_name": "Ajax - Telstar",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2024-12-22",
+    "listeners": 47067,
+    "kickoff": "12:15",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "EPSN3",
+    "match_name": "Sparta - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2025-01-11",
+    "listeners": 39734,
+    "kickoff": "18:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Bas",
+      "Sjors"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - RKC",
+    "home_away": "Thuis",
+    "score": "2-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-01-14",
+    "listeners": 16685,
+    "kickoff": "18:45",
+    "competition": "KNVB Beker",
+    "commentators": [
+      "Bas",
+      "Corné"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "AZ - Ajax",
+    "home_away": "Uit",
+    "score": "2-0",
+    "result": "L"
+  },
+  {
+    "date": "2025-01-19",
+    "listeners": 32886,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Heerenveen - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2025-01-23",
+    "listeners": 12804,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Bas",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "RFS - Ajax",
+    "home_away": "Uit",
+    "score": "1-0",
+    "result": "L"
+  },
+  {
+    "date": "2025-01-30",
+    "listeners": 18125,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Sjors"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Galataray",
+    "home_away": "Thuis",
+    "score": "2-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-02-02",
+    "listeners": 33951,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "EPSN2",
+    "match_name": "Ajax - Feyenoord",
+    "home_away": "Thuis",
+    "score": "2-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-02-09",
+    "listeners": 62602,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Fortuna Sittard - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2025-02-13",
+    "listeners": 20291,
+    "kickoff": "18:45",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Union SG - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2025-02-16",
+    "listeners": 54094,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Sjors",
+      "Corné"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - Heracles",
+    "home_away": "Thuis",
+    "score": "4-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-02-20",
+    "listeners": 48549,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Union SG",
+    "home_away": "Thuis",
+    "score": "1-2",
+    "result": "L"
+  },
+  {
+    "date": "2025-02-23",
+    "listeners": 57684,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - Go Ahead Eagles",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-03-02",
+    "listeners": 48366,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Corné",
+      "Bas"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Almere - Ajax",
+    "home_away": "Uit",
+    "score": "0-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-03-06",
+    "listeners": 18695,
+    "kickoff": "21:00",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Eintracht Frankfurt",
+    "home_away": "Thuis",
+    "score": "1-2",
+    "result": "L"
+  },
+  {
+    "date": "2025-03-09",
+    "listeners": 22295,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Frank"
+    ],
+    "tv_channel": "EPSN3",
+    "match_name": "PEC Zwolle - Ajax",
+    "home_away": "Uit",
+    "score": "0-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-03-13",
+    "listeners": 17098,
+    "kickoff": "18:45",
+    "competition": "Europa League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Eintracht Frankurt - Ajax",
+    "home_away": "Uit",
+    "score": "4-1",
+    "result": "L"
+  },
+  {
+    "date": "2025-03-16",
+    "listeners": 38829,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - AZ",
+    "home_away": "Thuis",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2025-03-30",
+    "listeners": 52327,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "PSV - Ajax",
+    "home_away": "Uit",
+    "score": "0-2",
+    "result": "W"
+  },
+  {
+    "date": "2025-04-06",
+    "listeners": 59441,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - NAC",
+    "home_away": "Thuis",
+    "score": "3-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-04-13",
+    "listeners": 22283,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Willem II - Ajax",
+    "home_away": "Uit",
+    "score": "1-2",
+    "result": "W"
+  },
+  {
+    "date": "2025-04-20",
+    "listeners": 22982,
+    "kickoff": "12:15",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Corné",
+      "Sjors"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "FC Utrecht - Ajax",
+    "home_away": "Uit",
+    "score": "4-0",
+    "result": "L"
+  },
+  {
+    "date": "2025-04-27",
+    "listeners": 31466,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - Sparta",
+    "home_away": "Thuis",
+    "score": "1-1",
+    "result": "D"
+  },
+  {
+    "date": "2025-05-11",
+    "listeners": 21162,
+    "kickoff": "16:45",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - NEC",
+    "home_away": "Thuis",
+    "score": "0-3",
+    "result": "L"
+  },
+  {
+    "date": "2025-05-14",
+    "listeners": 53547,
+    "kickoff": "20:00",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "FC Groningen - Ajax",
+    "home_away": "Uit",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2025-05-18",
+    "listeners": 61284,
+    "kickoff": "14:30",
+    "competition": "Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "EPSN3",
+    "match_name": "Ajax - FC Twente",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-08-03",
+    "listeners": 28311,
+    "kickoff": "14:00",
+    "competition": "Vriendschappelijke wedstrijd",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - AS Monaco",
+    "home_away": "Thuis",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2025-08-10",
+    "listeners": 63480,
+    "kickoff": "14:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - Telstar",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-08-17",
+    "listeners": 41566,
+    "kickoff": "12:15",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Frank"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Go Ahead Eagles - Ajax",
+    "home_away": "Uit",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2025-08-24",
+    "listeners": 70621,
+    "kickoff": "16:45",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - Heracles Almelo",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-08-30",
+    "listeners": 29971,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "FC Volendam - Ajax",
+    "home_away": "Uit",
+    "score": "1-1",
+    "result": "D"
+  },
+  {
+    "date": "2025-09-13",
+    "listeners": 78753,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN3",
+    "match_name": "Ajax - PEC Zwolle",
+    "home_away": "Thuis",
+    "score": "3-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-09-17",
+    "listeners": 20218,
+    "kickoff": "21:00",
+    "competition": "Champions League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Inter",
+    "home_away": "Thuis",
+    "score": "0-2",
+    "result": "L"
+  },
+  {
+    "date": "2025-09-21",
+    "listeners": 33752,
+    "kickoff": "14:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "PSV - Ajax",
+    "home_away": "Uit",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2025-09-27",
+    "listeners": 71250,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Frank"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - NAC Breda",
+    "home_away": "Thuis",
+    "score": "2-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-09-30",
+    "listeners": 40187,
+    "kickoff": "21:00",
+    "competition": "Champions League",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Olympique Marseille - Ajax",
+    "home_away": "Uit",
+    "score": "4-0",
+    "result": "L"
+  },
+  {
+    "date": "2025-10-04",
+    "listeners": 28074,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Sparta Rotterdam - Ajax",
+    "home_away": "Uit",
+    "score": "3-3",
+    "result": "D"
+  },
+  {
+    "date": "2025-10-18",
+    "listeners": 25215,
+    "kickoff": "21:00",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - AZ",
+    "home_away": "Thuis",
+    "score": "0-3",
+    "result": "L"
+  },
+  {
+    "date": "2025-10-22",
+    "listeners": 15682,
+    "kickoff": "21:00",
+    "competition": "Champions League",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Chelsea - Ajax",
+    "home_away": "Uit",
+    "score": "5-1",
+    "result": "L"
+  },
+  {
+    "date": "2025-10-26",
+    "listeners": 56499,
+    "kickoff": "12:15",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "FC Twente - Ajax",
+    "home_away": "Uit",
+    "score": "2-3",
+    "result": "W"
+  },
+  {
+    "date": "2025-11-01",
+    "listeners": 37630,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - sc Heerenveen",
+    "home_away": "Thuis",
+    "score": "1-1",
+    "result": "D"
+  },
+  {
+    "date": "2025-11-05",
+    "listeners": 19979,
+    "kickoff": "21:00",
+    "competition": "Champions League",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Galatasaray",
+    "home_away": "Thuis",
+    "score": "0-3",
+    "result": "L"
+  },
+  {
+    "date": "2025-11-08",
+    "listeners": 4670,
+    "kickoff": "14:00",
+    "competition": "Eurojackpot Vrouwen Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - PSV (vrouwen)",
+    "home_away": "Thuis",
+    "score": "2-1",
+    "result": "W"
+  },
+  {
+    "date": "2025-11-09",
+    "listeners": 24587,
+    "kickoff": "12:15",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "FC Utrecht - Ajax",
+    "home_away": "Uit",
+    "score": "2-1",
+    "result": "L"
+  },
+  {
+    "date": "2025-11-22",
+    "listeners": 32921,
+    "kickoff": "18:45",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Frank"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - Excelsior",
+    "home_away": "Thuis",
+    "score": "1-2",
+    "result": "L"
+  },
+  {
+    "date": "2025-11-25",
+    "listeners": 21518,
+    "kickoff": "18:45",
+    "competition": "Champions League",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Ajax - Benfica",
+    "home_away": "Thuis",
+    "score": "0-2",
+    "result": "L"
+  },
+  {
+    "date": "2025-11-30",
+    "listeners": 27561,
+    "kickoff": "20:00",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - FC Groningen",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-12-06",
+    "listeners": 30434,
+    "kickoff": "18:45",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Corné"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Fortuna Sittard - Ajax",
+    "home_away": "Uit",
+    "score": "1-3",
+    "result": "W"
+  },
+  {
+    "date": "2025-12-10",
+    "listeners": 16165,
+    "kickoff": "18:45",
+    "competition": "Champions League",
+    "commentators": [
+      "Diederik",
+      "Bas"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Qarabag FK - Ajax",
+    "home_away": "Uit",
+    "score": "2-4",
+    "result": "W"
+  },
+  {
+    "date": "2025-12-14",
+    "listeners": 40295,
+    "kickoff": "14:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - Feyenoord",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2025-12-17",
+    "listeners": 23210,
+    "kickoff": "18:45",
+    "competition": "Eurojackpot KNVB Beker",
+    "commentators": [
+      "Diederik",
+      "Frank"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Excelsior Maassluis - Ajax",
+    "home_away": "Uit",
+    "score": "2-7",
+    "result": "W"
+  },
+  {
+    "date": "2025-12-20",
+    "listeners": 19555,
+    "kickoff": "20:00",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "Daaf"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "N.E.C. - Ajax",
+    "home_away": "Uit",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2026-01-11",
+    "listeners": 29624,
+    "kickoff": "14:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Corné",
+      "Diederik"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Telstar - Ajax",
+    "home_away": "Uit",
+    "score": "3-2",
+    "result": "L"
+  },
+  {
+    "date": "2026-01-14",
+    "listeners": 14361,
+    "kickoff": "21:00",
+    "competition": "Eurojackpot KNVB Beker",
+    "commentators": [
+      "Frank",
+      "Diederik"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "AZ - Ajax",
+    "home_away": "Uit",
+    "score": "6-0",
+    "result": "L"
+  },
+  {
+    "date": "2026-01-17",
+    "listeners": 39147,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Corné",
+      "Diederik"
+    ],
+    "tv_channel": "ESPN2",
+    "match_name": "Ajax - Go Ahead Eagles",
+    "home_away": "Thuis",
+    "score": "2-2",
+    "result": "D"
+  },
+  {
+    "date": "2026-01-20",
+    "listeners": 16199,
+    "kickoff": "21:00",
+    "competition": "Champions League",
+    "commentators": [
+      "Frank",
+      "Diederik"
+    ],
+    "tv_channel": "ZIGGO",
+    "match_name": "Villarreal CF - Ajax",
+    "home_away": "Uit",
+    "score": "1-2",
+    "result": "W"
+  }
+]

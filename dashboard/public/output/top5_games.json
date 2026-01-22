@@ -1,0 +1,136 @@
+{
+  "2024/2025": [
+    {
+      "date": "2025-02-09",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "Fortuna Sittard - Ajax",
+      "commentators": "Diederik & Corné",
+      "listeners": 62602,
+      "competition": "Eredivisie",
+      "tv_channel": "ESPN1",
+      "score": "0-2",
+      "result": "W",
+      "home_away": "Uit"
+    },
+    {
+      "date": "2025-05-18",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "Ajax - FC Twente",
+      "commentators": "Diederik & Corné",
+      "listeners": 61284,
+      "competition": "Eredivisie",
+      "tv_channel": "EPSN3",
+      "score": "2-0",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2025-04-06",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "Ajax - NAC",
+      "commentators": "Diederik & Bas",
+      "listeners": 59441,
+      "competition": "Eredivisie",
+      "tv_channel": "ESPN2",
+      "score": "3-1",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2025-02-23",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "Ajax - Go Ahead Eagles",
+      "commentators": "Diederik & Bas",
+      "listeners": 57684,
+      "competition": "Eredivisie",
+      "tv_channel": "ESPN1",
+      "score": "2-0",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2024-12-15",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "Ajax - Almere",
+      "commentators": "Diederik & Bas",
+      "listeners": 55373,
+      "competition": "Eredivisie",
+      "tv_channel": "ESPN1",
+      "score": "3-0",
+      "result": "W",
+      "home_away": "Thuis"
+    }
+  ],
+  "2025/2026": [
+    {
+      "date": "2025-09-13",
+      "weekday": "Saturday",
+      "time": "16:30",
+      "match_name": "Ajax - PEC Zwolle",
+      "commentators": "Diederik & Bas",
+      "listeners": 78753,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": "ESPN3",
+      "score": "3-1",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2025-09-27",
+      "weekday": "Saturday",
+      "time": "16:30",
+      "match_name": "Ajax - NAC Breda",
+      "commentators": "Diederik & Frank",
+      "listeners": 71250,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": "ESPN2",
+      "score": "2-1",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2025-08-24",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "Ajax - Heracles Almelo",
+      "commentators": "Diederik & Corné",
+      "listeners": 70621,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": "ESPN2",
+      "score": "2-0",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2025-08-10",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "Ajax - Telstar",
+      "commentators": "Diederik & Daaf",
+      "listeners": 63480,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": "ESPN1",
+      "score": "2-0",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2025-10-26",
+      "weekday": "Sunday",
+      "time": "12:15",
+      "match_name": "FC Twente - Ajax",
+      "commentators": "Diederik & Bas",
+      "listeners": 56499,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": "ESPN1",
+      "score": "2-3",
+      "result": "W",
+      "home_away": "Uit"
+    }
+  ]
+}

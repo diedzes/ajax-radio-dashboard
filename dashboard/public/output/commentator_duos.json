@@ -1,0 +1,96 @@
+{
+  "excluded_null_listeners": 0,
+  "duos": [
+    {
+      "duo": "Diederik & Errol",
+      "matches_count": 1,
+      "avg": 51757,
+      "median": 51757,
+      "max": 51757
+    },
+    {
+      "duo": "Bas & Sjors",
+      "matches_count": 2,
+      "avg": 42417.5,
+      "median": 42417,
+      "max": 45101
+    },
+    {
+      "duo": "Corné & Sjors",
+      "matches_count": 2,
+      "avg": 38538,
+      "median": 38538,
+      "max": 54094
+    },
+    {
+      "duo": "Bas & Diederik",
+      "matches_count": 17,
+      "avg": 38392.35,
+      "median": 38829,
+      "max": 78753
+    },
+    {
+      "duo": "Corné & Diederik",
+      "matches_count": 25,
+      "avg": 33702.2,
+      "median": 31466,
+      "max": 70621
+    },
+    {
+      "duo": "Diederik & Sjors",
+      "matches_count": 6,
+      "avg": 33317.5,
+      "median": 33530,
+      "max": 48968
+    },
+    {
+      "duo": "Diederik & Frank",
+      "matches_count": 7,
+      "avg": 31686,
+      "median": 23210,
+      "max": 71250
+    },
+    {
+      "duo": "Daaf & Diederik",
+      "matches_count": 13,
+      "avg": 29962.69,
+      "median": 28074,
+      "max": 63480
+    },
+    {
+      "duo": "Anne & Diederik",
+      "matches_count": 6,
+      "avg": 26495.67,
+      "median": 21568,
+      "max": 51928
+    },
+    {
+      "duo": "Bas & Corné",
+      "matches_count": 3,
+      "avg": 25951.67,
+      "median": 16685,
+      "max": 48366
+    },
+    {
+      "duo": "Diederik & Tom",
+      "matches_count": 1,
+      "avg": 25240,
+      "median": 25240,
+      "max": 25240
+    },
+    {
+      "duo": "Anne & Corné",
+      "matches_count": 1,
+      "avg": 24075,
+      "median": 24075,
+      "max": 24075
+    },
+    {
+      "duo": "Corné & https://vercel.com/diederik-van-zessens-projects/dashboard/FZPG8z118Ujg53aGEq95jdW6M4nh",
+      "matches_count": 1,
+      "avg": 23189,
+      "median": 23189,
+      "max": 23189
+    }
+  ]
+}

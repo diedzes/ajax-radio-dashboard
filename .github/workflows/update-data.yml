@@ -1,0 +1,42 @@
+name: Update Dashboard Data
+
+on:
+  schedule:
+    # Run every day at 2 AM UTC (adjust timezone as needed)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Install Python dependencies
+      run: |
+        pip install requests beautifulsoup4
+    
+    - name: Update data
+      run: |
+        python3 fetch_google_sheet.py
+        python3 merge_data.py
+        python3 analyze_matchdays.py
+      env:
+        # Add any required environment variables here
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add dashboard/public/output/*.json
+        git commit -m "Auto-update dashboard data [skip ci]" || exit 0
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

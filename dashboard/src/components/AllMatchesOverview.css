@@ -1,0 +1,162 @@
+.all-matches-overview {
+  margin-bottom: 2rem;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.matches-table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.matches-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.matches-table thead {
+  background-color: #f5f5f5;
+  position: sticky;
+  top: 0;
+}
+
+.matches-table th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  white-space: nowrap;
+  background-color: #f5f5f5;
+}
+
+.matches-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.matches-table th.sortable:hover {
+  background-color: #e0e0e0;
+}
+
+/* Column width adjustments */
+.matches-table th:nth-child(1), /* Date */
+.matches-table td:nth-child(1) {
+  min-width: 100px;
+  max-width: 120px;
+}
+
+.matches-table th:nth-child(2), /* Day */
+.matches-table td:nth-child(2) {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.matches-table th:nth-child(3), /* Time */
+.matches-table td:nth-child(3) {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.matches-table th:nth-child(4), /* Match */
+.matches-table td:nth-child(4) {
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.matches-table th:nth-child(5), /* Commentators */
+.matches-table td:nth-child(5) {
+  min-width: 100px;
+  max-width: 130px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.matches-table th:nth-child(6), /* TV Channel */
+.matches-table td:nth-child(6) {
+  min-width: 80px;
+  max-width: 120px;
+}
+
+.matches-table th:nth-child(7), /* Score */
+.matches-table td:nth-child(7) {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.matches-table th:nth-child(8), /* Result */
+.matches-table td:nth-child(8) {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.matches-table th:nth-child(9), /* Listeners */
+.matches-table td:nth-child(9) {
+  min-width: 100px;
+  max-width: 120px;
+  text-align: right;
+}
+
+.matches-table th:nth-child(10), /* Media Value */
+.matches-table td:nth-child(10) {
+  min-width: 100px;
+  max-width: 120px;
+  text-align: right;
+}
+
+.media-value-cell {
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.matches-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.matches-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.result-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.result-win {
+  background-color: #4caf50;
+  color: white;
+}
+
+.result-draw {
+  background-color: #ff9800;
+  color: white;
+}
+
+.result-loss {
+  background-color: #f44336;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .matches-table {
+    font-size: 0.8rem;
+  }
+  
+  .matches-table th,
+  .matches-table td {
+    padding: 0.5rem;
+  }
+}
