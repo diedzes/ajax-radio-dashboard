@@ -34,7 +34,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add dashboard/public/output/*.json
-        git commit -m "Auto-update dashboard data [skip ci]" || exit 0
+        git commit -m "Auto-update dashboard data" || exit 0
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
