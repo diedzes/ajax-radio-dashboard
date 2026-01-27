@@ -28,8 +28,6 @@ jobs:
         python3 fetch_google_sheet.py
         python3 merge_data.py
         python3 analyze_matchdays.py
-      env:
-        # Add any required environment variables here
     
     - name: Commit and push changes
       run: |
