@@ -3,9 +3,9 @@
   "results": [
     {
       "result": "W",
-      "matches_count": 46,
-      "avg": 39039.78,
-      "median": 39375,
+      "matches_count": 47,
+      "avg": 39310.36,
+      "median": 39734,
       "min": 4670,
       "max": 78753
     },

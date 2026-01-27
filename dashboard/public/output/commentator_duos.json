@@ -80,17 +80,10 @@
     },
     {
       "duo": "Anne & Corné",
-      "matches_count": 1,
-      "avg": 24075,
-      "median": 24075,
+      "matches_count": 2,
+      "avg": 23632,
+      "median": 23632,
       "max": 24075
-    },
-    {
-      "duo": "Corné & https://vercel.com/diederik-van-zessens-projects/dashboard/FZPG8z118Ujg53aGEq95jdW6M4nh",
-      "matches_count": 1,
-      "avg": 23189,
-      "median": 23189,
-      "max": 23189
     }
   ]
 }

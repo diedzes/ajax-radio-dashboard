@@ -59,10 +59,10 @@
     },
     {
       "commentator": "Anne",
-      "matches_count": 7,
+      "matches_count": 8,
       "min": 15802,
-      "avg": 26149.86,
-      "median": 24075,
+      "avg": 25779.75,
+      "median": 23632,
       "max": 51928
     },
     {
@@ -72,14 +72,6 @@
       "avg": 25240,
       "median": 25240,
       "max": 25240
-    },
-    {
-      "commentator": "https://vercel.com/diederik-van-zessens-projects/dashboard/FZPG8z118Ujg53aGEq95jdW6M4nh",
-      "matches_count": 1,
-      "min": 23189,
-      "avg": 23189,
-      "median": 23189,
-      "max": 23189
     }
   ]
 }
