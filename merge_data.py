@@ -227,10 +227,6 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
             uitslag = re.sub(r'-+', '-', uitslag)
         result = sheet_record.get('result', '')
         
-        # Only include matches with listener data
-        if listeners is None:
-            continue
-        
         # Create merged record
         merged_record = {
             'date': date_key,
