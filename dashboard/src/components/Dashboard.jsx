@@ -23,83 +23,109 @@ function Dashboard() {
     weekday: null
   })
   const [loading, setLoading] = useState(true)
+  const [refreshing, setRefreshing] = useState(false)
   const [error, setError] = useState(null)
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const [
-          allMatchesRes,
-          top5GamesRes,
-          commentatorDuosRes,
-          byResultRes,
-          byHomeAwayRes,
-          byTVCategoryRes,
-          commentatorsRes,
-          kickoffRes,
-          weekdayRes
-        ] = await Promise.all([
-          fetch('/output/all_matches.json'),
-          fetch('/output/top5_games.json'),
-          fetch('/output/commentator_duos.json'),
-          fetch('/output/by_result.json'),
-          fetch('/output/by_home_away.json'),
-          fetch('/output/by_tv_category.json'),
-          fetch('/output/commentators_full_credit.json'),
-          fetch('/output/kickoff_blocks.json'),
-          fetch('/output/weekday.json')
-        ])
+  const loadData = async ({ isRefresh = false } = {}) => {
+    if (isRefresh) {
+      setRefreshing(true)
+    } else {
+      setLoading(true)
+    }
+    setError(null)
 
-        if (!allMatchesRes.ok || !top5GamesRes.ok || !commentatorDuosRes.ok || 
-            !byResultRes.ok || !byHomeAwayRes.ok || !byTVCategoryRes.ok ||
-            !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok) {
-          throw new Error('Failed to load data files')
-        }
+    const cacheBuster = `?t=${Date.now()}`
 
-        const [
-          allMatchesData,
-          top5GamesData,
-          commentatorDuosData,
-          byResultData,
-          byHomeAwayData,
-          byTVCategoryData,
-          commentatorsData,
-          kickoffData,
-          weekdayData
-        ] = await Promise.all([
-          allMatchesRes.json(),
-          top5GamesRes.json(),
-          commentatorDuosRes.json(),
-          byResultRes.json(),
-          byHomeAwayRes.json(),
-          byTVCategoryRes.json(),
-          commentatorsRes.json(),
-          kickoffRes.json(),
-          weekdayRes.json()
-        ])
+    try {
+      const [
+        allMatchesRes,
+        top5GamesRes,
+        commentatorDuosRes,
+        byResultRes,
+        byHomeAwayRes,
+        byTVCategoryRes,
+        commentatorsRes,
+        kickoffRes,
+        weekdayRes
+      ] = await Promise.all([
+        fetch(`/output/all_matches.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/top5_games.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/commentator_duos.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/by_result.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/by_home_away.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/by_tv_category.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/commentators_full_credit.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/kickoff_blocks.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/weekday.json${cacheBuster}`, { cache: 'no-store' })
+      ])
 
-        setData({
-          allMatches: allMatchesData,
-          top5Games: top5GamesData,
-          commentatorDuos: commentatorDuosData,
-          byResult: byResultData,
-          byHomeAway: byHomeAwayData,
-          byTVCategory: byTVCategoryData,
-          commentators: commentatorsData.commentators || [],
-          kickoffBlocks: kickoffData.kickoff_blocks || [],
-          weekday: weekdayData.weekdays || []
-        })
-        setLoading(false)
-      } catch (err) {
-        setError(err.message)
+      if (!allMatchesRes.ok || !top5GamesRes.ok || !commentatorDuosRes.ok ||
+          !byResultRes.ok || !byHomeAwayRes.ok || !byTVCategoryRes.ok ||
+          !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok) {
+        throw new Error('Failed to load data files')
+      }
+
+      const [
+        allMatchesData,
+        top5GamesData,
+        commentatorDuosData,
+        byResultData,
+        byHomeAwayData,
+        byTVCategoryData,
+        commentatorsData,
+        kickoffData,
+        weekdayData
+      ] = await Promise.all([
+        allMatchesRes.json(),
+        top5GamesRes.json(),
+        commentatorDuosRes.json(),
+        byResultRes.json(),
+        byHomeAwayRes.json(),
+        byTVCategoryRes.json(),
+        commentatorsRes.json(),
+        kickoffRes.json(),
+        weekdayRes.json()
+      ])
+
+      setData({
+        allMatches: allMatchesData,
+        top5Games: top5GamesData,
+        commentatorDuos: commentatorDuosData,
+        byResult: byResultData,
+        byHomeAway: byHomeAwayData,
+        byTVCategory: byTVCategoryData,
+        commentators: commentatorsData.commentators || [],
+        kickoffBlocks: kickoffData.kickoff_blocks || [],
+        weekday: weekdayData.weekdays || []
+      })
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      if (isRefresh) {
+        setRefreshing(false)
+      } else {
         setLoading(false)
       }
     }
+  }
 
+  useEffect(() => {
     loadData()
   }, [])
 
-  if (loading) {
+  const hasData = Boolean(
+    data.allMatches &&
+    data.top5Games &&
+    data.commentatorDuos &&
+    data.byResult &&
+    data.byHomeAway &&
+    data.byTVCategory &&
+    data.commentators &&
+    data.kickoffBlocks &&
+    data.weekday
+  )
+
+  if (loading && !hasData) {
     return (
       <div className="dashboard-container">
         <h1>Ajax Radio Dashboard</h1>
@@ -108,7 +134,7 @@ function Dashboard() {
     )
   }
 
-  if (error) {
+  if (error && !hasData) {
     return (
       <div className="dashboard-container">
         <h1>Ajax Radio Dashboard</h1>
@@ -128,7 +154,19 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <header>
-        <h1>Ajax Radio Dashboard</h1>
+        <div className="dashboard-header-top">
+          <h1>Ajax Radio Dashboard</h1>
+          <button
+            type="button"
+            className="refresh-button"
+            onClick={() => loadData({ isRefresh: true })}
+            disabled={loading || refreshing}
+            aria-busy={refreshing}
+          >
+            {refreshing ? 'Refreshing...' : 'Refresh Data'}
+          </button>
+        </div>
+        {error ? <p className="error">Refresh failed: {error}</p> : null}
         <nav className="dashboard-nav">
           <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>
             All Matches
