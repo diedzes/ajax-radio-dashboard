@@ -26,6 +26,7 @@ jobs:
     - name: Update data
       run: |
         python3 fetch_google_sheet.py
+        python3 fetch_full_api_data.py
         python3 merge_data.py
         python3 analyze_matchdays.py
     
