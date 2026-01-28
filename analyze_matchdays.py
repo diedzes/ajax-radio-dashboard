@@ -6,7 +6,7 @@ Analyzes commentators, kickoff times, and weekday performance
 import json
 import csv
 import os
-from datetime import datetime
+from datetime import datetime, date
 from typing import List, Dict, Any, Optional
 from collections import defaultdict
 from statistics import median, mean
@@ -59,6 +59,168 @@ def get_weekday(date_str: str) -> Optional[str]:
         return date_obj.strftime('%A')
     except (ValueError, AttributeError):
         return None
+
+
+def is_future_date(date_str: str, today: date) -> bool:
+    """Return True if date_str is after today (YYYY-MM-DD)."""
+    try:
+        return datetime.strptime(date_str, '%Y-%m-%d').date() > today
+    except (ValueError, TypeError):
+        return False
+
+
+def get_commentator_duo(commentators: List[str]) -> str:
+    """Create a stable commentator duo label."""
+    if not commentators:
+        return "Unknown"
+    if len(commentators) == 1:
+        return f"Solo: {commentators[0]}"
+    if len(commentators) == 2:
+        sorted_pair = sorted(commentators)
+        return f"{sorted_pair[0]} & {sorted_pair[1]}"
+    return "Multi"
+
+
+def build_feature_schema(records: List[Dict[str, Any]]) -> Dict[str, List[str]]:
+    """Build categorical feature schema from training records."""
+    schema = {
+        'kickoff_block': set(),
+        'weekday': set(),
+        'home_away': set(),
+        'tv_category': set(),
+        'commentator_duo': set()
+    }
+
+    for record in records:
+        kickoff_minutes = parse_kickoff(record.get('kickoff'))
+        kickoff_block = get_kickoff_block(kickoff_minutes) or "Unknown"
+        weekday = get_weekday(record.get('date', '')) or "Unknown"
+        home_away = record.get('home_away') or "Unknown"
+        tv_category = categorize_tv_channel(record.get('tv_channel')) or "Unknown"
+        duo = get_commentator_duo(record.get('commentators', []))
+
+        schema['kickoff_block'].add(kickoff_block)
+        schema['weekday'].add(weekday)
+        schema['home_away'].add(home_away)
+        schema['tv_category'].add(tv_category)
+        schema['commentator_duo'].add(duo)
+
+    # Ensure unknown bucket exists
+    for key in schema:
+        schema[key].add("Unknown")
+
+    return {key: sorted(values) for key, values in schema.items()}
+
+
+def encode_record(record: Dict[str, Any], schema: Dict[str, List[str]]) -> List[float]:
+    """Encode record into feature vector with one-hot categories."""
+    kickoff_minutes = parse_kickoff(record.get('kickoff'))
+    kickoff_block = get_kickoff_block(kickoff_minutes) or "Unknown"
+    weekday = get_weekday(record.get('date', '')) or "Unknown"
+    home_away = record.get('home_away') or "Unknown"
+    tv_category = categorize_tv_channel(record.get('tv_channel')) or "Unknown"
+    duo = get_commentator_duo(record.get('commentators', []))
+
+    features = [1.0]  # intercept
+
+    for key, value in [
+        ('kickoff_block', kickoff_block),
+        ('weekday', weekday),
+        ('home_away', home_away),
+        ('tv_category', tv_category),
+        ('commentator_duo', duo)
+    ]:
+        categories = schema.get(key, ["Unknown"])
+        if value not in categories:
+            value = "Unknown"
+        features.extend([1.0 if value == category else 0.0 for category in categories])
+
+    return features
+
+
+def transpose(matrix: List[List[float]]) -> List[List[float]]:
+    return [list(row) for row in zip(*matrix)]
+
+
+def matmul(a: List[List[float]], b: List[List[float]]) -> List[List[float]]:
+    result = [[0.0 for _ in range(len(b[0]))] for _ in range(len(a))]
+    for i in range(len(a)):
+        for k in range(len(b)):
+            for j in range(len(b[0])):
+                result[i][j] += a[i][k] * b[k][j]
+    return result
+
+
+def invert_matrix(matrix: List[List[float]]) -> Optional[List[List[float]]]:
+    size = len(matrix)
+    augmented = [row[:] + [1.0 if i == j else 0.0 for j in range(size)] for i, row in enumerate(matrix)]
+
+    for i in range(size):
+        pivot = augmented[i][i]
+        if abs(pivot) < 1e-9:
+            swap_row = None
+            for j in range(i + 1, size):
+                if abs(augmented[j][i]) > 1e-9:
+                    swap_row = j
+                    break
+            if swap_row is None:
+                return None
+            augmented[i], augmented[swap_row] = augmented[swap_row], augmented[i]
+            pivot = augmented[i][i]
+
+        pivot_inv = 1.0 / pivot
+        augmented[i] = [value * pivot_inv for value in augmented[i]]
+
+        for j in range(size):
+            if j == i:
+                continue
+            factor = augmented[j][i]
+            augmented[j] = [
+                augmented[j][k] - factor * augmented[i][k]
+                for k in range(2 * size)
+            ]
+
+    return [row[size:] for row in augmented]
+
+
+def fit_linear_regression(features: List[List[float]], targets: List[float]) -> Optional[List[float]]:
+    if not features or len(features) != len(targets):
+        return None
+
+    rows = len(features)
+    cols = len(features[0])
+    if rows <= cols:
+        return None
+
+    x = features
+    y = [[value] for value in targets]
+
+    xt = transpose(x)
+    xtx = matmul(xt, x)
+    xtx_inv = invert_matrix(xtx)
+    if xtx_inv is None:
+        return None
+    xty = matmul(xt, y)
+    beta = matmul(xtx_inv, xty)
+    return [row[0] for row in beta]
+
+
+def predict_listeners(record: Dict[str, Any],
+                      schema: Dict[str, List[str]],
+                      coefficients: Optional[List[float]],
+                      fallback_average: float,
+                      kickoff_averages: Dict[str, float]) -> int:
+    if coefficients is None:
+        kickoff_minutes = parse_kickoff(record.get('kickoff'))
+        kickoff_block = get_kickoff_block(kickoff_minutes) or "Unknown"
+        baseline = kickoff_averages.get(kickoff_block, fallback_average)
+        return max(0, int(round(baseline)))
+
+    features = encode_record(record, schema)
+    prediction = sum(weight * value for weight, value in zip(coefficients, features))
+    if prediction < 0:
+        prediction = 0
+    return int(round(prediction))
 
 
 def analyze_commentators(data: List[Dict[str, Any]], split_credit: bool = False) -> Dict[str, Any]:
@@ -672,38 +834,44 @@ def main():
     print("Loading merged matchdays data...")
     data = load_merged_data(input_file)
     print(f"Loaded {len(data)} records")
+
+    today = datetime.utcnow().date()
+    past_records = [r for r in data if not is_future_date(r.get('date', ''), today)]
+    future_records = [r for r in data if is_future_date(r.get('date', ''), today)]
+    print(f"Past records: {len(past_records)}")
+    print(f"Future records: {len(future_records)}")
     
     print("\nRunning analyses...")
     
     # A) Commentators analysis
     print("  - Analyzing commentators (full credit)...")
-    commentators_full = analyze_commentators(data, split_credit=False)
+    commentators_full = analyze_commentators(past_records, split_credit=False)
     
     print("  - Analyzing commentators (split credit)...")
-    commentators_split = analyze_commentators(data, split_credit=True)
+    commentators_split = analyze_commentators(past_records, split_credit=True)
     
     print("  - Analyzing commentator duos...")
-    commentator_duos = analyze_commentator_duos(data)
+    commentator_duos = analyze_commentator_duos(past_records)
     
     # B) Kickoff analysis
     print("  - Analyzing exact kickoff times...")
-    kickoff_exact = analyze_kickoff_exact(data)
+    kickoff_exact = analyze_kickoff_exact(past_records)
     
     print("  - Analyzing kickoff blocks...")
-    kickoff_blocks = analyze_kickoff_blocks(data)
+    kickoff_blocks = analyze_kickoff_blocks(past_records)
     
     # C) Weekday analysis
     print("  - Analyzing weekdays...")
-    weekday = analyze_weekday(data)
+    weekday = analyze_weekday(past_records)
     
     # D) All matches overview
     print("  - Preparing all matches overview...")
-    all_matches = prepare_all_matches(data)
+    all_matches = prepare_all_matches(past_records)
     
     # E) Top 5 games by season
     print("  - Preparing top 5 games...")
-    top5_2024_2025 = get_top5_games(data, "2024/2025")
-    top5_2025_2026 = get_top5_games(data, "2025/2026")
+    top5_2024_2025 = get_top5_games(past_records, "2024/2025")
+    top5_2025_2026 = get_top5_games(past_records, "2025/2026")
     top5_games = {
         '2024/2025': top5_2024_2025,
         '2025/2026': top5_2025_2026
@@ -711,15 +879,59 @@ def main():
     
     # F) Analyze by result (W/D/L)
     print("  - Analyzing by result (W/D/L)...")
-    by_result = analyze_by_result(data)
+    by_result = analyze_by_result(past_records)
     
     # G) Analyze by home/away
     print("  - Analyzing by home/away...")
-    by_home_away = analyze_by_home_away(data)
+    by_home_away = analyze_by_home_away(past_records)
     
     # H) Analyze by TV channel category
     print("  - Analyzing by TV channel category...")
-    by_tv_category = analyze_by_tv_category(data)
+    by_tv_category = analyze_by_tv_category(past_records)
+
+    # Predictions for future matches
+    print("  - Predicting listeners for future matches...")
+    training_records = [r for r in past_records if r.get('listeners') is not None]
+    schema = build_feature_schema(training_records) if training_records else {
+        'kickoff_block': ["Unknown"],
+        'weekday': ["Unknown"],
+        'home_away': ["Unknown"],
+        'tv_category': ["Unknown"],
+        'commentator_duo': ["Unknown"]
+    }
+
+    training_features = [encode_record(r, schema) for r in training_records]
+    training_targets = [r.get('listeners', 0) for r in training_records]
+    coefficients = fit_linear_regression(training_features, training_targets)
+
+    overall_average = mean(training_targets) if training_targets else 0
+    kickoff_averages = {}
+    if training_records:
+        kickoff_buckets = defaultdict(list)
+        for record in training_records:
+            kickoff_minutes = parse_kickoff(record.get('kickoff'))
+            kickoff_block = get_kickoff_block(kickoff_minutes) or "Unknown"
+            kickoff_buckets[kickoff_block].append(record.get('listeners', 0))
+        kickoff_averages = {
+            block: mean(values) if values else overall_average
+            for block, values in kickoff_buckets.items()
+        }
+
+    future_matches = []
+    for record in future_records:
+        predicted = predict_listeners(record, schema, coefficients, overall_average, kickoff_averages)
+        future_matches.append({
+            'date': record.get('date', ''),
+            'weekday': get_weekday(record.get('date', '')),
+            'time': record.get('kickoff'),
+            'match_name': record.get('match_name', ''),
+            'commentators': " & ".join(record.get('commentators', [])) if record.get('commentators') else "N/A",
+            'competition': record.get('competition', ''),
+            'tv_channel': record.get('tv_channel'),
+            'tv_category': categorize_tv_channel(record.get('tv_channel')) or "Unknown",
+            'home_away': record.get('home_away', ''),
+            'predicted_listeners': predicted
+        })
     
     # Save JSON files
     print(f"\nSaving results to {output_dir}/...")
@@ -734,6 +946,7 @@ def main():
     save_json(by_result, f'{output_dir}/by_result.json')
     save_json(by_home_away, f'{output_dir}/by_home_away.json')
     save_json(by_tv_category, f'{output_dir}/by_tv_category.json')
+    save_json({'matches': future_matches}, f'{output_dir}/future_matches.json')
     
     # Save CSV files
     save_csv(commentators_full, f'{output_dir}/commentators_full_credit.csv', 'commentators')

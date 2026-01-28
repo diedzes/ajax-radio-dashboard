@@ -326,8 +326,8 @@
     "tv_channel": "ZIGGO",
     "match_name": "Ajax Legends - Real Madrid Legends",
     "home_away": "Thuis",
-    "score": "-",
-    "result": "Â"
+    "score": "2-1",
+    "result": "W"
   },
   {
     "date": "2024-11-24",
@@ -1273,5 +1273,137 @@
     "home_away": "Uit",
     "score": "1-2",
     "result": "W"
+  },
+  {
+    "date": "2026-01-24",
+    "listeners": 35974,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Sjors",
+      "Diederik"
+    ],
+    "tv_channel": "ESPN1",
+    "match_name": "Ajax - FC Volendam",
+    "home_away": "Thuis",
+    "score": "2-0",
+    "result": "W"
+  },
+  {
+    "date": "2026-01-28",
+    "listeners": null,
+    "kickoff": "21:00",
+    "competition": "Champions League",
+    "commentators": [
+      "Frank",
+      "Diederik"
+    ],
+    "tv_channel": null,
+    "match_name": "Ajax - Olympiacos FC",
+    "home_away": "Thuis",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-02-01",
+    "listeners": null,
+    "kickoff": "12:15",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Corné"
+    ],
+    "tv_channel": null,
+    "match_name": "Excelsior - Ajax",
+    "home_away": "Uit",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-02-08",
+    "listeners": null,
+    "kickoff": "14:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Sjors",
+      "Diederik"
+    ],
+    "tv_channel": null,
+    "match_name": "AZ - Ajax",
+    "home_away": "Uit",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-02-14",
+    "listeners": null,
+    "kickoff": "20:00",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Daaf",
+      "Diederik"
+    ],
+    "tv_channel": null,
+    "match_name": "Ajax - Fortuna",
+    "home_away": "Thuis",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-02-21",
+    "listeners": null,
+    "kickoff": "21:00",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik"
+    ],
+    "tv_channel": null,
+    "match_name": "Ajax - NEC",
+    "home_away": "Thuis",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-03-01",
+    "listeners": null,
+    "kickoff": "12:15",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Daaf",
+      "Corné"
+    ],
+    "tv_channel": null,
+    "match_name": "PEC Zwolle - Ajax",
+    "home_away": "Uit",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-03-07",
+    "listeners": null,
+    "kickoff": "16:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik",
+      "??"
+    ],
+    "tv_channel": null,
+    "match_name": "FC Groningen - Ajax",
+    "home_away": "Uit",
+    "score": null,
+    "result": null
+  },
+  {
+    "date": "2026-04-04",
+    "listeners": null,
+    "kickoff": "21:00",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [
+      "Diederik"
+    ],
+    "tv_channel": "Future Cup",
+    "match_name": "Ajax - FC Twente",
+    "home_away": "Thuis",
+    "score": null,
+    "result": null
   }
 ]
