@@ -25,13 +25,15 @@ function Dashboard() {
     weekday: null,
     futureMatches: null,
     podcastEpisodes: null,
-    podcastMonthly: null
+    podcastMonthly: null,
+    podcastApps: null
   })
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [updating, setUpdating] = useState(false)
   const [updateMessage, setUpdateMessage] = useState('')
   const [error, setError] = useState(null)
+  const [activeTab, setActiveTab] = useState('radio')
 
   const loadData = async ({ isRefresh = false } = {}) => {
     if (isRefresh) {
@@ -56,7 +58,8 @@ function Dashboard() {
         weekdayRes,
         futureMatchesRes,
         podcastEpisodesRes,
-        podcastMonthlyRes
+        podcastMonthlyRes,
+        podcastAppsRes
       ] = await Promise.all([
         fetch(`/output/all_matches.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/top5_games.json${cacheBuster}`, { cache: 'no-store' }),
@@ -69,7 +72,8 @@ function Dashboard() {
         fetch(`/output/weekday.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/future_matches.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/podcast_episodes.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/podcast_monthly.json${cacheBuster}`, { cache: 'no-store' })
+        fetch(`/output/podcast_monthly.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/podcast_apps.json${cacheBuster}`, { cache: 'no-store' })
       ])
 
       if (!allMatchesRes.ok || !top5GamesRes.ok || !commentatorDuosRes.ok ||
@@ -77,7 +81,7 @@ function Dashboard() {
           !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok || !futureMatchesRes.ok) {
         throw new Error('Failed to load data files')
       }
-      if (!podcastEpisodesRes.ok || !podcastMonthlyRes.ok) {
+      if (!podcastEpisodesRes.ok || !podcastMonthlyRes.ok || !podcastAppsRes.ok) {
         throw new Error('Failed to load podcast data files')
       }
 
@@ -93,7 +97,8 @@ function Dashboard() {
         weekdayData,
         futureMatchesData,
         podcastEpisodesData,
-        podcastMonthlyData
+        podcastMonthlyData,
+        podcastAppsData
       ] = await Promise.all([
         allMatchesRes.json(),
         top5GamesRes.json(),
@@ -106,7 +111,8 @@ function Dashboard() {
         weekdayRes.json(),
         futureMatchesRes.json(),
         podcastEpisodesRes.json(),
-        podcastMonthlyRes.json()
+        podcastMonthlyRes.json(),
+        podcastAppsRes.json()
       ])
 
       setData({
@@ -121,7 +127,8 @@ function Dashboard() {
         weekday: weekdayData.weekdays || [],
         futureMatches: futureMatchesData,
         podcastEpisodes: podcastEpisodesData,
-        podcastMonthly: podcastMonthlyData
+        podcastMonthly: podcastMonthlyData,
+        podcastApps: podcastAppsData
       })
     } catch (err) {
       setError(err.message)
@@ -189,7 +196,8 @@ function Dashboard() {
     data.weekday &&
     data.futureMatches &&
     data.podcastEpisodes &&
-    data.podcastMonthly
+    data.podcastMonthly &&
+    data.podcastApps
   )
 
   if (loading && !hasData) {
@@ -228,97 +236,121 @@ function Dashboard() {
             alt="Zessen logo"
           />
           <nav className="dashboard-side-nav">
-            <button type="button" onClick={() => scrollToSection('all-matches')}>
+            <button
+              type="button"
+              className={activeTab === 'radio' ? 'is-active' : ''}
+              onClick={() => setActiveTab('radio')}
+            >
               Radio
             </button>
-            <button type="button" onClick={() => scrollToSection('podcast')}>
+            <button
+              type="button"
+              className={activeTab === 'podcast' ? 'is-active' : ''}
+              onClick={() => setActiveTab('podcast')}
+            >
               Podcast
             </button>
           </nav>
         </aside>
 
         <div className="dashboard-main">
-          <header>
-            <div className="dashboard-header-top">
-              <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
-            </div>
-            <nav className="dashboard-nav">
-              <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>
-                All Matches
-              </a>
-              <a href="#future-matches" onClick={(e) => { e.preventDefault(); scrollToSection('future-matches') }}>
-                Future Matches
-              </a>
-              <a href="#top5-games" onClick={(e) => { e.preventDefault(); scrollToSection('top5-games') }}>
-                Top 5 Games
-              </a>
-              <a href="#by-result" onClick={(e) => { e.preventDefault(); scrollToSection('by-result') }}>
-                By Result
-              </a>
-              <a href="#by-home-away" onClick={(e) => { e.preventDefault(); scrollToSection('by-home-away') }}>
-                Home/Away
-              </a>
-              <a href="#by-tv-category" onClick={(e) => { e.preventDefault(); scrollToSection('by-tv-category') }}>
-                TV Categories
-              </a>
-              <a href="#kickoff-blocks" onClick={(e) => { e.preventDefault(); scrollToSection('kickoff-blocks') }}>
-                Kickoff Blocks
-              </a>
-              <a href="#weekday" onClick={(e) => { e.preventDefault(); scrollToSection('weekday') }}>
-                Weekday
-              </a>
-              <a href="#commentators" onClick={(e) => { e.preventDefault(); scrollToSection('commentators') }}>
-                Commentators
-              </a>
-              <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
-                Commentator Duos
-              </a>
-            </nav>
-          </header>
+          {activeTab === 'radio' ? (
+            <>
+              <header>
+                <div className="dashboard-header-top">
+                  <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
+                </div>
+                <nav className="dashboard-nav">
+                  <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>
+                    All Matches
+                  </a>
+                  <a href="#future-matches" onClick={(e) => { e.preventDefault(); scrollToSection('future-matches') }}>
+                    Future Matches
+                  </a>
+                  <a href="#top5-games" onClick={(e) => { e.preventDefault(); scrollToSection('top5-games') }}>
+                    Top 5 Games
+                  </a>
+                  <a href="#by-result" onClick={(e) => { e.preventDefault(); scrollToSection('by-result') }}>
+                    By Result
+                  </a>
+                  <a href="#by-home-away" onClick={(e) => { e.preventDefault(); scrollToSection('by-home-away') }}>
+                    Home/Away
+                  </a>
+                  <a href="#by-tv-category" onClick={(e) => { e.preventDefault(); scrollToSection('by-tv-category') }}>
+                    TV Categories
+                  </a>
+                  <a href="#kickoff-blocks" onClick={(e) => { e.preventDefault(); scrollToSection('kickoff-blocks') }}>
+                    Kickoff Blocks
+                  </a>
+                  <a href="#weekday" onClick={(e) => { e.preventDefault(); scrollToSection('weekday') }}>
+                    Weekday
+                  </a>
+                  <a href="#commentators" onClick={(e) => { e.preventDefault(); scrollToSection('commentators') }}>
+                    Commentators
+                  </a>
+                  <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
+                    Commentator Duos
+                  </a>
+                </nav>
+              </header>
 
-          <section className="dashboard-section" id="all-matches">
-            <AllMatchesOverview data={data.allMatches} />
-          </section>
+              <section className="dashboard-section" id="all-matches">
+                <AllMatchesOverview data={data.allMatches} />
+              </section>
 
-          <section className="dashboard-section" id="future-matches">
-            <FutureMatchesSection data={data.futureMatches} />
-          </section>
+              <section className="dashboard-section" id="future-matches">
+                <FutureMatchesSection data={data.futureMatches} />
+              </section>
 
-          <section className="dashboard-section" id="top5-games">
-            <Top5GamesSection data={data.top5Games} />
-          </section>
+              <section className="dashboard-section" id="top5-games">
+                <Top5GamesSection data={data.top5Games} />
+              </section>
 
-          <section className="dashboard-section" id="by-result">
-            <ResultAnalysisSection data={data.byResult} />
-          </section>
+              <section className="dashboard-section" id="by-result">
+                <ResultAnalysisSection data={data.byResult} />
+              </section>
 
-          <section className="dashboard-section" id="by-home-away">
-            <HomeAwayAnalysisSection data={data.byHomeAway} />
-          </section>
+              <section className="dashboard-section" id="by-home-away">
+                <HomeAwayAnalysisSection data={data.byHomeAway} />
+              </section>
 
-          <section className="dashboard-section" id="by-tv-category">
-            <TVCategoryAnalysisSection data={data.byTVCategory} />
-          </section>
+              <section className="dashboard-section" id="by-tv-category">
+                <TVCategoryAnalysisSection data={data.byTVCategory} />
+              </section>
 
-          <section className="dashboard-section" id="kickoff-blocks">
-            <KickoffBlocksSection data={data.kickoffBlocks} />
-          </section>
+              <section className="dashboard-section" id="kickoff-blocks">
+                <KickoffBlocksSection data={data.kickoffBlocks} />
+              </section>
 
-          <section className="dashboard-section" id="weekday">
-            <WeekdaySection data={data.weekday} />
-          </section>
+              <section className="dashboard-section" id="weekday">
+                <WeekdaySection data={data.weekday} />
+              </section>
 
-          <section className="dashboard-section" id="commentators">
-            <CommentatorsSection data={data.commentators} />
-          </section>
+              <section className="dashboard-section" id="commentators">
+                <CommentatorsSection data={data.commentators} />
+              </section>
 
-          <section className="dashboard-section" id="commentator-duos">
-            <CommentatorDuosSection data={data.commentatorDuos} />
-          </section>
+              <section className="dashboard-section" id="commentator-duos">
+                <CommentatorDuosSection data={data.commentatorDuos} />
+              </section>
+            </>
+          ) : (
+            <>
+              <header>
+                <div className="dashboard-header-top">
+                  <h1 className="dashboard-title">Ajax Podcast Dashboard</h1>
+                </div>
+              </header>
 
-          <section className="dashboard-section" id="podcast">
-            <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} />
-          </section>
+              <section className="dashboard-section" id="podcast">
+                <PodcastSection
+                  episodes={data.podcastEpisodes}
+                  monthly={data.podcastMonthly}
+                  apps={data.podcastApps}
+                />
+              </section>
+            </>
+          )}
 
           <div className="dashboard-refresh-footer">
             <button

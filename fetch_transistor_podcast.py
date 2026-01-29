@@ -4,6 +4,7 @@ Fetch Transistor podcast data and analytics for the dashboard.
 Outputs:
   - dashboard/public/output/podcast_episodes.json
   - dashboard/public/output/podcast_monthly.json
+  - dashboard/public/output/podcast_apps.json
 """
 import json
 import os
@@ -170,11 +171,21 @@ def main():
         "months": monthly
     }
 
+    apps_payload = {
+        "show_id": show_id,
+        "feed_url": feed_url,
+        "window": {"start_date": start_date, "end_date": end_date},
+        "apps": []
+    }
+
     with open(os.path.join(OUTPUT_DIR, "podcast_episodes.json"), "w", encoding="utf-8") as file:
         json.dump(episodes_payload, file, indent=2, ensure_ascii=False)
 
     with open(os.path.join(OUTPUT_DIR, "podcast_monthly.json"), "w", encoding="utf-8") as file:
         json.dump(monthly_payload, file, indent=2, ensure_ascii=False)
+
+    with open(os.path.join(OUTPUT_DIR, "podcast_apps.json"), "w", encoding="utf-8") as file:
+        json.dump(apps_payload, file, indent=2, ensure_ascii=False)
 
     print("Podcast data saved.")
 
