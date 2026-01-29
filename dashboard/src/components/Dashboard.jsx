@@ -220,114 +220,125 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <header>
-        <div className="dashboard-header-top">
-          <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
+      <div className="dashboard-layout">
+        <aside className="dashboard-sidebar">
           <img
             className="dashboard-logo"
             src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/01/zessenlogo-zwart.png"
             alt="Zessen logo"
           />
+          <nav className="dashboard-side-nav">
+            <button type="button" onClick={() => scrollToSection('all-matches')}>
+              Radio
+            </button>
+            <button type="button" onClick={() => scrollToSection('podcast')}>
+              Podcast
+            </button>
+          </nav>
+        </aside>
+
+        <div className="dashboard-main">
+          <header>
+            <div className="dashboard-header-top">
+              <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
+            </div>
+            <nav className="dashboard-nav">
+              <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>
+                All Matches
+              </a>
+              <a href="#future-matches" onClick={(e) => { e.preventDefault(); scrollToSection('future-matches') }}>
+                Future Matches
+              </a>
+              <a href="#top5-games" onClick={(e) => { e.preventDefault(); scrollToSection('top5-games') }}>
+                Top 5 Games
+              </a>
+              <a href="#by-result" onClick={(e) => { e.preventDefault(); scrollToSection('by-result') }}>
+                By Result
+              </a>
+              <a href="#by-home-away" onClick={(e) => { e.preventDefault(); scrollToSection('by-home-away') }}>
+                Home/Away
+              </a>
+              <a href="#by-tv-category" onClick={(e) => { e.preventDefault(); scrollToSection('by-tv-category') }}>
+                TV Categories
+              </a>
+              <a href="#kickoff-blocks" onClick={(e) => { e.preventDefault(); scrollToSection('kickoff-blocks') }}>
+                Kickoff Blocks
+              </a>
+              <a href="#weekday" onClick={(e) => { e.preventDefault(); scrollToSection('weekday') }}>
+                Weekday
+              </a>
+              <a href="#commentators" onClick={(e) => { e.preventDefault(); scrollToSection('commentators') }}>
+                Commentators
+              </a>
+              <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
+                Commentator Duos
+              </a>
+            </nav>
+          </header>
+
+          <section className="dashboard-section" id="all-matches">
+            <AllMatchesOverview data={data.allMatches} />
+          </section>
+
+          <section className="dashboard-section" id="future-matches">
+            <FutureMatchesSection data={data.futureMatches} />
+          </section>
+
+          <section className="dashboard-section" id="top5-games">
+            <Top5GamesSection data={data.top5Games} />
+          </section>
+
+          <section className="dashboard-section" id="by-result">
+            <ResultAnalysisSection data={data.byResult} />
+          </section>
+
+          <section className="dashboard-section" id="by-home-away">
+            <HomeAwayAnalysisSection data={data.byHomeAway} />
+          </section>
+
+          <section className="dashboard-section" id="by-tv-category">
+            <TVCategoryAnalysisSection data={data.byTVCategory} />
+          </section>
+
+          <section className="dashboard-section" id="kickoff-blocks">
+            <KickoffBlocksSection data={data.kickoffBlocks} />
+          </section>
+
+          <section className="dashboard-section" id="weekday">
+            <WeekdaySection data={data.weekday} />
+          </section>
+
+          <section className="dashboard-section" id="commentators">
+            <CommentatorsSection data={data.commentators} />
+          </section>
+
+          <section className="dashboard-section" id="commentator-duos">
+            <CommentatorDuosSection data={data.commentatorDuos} />
+          </section>
+
+          <section className="dashboard-section" id="podcast">
+            <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} />
+          </section>
+
+          <div className="dashboard-refresh-footer">
+            <button
+              type="button"
+              className="refresh-button"
+              onClick={triggerDataUpdate}
+              disabled={loading || refreshing || updating}
+              aria-busy={updating || refreshing}
+            >
+              {updating ? 'Starting Update...' : 'Refresh Data'}
+            </button>
+            {error ? <p className="error">Refresh failed: {error}</p> : null}
+            {updateMessage ? (
+              <p className={`status-message ${updateMessage.startsWith('Failed') ? 'error' : ''}`}>
+                {updateMessage}
+              </p>
+            ) : null}
+          </div>
         </div>
-        <nav className="dashboard-nav">
-          <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>
-            All Matches
-          </a>
-          <a href="#future-matches" onClick={(e) => { e.preventDefault(); scrollToSection('future-matches') }}>
-            Future Matches
-          </a>
-          <a href="#top5-games" onClick={(e) => { e.preventDefault(); scrollToSection('top5-games') }}>
-            Top 5 Games
-          </a>
-          <a href="#by-result" onClick={(e) => { e.preventDefault(); scrollToSection('by-result') }}>
-            By Result
-          </a>
-          <a href="#by-home-away" onClick={(e) => { e.preventDefault(); scrollToSection('by-home-away') }}>
-            Home/Away
-          </a>
-          <a href="#by-tv-category" onClick={(e) => { e.preventDefault(); scrollToSection('by-tv-category') }}>
-            TV Categories
-          </a>
-          <a href="#kickoff-blocks" onClick={(e) => { e.preventDefault(); scrollToSection('kickoff-blocks') }}>
-            Kickoff Blocks
-          </a>
-          <a href="#weekday" onClick={(e) => { e.preventDefault(); scrollToSection('weekday') }}>
-            Weekday
-          </a>
-          <a href="#commentators" onClick={(e) => { e.preventDefault(); scrollToSection('commentators') }}>
-            Commentators
-          </a>
-          <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
-            Commentator Duos
-          </a>
-          <a href="#podcast" onClick={(e) => { e.preventDefault(); scrollToSection('podcast') }}>
-            Podcast
-          </a>
-        </nav>
-      </header>
-
-      <section className="dashboard-section" id="all-matches">
-        <AllMatchesOverview data={data.allMatches} />
-      </section>
-
-      <section className="dashboard-section" id="future-matches">
-        <FutureMatchesSection data={data.futureMatches} />
-      </section>
-
-      <section className="dashboard-section" id="top5-games">
-        <Top5GamesSection data={data.top5Games} />
-      </section>
-
-      <section className="dashboard-section" id="by-result">
-        <ResultAnalysisSection data={data.byResult} />
-      </section>
-
-      <section className="dashboard-section" id="by-home-away">
-        <HomeAwayAnalysisSection data={data.byHomeAway} />
-      </section>
-
-      <section className="dashboard-section" id="by-tv-category">
-        <TVCategoryAnalysisSection data={data.byTVCategory} />
-      </section>
-
-      <section className="dashboard-section" id="kickoff-blocks">
-        <KickoffBlocksSection data={data.kickoffBlocks} />
-      </section>
-
-      <section className="dashboard-section" id="weekday">
-        <WeekdaySection data={data.weekday} />
-      </section>
-
-      <section className="dashboard-section" id="commentators">
-        <CommentatorsSection data={data.commentators} />
-      </section>
-
-      <section className="dashboard-section" id="commentator-duos">
-        <CommentatorDuosSection data={data.commentatorDuos} />
-      </section>
-
-      <section className="dashboard-section" id="podcast">
-        <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} />
-      </section>
-
-      <div className="dashboard-refresh-footer">
-        <button
-          type="button"
-          className="refresh-button"
-          onClick={triggerDataUpdate}
-          disabled={loading || refreshing || updating}
-          aria-busy={updating || refreshing}
-        >
-          {updating ? 'Starting Update...' : 'Refresh Data'}
-        </button>
-        {error ? <p className="error">Refresh failed: {error}</p> : null}
-        {updateMessage ? (
-          <p className={`status-message ${updateMessage.startsWith('Failed') ? 'error' : ''}`}>
-            {updateMessage}
-          </p>
-        ) : null}
       </div>
-
     </div>
   )
 }
