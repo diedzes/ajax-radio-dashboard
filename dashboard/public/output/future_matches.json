@@ -46,7 +46,7 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
-      "predicted_listeners": 21581
+      "predicted_listeners": 21545
     },
     {
       "date": "2026-03-01",
@@ -82,7 +82,7 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
-      "predicted_listeners": 21581
+      "predicted_listeners": 21545
     },
     {
       "date": "2026-03-22",
@@ -106,7 +106,7 @@
       "tv_channel": "Future Cup",
       "tv_category": "Paid",
       "home_away": "Thuis",
-      "predicted_listeners": 21581
+      "predicted_listeners": 21545
     },
     {
       "date": "2026-04-11",
@@ -118,7 +118,7 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
-      "predicted_listeners": 21581
+      "predicted_listeners": 21545
     },
     {
       "date": "2026-04-25",
