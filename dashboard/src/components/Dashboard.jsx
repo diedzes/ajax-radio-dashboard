@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import AllMatchesOverview from './AllMatchesOverview'
 import FutureMatchesSection from './FutureMatchesSection'
+import PodcastSection from './PodcastSection'
 import Top5GamesSection from './Top5GamesSection'
 import CommentatorDuosSection from './CommentatorDuosSection'
 import ResultAnalysisSection from './ResultAnalysisSection'
@@ -22,7 +23,9 @@ function Dashboard() {
     commentators: null,
     kickoffBlocks: null,
     weekday: null,
-    futureMatches: null
+    futureMatches: null,
+    podcastEpisodes: null,
+    podcastMonthly: null
   })
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
@@ -51,7 +54,9 @@ function Dashboard() {
         commentatorsRes,
         kickoffRes,
         weekdayRes,
-        futureMatchesRes
+        futureMatchesRes,
+        podcastEpisodesRes,
+        podcastMonthlyRes
       ] = await Promise.all([
         fetch(`/output/all_matches.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/top5_games.json${cacheBuster}`, { cache: 'no-store' }),
@@ -62,13 +67,18 @@ function Dashboard() {
         fetch(`/output/commentators_full_credit.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/kickoff_blocks.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/weekday.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/future_matches.json${cacheBuster}`, { cache: 'no-store' })
+        fetch(`/output/future_matches.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/podcast_episodes.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/podcast_monthly.json${cacheBuster}`, { cache: 'no-store' })
       ])
 
       if (!allMatchesRes.ok || !top5GamesRes.ok || !commentatorDuosRes.ok ||
           !byResultRes.ok || !byHomeAwayRes.ok || !byTVCategoryRes.ok ||
           !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok || !futureMatchesRes.ok) {
         throw new Error('Failed to load data files')
+      }
+      if (!podcastEpisodesRes.ok || !podcastMonthlyRes.ok) {
+        throw new Error('Failed to load podcast data files')
       }
 
       const [
@@ -81,7 +91,9 @@ function Dashboard() {
         commentatorsData,
         kickoffData,
         weekdayData,
-        futureMatchesData
+        futureMatchesData,
+        podcastEpisodesData,
+        podcastMonthlyData
       ] = await Promise.all([
         allMatchesRes.json(),
         top5GamesRes.json(),
@@ -92,7 +104,9 @@ function Dashboard() {
         commentatorsRes.json(),
         kickoffRes.json(),
         weekdayRes.json(),
-        futureMatchesRes.json()
+        futureMatchesRes.json(),
+        podcastEpisodesRes.json(),
+        podcastMonthlyRes.json()
       ])
 
       setData({
@@ -105,7 +119,9 @@ function Dashboard() {
         commentators: commentatorsData.commentators || [],
         kickoffBlocks: kickoffData.kickoff_blocks || [],
         weekday: weekdayData.weekdays || [],
-        futureMatches: futureMatchesData
+        futureMatches: futureMatchesData,
+        podcastEpisodes: podcastEpisodesData,
+        podcastMonthly: podcastMonthlyData
       })
     } catch (err) {
       setError(err.message)
@@ -171,7 +187,9 @@ function Dashboard() {
     data.commentators &&
     data.kickoffBlocks &&
     data.weekday &&
-    data.futureMatches
+    data.futureMatches &&
+    data.podcastEpisodes &&
+    data.podcastMonthly
   )
 
   if (loading && !hasData) {
@@ -242,6 +260,9 @@ function Dashboard() {
           <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
             Commentator Duos
           </a>
+          <a href="#podcast" onClick={(e) => { e.preventDefault(); scrollToSection('podcast') }}>
+            Podcast
+          </a>
         </nav>
       </header>
 
@@ -283,6 +304,10 @@ function Dashboard() {
 
       <section className="dashboard-section" id="commentator-duos">
         <CommentatorDuosSection data={data.commentatorDuos} />
+      </section>
+
+      <section className="dashboard-section" id="podcast">
+        <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} />
       </section>
 
       <div className="dashboard-refresh-footer">

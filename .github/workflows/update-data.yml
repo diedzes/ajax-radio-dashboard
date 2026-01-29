@@ -27,8 +27,12 @@ jobs:
       run: |
         python3 fetch_google_sheet.py
         python3 fetch_full_api_data.py
+        python3 fetch_transistor_podcast.py
         python3 merge_data.py
         python3 analyze_matchdays.py
+      env:
+        TRANSISTOR_API_KEY: ${{ secrets.TRANSISTOR_API_KEY }}
+        TRANSISTOR_FEED_URL: https://feeds.transistor.fm/ajax-podcast
     
     - name: Commit and push changes
       run: |
