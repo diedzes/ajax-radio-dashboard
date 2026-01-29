@@ -19,9 +19,9 @@
     },
     {
       "result": "L",
-      "matches_count": 23,
-      "avg": 22280.39,
-      "median": 19979,
+      "matches_count": 24,
+      "avg": 22224,
+      "median": 20098,
       "min": 11844,
       "max": 48549
     }
