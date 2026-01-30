@@ -2,17 +2,25 @@
   "show_id": "62011",
   "feed_url": "https://feeds.transistor.fm/ajax-podcast",
   "window": {
-    "start_date": "30-01-2024",
-    "end_date": "29-01-2026"
+    "start_date": "31-01-2024",
+    "end_date": "30-01-2026"
   },
   "episodes": [
+    {
+      "id": "2998186",
+      "title": "14 Minuten met... Vurnon Anita",
+      "published_at": "2026-01-30T05:00:00.000Z",
+      "duration_in_mmss": "15:15",
+      "share_url": "https://share.transistor.fm/s/43cc03ae",
+      "total_downloads": 79
+    },
     {
       "id": "2874749",
       "title": "14 Minuten met... Marko Pantelic",
       "published_at": "2026-01-16T05:00:00.000Z",
       "duration_in_mmss": "18:59",
       "share_url": "https://share.transistor.fm/s/fc991f25",
-      "total_downloads": 1108
+      "total_downloads": 1114
     },
     {
       "id": "2874667",
@@ -84,7 +92,7 @@
       "published_at": "2025-03-12T00:28:00.000Z",
       "duration_in_mmss": "38:00",
       "share_url": "https://share.transistor.fm/s/05285b5f",
-      "total_downloads": 5578
+      "total_downloads": 5580
     },
     {
       "id": "2373139",
@@ -92,7 +100,7 @@
       "published_at": "2025-03-12T00:27:00.000Z",
       "duration_in_mmss": "39:00",
       "share_url": "https://share.transistor.fm/s/55858470",
-      "total_downloads": 3885
+      "total_downloads": 3886
     },
     {
       "id": "2373137",
@@ -108,7 +116,7 @@
       "published_at": "2025-03-12T00:25:00.000Z",
       "duration_in_mmss": "46:23",
       "share_url": "https://share.transistor.fm/s/137b9544",
-      "total_downloads": 5798
+      "total_downloads": 5799
     },
     {
       "id": "2374176",
@@ -404,7 +412,7 @@
       "published_at": "2021-07-11T05:43:00.000Z",
       "duration_in_mmss": "53:38",
       "share_url": "https://share.transistor.fm/s/25e45dfd",
-      "total_downloads": 232
+      "total_downloads": 234
     },
     {
       "id": "2366389",
@@ -772,7 +780,7 @@
       "published_at": "2019-09-16T04:49:44.000Z",
       "duration_in_mmss": "62:54",
       "share_url": "https://share.transistor.fm/s/297f40ad",
-      "total_downloads": 38
+      "total_downloads": 39
     },
     {
       "id": "2366343",
@@ -1004,7 +1012,7 @@
       "published_at": "2019-01-01T10:30:00.000Z",
       "duration_in_mmss": "31:19",
       "share_url": "https://share.transistor.fm/s/078a997b",
-      "total_downloads": 73
+      "total_downloads": 74
     }
   ]
 }
