@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "commentators": [
     {
       "commentator": "Errol",
@@ -27,18 +27,18 @@
     },
     {
       "commentator": "Diederik",
-      "matches_count": 78,
+      "matches_count": 79,
       "min": 2335,
-      "avg": 16662.3,
-      "median": 14898,
+      "avg": 16645.87,
+      "median": 14985,
       "max": 39376
     },
     {
       "commentator": "Corné",
-      "matches_count": 32,
+      "matches_count": 33,
       "min": 5922,
-      "avg": 16324.22,
-      "median": 15014,
+      "avg": 16295.12,
+      "median": 15217,
       "max": 35310
     },
     {

@@ -10,7 +10,7 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
-      "predicted_listeners": 36816
+      "predicted_listeners": 36551
     },
     {
       "date": "2026-02-14",
@@ -46,14 +46,14 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
-      "predicted_listeners": 36816
+      "predicted_listeners": 36551
     },
     {
       "date": "2026-03-07",
       "weekday": "Saturday",
       "time": "16:30",
       "match_name": "FC Groningen - Ajax",
-      "commentators": "Diederik & ??",
+      "commentators": "Diederik & Frank",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
@@ -77,12 +77,12 @@
       "weekday": "Sunday",
       "time": "14:30",
       "match_name": "Feyenoord - Ajax",
-      "commentators": "Diederik",
+      "commentators": "Diederik & Daaf",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
-      "predicted_listeners": 36816
+      "predicted_listeners": 36551
     },
     {
       "date": "2026-04-04",
