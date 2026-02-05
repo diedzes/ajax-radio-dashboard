@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import ExportPdfButton from './ExportPdfButton'
 import './CommentatorDuosSection.css'
 
 function CommentatorDuosSection({ data }) {
@@ -58,13 +59,16 @@ function CommentatorDuosSection({ data }) {
 
   return (
     <div className="section commentator-duos-section">
-      <h2>Commentator Duos Performance</h2>
+      <div className="section-header-row">
+        <h2>Commentator Duos Performance</h2>
+        <ExportPdfButton targetId="commentator-duos-table" filename="commentator-duos.pdf" />
+      </div>
       <p className="section-description">
         Average listeners per commentator duo (order doesn't matter)
       </p>
       
       <div className="section-content">
-        <div className="table-container">
+        <div className="table-container" id="commentator-duos-table">
           <table className="data-table">
             <thead>
               <tr>

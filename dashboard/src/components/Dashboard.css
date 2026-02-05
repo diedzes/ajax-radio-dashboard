@@ -85,6 +85,85 @@ header h1 {
   flex-wrap: wrap;
 }
 
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.export-button {
+  border: 1px solid #c8102e;
+  background: #fff;
+  color: #c8102e;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.export-button:hover {
+  background: #c8102e;
+  color: #fff;
+}
+
+.dashboard-metrics {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.metric-clock {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  justify-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  min-width: 150px;
+}
+
+.metric-clock-face {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #ffffff 55%, transparent 56%),
+    conic-gradient(from 0deg, #c8102e 0deg 10deg, #111111 10deg 20deg, #f2f2f2 20deg 30deg);
+  border: 2px solid #111;
+  position: relative;
+}
+
+.metric-clock-face::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 2px solid rgba(17, 17, 17, 0.15);
+}
+
+.metric-clock-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #444;
+  letter-spacing: 0.03em;
+}
+
+.metric-clock-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+
 .dashboard-logo {
   width: 50px;
   height: 50px;

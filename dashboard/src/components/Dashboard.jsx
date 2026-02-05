@@ -218,6 +218,25 @@ function Dashboard() {
     )
   }
 
+  const radioSeasonStart = '2024-07-01'
+  const radioListenersTotal = data.allMatches?.matches
+    ? data.allMatches.matches.reduce((sum, match) => {
+        if (!match?.date || match.date < radioSeasonStart) return sum
+        return sum + (match.listeners || 0)
+      }, 0)
+    : 0
+
+  const podcastSeasonStart = '2024-07'
+  const podcastListenersTotal = data.podcastMonthly?.months
+    ? data.podcastMonthly.months.reduce((sum, month) => {
+        if (!month?.month || month.month < podcastSeasonStart) return sum
+        return sum + (month.downloads || 0)
+      }, 0)
+    : 0
+
+  const totalListeners = radioListenersTotal + podcastListenersTotal
+  const formatTotal = (value) => (value ? value.toLocaleString() : '0')
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -265,6 +284,23 @@ function Dashboard() {
               <header>
                 <div className="dashboard-header-top">
                   <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
+                  <div className="dashboard-metrics">
+                    <div className="metric-clock">
+                      <div className="metric-clock-face" />
+                      <div className="metric-clock-label">RADIO LISTENERS 25/26</div>
+                      <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
+                    </div>
+                    <div className="metric-clock">
+                      <div className="metric-clock-face" />
+                      <div className="metric-clock-label">PODCAST LISTENERS 25/26</div>
+                      <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
+                    </div>
+                    <div className="metric-clock">
+                      <div className="metric-clock-face" />
+                      <div className="metric-clock-label">TOTAL LISTENERS</div>
+                      <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
+                    </div>
+                  </div>
                 </div>
                 <nav className="dashboard-nav">
                   <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>

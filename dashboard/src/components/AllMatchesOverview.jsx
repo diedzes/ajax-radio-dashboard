@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import ExportPdfButton from './ExportPdfButton'
 import './AllMatchesOverview.css'
 
 function AllMatchesOverview({ data }) {
@@ -113,9 +114,14 @@ function AllMatchesOverview({ data }) {
 
   return (
     <div className="section all-matches-overview">
-      <h2>All Matches Overview</h2>
-      <p className="section-subtitle">from july 2024</p>
-      <div className="matches-table-container">
+      <div className="section-header-row">
+        <div>
+          <h2>All Matches Overview</h2>
+          <p className="section-subtitle">from july 2024</p>
+        </div>
+        <ExportPdfButton targetId="all-matches-table" filename="all-matches.pdf" />
+      </div>
+      <div className="matches-table-container" id="all-matches-table">
         <table className="matches-table">
           <thead>
             <tr>

@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import ExportPdfButton from './ExportPdfButton'
 import './PodcastSection.css'
 
 const APP_COLORS = [
@@ -170,11 +171,14 @@ function PodcastSection({ episodes, monthly, apps }) {
 
       <div className="podcast-stack">
         <div className="podcast-panel" id="podcast-episodes">
-          <h3>Episodes</h3>
+          <div className="section-header-row">
+            <h3>Episodes</h3>
+            <ExportPdfButton targetId="podcast-episodes-table" filename="podcast-episodes.pdf" />
+          </div>
           {sortedEpisodes.length === 0 ? (
             <p>No episode data available</p>
           ) : (
-            <div className="matches-table-container">
+            <div className="matches-table-container" id="podcast-episodes-table">
               <table className="matches-table">
                 <thead>
                   <tr>
@@ -248,11 +252,14 @@ function PodcastSection({ episodes, monthly, apps }) {
         </div>
 
         <div className="podcast-panel" id="podcast-monthly">
-          <h3>Monthly Results</h3>
+          <div className="section-header-row">
+            <h3>Monthly Results</h3>
+            <ExportPdfButton targetId="podcast-monthly-table" filename="podcast-monthly.pdf" />
+          </div>
           {sortedMonthly.length === 0 ? (
             <p>No monthly analytics available</p>
           ) : (
-            <div className="matches-table-container">
+            <div className="matches-table-container" id="podcast-monthly-table">
               <table className="matches-table podcast-monthly-table">
                 <thead>
                   <tr>

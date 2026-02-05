@@ -1,5 +1,6 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import ExportPdfButton from './ExportPdfButton'
 import './ResultAnalysisSection.css'
 
 function ResultAnalysisSection({ data }) {
@@ -29,10 +30,13 @@ function ResultAnalysisSection({ data }) {
 
   return (
     <div className="section result-analysis-section">
-      <h2>Average Listeners by Result</h2>
+      <div className="section-header-row">
+        <h2>Average Listeners by Result</h2>
+        <ExportPdfButton targetId="result-analysis-table" filename="result-analysis.pdf" />
+      </div>
       
       <div className="section-content">
-        <div className="table-container">
+        <div className="table-container" id="result-analysis-table">
           <table className="data-table">
             <thead>
               <tr>

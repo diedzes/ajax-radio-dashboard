@@ -1,4 +1,5 @@
 import React from 'react'
+import ExportPdfButton from './ExportPdfButton'
 import './FutureMatchesSection.css'
 
 function FutureMatchesSection({ data }) {
@@ -27,9 +28,14 @@ function FutureMatchesSection({ data }) {
 
   return (
     <div className="section future-matches-section">
-      <h2>Future Matches</h2>
-      <p className="section-subtitle">predicted listeners</p>
-      <div className="matches-table-container">
+      <div className="section-header-row">
+        <div>
+          <h2>Future Matches</h2>
+          <p className="section-subtitle">predicted listeners</p>
+        </div>
+        <ExportPdfButton targetId="future-matches-table" filename="future-matches.pdf" />
+      </div>
+      <div className="matches-table-container" id="future-matches-table">
         <table className="matches-table">
           <thead>
             <tr>
@@ -40,7 +46,7 @@ function FutureMatchesSection({ data }) {
               <th>Commentators</th>
               <th>Home/Away</th>
               <th>TV Category</th>
-              <th>Opponent Position</th>
+              <th>PosEre</th>
               <th>Predicted Listeners</th>
             </tr>
           </thead>
