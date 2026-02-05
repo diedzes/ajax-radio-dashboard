@@ -25,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Fortuna Sittard",
-      "opponent_position": null,
+      "opponent_position": 11,
       "predicted_listeners": 28343
     },
     {
@@ -53,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "PEC Zwolle",
-      "opponent_position": null,
+      "opponent_position": 9,
       "predicted_listeners": 36551
     },
     {
