@@ -23,6 +23,7 @@ function Dashboard() {
     kickoffBlocks: null,
     weekday: null,
     futureMatches: null,
+    recentPredictions: null,
     podcastEpisodes: null,
     podcastMonthly: null,
     podcastApps: null
@@ -56,6 +57,7 @@ function Dashboard() {
         kickoffRes,
         weekdayRes,
         futureMatchesRes,
+        recentPredictionsRes,
         podcastEpisodesRes,
         podcastMonthlyRes,
         podcastAppsRes
@@ -70,6 +72,7 @@ function Dashboard() {
         fetch(`/output/kickoff_blocks.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/weekday.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/future_matches.json${cacheBuster}`, { cache: 'no-store' }),
+        fetch(`/output/recent_predictions.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/podcast_episodes.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/podcast_monthly.json${cacheBuster}`, { cache: 'no-store' }),
         fetch(`/output/podcast_apps.json${cacheBuster}`, { cache: 'no-store' })
@@ -77,7 +80,8 @@ function Dashboard() {
 
       if (!allMatchesRes.ok || !top5GamesRes.ok || !commentatorDuosRes.ok ||
           !byResultRes.ok || !byHomeAwayRes.ok || !byTVCategoryRes.ok ||
-          !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok || !futureMatchesRes.ok) {
+          !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok || !futureMatchesRes.ok ||
+          !recentPredictionsRes.ok) {
         throw new Error('Failed to load data files')
       }
       if (!podcastEpisodesRes.ok || !podcastMonthlyRes.ok || !podcastAppsRes.ok) {
@@ -95,6 +99,7 @@ function Dashboard() {
         kickoffData,
         weekdayData,
         futureMatchesData,
+        recentPredictionsData,
         podcastEpisodesData,
         podcastMonthlyData,
         podcastAppsData
@@ -109,6 +114,7 @@ function Dashboard() {
         kickoffRes.json(),
         weekdayRes.json(),
         futureMatchesRes.json(),
+        recentPredictionsRes.json(),
         podcastEpisodesRes.json(),
         podcastMonthlyRes.json(),
         podcastAppsRes.json()
@@ -125,6 +131,7 @@ function Dashboard() {
         kickoffBlocks: kickoffData.kickoff_blocks || [],
         weekday: weekdayData.weekdays || [],
         futureMatches: futureMatchesData,
+        recentPredictions: recentPredictionsData,
         podcastEpisodes: podcastEpisodesData,
         podcastMonthly: podcastMonthlyData,
         podcastApps: podcastAppsData
@@ -194,6 +201,7 @@ function Dashboard() {
     data.kickoffBlocks &&
     data.weekday &&
     data.futureMatches &&
+    data.recentPredictions &&
     data.podcastEpisodes &&
     data.podcastMonthly &&
     data.podcastApps
@@ -346,7 +354,10 @@ function Dashboard() {
               </section>
 
               <section className="dashboard-section" id="future-matches">
-                <FutureMatchesSection data={data.futureMatches} />
+                <FutureMatchesSection
+                  data={data.futureMatches}
+                  recentPredictions={data.recentPredictions}
+                />
               </section>
 
               <section className="dashboard-section" id="top5-games">
@@ -382,6 +393,23 @@ function Dashboard() {
               <header>
                 <div className="dashboard-header-top">
                   <h1 className="dashboard-title">Ajax Podcast Dashboard</h1>
+                  <div className="dashboard-metrics">
+                    <div className="metric-clock">
+                      <div className="metric-clock-face" style={getMetricStyle(radioListenersTotal)} />
+                      <div className="metric-clock-label">RADIO LISTENERS 25/26</div>
+                      <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
+                    </div>
+                    <div className="metric-clock">
+                      <div className="metric-clock-face" style={getMetricStyle(podcastListenersTotal)} />
+                      <div className="metric-clock-label">PODCAST LISTENERS 25/26</div>
+                      <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
+                    </div>
+                    <div className="metric-clock">
+                      <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
+                      <div className="metric-clock-label">TOTAL LISTENERS 25/26</div>
+                      <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
+                    </div>
+                  </div>
                 </div>
               </header>
 

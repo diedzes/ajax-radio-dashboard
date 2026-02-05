@@ -163,15 +163,108 @@ def extract_commentators(record: Dict[str, Any]) -> List[str]:
     return unique_commentators
 
 
+TEAM_ALIASES = {
+    # PSV
+    "psv": "psv",
+    "psv eindhoven": "psv",
+    "psv eind hoven": "psv",
+    "philips sport vereniging": "psv",
+    "philips sv": "psv",
+    "psv eindhoven eindhoven": "psv",
+    # Feyenoord
+    "feyenoord": "feyenoord",
+    "feyenoord rotterdam": "feyenoord",
+    "stadionclub feyenoord": "feyenoord",
+    "feyenoord 1": "feyenoord",
+    # NEC
+    "nec": "nec",
+    "nec nijmegen": "nec",
+    "nijmegen eendracht combinatie": "nec",
+    "nijmegen ec": "nec",
+    # Ajax
+    "ajax": "ajax",
+    "afc ajax": "ajax",
+    "ajax amsterdam": "ajax",
+    "amsterdamsche football club ajax": "ajax",
+    "amsterdamsche fc ajax": "ajax",
+    # Sparta
+    "sparta": "sparta",
+    "sparta rotterdam": "sparta",
+    "sparta rdam": "sparta",
+    "sparta r dam": "sparta",
+    # AZ
+    "az": "az",
+    "az alkmaar": "az",
+    "az 67": "az",
+    "az 67 alkmaar": "az",
+    "az alkmaar zaanstreek": "az",
+    # Twente
+    "twente": "twente",
+    "fc twente": "twente",
+    "fc twente enschede": "twente",
+    "twente enschede": "twente",
+    # Groningen
+    "groningen": "groningen",
+    "fc groningen": "groningen",
+    "groningen fc": "groningen",
+    # Zwolle
+    "zwolle": "zwolle",
+    "pec": "zwolle",
+    "pec zwolle": "zwolle",
+    "zwolle pec": "zwolle",
+    # Heerenveen
+    "heerenveen": "heerenveen",
+    "sc heerenveen": "heerenveen",
+    "sportclub heerenveen": "heerenveen",
+    "heerenveen sc": "heerenveen",
+    # Sittard
+    "sittard": "sittard",
+    "fortuna": "sittard",
+    "fortuna sittard": "sittard",
+    "fortuna sittard nl": "sittard",
+    # Utrecht
+    "utrecht": "utrecht",
+    "fc utrecht": "utrecht",
+    "utrecht fc": "utrecht",
+    # Excelsior
+    "excelsior": "excelsior",
+    "excelsior rotterdam": "excelsior",
+    "sbv excelsior": "excelsior",
+    # Go Ahead
+    "go ahead": "go ahead",
+    "go ahead eagles": "go ahead",
+    "go ahead eagles deventer": "go ahead",
+    "go ahead deventer": "go ahead",
+    "g a eagles": "go ahead",
+    # Volendam
+    "volendam": "volendam",
+    "fc volendam": "volendam",
+    "volendam fc": "volendam",
+    # Heracles
+    "heracles": "heracles",
+    "heracles almelo": "heracles",
+    # NAC
+    "nac": "nac",
+    "nac breda": "nac",
+    "n a c": "nac",
+    "n a c breda": "nac",
+    "noad advendo combinatie": "nac",
+    # Telstar
+    "telstar": "telstar",
+    "telstar ijmuiden": "telstar"
+}
+
+
 def normalize_team_name(name: str) -> str:
     if not name:
         return ""
-    cleaned = re.sub(r"[\.\(\)\[\],/]", " ", name.lower())
+    cleaned = re.sub(r"[\.\(\)\[\],/’']", " ", name.lower())
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
     tokens = cleaned.split()
     if tokens and tokens[0] in {"fc", "sc", "sv"} and len(tokens) > 1:
         tokens = tokens[1:]
-    return " ".join(tokens)
+    normalized = " ".join(tokens)
+    return TEAM_ALIASES.get(normalized, normalized)
 
 
 def extract_opponent(match_name: Optional[str]) -> Optional[str]:

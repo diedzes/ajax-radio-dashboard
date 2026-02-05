@@ -1,8 +1,9 @@
 import React from 'react'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import ExportPdfButton from './ExportPdfButton'
 import './FutureMatchesSection.css'
 
-function FutureMatchesSection({ data }) {
+function FutureMatchesSection({ data, recentPredictions }) {
   if (!data || !data.matches || data.matches.length === 0) {
     return (
       <div className="section future-matches-section">
@@ -25,6 +26,14 @@ function FutureMatchesSection({ data }) {
       return dateStr
     }
   }
+
+  const chartMatches = recentPredictions?.matches || []
+  const chartData = chartMatches.map((match) => ({
+    label: formatDate(match.date),
+    matchName: match.match_name || 'N/A',
+    actual: match.listeners || 0,
+    predicted: match.predicted_listeners || 0
+  }))
 
   return (
     <div className="section future-matches-section">
@@ -67,6 +76,27 @@ function FutureMatchesSection({ data }) {
           </tbody>
         </table>
       </div>
+
+      {chartData.length > 0 ? (
+        <div className="future-matches-chart">
+          <h3>Last 10 Matches: Predicted vs Actual</h3>
+          <ResponsiveContainer width="100%" height={320}>
+            <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="label" />
+              <YAxis />
+              <Tooltip
+                formatter={(value, name) => [Number(value).toLocaleString(), name]}
+                labelFormatter={(label, items) =>
+                  items && items[0] ? `${label} • ${items[0].payload.matchName}` : label
+                }
+              />
+              <Line type="monotone" dataKey="predicted" stroke="#c8102e" strokeWidth={2} />
+              <Line type="monotone" dataKey="actual" stroke="#111111" strokeWidth={2} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      ) : null}
     </div>
   )
 }
