@@ -137,9 +137,25 @@ header h1 {
   border-radius: 50%;
   background:
     radial-gradient(circle at center, #ffffff 55%, transparent 56%),
-    conic-gradient(from 0deg, #c8102e 0deg 10deg, #111111 10deg 20deg, #f2f2f2 20deg 30deg);
+    conic-gradient(
+      #c8102e 0 var(--fill-percent, 0%),
+      #f0f0f0 var(--fill-percent, 0%) 100%
+    );
   border: 2px solid #111;
   position: relative;
+}
+
+.metric-clock-face::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 24px;
+  background: #111;
+  top: 10px;
+  left: 50%;
+  transform-origin: 50% 90%;
+  transform: translateX(-50%) rotate(var(--needle-rotation, 0deg));
+  border-radius: 2px;
 }
 
 .metric-clock-face::after {

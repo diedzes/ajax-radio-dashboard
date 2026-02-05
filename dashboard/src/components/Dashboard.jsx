@@ -235,6 +235,14 @@ function Dashboard() {
     : 0
 
   const totalListeners = radioListenersTotal + podcastListenersTotal
+  const maxMetricValue = Math.max(radioListenersTotal, podcastListenersTotal, totalListeners, 1)
+  const getMetricStyle = (value) => {
+    const percent = Math.round((value / maxMetricValue) * 100)
+    return {
+      '--fill-percent': `${percent}%`,
+      '--needle-rotation': `${percent * 3.6}deg`
+    }
+  }
   const formatTotal = (value) => (value ? value.toLocaleString() : '0')
 
   const scrollToSection = (sectionId) => {
@@ -286,17 +294,17 @@ function Dashboard() {
                   <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
                   <div className="dashboard-metrics">
                     <div className="metric-clock">
-                      <div className="metric-clock-face" />
+                      <div className="metric-clock-face" style={getMetricStyle(radioListenersTotal)} />
                       <div className="metric-clock-label">RADIO LISTENERS 25/26</div>
                       <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
                     </div>
                     <div className="metric-clock">
-                      <div className="metric-clock-face" />
+                      <div className="metric-clock-face" style={getMetricStyle(podcastListenersTotal)} />
                       <div className="metric-clock-label">PODCAST LISTENERS 25/26</div>
                       <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
                     </div>
                     <div className="metric-clock">
-                      <div className="metric-clock-face" />
+                      <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
                       <div className="metric-clock-label">TOTAL LISTENERS</div>
                       <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
                     </div>
