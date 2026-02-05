@@ -10,6 +10,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "AZ",
+      "opponent_position": null,
       "predicted_listeners": 36551
     },
     {
@@ -22,6 +24,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "Fortuna",
+      "opponent_position": null,
       "predicted_listeners": 28343
     },
     {
@@ -34,6 +38,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "NEC",
+      "opponent_position": null,
       "predicted_listeners": 21545
     },
     {
@@ -46,6 +52,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "PEC Zwolle",
+      "opponent_position": null,
       "predicted_listeners": 36551
     },
     {
@@ -58,6 +66,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "FC Groningen",
+      "opponent_position": null,
       "predicted_listeners": 44670
     },
     {
@@ -70,6 +80,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "Sparta",
+      "opponent_position": null,
       "predicted_listeners": 21545
     },
     {
@@ -82,6 +94,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "Feyenoord",
+      "opponent_position": null,
       "predicted_listeners": 36551
     },
     {
@@ -94,6 +108,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "FC Twente",
+      "opponent_position": null,
       "predicted_listeners": 21545
     },
     {
@@ -106,6 +122,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "Heracles",
+      "opponent_position": null,
       "predicted_listeners": 21545
     },
     {
@@ -118,6 +136,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "NAC",
+      "opponent_position": null,
       "predicted_listeners": 28343
     },
     {
@@ -130,6 +150,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "Feyenoord Vrouwen",
+      "opponent_position": null,
       "predicted_listeners": 36551
     },
     {
@@ -142,6 +164,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "PSV",
+      "opponent_position": null,
       "predicted_listeners": 28343
     },
     {
@@ -154,6 +178,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
+      "opponent": "FC Utrecht",
+      "opponent_position": null,
       "predicted_listeners": 44670
     },
     {
@@ -166,6 +192,8 @@
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
+      "opponent": "sc Heerenveen",
+      "opponent_position": null,
       "predicted_listeners": 36551
     }
   ]
