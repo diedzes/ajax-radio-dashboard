@@ -40,6 +40,7 @@ function FutureMatchesSection({ data }) {
               <th>Commentators</th>
               <th>Home/Away</th>
               <th>TV Category</th>
+              <th>Opponent Position</th>
               <th>Predicted Listeners</th>
             </tr>
           </thead>
@@ -53,6 +54,7 @@ function FutureMatchesSection({ data }) {
                 <td>{match.commentators || 'N/A'}</td>
                 <td>{match.home_away || 'N/A'}</td>
                 <td>{match.tv_category || 'N/A'}</td>
+                <td>{Number.isInteger(match.opponent_position) ? match.opponent_position : 'N/A'}</td>
                 <td>{match.predicted_listeners ? match.predicted_listeners.toLocaleString() : 'N/A'}</td>
               </tr>
             ))}

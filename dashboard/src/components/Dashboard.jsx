@@ -7,7 +7,6 @@ import CommentatorDuosSection from './CommentatorDuosSection'
 import ResultAnalysisSection from './ResultAnalysisSection'
 import HomeAwayAnalysisSection from './HomeAwayAnalysisSection'
 import TVCategoryAnalysisSection from './TVCategoryAnalysisSection'
-import CommentatorsSection from './CommentatorsSection'
 import KickoffBlocksSection from './KickoffBlocksSection'
 import WeekdaySection from './WeekdaySection'
 import './Dashboard.css'
@@ -230,11 +229,18 @@ function Dashboard() {
     <div className="dashboard-container">
       <div className="dashboard-layout">
         <aside className="dashboard-sidebar">
-          <img
-            className="dashboard-logo"
-            src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/01/zessenlogo-zwart.png"
-            alt="Zessen logo"
-          />
+          <div className="dashboard-logos">
+            <img
+              className="dashboard-logo"
+              src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/01/zessenlogo-zwart.png"
+              alt="Zessen Media logo"
+            />
+            <img
+              className="dashboard-logo"
+              src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/02/AFC_Ajax_crest.svg.png"
+              alt="AFC Ajax crest"
+            />
+          </div>
           <nav className="dashboard-side-nav">
             <button
               type="button"
@@ -285,9 +291,6 @@ function Dashboard() {
                   <a href="#weekday" onClick={(e) => { e.preventDefault(); scrollToSection('weekday') }}>
                     Weekday
                   </a>
-                  <a href="#commentators" onClick={(e) => { e.preventDefault(); scrollToSection('commentators') }}>
-                    Commentators
-                  </a>
                   <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
                     Commentator Duos
                   </a>
@@ -324,10 +327,6 @@ function Dashboard() {
 
               <section className="dashboard-section" id="weekday">
                 <WeekdaySection data={data.weekday} />
-              </section>
-
-              <section className="dashboard-section" id="commentators">
-                <CommentatorsSection data={data.commentators} />
               </section>
 
               <section className="dashboard-section" id="commentator-duos">

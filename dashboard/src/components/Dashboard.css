@@ -18,6 +18,12 @@
   gap: 16px;
 }
 
+.dashboard-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .dashboard-side-nav {
   display: flex;
   flex-direction: column;
@@ -34,6 +40,11 @@
   border-radius: 999px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
+}
+
+.dashboard-side-nav button.is-active {
+  background: #c8102e;
+  border-color: #c8102e;
 }
 
 .dashboard-side-nav button:hover {

@@ -6,10 +6,14 @@ Analyzes commentators, kickoff times, and weekday performance
 import json
 import csv
 import os
+import re
 from datetime import datetime, date
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
 from statistics import median, mean
+
+import requests
+from bs4 import BeautifulSoup
 
 
 def load_merged_data(filepath: str) -> List[Dict[str, Any]]:
@@ -81,6 +85,100 @@ def get_commentator_duo(commentators: List[str]) -> str:
     return "Multi"
 
 
+def normalize_team_name(name: str) -> str:
+    if not name:
+        return ""
+    cleaned = re.sub(r"[\.\(\)\[\],/]", " ", name.lower())
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    tokens = cleaned.split()
+    if tokens and tokens[0] in {"fc", "sc", "sv"} and len(tokens) > 1:
+        tokens = tokens[1:]
+    return " ".join(tokens)
+
+
+def extract_opponent(match_name: Optional[str]) -> Optional[str]:
+    if not match_name or not isinstance(match_name, str):
+        return None
+    parts = [part.strip() for part in match_name.split(" - ") if part.strip()]
+    if len(parts) != 2:
+        return None
+    left, right = parts
+    left_norm = normalize_team_name(left)
+    right_norm = normalize_team_name(right)
+    if "ajax" in left_norm:
+        return right
+    if "ajax" in right_norm:
+        return left
+    return None
+
+
+def parse_standings_from_html(html: str) -> List[Dict[str, Any]]:
+    soup = BeautifulSoup(html, "html.parser")
+    standings = []
+    rows = soup.find_all("tr")
+    for row in rows:
+        cells = row.find_all(["td", "th"])
+        if len(cells) < 2:
+            continue
+        cell_texts = [cell.get_text(" ", strip=True) for cell in cells]
+        position = None
+        position_index = None
+        for idx, text in enumerate(cell_texts):
+            match = re.match(r"^\d{1,2}$", text)
+            if match:
+                position = int(match.group(0))
+                position_index = idx
+                break
+        if position is None:
+            continue
+        team_name = None
+        for text in cell_texts[position_index + 1:]:
+            if re.search(r"[A-Za-z]", text):
+                team_name = text
+                break
+        if not team_name:
+            continue
+        standings.append({
+            "position": position,
+            "team": team_name
+        })
+    return standings
+
+
+def fetch_eredivisie_standings() -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
+    url = "https://www.knvb.nl/competities/eredivisie/stand"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; AjaxDashboardBot/1.0)"
+    }
+    try:
+        response = requests.get(url, headers=headers, timeout=20)
+        response.raise_for_status()
+    except requests.RequestException as exc:
+        print(f"Warning: failed to fetch Eredivisie standings ({exc})")
+        return [], {}
+
+    standings = parse_standings_from_html(response.text)
+    mapping = {}
+    for entry in standings:
+        normalized = normalize_team_name(entry.get("team", ""))
+        if normalized:
+            mapping[normalized] = entry.get("position")
+    return standings, mapping
+
+
+def add_opponent_positions(records: List[Dict[str, Any]],
+                           standings_map: Dict[str, int]) -> None:
+    for record in records:
+        opponent = extract_opponent(record.get("match_name"))
+        if not opponent:
+            record["opponent"] = None
+            record["opponent_position"] = None
+            continue
+        normalized = normalize_team_name(opponent)
+        record["opponent"] = opponent
+        record["opponent_position"] = standings_map.get(normalized)
+
+
 def build_feature_schema(records: List[Dict[str, Any]]) -> Dict[str, List[str]]:
     """Build categorical feature schema from training records."""
     schema = {
@@ -120,8 +218,11 @@ def encode_record(record: Dict[str, Any], schema: Dict[str, List[str]]) -> List[
     home_away = record.get('home_away') or "Unknown"
     tv_category = categorize_tv_channel(record.get('tv_channel')) or "Unknown"
     duo = get_commentator_duo(record.get('commentators', []))
+    opponent_position = record.get('opponent_position')
+    opponent_position_value = float(opponent_position) if isinstance(opponent_position, int) else 0.0
 
     features = [1.0]  # intercept
+    features.append(opponent_position_value)
 
     for key, value in [
         ('kickoff_block', kickoff_block),
@@ -841,6 +942,12 @@ def main():
     print(f"Past records: {len(past_records)}")
     print(f"Future records: {len(future_records)}")
     
+    print("\nFetching latest Eredivisie standings...")
+    standings, standings_map = fetch_eredivisie_standings()
+    print(f"Standings entries: {len(standings)}")
+    add_opponent_positions(past_records, standings_map)
+    add_opponent_positions(future_records, standings_map)
+
     print("\nRunning analyses...")
     
     # A) Commentators analysis
@@ -930,6 +1037,8 @@ def main():
             'tv_channel': record.get('tv_channel'),
             'tv_category': categorize_tv_channel(record.get('tv_channel')) or "Unknown",
             'home_away': record.get('home_away', ''),
+            'opponent': record.get('opponent'),
+            'opponent_position': record.get('opponent_position'),
             'predicted_listeners': predicted
         })
     
