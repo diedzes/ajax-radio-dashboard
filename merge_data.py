@@ -4,8 +4,12 @@ Script to merge API listener data with Google Sheets match data
 Creates merged_matchdays.json for analysis
 """
 import json
+import os
+import re
 from datetime import datetime
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
+
+import requests
 
 
 def load_api_data(filepath: str = 'api_data_full.json') -> Dict[str, int]:
@@ -159,10 +163,152 @@ def extract_commentators(record: Dict[str, Any]) -> List[str]:
     return unique_commentators
 
 
+def normalize_team_name(name: str) -> str:
+    if not name:
+        return ""
+    cleaned = re.sub(r"[\.\(\)\[\],/]", " ", name.lower())
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    tokens = cleaned.split()
+    if tokens and tokens[0] in {"fc", "sc", "sv"} and len(tokens) > 1:
+        tokens = tokens[1:]
+    return " ".join(tokens)
+
+
+def extract_opponent(match_name: Optional[str]) -> Optional[str]:
+    if not match_name or not isinstance(match_name, str):
+        return None
+    parts = [part.strip() for part in match_name.split(" - ") if part.strip()]
+    if len(parts) != 2:
+        return None
+    left, right = parts
+    left_norm = normalize_team_name(left)
+    right_norm = normalize_team_name(right)
+    if "ajax" in left_norm:
+        return right
+    if "ajax" in right_norm:
+        return left
+    return None
+
+
+def determine_result(score: str, home_away: str, match_name: str) -> Optional[str]:
+    if not score:
+        return None
+
+    try:
+        parts = score.split('-')
+        if len(parts) != 2:
+            return None
+        home_score = int(parts[0].strip())
+        away_score = int(parts[1].strip())
+
+        is_home = home_away == "Thuis"
+        if not home_away and match_name:
+            is_home = match_name.split(' - ')[0].strip().lower().startswith('ajax')
+
+        if is_home:
+            if home_score > away_score:
+                return "W"
+            if home_score < away_score:
+                return "L"
+            return "D"
+        else:
+            if away_score > home_score:
+                return "W"
+            if away_score < home_score:
+                return "L"
+            return "D"
+    except (ValueError, AttributeError):
+        return None
+
+
+def fetch_ajax_team_id(token: str) -> Optional[int]:
+    url = "https://api.football-data.org/v4/teams?name=Ajax"
+    headers = {"X-Auth-Token": token}
+    try:
+        response = requests.get(url, headers=headers, timeout=20)
+        response.raise_for_status()
+        payload = response.json()
+    except (requests.RequestException, ValueError):
+        return None
+
+    teams = payload.get("teams", []) or []
+    for team in teams:
+        name = (team.get("name") or "").lower()
+        if "ajax" in name and "amsterdam" in name:
+            return team.get("id")
+    for team in teams:
+        name = (team.get("name") or "").lower()
+        if "ajax" in name:
+            return team.get("id")
+    return None
+
+
+def fetch_ajax_match_results(date_from: str, date_to: str) -> Dict[Tuple[str, str], str]:
+    token = os.environ.get("FOOTBALL_DATA_TOKEN")
+    if not token:
+        print("  FOOTBALL_DATA_TOKEN not set. Skipping match results fetch.")
+        return {}
+
+    team_id = fetch_ajax_team_id(token)
+    if not team_id:
+        print("  Could not resolve Ajax team id. Skipping match results fetch.")
+        return {}
+
+    url = f"https://api.football-data.org/v4/teams/{team_id}/matches"
+    headers = {"X-Auth-Token": token}
+    params = {
+        "status": "FINISHED",
+        "dateFrom": date_from,
+        "dateTo": date_to
+    }
+
+    try:
+        response = requests.get(url, headers=headers, params=params, timeout=20)
+        response.raise_for_status()
+        payload = response.json()
+    except (requests.RequestException, ValueError) as exc:
+        print(f"  Warning: failed to fetch match results ({exc})")
+        return {}
+
+    results = {}
+    for match in payload.get("matches", []) or []:
+        utc_date = match.get("utcDate", "")
+        date_key = utc_date.split("T")[0] if utc_date else None
+        if not date_key:
+            continue
+
+        home_team = match.get("homeTeam", {}) or {}
+        away_team = match.get("awayTeam", {}) or {}
+        home_name = home_team.get("name")
+        away_name = away_team.get("name")
+        if not home_name or not away_name:
+            continue
+
+        score = match.get("score", {}).get("fullTime", {})
+        home_score = score.get("home")
+        away_score = score.get("away")
+        if home_score is None or away_score is None:
+            continue
+
+        home_norm = normalize_team_name(home_name)
+        away_norm = normalize_team_name(away_name)
+        opponent = away_name if "ajax" in home_norm else home_name
+        opponent_norm = normalize_team_name(opponent)
+
+        results[(date_key, opponent_norm)] = f"{home_score}-{away_score}"
+
+    print(f"  Loaded {len(results)} match scores from football-data.org")
+    return results
+
+
 def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Merge API and sheet data by date, with deduplication"""
     merged = []
     seen_matches = set()  # Track duplicates by (date, match_name)
+    dates = [r.get('date', '') for r in sheet_data if r.get('date')]
+    date_from = min(dates) if dates else None
+    date_to = max(dates) if dates else None
+    results_map = fetch_ajax_match_results(date_from, date_to) if date_from and date_to else {}
     
     for sheet_record in sheet_data:
         date = sheet_record.get('date', '')
@@ -226,6 +372,16 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
             # Clean up multiple dashes
             uitslag = re.sub(r'-+', '-', uitslag)
         result = sheet_record.get('result', '')
+
+        # Fill missing scores/results from football-data.org for Ajax matches
+        if not uitslag:
+            opponent = extract_opponent(match_name)
+            opponent_norm = normalize_team_name(opponent or "")
+            score_key = (date_key, opponent_norm)
+            if score_key in results_map:
+                uitslag = results_map[score_key]
+        if not result and uitslag:
+            result = determine_result(uitslag, home_away, match_name)
         
         # Create merged record
         merged_record = {

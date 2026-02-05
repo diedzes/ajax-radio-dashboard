@@ -13,7 +13,6 @@ from collections import defaultdict
 from statistics import median, mean
 
 import requests
-from bs4 import BeautifulSoup
 
 
 def load_merged_data(filepath: str) -> List[Dict[str, Any]]:
@@ -112,58 +111,39 @@ def extract_opponent(match_name: Optional[str]) -> Optional[str]:
     return None
 
 
-def parse_standings_from_html(html: str) -> List[Dict[str, Any]]:
-    soup = BeautifulSoup(html, "html.parser")
-    standings = []
-    rows = soup.find_all("tr")
-    for row in rows:
-        cells = row.find_all(["td", "th"])
-        if len(cells) < 2:
-            continue
-        cell_texts = [cell.get_text(" ", strip=True) for cell in cells]
-        position = None
-        position_index = None
-        for idx, text in enumerate(cell_texts):
-            match = re.match(r"^\d{1,2}$", text)
-            if match:
-                position = int(match.group(0))
-                position_index = idx
-                break
-        if position is None:
-            continue
-        team_name = None
-        for text in cell_texts[position_index + 1:]:
-            if re.search(r"[A-Za-z]", text):
-                team_name = text
-                break
-        if not team_name:
-            continue
-        standings.append({
-            "position": position,
-            "team": team_name
-        })
-    return standings
-
-
 def fetch_eredivisie_standings() -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
-    url = "https://www.knvb.nl/competities/eredivisie/stand"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (compatible; AjaxDashboardBot/1.0)"
-    }
+    token = os.environ.get("FOOTBALL_DATA_TOKEN")
+    if not token:
+        print("Warning: FOOTBALL_DATA_TOKEN not set. Skipping standings fetch.")
+        return [], {}
+
+    url = "https://api.football-data.org/v4/competitions/DED/standings"
+    headers = {"X-Auth-Token": token}
+
     try:
         response = requests.get(url, headers=headers, timeout=20)
         response.raise_for_status()
-    except requests.RequestException as exc:
+        payload = response.json()
+    except (requests.RequestException, ValueError) as exc:
         print(f"Warning: failed to fetch Eredivisie standings ({exc})")
         return [], {}
 
-    standings = parse_standings_from_html(response.text)
+    standings = payload.get("standings", [])
+    total = next((s for s in standings if s.get("type") == "TOTAL"), None)
+    table = (total or {}).get("table", [])
+    entries = []
     mapping = {}
-    for entry in standings:
-        normalized = normalize_team_name(entry.get("team", ""))
+    for row in table:
+        position = row.get("position")
+        team = row.get("team", {}) or {}
+        name = team.get("shortName") or team.get("name") or team.get("tla")
+        if not isinstance(position, int) or not name:
+            continue
+        entries.append({"position": position, "team": name})
+        normalized = normalize_team_name(name)
         if normalized:
-            mapping[normalized] = entry.get("position")
-    return standings, mapping
+            mapping[normalized] = position
+    return entries, mapping
 
 
 def add_opponent_positions(records: List[Dict[str, Any]],

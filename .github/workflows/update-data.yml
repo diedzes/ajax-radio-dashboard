@@ -33,6 +33,7 @@ jobs:
       env:
         TRANSISTOR_API_KEY: ${{ secrets.TRANSISTOR_API_KEY }}
         TRANSISTOR_FEED_URL: https://feeds.transistor.fm/ajax-podcast
+        FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
     
     - name: Commit and push changes
       run: |

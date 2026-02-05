@@ -305,7 +305,7 @@ function Dashboard() {
                     </div>
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
-                      <div className="metric-clock-label">TOTAL LISTENERS</div>
+                      <div className="metric-clock-label">TOTAL LISTENERS 25/26</div>
                       <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
                     </div>
                   </div>
