@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-02-08",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "AZ - Ajax",
+      "commentators": "Sjors & Diederik",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": "ESPN3",
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-02-01",
       "weekday": "Sunday",
       "time": "12:15",

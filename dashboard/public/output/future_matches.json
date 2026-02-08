@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-02-08",
-      "weekday": "Sunday",
-      "time": "14:30",
-      "match_name": "AZ - Ajax",
-      "commentators": "Sjors & Diederik",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": "ESPN3",
-      "tv_category": "Paid",
-      "home_away": "Uit",
-      "opponent": "AZ",
-      "opponent_position": 6,
-      "predicted_listeners": 36551
-    },
-    {
       "date": "2026-02-14",
       "weekday": "Saturday",
       "time": "20:00",
@@ -25,7 +11,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 12,
+      "opponent_position": 9,
       "predicted_listeners": 28343
     },
     {
@@ -39,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "NEC",
-      "opponent_position": 3,
+      "opponent_position": 2,
       "predicted_listeners": 21545
     },
     {
@@ -53,7 +39,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "PEC Zwolle",
-      "opponent_position": 9,
+      "opponent_position": 11,
       "predicted_listeners": 36551
     },
     {
@@ -95,7 +81,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Feyenoord",
-      "opponent_position": 2,
+      "opponent_position": 3,
       "predicted_listeners": 36551
     },
     {
@@ -109,7 +95,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Twente",
-      "opponent_position": 7,
+      "opponent_position": 6,
       "predicted_listeners": 21545
     },
     {
@@ -193,7 +179,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "sc Heerenveen",
-      "opponent_position": 11,
+      "opponent_position": 12,
       "predicted_listeners": 36551
     }
   ]
