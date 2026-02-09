@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2025-12-14",
-      "match_name": "Ajax - Feyenoord",
-      "listeners": 40295,
-      "predicted_listeners": 36551
-    },
-    {
       "date": "2025-12-17",
       "match_name": "Excelsior Maassluis - Ajax",
       "listeners": 23210,
@@ -22,7 +16,7 @@
       "date": "2026-01-11",
       "match_name": "Telstar - Ajax",
       "listeners": 29624,
-      "predicted_listeners": 36551
+      "predicted_listeners": 35761
     },
     {
       "date": "2026-01-14",
@@ -58,7 +52,13 @@
       "date": "2026-02-01",
       "match_name": "Excelsior - Ajax",
       "listeners": 30728,
-      "predicted_listeners": 36551
+      "predicted_listeners": 35761
+    },
+    {
+      "date": "2026-02-08",
+      "match_name": "AZ - Ajax",
+      "listeners": 17579,
+      "predicted_listeners": 35761
     }
   ]
 }

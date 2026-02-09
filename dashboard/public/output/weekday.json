@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "weekdays": [
     {
       "weekday": "Tuesday",
@@ -35,10 +35,10 @@
     },
     {
       "weekday": "Sunday",
-      "matches_count": 39,
+      "matches_count": 40,
       "min": 15686,
-      "avg": 40260.82,
-      "median": 39016,
+      "avg": 39693.78,
+      "median": 38922,
       "max": 70621
     }
   ]

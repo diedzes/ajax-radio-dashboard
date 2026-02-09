@@ -25,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "NEC",
-      "opponent_position": 2,
+      "opponent_position": 3,
       "predicted_listeners": 21545
     },
     {
@@ -40,7 +40,7 @@
       "home_away": "Uit",
       "opponent": "PEC Zwolle",
       "opponent_position": 11,
-      "predicted_listeners": 36551
+      "predicted_listeners": 35761
     },
     {
       "date": "2026-03-07",
@@ -81,8 +81,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Feyenoord",
-      "opponent_position": 3,
-      "predicted_listeners": 36551
+      "opponent_position": 2,
+      "predicted_listeners": 35761
     },
     {
       "date": "2026-04-04",
@@ -109,7 +109,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Heracles",
-      "opponent_position": 16,
+      "opponent_position": 17,
       "predicted_listeners": 21545
     },
     {
@@ -138,7 +138,7 @@
       "home_away": "Thuis",
       "opponent": "Feyenoord Vrouwen",
       "opponent_position": null,
-      "predicted_listeners": 36551
+      "predicted_listeners": 35761
     },
     {
       "date": "2026-05-02",
@@ -180,7 +180,7 @@
       "home_away": "Uit",
       "opponent": "sc Heerenveen",
       "opponent_position": 12,
-      "predicted_listeners": 36551
+      "predicted_listeners": 35761
     }
   ]
 }
