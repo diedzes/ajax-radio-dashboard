@@ -11,7 +11,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 9,
+      "opponent_position": 11,
       "predicted_listeners": 28343
     },
     {
@@ -39,7 +39,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "PEC Zwolle",
-      "opponent_position": 11,
+      "opponent_position": 13,
       "predicted_listeners": 35761
     },
     {
@@ -165,7 +165,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 13,
+      "opponent_position": 10,
       "predicted_listeners": 44670
     },
     {
@@ -179,7 +179,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "sc Heerenveen",
-      "opponent_position": 12,
+      "opponent_position": 9,
       "predicted_listeners": 35761
     }
   ]
