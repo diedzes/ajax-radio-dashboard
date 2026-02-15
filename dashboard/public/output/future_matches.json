@@ -11,7 +11,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "NEC",
-      "opponent_position": 3,
+      "opponent_position": 4,
       "predicted_listeners": 21545
     },
     {
@@ -25,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "PEC Zwolle",
-      "opponent_position": 13,
+      "opponent_position": 12,
       "predicted_listeners": 35761
     },
     {
@@ -53,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Sparta",
-      "opponent_position": 5,
+      "opponent_position": 6,
       "predicted_listeners": 21545
     },
     {
@@ -81,7 +81,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Twente",
-      "opponent_position": 6,
+      "opponent_position": 7,
       "predicted_listeners": 21545
     },
     {
@@ -95,7 +95,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Heracles",
-      "opponent_position": 17,
+      "opponent_position": 18,
       "predicted_listeners": 21545
     },
     {
@@ -109,8 +109,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "NAC",
-      "opponent_position": 18,
-      "predicted_listeners": 28343
+      "opponent_position": 16,
+      "predicted_listeners": 28133
     },
     {
       "date": "2026-04-26",
@@ -138,7 +138,7 @@
       "home_away": "Thuis",
       "opponent": "PSV",
       "opponent_position": 1,
-      "predicted_listeners": 28343
+      "predicted_listeners": 28133
     },
     {
       "date": "2026-05-10",
@@ -151,7 +151,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 10,
+      "opponent_position": 9,
       "predicted_listeners": 44670
     },
     {
@@ -165,7 +165,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "sc Heerenveen",
-      "opponent_position": 9,
+      "opponent_position": 10,
       "predicted_listeners": 35761
     }
   ]
