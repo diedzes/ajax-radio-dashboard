@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-02-21",
-      "weekday": "Saturday",
-      "time": "21:00",
-      "match_name": "Ajax - NEC",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "NEC",
-      "opponent_position": 3,
-      "predicted_listeners": 21545
-    },
-    {
       "date": "2026-03-01",
       "weekday": "Sunday",
       "time": "12:15",
