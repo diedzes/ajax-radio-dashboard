@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "duos": [
     {
       "duo": "Diederik & Errol",
@@ -52,9 +52,9 @@
     },
     {
       "duo": "Daaf & Diederik",
-      "matches_count": 14,
-      "avg": 29666.79,
-      "median": 27817,
+      "matches_count": 15,
+      "avg": 29524.6,
+      "median": 27561,
       "max": 63480
     },
     {
