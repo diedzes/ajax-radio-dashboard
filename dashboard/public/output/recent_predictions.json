@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-01-11",
-      "match_name": "Telstar - Ajax",
-      "listeners": 29624,
-      "predicted_listeners": 35761
-    },
-    {
       "date": "2026-01-14",
       "match_name": "AZ - Ajax",
       "listeners": 14361,
@@ -40,13 +34,13 @@
       "date": "2026-02-01",
       "match_name": "Excelsior - Ajax",
       "listeners": 30728,
-      "predicted_listeners": 35761
+      "predicted_listeners": 34864
     },
     {
       "date": "2026-02-08",
       "match_name": "AZ - Ajax",
       "listeners": 17579,
-      "predicted_listeners": 35761
+      "predicted_listeners": 34864
     },
     {
       "date": "2026-02-14",
@@ -59,6 +53,12 @@
       "match_name": "Ajax - NEC",
       "listeners": 27534,
       "predicted_listeners": 21860
+    },
+    {
+      "date": "2026-03-01",
+      "match_name": "PEC Zwolle - Ajax",
+      "listeners": 13343,
+      "predicted_listeners": 34864
     }
   ]
 }

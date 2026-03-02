@@ -40,7 +40,7 @@
       "home_away": "Uit",
       "opponent": "Feyenoord",
       "opponent_position": 2,
-      "predicted_listeners": 35761
+      "predicted_listeners": 34864
     },
     {
       "date": "2026-04-04",
@@ -53,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Twente",
-      "opponent_position": 6,
+      "opponent_position": 5,
       "predicted_listeners": 21860
     },
     {
@@ -96,7 +96,7 @@
       "home_away": "Thuis",
       "opponent": "Feyenoord Vrouwen",
       "opponent_position": null,
-      "predicted_listeners": 35761
+      "predicted_listeners": 34864
     },
     {
       "date": "2026-05-02",
@@ -123,7 +123,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 10,
+      "opponent_position": 8,
       "predicted_listeners": 44670
     },
     {
@@ -137,8 +137,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "sc Heerenveen",
-      "opponent_position": 8,
-      "predicted_listeners": 35761
+      "opponent_position": 9,
+      "predicted_listeners": 34864
     }
   ]
 }
