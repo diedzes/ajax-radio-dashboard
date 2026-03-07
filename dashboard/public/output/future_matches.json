@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-03-07",
-      "weekday": "Saturday",
-      "time": "16:30",
-      "match_name": "FC Groningen - Ajax",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "FC Groningen",
-      "opponent_position": 11,
-      "predicted_listeners": 44670
-    },
-    {
       "date": "2026-03-14",
       "weekday": "Saturday",
       "time": "21:00",
