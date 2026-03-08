@@ -1,16 +1,10 @@
 {
   "matches": [
     {
-      "date": "2026-01-14",
-      "match_name": "AZ - Ajax",
-      "listeners": 14361,
-      "predicted_listeners": 21860
-    },
-    {
       "date": "2026-01-17",
       "match_name": "Ajax - Go Ahead Eagles",
       "listeners": 39147,
-      "predicted_listeners": 44670
+      "predicted_listeners": 43573
     },
     {
       "date": "2026-01-20",
@@ -22,7 +16,7 @@
       "date": "2026-01-24",
       "match_name": "Ajax - FC Volendam",
       "listeners": 35974,
-      "predicted_listeners": 44670
+      "predicted_listeners": 43573
     },
     {
       "date": "2026-01-28",
@@ -59,6 +53,12 @@
       "match_name": "PEC Zwolle - Ajax",
       "listeners": 13343,
       "predicted_listeners": 34864
+    },
+    {
+      "date": "2026-03-07",
+      "match_name": "FC Groningen - Ajax",
+      "listeners": 18336,
+      "predicted_listeners": 43573
     }
   ]
 }
