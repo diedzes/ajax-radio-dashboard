@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-03-14",
-      "weekday": "Saturday",
-      "time": "21:00",
-      "match_name": "Ajax - Sparta",
-      "commentators": "Diederik & Corné",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "Sparta",
-      "opponent_position": 7,
-      "predicted_listeners": 21860
-    },
-    {
       "date": "2026-03-22",
       "weekday": "Sunday",
       "time": "14:30",
