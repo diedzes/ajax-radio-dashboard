@@ -5,12 +5,12 @@
       "weekday": "Saturday",
       "time": "21:00",
       "match_name": "Ajax - Sparta",
-      "commentators": "Diederik & Corné",
-      "listeners": null,
+      "commentators": "Diederik & Bas",
+      "listeners": 33231,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ESPN2",
+      "score": "4-0",
+      "result": "W",
       "home_away": "Thuis"
     },
     {

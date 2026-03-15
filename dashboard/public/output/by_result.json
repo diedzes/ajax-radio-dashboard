@@ -1,11 +1,11 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "results": [
     {
       "result": "W",
-      "matches_count": 49,
-      "avg": 38966.96,
-      "median": 39016,
+      "matches_count": 50,
+      "avg": 38852.24,
+      "median": 37495,
       "min": 4670,
       "max": 78753
     },
