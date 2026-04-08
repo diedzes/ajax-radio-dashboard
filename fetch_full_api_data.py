@@ -9,7 +9,7 @@ from datetime import datetime
 
 def fetch_api_data(url: str) -> str:
     """Fetch HTML data from the API"""
-    response = requests.get(url)
+    response = requests.get(url, timeout=30)
     response.raise_for_status()
     return response.text
 
@@ -48,7 +48,18 @@ if __name__ == '__main__':
     api_url = 'http://ajaxradio.westeurope.azurecontainer.io/all_shows/'
     
     print("Fetching full API data...")
-    html = fetch_api_data(api_url)
+    try:
+        html = fetch_api_data(api_url)
+    except requests.RequestException as exc:
+        print(f"Warning: failed to fetch API data ({exc}). Using cached file if available.")
+        try:
+            with open('api_data_full.json', 'r', encoding='utf-8') as f:
+                json.load(f)
+            print("Found cached api_data_full.json; continuing.")
+            exit(0)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("No cached api_data_full.json available.")
+            exit(0)
     
     print("Parsing HTML data...")
     data = parse_html_data(html)

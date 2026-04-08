@@ -11,6 +11,11 @@ from typing import List, Dict, Any, Optional, Tuple
 
 import requests
 
+MANUAL_LISTENER_OVERRIDES = {
+    "Feyenoord - Ajax": 29813,
+    "Ajax - FC Twente": 23334,
+}
+
 
 def load_api_data(filepath: str = 'api_data_full.json') -> Dict[str, int]:
     """Load API data and create date -> listeners mapping"""
@@ -427,6 +432,8 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
         
         # Get listeners from API data (may be None if not found)
         listeners = api_data.get(date_key)
+        if listeners is None and match_name in MANUAL_LISTENER_OVERRIDES:
+            listeners = MANUAL_LISTENER_OVERRIDES[match_name]
         
         # Extract kickoff time
         kickoff = sheet_record.get('time', '')
@@ -441,8 +448,8 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
         # Extract commentators
         commentators = extract_commentators(sheet_record)
         
-        # Skip matches without commentators
-        if not commentators or len(commentators) == 0:
+        # Skip matches without commentators, unless we have a manual listener override.
+        if (not commentators or len(commentators) == 0) and match_name not in MANUAL_LISTENER_OVERRIDES:
             continue
         
         # Extract TV channel
