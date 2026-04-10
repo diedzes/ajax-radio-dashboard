@@ -1,12 +1,12 @@
 {
-  "excluded_null_listeners": 7,
+  "excluded_null_listeners": 2,
   "kickoff_times": [
     {
       "kickoff": "12:15",
-      "matches_count": 5,
-      "min": 22982,
-      "avg": 38540.2,
-      "median": 41566,
+      "matches_count": 6,
+      "min": 13343,
+      "avg": 34340.67,
+      "median": 33076,
       "max": 56499
     },
     {
@@ -19,10 +19,10 @@
     },
     {
       "kickoff": "14:30",
-      "matches_count": 16,
+      "matches_count": 17,
       "min": 15686,
-      "avg": 38379.88,
-      "median": 33851,
+      "avg": 37156.29,
+      "median": 33752,
       "max": 63480
     },
     {
@@ -35,10 +35,10 @@
     },
     {
       "kickoff": "16:30",
-      "matches_count": 7,
-      "min": 28074,
-      "avg": 45828.43,
-      "median": 37630,
+      "matches_count": 8,
+      "min": 18336,
+      "avg": 42391.88,
+      "median": 36802,
       "max": 78753
     },
     {
@@ -67,10 +67,10 @@
     },
     {
       "kickoff": "20:00",
-      "matches_count": 9,
+      "matches_count": 10,
       "min": 12541,
-      "avg": 30460.67,
-      "median": 27561,
+      "avg": 29996.6,
+      "median": 26690,
       "max": 53547
     },
     {
@@ -91,10 +91,10 @@
     },
     {
       "kickoff": "21:00",
-      "matches_count": 18,
+      "matches_count": 20,
       "min": 11844,
-      "avg": 21678.28,
-      "median": 19337,
+      "avg": 22548.7,
+      "median": 20098,
       "max": 48549
     }
   ]

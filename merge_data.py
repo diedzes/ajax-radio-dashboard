@@ -11,9 +11,16 @@ from typing import List, Dict, Any, Optional, Tuple
 
 import requests
 
-MANUAL_LISTENER_OVERRIDES = {
-    "Feyenoord - Ajax": 29813,
-    "Ajax - FC Twente": 23334,
+MANUAL_LISTENER_OVERRIDES_BY_KEY = {
+    ("2026-02-08", "AZ - Ajax"): 17579,
+    ("2026-02-14", "Ajax - Fortuna Sittard"): 25820,
+    ("2026-02-14", "Ajax - Fortuna"): 25820,
+    ("2026-02-21", "Ajax - NEC"): 27534,
+    ("2026-03-01", "PEC Zwolle - Ajax"): 13343,
+    ("2026-03-07", "FC Groningen - Ajax"): 18336,
+    ("2026-03-14", "Ajax - Sparta"): 33231,
+    ("2026-03-22", "Feyenoord - Ajax"): 29813,
+    ("2026-04-04", "Ajax - FC Twente"): 23334,
 }
 
 
@@ -432,8 +439,8 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
         
         # Get listeners from API data (may be None if not found)
         listeners = api_data.get(date_key)
-        if listeners is None and match_name in MANUAL_LISTENER_OVERRIDES:
-            listeners = MANUAL_LISTENER_OVERRIDES[match_name]
+        if listeners is None:
+            listeners = MANUAL_LISTENER_OVERRIDES_BY_KEY.get((date_key, match_name))
         
         # Extract kickoff time
         kickoff = sheet_record.get('time', '')
@@ -449,7 +456,7 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
         commentators = extract_commentators(sheet_record)
         
         # Skip matches without commentators, unless we have a manual listener override.
-        if (not commentators or len(commentators) == 0) and match_name not in MANUAL_LISTENER_OVERRIDES:
+        if (not commentators or len(commentators) == 0) and (date_key, match_name) not in MANUAL_LISTENER_OVERRIDES_BY_KEY:
             continue
         
         # Extract TV channel
