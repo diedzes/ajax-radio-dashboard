@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "total_records": 105,
-    "unique_dates": 105,
+    "total_records": 106,
+    "unique_dates": 106,
     "competitions": {
       "Europa League": 18,
       "Eredivisie": 34,
@@ -11,21 +11,21 @@
       "Como Cup": 1,
       "VriendenLoterij Eredivisie": 34,
       "Champions League": 8,
-      "Eurojackpot Vrouwen Eredivisie": 1,
+      "Eurojackpot Vrouwen Eredivisie": 2,
       "Eurojackpot KNVB Beker": 2
     },
     "home_away_distribution": {
-      "Thuis": 55,
+      "Thuis": 56,
       "Uit": 50
     },
     "date_range": {
       "earliest": "2024-07-25",
       "latest": "2026-05-17",
-      "total_days": 105
+      "total_days": 106
     },
     "unique_commentators": [
-      "??",
       "Anne",
+      "Astrid",
       "Bas",
       "CornÃ©",
       "Daaf",
@@ -159,8 +159,8 @@
     ],
     "by_sheet": {
       "Ajax Radio 25/26": {
-        "total_records": 105,
-        "unique_dates": 105,
+        "total_records": 106,
+        "unique_dates": 106,
         "competitions": {
           "Europa League": 18,
           "Eredivisie": 34,
@@ -170,21 +170,21 @@
           "Como Cup": 1,
           "VriendenLoterij Eredivisie": 34,
           "Champions League": 8,
-          "Eurojackpot Vrouwen Eredivisie": 1,
+          "Eurojackpot Vrouwen Eredivisie": 2,
           "Eurojackpot KNVB Beker": 2
         },
         "home_away_distribution": {
-          "Thuis": 55,
+          "Thuis": 56,
           "Uit": 50
         },
         "date_range": {
           "earliest": "2024-07-25",
           "latest": "2026-05-17",
-          "total_days": 105
+          "total_days": 106
         },
         "unique_commentators": [
-          "??",
           "Anne",
+          "Astrid",
           "Bas",
           "CornÃ©",
           "Daaf",
@@ -318,8 +318,8 @@
         ]
       },
       "Ajax Radio 24/25": {
-        "total_records": 105,
-        "unique_dates": 105,
+        "total_records": 106,
+        "unique_dates": 106,
         "competitions": {
           "Europa League": 18,
           "Eredivisie": 34,
@@ -329,21 +329,21 @@
           "Como Cup": 1,
           "VriendenLoterij Eredivisie": 34,
           "Champions League": 8,
-          "Eurojackpot Vrouwen Eredivisie": 1,
+          "Eurojackpot Vrouwen Eredivisie": 2,
           "Eurojackpot KNVB Beker": 2
         },
         "home_away_distribution": {
-          "Thuis": 55,
+          "Thuis": 56,
           "Uit": 50
         },
         "date_range": {
           "earliest": "2024-07-25",
           "latest": "2026-05-17",
-          "total_days": 105
+          "total_days": 106
         },
         "unique_commentators": [
-          "??",
           "Anne",
+          "Astrid",
           "Bas",
           "CornÃ©",
           "Daaf",
@@ -2656,9 +2656,9 @@
       "host": "Frank & Diederik",
       "commentator1": "Frank",
       "commentator2": "Diederik",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "tv_channel": "ZIGGO",
+      "uitslag": "0-2",
+      "result": "L",
       "is_vacation": false,
       "description": "Ajax - Olympiacos FC (Champions League)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2677,12 +2677,12 @@
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": "CornÃ©",
+      "host": "CornÃ© & Diederik",
       "commentator1": "CornÃ©",
-      "commentator2": "",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "commentator2": "Diederik",
+      "tv_channel": "ESPN2",
+      "uitslag": "2-2",
+      "result": "D",
       "is_vacation": false,
       "description": "Excelsior - Ajax (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2704,19 +2704,19 @@
       "host": "Sjors & Diederik",
       "commentator1": "Sjors",
       "commentator2": "Diederik",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "tv_channel": "ESPN3",
+      "uitslag": "1-1",
+      "result": "D",
       "is_vacation": false,
       "description": "AZ - Ajax (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
     },
     {
-      "show_id": "match_2026-02-14_Ajax___Fortuna",
+      "show_id": "match_2026-02-14_Ajax___Fortuna_Sittard",
       "date": "2026-02-14",
       "date_raw": "14/02/2026",
-      "show_name": "Ajax - Fortuna",
-      "match": "Ajax - Fortuna",
+      "show_name": "Ajax - Fortuna Sittard",
+      "match": "Ajax - Fortuna Sittard",
       "home_away": "Thuis",
       "time": "20:00",
       "competition": "VriendenLoterij Eredivisie",
@@ -2728,11 +2728,11 @@
       "host": "Daaf & Diederik",
       "commentator1": "Daaf",
       "commentator2": "Diederik",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "tv_channel": "ESPN1",
+      "uitslag": "4-1",
+      "result": "W",
       "is_vacation": false,
-      "description": "Ajax - Fortuna (VriendenLoterij Eredivisie)",
+      "description": "Ajax - Fortuna Sittard (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
     },
     {
@@ -2749,12 +2749,12 @@
         "VriendenLoterij Eredivisie",
         "Thuis"
       ],
-      "host": "Diederik",
+      "host": "Diederik & Daaf",
       "commentator1": "Diederik",
-      "commentator2": "",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "commentator2": "Daaf",
+      "tv_channel": "ESPN2",
+      "uitslag": "1-1",
+      "result": "D",
       "is_vacation": false,
       "description": "Ajax - NEC (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2773,12 +2773,12 @@
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": "Daaf & CornÃ©",
-      "commentator1": "Daaf",
+      "host": "Diederik & CornÃ©",
+      "commentator1": "Diederik",
       "commentator2": "CornÃ©",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "tv_channel": "ESPN1",
+      "uitslag": "0-0",
+      "result": "D",
       "is_vacation": false,
       "description": "PEC Zwolle - Ajax (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2797,12 +2797,12 @@
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": "Diederik & ??",
+      "host": "Diederik & Daaf",
       "commentator1": "Diederik",
-      "commentator2": "??",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "commentator2": "Daaf",
+      "tv_channel": "ESPN2",
+      "uitslag": "1-3",
+      "result": "L",
       "is_vacation": false,
       "description": "FC Groningen - Ajax (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2821,12 +2821,12 @@
         "VriendenLoterij Eredivisie",
         "Thuis"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "host": "Diederik & Bas",
+      "commentator1": "Diederik",
+      "commentator2": "Bas",
+      "tv_channel": "ESPN2",
+      "uitslag": "4-0",
+      "result": "W",
       "is_vacation": false,
       "description": "Ajax - Sparta (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2845,12 +2845,12 @@
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
-      "tv_channel": null,
-      "uitslag": null,
-      "result": null,
+      "host": "Diederik & Daaf",
+      "commentator1": "Diederik",
+      "commentator2": "Daaf",
+      "tv_channel": "ESPN2",
+      "uitslag": "1-1",
+      "result": "D",
       "is_vacation": false,
       "description": "Feyenoord - Ajax (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2869,12 +2869,12 @@
         "VriendenLoterij Eredivisie",
         "Thuis"
       ],
-      "host": "Diederik",
+      "host": "Diederik & Daaf",
       "commentator1": "Diederik",
-      "commentator2": "",
-      "tv_channel": "Future Cup",
-      "uitslag": null,
-      "result": null,
+      "commentator2": "Daaf",
+      "tv_channel": "ESPN3",
+      "uitslag": "1-2",
+      "result": "L",
       "is_vacation": false,
       "description": "Ajax - FC Twente (VriendenLoterij Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
@@ -2893,9 +2893,9 @@
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
+      "host": "Diederik & Daaf",
+      "commentator1": "Diederik",
+      "commentator2": "Daaf",
       "tv_channel": null,
       "uitslag": null,
       "result": null,
@@ -2917,14 +2917,38 @@
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
+      "host": "Diederik & Daaf",
+      "commentator1": "Diederik",
+      "commentator2": "Daaf",
       "tv_channel": null,
       "uitslag": null,
       "result": null,
       "is_vacation": false,
       "description": "NAC - Ajax (VriendenLoterij Eredivisie)",
+      "sheet_name": "Ajax Radio 25/26"
+    },
+    {
+      "show_id": "match_2026-04-26_Ajax_Vrouwen___Feyenoord_Vrouw",
+      "date": "2026-04-26",
+      "date_raw": "26/04/2026",
+      "show_name": "Ajax Vrouwen - Feyenoord Vrouwen",
+      "match": "Ajax Vrouwen - Feyenoord Vrouwen",
+      "home_away": "Thuis",
+      "time": "12:15",
+      "competition": "Eurojackpot Vrouwen Eredivisie",
+      "content_type": "Eurojackpot Vrouwen Eredivisie",
+      "labels": [
+        "Eurojackpot Vrouwen Eredivisie",
+        "Thuis"
+      ],
+      "host": "Diederik & Astrid",
+      "commentator1": "Diederik",
+      "commentator2": "Astrid",
+      "tv_channel": null,
+      "uitslag": null,
+      "result": null,
+      "is_vacation": false,
+      "description": "Ajax Vrouwen - Feyenoord Vrouwen (Eurojackpot Vrouwen Eredivisie)",
       "sheet_name": "Ajax Radio 25/26"
     },
     {
@@ -2941,9 +2965,9 @@
         "VriendenLoterij Eredivisie",
         "Thuis"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
+      "host": "Diederik & CornÃ©",
+      "commentator1": "Diederik",
+      "commentator2": "CornÃ©",
       "tv_channel": null,
       "uitslag": null,
       "result": null,
@@ -2958,16 +2982,16 @@
       "show_name": "Ajax - FC Utrecht",
       "match": "Ajax - FC Utrecht",
       "home_away": "Thuis",
-      "time": "?",
+      "time": "16:45",
       "competition": "VriendenLoterij Eredivisie",
       "content_type": "VriendenLoterij Eredivisie",
       "labels": [
         "VriendenLoterij Eredivisie",
         "Thuis"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
+      "host": "Diederik & Frank",
+      "commentator1": "Diederik",
+      "commentator2": "Frank",
       "tv_channel": null,
       "uitslag": null,
       "result": null,
@@ -2982,16 +3006,16 @@
       "show_name": "sc Heerenveen - Ajax",
       "match": "sc Heerenveen - Ajax",
       "home_away": "Uit",
-      "time": "?",
+      "time": "14:30",
       "competition": "VriendenLoterij Eredivisie",
       "content_type": "VriendenLoterij Eredivisie",
       "labels": [
         "VriendenLoterij Eredivisie",
         "Uit"
       ],
-      "host": null,
-      "commentator1": "",
-      "commentator2": "",
+      "host": "Diederik & Frank",
+      "commentator1": "Diederik",
+      "commentator2": "Frank",
       "tv_channel": null,
       "uitslag": null,
       "result": null,

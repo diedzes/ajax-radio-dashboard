@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 7,
+  "excluded_null_listeners": 2,
   "duos": [
     {
       "duo": "Diederik & Errol",
@@ -24,24 +24,17 @@
     },
     {
       "duo": "Bas & Diederik",
-      "matches_count": 17,
-      "avg": 38392.35,
-      "median": 38829,
+      "matches_count": 18,
+      "avg": 38105.61,
+      "median": 36030,
       "max": 78753
     },
     {
       "duo": "Corné & Diederik",
-      "matches_count": 25,
-      "avg": 33702.2,
-      "median": 31466,
+      "matches_count": 26,
+      "avg": 32919.15,
+      "median": 30950,
       "max": 70621
-    },
-    {
-      "duo": "Diederik & Sjors",
-      "matches_count": 7,
-      "avg": 33697,
-      "median": 35974,
-      "max": 48968
     },
     {
       "duo": "Diederik & Frank",
@@ -51,10 +44,17 @@
       "max": 71250
     },
     {
+      "duo": "Diederik & Sjors",
+      "matches_count": 8,
+      "avg": 31682.25,
+      "median": 28238,
+      "max": 48968
+    },
+    {
       "duo": "Daaf & Diederik",
-      "matches_count": 13,
-      "avg": 29962.69,
-      "median": 28074,
+      "matches_count": 18,
+      "avg": 28575.11,
+      "median": 27547,
       "max": 63480
     },
     {
