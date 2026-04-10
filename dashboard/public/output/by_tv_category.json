@@ -1,27 +1,27 @@
 {
-  "excluded_null_listeners": 0,
+  "excluded_null_listeners": 7,
   "categories": [
     {
       "category": "Half-open",
-      "matches_count": 28,
-      "avg": 22213.43,
-      "median": 19337,
+      "matches_count": 27,
+      "avg": 22261.07,
+      "median": 18695,
       "min": 11844,
       "max": 51757
     },
     {
       "category": "Open",
-      "matches_count": 27,
-      "avg": 37819.26,
-      "median": 38829,
+      "matches_count": 25,
+      "avg": 39278.28,
+      "median": 39734,
       "min": 4670,
       "max": 63480
     },
     {
       "category": "Paid",
-      "matches_count": 39,
-      "avg": 36149.33,
-      "median": 32886,
+      "matches_count": 35,
+      "avg": 37307.14,
+      "median": 32921,
       "min": 15686,
       "max": 78753
     }

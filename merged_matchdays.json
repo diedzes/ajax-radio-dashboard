@@ -1393,8 +1393,20 @@
     "result": null
   },
   {
+    "date": "2026-03-22",
+    "listeners": 29813,
+    "kickoff": "14:30",
+    "competition": "VriendenLoterij Eredivisie",
+    "commentators": [],
+    "tv_channel": null,
+    "match_name": "Feyenoord - Ajax",
+    "home_away": "Uit",
+    "score": null,
+    "result": null
+  },
+  {
     "date": "2026-04-04",
-    "listeners": null,
+    "listeners": 23334,
     "kickoff": "21:00",
     "competition": "VriendenLoterij Eredivisie",
     "commentators": [
