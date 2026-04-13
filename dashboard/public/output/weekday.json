@@ -27,10 +27,10 @@
     },
     {
       "weekday": "Saturday",
-      "matches_count": 20,
+      "matches_count": 21,
       "min": 4670,
-      "avg": 33392.6,
-      "median": 30202,
+      "avg": 32846.43,
+      "median": 29971,
       "max": 78753
     },
     {

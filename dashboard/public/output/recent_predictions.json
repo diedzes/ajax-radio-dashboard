@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-01-20",
-      "match_name": "Villarreal CF - Ajax",
-      "listeners": 16199,
-      "predicted_listeners": 22549
-    },
-    {
       "date": "2026-01-24",
       "match_name": "Ajax - FC Volendam",
       "listeners": 35974,
@@ -28,7 +22,7 @@
       "date": "2026-02-21",
       "match_name": "Ajax - NEC",
       "listeners": 27534,
-      "predicted_listeners": 22549
+      "predicted_listeners": 22519
     },
     {
       "date": "2026-03-01",
@@ -46,7 +40,7 @@
       "date": "2026-03-14",
       "match_name": "Ajax - Sparta",
       "listeners": 33231,
-      "predicted_listeners": 22549
+      "predicted_listeners": 22519
     },
     {
       "date": "2026-03-22",
@@ -58,7 +52,13 @@
       "date": "2026-04-04",
       "match_name": "Ajax - FC Twente",
       "listeners": 23334,
-      "predicted_listeners": 22549
+      "predicted_listeners": 22519
+    },
+    {
+      "date": "2026-04-11",
+      "match_name": "Heracles - Ajax",
+      "listeners": 21923,
+      "predicted_listeners": 22519
     }
   ]
 }

@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-04-11",
+      "weekday": "Saturday",
+      "time": "21:00",
+      "match_name": "Heracles - Ajax",
+      "commentators": "Diederik & Daaf",
+      "listeners": 21923,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-04-04",
       "weekday": "Saturday",
       "time": "21:00",

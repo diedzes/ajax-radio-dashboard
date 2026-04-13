@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-04-11",
-      "weekday": "Saturday",
-      "time": "21:00",
-      "match_name": "Heracles - Ajax",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "Heracles",
-      "opponent_position": 18,
-      "predicted_listeners": 22549
-    },
-    {
       "date": "2026-04-25",
       "weekday": "Saturday",
       "time": "20:00",
@@ -25,7 +11,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "NAC",
-      "opponent_position": 17,
+      "opponent_position": null,
       "predicted_listeners": 28133
     },
     {
@@ -53,7 +39,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "PSV",
-      "opponent_position": 1,
+      "opponent_position": null,
       "predicted_listeners": 28133
     },
     {
@@ -67,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 9,
+      "opponent_position": null,
       "predicted_listeners": 43573
     },
     {
@@ -81,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "sc Heerenveen",
-      "opponent_position": 7,
+      "opponent_position": null,
       "predicted_listeners": 34827
     }
   ]
