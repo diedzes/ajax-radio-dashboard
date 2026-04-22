@@ -18,14 +18,67 @@ function AllMatchesOverview({ data }) {
     if (!dateStr) return 'N/A'
     try {
       const date = new Date(dateStr + 'T00:00:00')
-      return date.toLocaleDateString('nl-NL', { 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric' 
+      return date.toLocaleDateString('nl-NL', {
+        day: '2-digit',
+        month: '2-digit',
+        year: '2-digit'
       })
     } catch {
       return dateStr
     }
+  }
+
+  const CLUB_LOGOS = {
+    ajax: 'https://crests.football-data.org/678.svg',
+    psv: 'https://crests.football-data.org/674.svg',
+    feyenoord: 'https://crests.football-data.org/675.svg',
+    twente: 'https://crests.football-data.org/666.svg',
+    az: 'https://crests.football-data.org/682.svg',
+    nec: 'https://crests.football-data.org/1915.svg',
+    heracles: 'https://crests.football-data.org/683.svg',
+    groningen: 'https://crests.football-data.org/677.svg',
+    zwolle: 'https://crests.football-data.org/684.svg',
+    excelsior: 'https://crests.football-data.org/676.svg',
+    sparta: 'https://crests.football-data.org/6806.svg',
+    fortuna: 'https://crests.football-data.org/1926.svg',
+    heerenveen: 'https://crests.football-data.org/673.svg',
+    utrecht: 'https://crests.football-data.org/6761.svg',
+    nac: 'https://crests.football-data.org/681.svg',
+    'go ahead eagles': 'https://crests.football-data.org/718.svg',
+    volendam: 'https://crests.football-data.org/1914.svg',
+    olympiacos: 'https://crests.football-data.org/654.svg',
+    villarreal: 'https://crests.football-data.org/94.svg',
+    panathinaikos: 'https://crests.football-data.org/782.svg',
+    vojvodina: 'https://crests.football-data.org/1884.svg',
+    'as monaco': 'https://crests.football-data.org/548.svg',
+    telstar: 'https://crests.football-data.org/7187.svg'
+  }
+
+  const normalizeTeamName = (name = '') => {
+    return name
+      .toLowerCase()
+      .replace(/\./g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+  }
+
+  const getOpponentTeam = (matchName = '') => {
+    const parts = matchName.split(' - ').map((p) => p.trim()).filter(Boolean)
+    if (parts.length !== 2) return null
+    const [left, right] = parts
+    const leftNorm = normalizeTeamName(left)
+    const rightNorm = normalizeTeamName(right)
+    if (leftNorm.includes('ajax')) return right
+    if (rightNorm.includes('ajax')) return left
+    return null
+  }
+
+  const getClubLogoUrl = (matchName = '') => {
+    const opponent = getOpponentTeam(matchName)
+    if (!opponent) return null
+    const normalized = normalizeTeamName(opponent)
+    const entry = Object.entries(CLUB_LOGOS).find(([key]) => normalized.includes(key))
+    return entry ? entry[1] : null
   }
 
   const getResultClass = (result) => {
@@ -134,6 +187,9 @@ function AllMatchesOverview({ data }) {
               <th className="sortable" onClick={() => handleSort('time')}>
                 Time {getSortIcon('time')}
               </th>
+              <th className="logo-header">
+                Club
+              </th>
               <th className="sortable" onClick={() => handleSort('match_name')}>
                 Match {getSortIcon('match_name')}
               </th>
@@ -158,11 +214,25 @@ function AllMatchesOverview({ data }) {
             </tr>
           </thead>
           <tbody>
-            {sortedMatches.map((match, index) => (
+            {sortedMatches.map((match, index) => {
+              const logoUrl = getClubLogoUrl(match.match_name)
+              return (
               <tr key={index}>
                 <td>{formatDate(match.date)}</td>
                 <td>{match.weekday || 'N/A'}</td>
                 <td>{match.time || 'N/A'}</td>
+                <td className="club-logo-cell">
+                  {logoUrl ? (
+                    <img
+                      src={logoUrl}
+                      alt=""
+                      className="club-logo"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span className="club-logo-placeholder" aria-hidden="true" />
+                  )}
+                </td>
                 <td>{match.match_name || 'N/A'}</td>
                 <td>{match.commentators || 'N/A'}</td>
                 <td>{match.tv_channel || 'N/A'}</td>
@@ -177,7 +247,8 @@ function AllMatchesOverview({ data }) {
                   {match.listeners ? formatCurrency(calculateMediaValue(match.listeners)) : 'N/A'}
                 </td>
               </tr>
-            ))}
+              )
+            })}
           </tbody>
         </table>
       </div>

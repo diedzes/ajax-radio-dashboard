@@ -49,8 +49,8 @@
 /* Column width adjustments */
 .matches-table th:nth-child(1), /* Date */
 .matches-table td:nth-child(1) {
-  min-width: 100px;
-  max-width: 120px;
+  min-width: 72px;
+  max-width: 72px;
 }
 
 .matches-table th:nth-child(2), /* Day */
@@ -65,50 +65,83 @@
   max-width: 80px;
 }
 
-.matches-table th:nth-child(4), /* Match */
+.matches-table th:nth-child(4), /* Club logo */
 .matches-table td:nth-child(4) {
+  min-width: 36px;
+  max-width: 36px;
+  text-align: center;
+}
+
+.matches-table th:nth-child(5), /* Match */
+.matches-table td:nth-child(5) {
   min-width: 150px;
   max-width: 200px;
 }
 
-.matches-table th:nth-child(5), /* Commentators */
-.matches-table td:nth-child(5) {
+.matches-table th:nth-child(6), /* Commentators */
+.matches-table td:nth-child(6) {
   min-width: 100px;
   max-width: 130px;
   white-space: normal;
   word-wrap: break-word;
 }
 
-.matches-table th:nth-child(6), /* TV Channel */
-.matches-table td:nth-child(6) {
+.matches-table th:nth-child(7), /* TV Channel */
+.matches-table td:nth-child(7) {
   min-width: 80px;
   max-width: 120px;
 }
 
-.matches-table th:nth-child(7), /* Score */
-.matches-table td:nth-child(7) {
-  min-width: 60px;
-  max-width: 80px;
-}
-
-.matches-table th:nth-child(8), /* Result */
+.matches-table th:nth-child(8), /* Score */
 .matches-table td:nth-child(8) {
   min-width: 60px;
   max-width: 80px;
 }
 
-.matches-table th:nth-child(9), /* Listeners */
+.matches-table th:nth-child(9), /* Result */
 .matches-table td:nth-child(9) {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.matches-table th:nth-child(10), /* Listeners */
+.matches-table td:nth-child(10) {
   min-width: 100px;
   max-width: 120px;
   text-align: right;
 }
 
-.matches-table th:nth-child(10), /* Media Value */
-.matches-table td:nth-child(10) {
+.matches-table th:nth-child(11), /* Media Value */
+.matches-table td:nth-child(11) {
   min-width: 100px;
   max-width: 120px;
   text-align: right;
+}
+
+.logo-header {
+  text-align: center;
+}
+
+.club-logo-cell {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.club-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.club-logo-placeholder {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  border-radius: 3px;
+  background: #f1f1f1;
+  border: 1px solid #e2e2e2;
 }
 
 .media-value-cell {
