@@ -67,8 +67,8 @@
 
 .matches-table th:nth-child(4), /* Club logo */
 .matches-table td:nth-child(4) {
-  min-width: 36px;
-  max-width: 36px;
+  min-width: 56px;
+  max-width: 56px;
   text-align: center;
 }
 
@@ -126,6 +126,13 @@
   padding: 0.5rem 0.25rem;
   text-align: center;
   vertical-align: middle;
+}
+
+.club-logos-stack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .club-logo {

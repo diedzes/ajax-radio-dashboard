@@ -54,12 +54,44 @@ function AllMatchesOverview({ data }) {
     telstar: 'https://crests.football-data.org/7187.svg'
   }
 
+  const TEAM_ALIASES = {
+    nec: 'nec',
+    'nec nijmegen': 'nec',
+    'n.e.c': 'nec',
+    'n.e.c.': 'nec',
+    psv: 'psv',
+    'psv eindhoven': 'psv',
+    az: 'az',
+    'az alkmaar': 'az',
+    ajax: 'ajax',
+    'afc ajax': 'ajax',
+    feyenoord: 'feyenoord',
+    'feyenoord rotterdam': 'feyenoord',
+    twente: 'twente',
+    'fc twente': 'twente',
+    fortuna: 'fortuna',
+    'fortuna sittard': 'fortuna',
+    'go ahead': 'go ahead eagles',
+    'go ahead eagles': 'go ahead eagles',
+    'go ahead eagles deventer': 'go ahead eagles',
+    sparta: 'sparta',
+    'sparta rotterdam': 'sparta',
+    'fc groningen': 'groningen',
+    'pec zwolle': 'zwolle',
+    'sc heerenveen': 'heerenveen',
+    'fc utrecht': 'utrecht',
+    'fc volendam': 'volendam',
+    'as monaco fc': 'as monaco'
+  }
+
   const normalizeTeamName = (name = '') => {
-    return name
+    const normalized = name
       .toLowerCase()
       .replace(/\./g, '')
+      .replace(/['’]/g, '')
       .replace(/\s+/g, ' ')
       .trim()
+    return TEAM_ALIASES[normalized] || normalized
   }
 
   const getOpponentTeam = (matchName = '') => {
@@ -73,12 +105,18 @@ function AllMatchesOverview({ data }) {
     return null
   }
 
-  const getClubLogoUrl = (matchName = '') => {
-    const opponent = getOpponentTeam(matchName)
-    if (!opponent) return null
-    const normalized = normalizeTeamName(opponent)
+  const getLogoUrlForTeam = (teamName = '') => {
+    const normalized = normalizeTeamName(teamName)
+    if (CLUB_LOGOS[normalized]) return CLUB_LOGOS[normalized]
     const entry = Object.entries(CLUB_LOGOS).find(([key]) => normalized.includes(key))
     return entry ? entry[1] : null
+  }
+
+  const getMatchLogoUrls = (matchName = '') => {
+    const opponent = getOpponentTeam(matchName)
+    const ajaxLogo = CLUB_LOGOS.ajax || null
+    const opponentLogo = opponent ? getLogoUrlForTeam(opponent) : null
+    return [ajaxLogo, opponentLogo]
   }
 
   const getResultClass = (result) => {
@@ -188,7 +226,7 @@ function AllMatchesOverview({ data }) {
                 Time {getSortIcon('time')}
               </th>
               <th className="logo-header">
-                Club
+                Clubs
               </th>
               <th className="sortable" onClick={() => handleSort('match_name')}>
                 Match {getSortIcon('match_name')}
@@ -215,23 +253,35 @@ function AllMatchesOverview({ data }) {
           </thead>
           <tbody>
             {sortedMatches.map((match, index) => {
-              const logoUrl = getClubLogoUrl(match.match_name)
+              const [ajaxLogoUrl, opponentLogoUrl] = getMatchLogoUrls(match.match_name)
               return (
               <tr key={index}>
                 <td>{formatDate(match.date)}</td>
                 <td>{match.weekday || 'N/A'}</td>
                 <td>{match.time || 'N/A'}</td>
                 <td className="club-logo-cell">
-                  {logoUrl ? (
-                    <img
-                      src={logoUrl}
-                      alt=""
-                      className="club-logo"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span className="club-logo-placeholder" aria-hidden="true" />
-                  )}
+                  <div className="club-logos-stack" aria-hidden="true">
+                    {ajaxLogoUrl ? (
+                      <img
+                        src={ajaxLogoUrl}
+                        alt=""
+                        className="club-logo"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="club-logo-placeholder" />
+                    )}
+                    {opponentLogoUrl ? (
+                      <img
+                        src={opponentLogoUrl}
+                        alt=""
+                        className="club-logo"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="club-logo-placeholder" />
+                    )}
+                  </div>
                 </td>
                 <td>{match.match_name || 'N/A'}</td>
                 <td>{match.commentators || 'N/A'}</td>
