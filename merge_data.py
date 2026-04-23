@@ -21,6 +21,9 @@ MANUAL_LISTENER_OVERRIDES_BY_KEY = {
     ("2026-03-14", "Ajax - Sparta"): 33231,
     ("2026-03-22", "Feyenoord - Ajax"): 29813,
     ("2026-04-04", "Ajax - FC Twente"): 23334,
+    ("2026-01-28", "Ajax - Olympiacos FC"): 20927,
+    ("2026-02-01", "Excelsior - Ajax"): 30728,
+    ("2026-04-11", "Heracles - Ajax"): 21923,
 }
 
 

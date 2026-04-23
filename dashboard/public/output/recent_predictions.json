@@ -1,22 +1,16 @@
 {
   "matches": [
     {
-      "date": "2026-01-20",
-      "match_name": "Villarreal CF - Ajax",
-      "listeners": 16199,
-      "predicted_listeners": 22549
-    },
-    {
-      "date": "2026-01-24",
-      "match_name": "Ajax - FC Volendam",
-      "listeners": 35974,
-      "predicted_listeners": 43573
+      "date": "2026-02-01",
+      "match_name": "Excelsior - Ajax",
+      "listeners": 30728,
+      "predicted_listeners": 34670
     },
     {
       "date": "2026-02-08",
       "match_name": "AZ - Ajax",
       "listeners": 17579,
-      "predicted_listeners": 34827
+      "predicted_listeners": 34670
     },
     {
       "date": "2026-02-14",
@@ -28,13 +22,13 @@
       "date": "2026-02-21",
       "match_name": "Ajax - NEC",
       "listeners": 27534,
-      "predicted_listeners": 22549
+      "predicted_listeners": 22447
     },
     {
       "date": "2026-03-01",
       "match_name": "PEC Zwolle - Ajax",
       "listeners": 13343,
-      "predicted_listeners": 34827
+      "predicted_listeners": 34670
     },
     {
       "date": "2026-03-07",
@@ -46,19 +40,25 @@
       "date": "2026-03-14",
       "match_name": "Ajax - Sparta",
       "listeners": 33231,
-      "predicted_listeners": 22549
+      "predicted_listeners": 22447
     },
     {
       "date": "2026-03-22",
       "match_name": "Feyenoord - Ajax",
       "listeners": 29813,
-      "predicted_listeners": 34827
+      "predicted_listeners": 34670
     },
     {
       "date": "2026-04-04",
       "match_name": "Ajax - FC Twente",
       "listeners": 23334,
-      "predicted_listeners": 22549
+      "predicted_listeners": 22447
+    },
+    {
+      "date": "2026-04-11",
+      "match_name": "Heracles - Ajax",
+      "listeners": 21923,
+      "predicted_listeners": 22447
     }
   ]
 }
