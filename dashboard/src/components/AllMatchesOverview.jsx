@@ -35,7 +35,7 @@ function AllMatchesOverview({ data }) {
     twente: 'https://crests.football-data.org/666.svg',
     az: 'https://crests.football-data.org/682.svg',
     nec: 'https://crests.football-data.org/1915.svg',
-    heracles: 'https://crests.football-data.org/683.svg',
+    heracles: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Heracles_Almelo_logo.svg/120px-Heracles_Almelo_logo.svg.png',
     groningen: 'https://crests.football-data.org/677.svg',
     zwolle: 'https://crests.football-data.org/684.svg',
     excelsior: 'https://crests.football-data.org/676.svg',
@@ -45,7 +45,7 @@ function AllMatchesOverview({ data }) {
     utrecht: 'https://crests.football-data.org/6761.svg',
     nac: 'https://crests.football-data.org/681.svg',
     'go ahead eagles': 'https://crests.football-data.org/718.svg',
-    volendam: 'https://crests.football-data.org/1914.svg',
+    volendam: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/40/FC_Volendam_logo.svg/120px-FC_Volendam_logo.svg.png',
     olympiacos: 'https://crests.football-data.org/654.svg',
     villarreal: 'https://crests.football-data.org/94.svg',
     panathinaikos: 'https://crests.football-data.org/782.svg',
@@ -94,15 +94,10 @@ function AllMatchesOverview({ data }) {
     return TEAM_ALIASES[normalized] || normalized
   }
 
-  const getOpponentTeam = (matchName = '') => {
+  const getMatchTeams = (matchName = '') => {
     const parts = matchName.split(' - ').map((p) => p.trim()).filter(Boolean)
-    if (parts.length !== 2) return null
-    const [left, right] = parts
-    const leftNorm = normalizeTeamName(left)
-    const rightNorm = normalizeTeamName(right)
-    if (leftNorm.includes('ajax')) return right
-    if (rightNorm.includes('ajax')) return left
-    return null
+    if (parts.length !== 2) return []
+    return parts
   }
 
   const getLogoUrlForTeam = (teamName = '') => {
@@ -113,10 +108,10 @@ function AllMatchesOverview({ data }) {
   }
 
   const getMatchLogoUrls = (matchName = '') => {
-    const opponent = getOpponentTeam(matchName)
-    const ajaxLogo = CLUB_LOGOS.ajax || null
-    const opponentLogo = opponent ? getLogoUrlForTeam(opponent) : null
-    return [ajaxLogo, opponentLogo]
+    const [homeTeam, awayTeam] = getMatchTeams(matchName)
+    const homeLogo = homeTeam ? getLogoUrlForTeam(homeTeam) : null
+    const awayLogo = awayTeam ? getLogoUrlForTeam(awayTeam) : null
+    return [homeLogo, awayLogo]
   }
 
   const getResultClass = (result) => {
@@ -253,7 +248,7 @@ function AllMatchesOverview({ data }) {
           </thead>
           <tbody>
             {sortedMatches.map((match, index) => {
-              const [ajaxLogoUrl, opponentLogoUrl] = getMatchLogoUrls(match.match_name)
+              const [firstLogoUrl, secondLogoUrl] = getMatchLogoUrls(match.match_name)
               return (
               <tr key={index}>
                 <td>{formatDate(match.date)}</td>
@@ -261,9 +256,9 @@ function AllMatchesOverview({ data }) {
                 <td>{match.time || 'N/A'}</td>
                 <td className="club-logo-cell">
                   <div className="club-logos-stack" aria-hidden="true">
-                    {ajaxLogoUrl ? (
+                    {firstLogoUrl ? (
                       <img
-                        src={ajaxLogoUrl}
+                        src={firstLogoUrl}
                         alt=""
                         className="club-logo"
                         loading="lazy"
@@ -271,9 +266,9 @@ function AllMatchesOverview({ data }) {
                     ) : (
                       <span className="club-logo-placeholder" />
                     )}
-                    {opponentLogoUrl ? (
+                    {secondLogoUrl ? (
                       <img
-                        src={opponentLogoUrl}
+                        src={secondLogoUrl}
                         alt=""
                         className="club-logo"
                         loading="lazy"
