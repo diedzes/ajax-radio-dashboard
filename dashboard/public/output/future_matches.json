@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-04-25",
-      "weekday": "Saturday",
-      "time": "20:00",
-      "match_name": "NAC - Ajax",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "NAC",
-      "opponent_position": 17,
-      "predicted_listeners": 28133
-    },
-    {
       "date": "2026-04-26",
       "weekday": "Sunday",
       "time": "12:15",
