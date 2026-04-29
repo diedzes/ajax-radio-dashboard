@@ -8,9 +8,9 @@
       "commentators": "Diederik & Astrid",
       "listeners": 5337,
       "competition": "Eurojackpot Vrouwen Eredivisie",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ESPN1",
+      "score": "0-0",
+      "result": "D",
       "home_away": "Thuis"
     },
     {
@@ -21,9 +21,9 @@
       "commentators": "Diederik & Daaf",
       "listeners": 24233,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ESPN2",
+      "score": "0-2",
+      "result": "W",
       "home_away": "Uit"
     },
     {
@@ -34,9 +34,9 @@
       "commentators": "Diederik & Daaf",
       "listeners": 21923,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ESPN2",
+      "score": "0-3",
+      "result": "W",
       "home_away": "Uit"
     },
     {
@@ -230,8 +230,8 @@
       "listeners": 29624,
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": "ESPN2",
-      "score": "3-2",
-      "result": "L",
+      "score": "2-3",
+      "result": "W",
       "home_away": "Uit"
     },
     {

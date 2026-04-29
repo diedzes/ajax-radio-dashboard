@@ -1226,8 +1226,8 @@
     "tv_channel": "ESPN2",
     "match_name": "Telstar - Ajax",
     "home_away": "Uit",
-    "score": "3-2",
-    "result": "L"
+    "score": "2-3",
+    "result": "W"
   },
   {
     "date": "2026-01-14",
@@ -1448,11 +1448,11 @@
       "Diederik",
       "Daaf"
     ],
-    "tv_channel": null,
+    "tv_channel": "ESPN2",
     "match_name": "Heracles - Ajax",
     "home_away": "Uit",
-    "score": null,
-    "result": null
+    "score": "0-3",
+    "result": "W"
   },
   {
     "date": "2026-04-25",
@@ -1463,11 +1463,11 @@
       "Diederik",
       "Daaf"
     ],
-    "tv_channel": null,
+    "tv_channel": "ESPN2",
     "match_name": "NAC - Ajax",
     "home_away": "Uit",
-    "score": null,
-    "result": null
+    "score": "0-2",
+    "result": "W"
   },
   {
     "date": "2026-04-26",
@@ -1478,11 +1478,11 @@
       "Diederik",
       "Astrid"
     ],
-    "tv_channel": null,
+    "tv_channel": "ESPN1",
     "match_name": "Ajax Vrouwen - Feyenoord Vrouwen",
     "home_away": "Thuis",
-    "score": null,
-    "result": null
+    "score": "0-0",
+    "result": "D"
   },
   {
     "date": "2026-05-02",

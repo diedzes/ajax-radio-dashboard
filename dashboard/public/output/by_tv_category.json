@@ -11,17 +11,17 @@
     },
     {
       "category": "Open",
-      "matches_count": 27,
-      "avg": 37819.26,
-      "median": 38829,
+      "matches_count": 28,
+      "avg": 36659.18,
+      "median": 38719,
       "min": 4670,
       "max": 63480
     },
     {
       "category": "Paid",
-      "matches_count": 41,
-      "avg": 35682.22,
-      "median": 31466,
+      "matches_count": 43,
+      "avg": 35095.98,
+      "median": 30728,
       "min": 15686,
       "max": 78753
     }

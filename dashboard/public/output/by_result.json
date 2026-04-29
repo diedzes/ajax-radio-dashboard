@@ -3,25 +3,25 @@
   "results": [
     {
       "result": "W",
-      "matches_count": 50,
-      "avg": 38852.24,
-      "median": 37495,
+      "matches_count": 53,
+      "avg": 38082.87,
+      "median": 35639,
       "min": 4670,
       "max": 78753
     },
     {
       "result": "D",
-      "matches_count": 20,
-      "avg": 29420.45,
-      "median": 29892,
-      "min": 12541,
+      "matches_count": 21,
+      "avg": 28273.62,
+      "median": 29813,
+      "min": 5337,
       "max": 53547
     },
     {
       "result": "L",
-      "matches_count": 26,
-      "avg": 22117.15,
-      "median": 20098,
+      "matches_count": 25,
+      "avg": 21816.88,
+      "median": 19979,
       "min": 11844,
       "max": 48549
     }
