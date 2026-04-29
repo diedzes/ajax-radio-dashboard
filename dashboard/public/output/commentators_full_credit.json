@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 2,
+  "excluded_null_listeners": 0,
   "commentators": [
     {
       "commentator": "Errol",
@@ -26,20 +26,20 @@
       "max": 54094
     },
     {
-      "commentator": "Diederik",
-      "matches_count": 88,
-      "min": 4670,
-      "avg": 32283.64,
-      "median": 28192,
-      "max": 78753
-    },
-    {
       "commentator": "Corné",
       "matches_count": 34,
       "min": 11844,
       "avg": 32024.15,
       "median": 30029,
       "max": 70621
+    },
+    {
+      "commentator": "Diederik",
+      "matches_count": 90,
+      "min": 4670,
+      "avg": 31894.78,
+      "median": 27817,
+      "max": 78753
     },
     {
       "commentator": "Frank",
@@ -51,10 +51,10 @@
     },
     {
       "commentator": "Daaf",
-      "matches_count": 19,
+      "matches_count": 20,
       "min": 4670,
-      "avg": 28225,
-      "median": 27534,
+      "avg": 28025.4,
+      "median": 26677,
       "max": 63480
     },
     {
@@ -72,6 +72,14 @@
       "avg": 25240,
       "median": 25240,
       "max": 25240
+    },
+    {
+      "commentator": "Astrid",
+      "matches_count": 1,
+      "min": 5337,
+      "avg": 5337,
+      "median": 5337,
+      "max": 5337
     }
   ]
 }

@@ -11,6 +11,9 @@ from typing import List, Dict, Any, Optional, Tuple
 
 import requests
 
+PRIMARY_API_URL = 'https://stajaxradioprod.blob.core.windows.net/luistercijfers/luistercijfers.csv'
+FALLBACK_API_URL = 'http://ajaxradio.westeurope.azurecontainer.io/all_shows/'
+
 MANUAL_LISTENER_OVERRIDES_BY_KEY = {
     ("2026-02-08", "AZ - Ajax"): 17579,
     ("2026-02-14", "Ajax - Fortuna Sittard"): 25820,
@@ -86,10 +89,13 @@ def load_api_data(filepath: str = 'api_data_full.json') -> Dict[str, int]:
 def fetch_fresh_api_data() -> Dict[str, int]:
     """Fetch fresh data from API if sample file doesn't exist"""
     try:
-        from explore_api import fetch_api_data, parse_html_data
+        from explore_api import fetch_api_data, parse_api_data
         print("Fetching fresh API data...")
-        html = fetch_api_data('http://ajaxradio.westeurope.azurecontainer.io/all_shows/')
-        data = parse_html_data(html)
+        try:
+            payload = fetch_api_data(PRIMARY_API_URL)
+        except requests.RequestException:
+            payload = fetch_api_data(FALLBACK_API_URL)
+        data = parse_api_data(payload)
         
         date_listeners = {}
         for record in data:

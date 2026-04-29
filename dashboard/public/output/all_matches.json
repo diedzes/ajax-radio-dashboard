@@ -6,7 +6,7 @@
       "time": "12:15",
       "match_name": "Ajax Vrouwen - Feyenoord Vrouwen",
       "commentators": "Diederik & Astrid",
-      "listeners": null,
+      "listeners": 5337,
       "competition": "Eurojackpot Vrouwen Eredivisie",
       "tv_channel": null,
       "score": null,
@@ -19,7 +19,7 @@
       "time": "20:00",
       "match_name": "NAC - Ajax",
       "commentators": "Diederik & Daaf",
-      "listeners": null,
+      "listeners": 24233,
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "score": null,
@@ -34,9 +34,9 @@
       "commentators": "Diederik & Daaf",
       "listeners": 21923,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": "ESPN2",
-      "score": "0-3",
-      "result": "W",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
       "home_away": "Uit"
     },
     {
@@ -230,8 +230,8 @@
       "listeners": 29624,
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": "ESPN2",
-      "score": "2-3",
-      "result": "W",
+      "score": "3-2",
+      "result": "L",
       "home_away": "Uit"
     },
     {

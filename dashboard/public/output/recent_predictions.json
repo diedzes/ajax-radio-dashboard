@@ -1,22 +1,10 @@
 {
   "matches": [
     {
-      "date": "2026-02-01",
-      "match_name": "Excelsior - Ajax",
-      "listeners": 30728,
-      "predicted_listeners": 34670
-    },
-    {
-      "date": "2026-02-08",
-      "match_name": "AZ - Ajax",
-      "listeners": 17579,
-      "predicted_listeners": 34670
-    },
-    {
       "date": "2026-02-14",
       "match_name": "Ajax - Fortuna Sittard",
       "listeners": 25820,
-      "predicted_listeners": 28133
+      "predicted_listeners": 27833
     },
     {
       "date": "2026-02-21",
@@ -28,7 +16,7 @@
       "date": "2026-03-01",
       "match_name": "PEC Zwolle - Ajax",
       "listeners": 13343,
-      "predicted_listeners": 34670
+      "predicted_listeners": 33583
     },
     {
       "date": "2026-03-07",
@@ -46,7 +34,7 @@
       "date": "2026-03-22",
       "match_name": "Feyenoord - Ajax",
       "listeners": 29813,
-      "predicted_listeners": 34670
+      "predicted_listeners": 33583
     },
     {
       "date": "2026-04-04",
@@ -59,6 +47,18 @@
       "match_name": "Heracles - Ajax",
       "listeners": 21923,
       "predicted_listeners": 22447
+    },
+    {
+      "date": "2026-04-25",
+      "match_name": "NAC - Ajax",
+      "listeners": 24233,
+      "predicted_listeners": 27833
+    },
+    {
+      "date": "2026-04-26",
+      "match_name": "Ajax Vrouwen - Feyenoord Vrouwen",
+      "listeners": 5337,
+      "predicted_listeners": 33583
     }
   ]
 }
