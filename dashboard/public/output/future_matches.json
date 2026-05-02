@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-05-02",
-      "weekday": "Saturday",
-      "time": "20:00",
-      "match_name": "Ajax - PSV",
-      "commentators": "Diederik & Corné",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "PSV",
-      "opponent_position": 1,
-      "predicted_listeners": 27833
-    },
-    {
       "date": "2026-05-10",
       "weekday": "Sunday",
       "time": "16:45",
