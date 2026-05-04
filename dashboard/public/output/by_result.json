@@ -11,9 +11,9 @@
     },
     {
       "result": "D",
-      "matches_count": 21,
-      "avg": 28273.62,
-      "median": 29813,
+      "matches_count": 22,
+      "avg": 28145.59,
+      "median": 29062,
       "min": 5337,
       "max": 53547
     },
