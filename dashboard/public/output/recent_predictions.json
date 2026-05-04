@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-02-14",
-      "match_name": "Ajax - Fortuna Sittard",
-      "listeners": 25820,
-      "predicted_listeners": 27833
-    },
-    {
       "date": "2026-02-21",
       "match_name": "Ajax - NEC",
       "listeners": 27534,
@@ -52,13 +46,19 @@
       "date": "2026-04-25",
       "match_name": "NAC - Ajax",
       "listeners": 24233,
-      "predicted_listeners": 27833
+      "predicted_listeners": 27663
     },
     {
       "date": "2026-04-26",
       "match_name": "Ajax Vrouwen - Feyenoord Vrouwen",
       "listeners": 5337,
       "predicted_listeners": 33583
+    },
+    {
+      "date": "2026-05-02",
+      "match_name": "Ajax - PSV",
+      "listeners": 25457,
+      "predicted_listeners": 27663
     }
   ]
 }
