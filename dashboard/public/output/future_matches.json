@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-05-10",
-      "weekday": "Sunday",
-      "time": "16:45",
-      "match_name": "Ajax - FC Utrecht",
-      "commentators": "Diederik & Frank",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "FC Utrecht",
-      "opponent_position": 8,
-      "predicted_listeners": 43573
-    },
-    {
       "date": "2026-05-17",
       "weekday": "Sunday",
       "time": "14:30",
