@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "commentators": [
     {
       "commentator": "Errol",
@@ -35,18 +35,18 @@
     },
     {
       "commentator": "Diederik",
-      "matches_count": 91,
+      "matches_count": 92,
       "min": 4670,
-      "avg": 31824.03,
-      "median": 27561,
+      "avg": 31714.54,
+      "median": 27547,
       "max": 78753
     },
     {
       "commentator": "Frank",
-      "matches_count": 8,
+      "matches_count": 9,
       "min": 14361,
-      "avg": 30341.12,
-      "median": 22752,
+      "avg": 29386.67,
+      "median": 22295,
       "max": 71250
     },
     {

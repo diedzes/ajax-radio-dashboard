@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "kickoff_times": [
     {
       "kickoff": "12:15",
@@ -43,10 +43,10 @@
     },
     {
       "kickoff": "16:45",
-      "matches_count": 15,
+      "matches_count": 16,
       "min": 18000,
-      "avg": 43656.6,
-      "median": 47989,
+      "avg": 42287.5,
+      "median": 46545,
       "max": 70621
     },
     {
