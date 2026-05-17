@@ -1,18 +1,3 @@
 {
-  "matches": [
-    {
-      "date": "2026-05-17",
-      "weekday": "Sunday",
-      "time": "14:30",
-      "match_name": "sc Heerenveen - Ajax",
-      "commentators": "Diederik & Frank",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "sc Heerenveen",
-      "opponent_position": 8,
-      "predicted_listeners": 33583
-    }
-  ]
+  "matches": []
 }
