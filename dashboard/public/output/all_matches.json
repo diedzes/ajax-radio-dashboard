@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-05-21",
+      "weekday": "Thursday",
+      "time": "18:45",
+      "match_name": "Ajax - FC Groningen",
+      "commentators": "Diederik & Daaf",
+      "listeners": null,
+      "competition": "Play-offs Europees Voetbal",
+      "tv_channel": "ESPN1",
+      "score": "2-0",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-05-17",
       "weekday": "Sunday",
       "time": "14:30",
@@ -8,9 +21,9 @@
       "commentators": "Diederik & Frank",
       "listeners": 10283,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ESPN3",
+      "score": "0-0",
+      "result": "D",
       "home_away": "Uit"
     },
     {
@@ -21,7 +34,7 @@
       "commentators": "Diederik & Frank",
       "listeners": 21751,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
+      "tv_channel": "ESPN3",
       "score": "1-2",
       "result": "L",
       "home_away": "Thuis"
