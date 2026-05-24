@@ -1,18 +1,3 @@
 {
-  "matches": [
-    {
-      "date": "2026-05-24",
-      "weekday": "Sunday",
-      "time": "12:15",
-      "match_name": "Ajax - FC Utrecht",
-      "commentators": "Diederik & Frank",
-      "competition": "Play-offs Europees Voetbal",
-      "tv_channel": "ESPN1",
-      "tv_category": "Open",
-      "home_away": "Thuis",
-      "opponent": "FC Utrecht",
-      "opponent_position": 6,
-      "predicted_listeners": 32751
-    }
-  ]
+  "matches": []
 }
