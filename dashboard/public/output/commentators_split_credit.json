@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 2,
+  "excluded_null_listeners": 0,
   "commentators": [
     {
       "commentator": "Errol",
@@ -11,10 +11,10 @@
     },
     {
       "commentator": "Bas",
-      "matches_count": 23,
+      "matches_count": 24,
       "min": 6270,
-      "avg": 18447.63,
-      "median": 19414,
+      "avg": 18244.62,
+      "median": 18015,
       "max": 39376
     },
     {
@@ -35,18 +35,18 @@
     },
     {
       "commentator": "Diederik",
-      "matches_count": 93,
+      "matches_count": 95,
       "min": 2335,
-      "avg": 15742.05,
-      "median": 13767,
+      "avg": 15671.58,
+      "median": 13575,
       "max": 39376
     },
     {
       "commentator": "Daaf",
-      "matches_count": 20,
+      "matches_count": 21,
       "min": 2335,
-      "avg": 14012.7,
-      "median": 13338,
+      "avg": 13879.43,
+      "median": 12910,
       "max": 31740
     },
     {
