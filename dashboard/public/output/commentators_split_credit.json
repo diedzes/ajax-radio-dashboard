@@ -1,4 +1,85 @@
 {
   "excluded_null_listeners": 1,
-  "commentators": []
+  "commentators": [
+    {
+      "commentator": "Errol",
+      "matches_count": 1,
+      "min": 25878,
+      "avg": 25878.5,
+      "median": 25878,
+      "max": 25878
+    },
+    {
+      "commentator": "Bas",
+      "matches_count": 24,
+      "min": 6270,
+      "avg": 18244.62,
+      "median": 18015,
+      "max": 39376
+    },
+    {
+      "commentator": "Sjors",
+      "matches_count": 12,
+      "min": 8789,
+      "avg": 17307.04,
+      "median": 18927,
+      "max": 27047
+    },
+    {
+      "commentator": "Corné",
+      "matches_count": 35,
+      "min": 5922,
+      "avg": 15918.26,
+      "median": 14812,
+      "max": 35310
+    },
+    {
+      "commentator": "Diederik",
+      "matches_count": 95,
+      "min": 2335,
+      "avg": 15671.58,
+      "median": 13575,
+      "max": 39376
+    },
+    {
+      "commentator": "Daaf",
+      "matches_count": 21,
+      "min": 2335,
+      "avg": 13879.43,
+      "median": 12910,
+      "max": 31740
+    },
+    {
+      "commentator": "Frank",
+      "matches_count": 10,
+      "min": 5141,
+      "avg": 13738.15,
+      "median": 11011,
+      "max": 35625
+    },
+    {
+      "commentator": "Anne",
+      "matches_count": 8,
+      "min": 7901,
+      "avg": 12889.88,
+      "median": 11816,
+      "max": 25964
+    },
+    {
+      "commentator": "Tom",
+      "matches_count": 1,
+      "min": 12620,
+      "avg": 12620.0,
+      "median": 12620,
+      "max": 12620
+    },
+    {
+      "commentator": "Astrid",
+      "matches_count": 1,
+      "min": 2668,
+      "avg": 2668.5,
+      "median": 2668,
+      "max": 2668
+    }
+  ]
 }

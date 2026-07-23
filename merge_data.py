@@ -418,7 +418,7 @@ def fetch_ajax_match_results(date_from: str, date_to: str) -> Dict[Tuple[str, st
 def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Merge API and sheet data by date, with deduplication"""
     merged = []
-    seen_matches = set()  # Track duplicates by (date, match_name)
+    seen_dates = set()  # One matchday per date (sheet order already prefers richer tabs)
     dates = [r.get('date', '') for r in sheet_data if r.get('date')]
     date_from = min(dates) if dates else None
     date_to = max(dates) if dates else None
@@ -436,15 +436,13 @@ def merge_data(api_data: Dict[str, int], sheet_data: List[Dict[str, Any]]) -> Li
         except (ValueError, AttributeError):
             continue
         
-        # Extract match name for deduplication
         match_name = sheet_record.get('match', '') or sheet_record.get('show_name', '')
-        unique_key = (date_key, match_name)
         
-        # Skip if we've seen this match before
-        if unique_key in seen_matches:
+        # Skip if we've already taken a richer record for this date
+        if date_key in seen_dates:
             continue
         
-        seen_matches.add(unique_key)
+        seen_dates.add(date_key)
         
         # Get listeners from API data (may be None if not found)
         listeners = api_data.get(date_key)

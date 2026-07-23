@@ -12,29 +12,27 @@ import requests
 
 # Google Sheet ID from the URL
 SHEET_ID = "1OHAe_neJVg2eLjn54jWkSbTTQKNfWyP-sDbtDRAWuJc"
-# Sheets to fetch (tab names in the Google Sheet)
-SHEET_NAMES = ["Ajax Radio 25/26", "Ajax Radio 24/25"]
-
-def get_sheet_gid(sheet_name: str) -> Optional[str]:
-    """Get the gid (grid ID) for a sheet by name"""
-    # Try to fetch the sheet metadata to find the gid
-    # For now, we'll try common gids or use the sheet name parameter
-    # Google Sheets API v4 would be better, but for CSV export we can try different approaches
-    return None  # Will need to be determined
+# Sheets to fetch (tab names in the Google Sheet).
+# Order matters for deduplication: first match for a given (date, match) wins.
+# Prefer the richer 25/26 tab for historical rows, then 24/25, then the new season.
+SHEET_NAMES = ["Ajax Radio 25/26", "Ajax Radio 24/25", "Ajax Radio 26/27"]
 
 def get_csv_url(sheet_name: str) -> str:
-    """Get CSV export URL for a specific sheet"""
-    # Google Sheets allows exporting by sheet name using the 'sheet' parameter
-    # URL encode the sheet name
+    """Get CSV export URL for a specific sheet via gviz.
+
+    The classic /export?format=csv&sheet=... endpoint ignores the sheet name and
+    always returns the first/active tab, so we use the gviz CSV endpoint instead.
+    """
     import urllib.parse
     encoded_name = urllib.parse.quote(sheet_name)
-    return f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&sheet={encoded_name}"
+    return f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={encoded_name}"
 
 
 def parse_dd_mm_yyyy_date(date_str: str) -> Optional[str]:
     """
-    Parse DD/MM/YYYY date format to ISO format 'YYYY-MM-DD'
-    Examples: '7/12/2025' -> '2025-12-07', '16/07/2025' -> '2025-07-16'
+    Parse date formats to ISO 'YYYY-MM-DD':
+    - DD/MM/YYYY: '7/12/2025' -> '2025-12-07'
+    - D - M - YY: '25 - 7 - 24' -> '2024-07-25'
     """
     if not date_str or date_str.strip() == "":
         return None
@@ -49,6 +47,20 @@ def parse_dd_mm_yyyy_date(date_str: str) -> Optional[str]:
             day = int(match.group(1))
             month = int(match.group(2))
             year = int(match.group(3))
+            date_obj = datetime(year, month, day)
+            return date_obj.strftime('%Y-%m-%d')
+        except ValueError:
+            return None
+
+    # Try "25 - 7 - 24" / "25-7-24" format used in Ajax Radio 24/25
+    match = re.match(r'(\d{1,2})\s*-\s*(\d{1,2})\s*-\s*(\d{2,4})$', date_str)
+    if match:
+        try:
+            day = int(match.group(1))
+            month = int(match.group(2))
+            year = int(match.group(3))
+            if year < 100:
+                year += 2000
             date_obj = datetime(year, month, day)
             return date_obj.strftime('%Y-%m-%d')
         except ValueError:
@@ -170,7 +182,7 @@ def parse_csv_data(csv_content: str, sheet_name: Optional[str] = None) -> List[D
         result = ""
         
         # Try Format 1 (Ajax Audio Agenda / Luistercijfers)
-        if 'datum' in header and 'wedstrijd' in header:
+        if 'datum' in header and 'wedstrijd' in header and 'verslaggevers' not in header:
             datum_idx = header.index('datum')
             wedstrijd_idx = header.index('wedstrijd')
             thuis_uit_idx = header.index('thuis/uit') if 'thuis/uit' in header else -1
@@ -198,11 +210,30 @@ def parse_csv_data(csv_content: str, sheet_name: Optional[str] = None) -> List[D
                 # Fix common encoding issues from CSV
                 uitslag = uitslag.replace('\u2013', '-').replace('\u2014', '-')  # Unicode en-dash and em-dash
                 # Fix the specific 'â' encoding issue
-                import re
                 uitslag = re.sub(r'[^\d\-]', '-', uitslag)  # Replace any non-digit, non-dash with dash
                 # Clean up multiple dashes
                 uitslag = re.sub(r'-+', '-', uitslag)
             result = row[result_idx].strip() if result_idx >= 0 and result_idx < len(row) else ""
+
+        # Try Format 1b (Ajax Radio 24/25 legacy layout)
+        # Header: Dag, Datum, Tijd, Wedstrijd, Verslaggevers, <empty>, Ajax personeel, TV
+        elif 'datum' in header and 'wedstrijd' in header and 'verslaggevers' in header:
+            datum_idx = header.index('datum')
+            wedstrijd_idx = header.index('wedstrijd')
+            tijd_idx = header.index('tijd') if 'tijd' in header else -1
+            verslag_idx = header.index('verslaggevers')
+            tv_idx = header.index('tv') if 'tv' in header else -1
+
+            datum = row[datum_idx].strip() if datum_idx < len(row) else ""
+            wedstrijd = row[wedstrijd_idx].strip() if wedstrijd_idx < len(row) else ""
+            tijd = row[tijd_idx].strip() if tijd_idx >= 0 and tijd_idx < len(row) else ""
+            commentator1 = row[verslag_idx].strip() if verslag_idx < len(row) else ""
+            # Next column after Verslaggevers is co-commentator in this layout
+            commentator2 = row[verslag_idx + 1].strip() if verslag_idx + 1 < len(row) else ""
+            tv_channel = row[tv_idx].strip() if tv_idx >= 0 and tv_idx < len(row) else ""
+            if wedstrijd:
+                left = wedstrijd.split(' - ')[0].strip().lower()
+                thuis_uit = "Thuis" if left.startswith('ajax') else "Uit"
         
         # Try Format 2 (Podcast/Show format)
         elif 'datum' in header and 'wedstrijd weekend' in header:
@@ -367,7 +398,10 @@ if __name__ == '__main__':
         # Parse each sheet
         all_data = []
         sheet_analyses = {}
-        seen_matches = set()  # Track duplicates by (date, match_name)
+        # Prefer first sheet in SHEET_NAMES. Deduplicate by date: Ajax Radio
+        # has at most one matchday per date, and match names can differ by typo
+        # across season tabs (e.g. Vojvodina vs Vojdovina).
+        seen_dates = set()
         
         for sheet_name, csv_content in sheets_data.items():
             if not csv_content:
@@ -391,23 +425,19 @@ if __name__ == '__main__':
                 date_range = f"{min(dates)} to {max(dates)}" if dates else "no dates"
                 print(f"  Date range: {date_range}")
                 
-                # Add sheet name to each record and deduplicate
+                # Add sheet name to each record and deduplicate by date
                 duplicates_skipped = 0
                 for record in data:
                     record['sheet_name'] = sheet_name
                     
-                    # Create unique key from date and match name
                     date = record.get('date', '')
-                    match_name = record.get('match', '') or record.get('show_name', '')
-                    unique_key = (date, match_name)
-                    
-                    # Skip if we've seen this exact match before (same date + same match name)
-                    # But allow different sheets to have matches on the same date if they're different matches
-                    if unique_key in seen_matches:
+                    if not date:
+                        continue
+                    if date in seen_dates:
                         duplicates_skipped += 1
                         continue
                     
-                    seen_matches.add(unique_key)
+                    seen_dates.add(date)
                     all_data.append(record)
                 
                 if duplicates_skipped > 0:

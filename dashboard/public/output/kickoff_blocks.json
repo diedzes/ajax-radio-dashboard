@@ -1,4 +1,45 @@
 {
   "excluded_null_listeners": 1,
-  "kickoff_blocks": []
+  "kickoff_blocks": [
+    {
+      "kickoff_block": "15:00-17:59",
+      "matches_count": 21,
+      "min": 18000,
+      "avg": 40955.86,
+      "median": 39147,
+      "max": 71250
+    },
+    {
+      "kickoff_block": "12:00-14:59",
+      "matches_count": 23,
+      "min": 4670,
+      "avg": 30260.26,
+      "median": 29813,
+      "max": 62602
+    },
+    {
+      "kickoff_block": "20:00-20:59",
+      "matches_count": 14,
+      "min": 12541,
+      "avg": 27663,
+      "median": 24845,
+      "max": 53547
+    },
+    {
+      "kickoff_block": "18:00-19:59",
+      "matches_count": 14,
+      "min": 15280,
+      "avg": 26560.79,
+      "median": 21973,
+      "max": 53728
+    },
+    {
+      "kickoff_block": "21:00+",
+      "matches_count": 21,
+      "min": 11844,
+      "avg": 22314.71,
+      "median": 20218,
+      "max": 48549
+    }
+  ]
 }
