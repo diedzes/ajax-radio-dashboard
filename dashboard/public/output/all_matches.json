@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-07-26",
+      "weekday": "Sunday",
+      "time": "14:00",
+      "match_name": "Ajax - Burnley",
+      "commentators": "Diederik & Bas",
+      "listeners": null,
+      "competition": "Vriendschappelijk",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-07-23",
       "weekday": "Thursday",
       "time": "20:00",
