@@ -8,9 +8,9 @@
       "commentators": "Diederik & Bas",
       "listeners": 43364,
       "competition": "Vriendschappelijk",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ZIGGO",
+      "score": "2-1",
+      "result": "W",
       "home_away": "Thuis"
     },
     {
@@ -21,9 +21,9 @@
       "commentators": "Diederik & Corné",
       "listeners": 24838,
       "competition": "UEFA Conference League",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ZIGGO",
+      "score": "1-4",
+      "result": "W",
       "home_away": "Uit"
     },
     {
