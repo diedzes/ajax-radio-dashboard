@@ -2,8 +2,8 @@
   "show_id": "62011",
   "feed_url": "https://feeds.transistor.fm/ajax-podcast",
   "window": {
-    "start_date": "27-07-2024",
-    "end_date": "27-07-2026"
+    "start_date": "28-07-2024",
+    "end_date": "28-07-2026"
   },
   "months": [
     {
@@ -104,7 +104,7 @@
     },
     {
       "month": "2026-07",
-      "downloads": 1007
+      "downloads": 1020
     }
   ]
 }
