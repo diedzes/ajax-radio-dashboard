@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-07-30",
+      "weekday": "Thursday",
+      "time": "20:00",
+      "match_name": "Ajax - FK Vojvodina",
+      "commentators": "Diederik & Corné",
+      "listeners": null,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-07-26",
       "weekday": "Sunday",
       "time": "14:00",
