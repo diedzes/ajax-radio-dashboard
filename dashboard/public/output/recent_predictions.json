@@ -1,16 +1,10 @@
 {
   "matches": [
     {
-      "date": "2026-04-11",
-      "match_name": "Heracles - Ajax",
-      "listeners": 21923,
-      "predicted_listeners": 22315
-    },
-    {
       "date": "2026-04-25",
       "match_name": "NAC - Ajax",
       "listeners": 24233,
-      "predicted_listeners": 27475
+      "predicted_listeners": 27873
     },
     {
       "date": "2026-04-26",
@@ -22,7 +16,7 @@
       "date": "2026-05-02",
       "match_name": "Ajax - PSV",
       "listeners": 25457,
-      "predicted_listeners": 27475
+      "predicted_listeners": 27873
     },
     {
       "date": "2026-05-10",
@@ -52,13 +46,19 @@
       "date": "2026-07-23",
       "match_name": "FK Vojvodina - Ajax",
       "listeners": 24838,
-      "predicted_listeners": 27475
+      "predicted_listeners": 27873
     },
     {
       "date": "2026-07-26",
       "match_name": "Ajax - Burnley",
       "listeners": 43364,
       "predicted_listeners": 30806
+    },
+    {
+      "date": "2026-07-30",
+      "match_name": "Ajax - FK Vojvodina",
+      "listeners": 33852,
+      "predicted_listeners": 27873
     }
   ]
 }
