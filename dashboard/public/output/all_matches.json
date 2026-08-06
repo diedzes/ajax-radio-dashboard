@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-08-06",
+      "weekday": "Thursday",
+      "time": "?",
+      "match_name": "3e ronde Q Conference League?",
+      "commentators": "Diederik & Daaf",
+      "listeners": null,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "?"
+    },
+    {
       "date": "2026-07-30",
       "weekday": "Thursday",
       "time": "20:00",
