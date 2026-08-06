@@ -3,9 +3,9 @@
   "categories": [
     {
       "category": "Half-open",
-      "matches_count": 28,
-      "avg": 22213.43,
-      "median": 19337,
+      "matches_count": 30,
+      "avg": 23005.93,
+      "median": 20010,
       "min": 11844,
       "max": 51757
     },

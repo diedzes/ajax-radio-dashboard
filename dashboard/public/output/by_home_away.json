@@ -3,17 +3,17 @@
   "home_away": [
     {
       "home_away": "Thuis",
-      "matches_count": 54,
-      "avg": 35486.81,
-      "median": 30995,
+      "matches_count": 56,
+      "avg": 35598.29,
+      "median": 32193,
       "min": 4670,
       "max": 78753
     },
     {
       "home_away": "Uit",
-      "matches_count": 50,
-      "avg": 26966.84,
-      "median": 22289,
+      "matches_count": 51,
+      "avg": 26925.1,
+      "median": 22295,
       "min": 10283,
       "max": 62602
     }

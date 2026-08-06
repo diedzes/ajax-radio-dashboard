@@ -11,18 +11,18 @@
     },
     {
       "kickoff_block": "12:00-14:59",
-      "matches_count": 23,
+      "matches_count": 24,
       "min": 4670,
-      "avg": 30260.26,
-      "median": 29813,
+      "avg": 30806.25,
+      "median": 30270,
       "max": 62602
     },
     {
       "kickoff_block": "20:00-20:59",
-      "matches_count": 14,
+      "matches_count": 16,
       "min": 12541,
-      "avg": 27663,
-      "median": 24845,
+      "avg": 27873.25,
+      "median": 25147,
       "max": 53547
     },
     {

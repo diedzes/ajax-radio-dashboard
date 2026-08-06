@@ -1,16 +1,55 @@
 {
   "matches": [
     {
-      "date": "2026-07-23",
+      "date": "2026-08-06",
       "weekday": "Thursday",
-      "time": "20:00",
-      "match_name": "FK Vojvodina - Ajax",
-      "commentators": "Diederik & Corné",
+      "time": "?",
+      "match_name": "3e ronde Q Conference League?",
+      "commentators": "Diederik & Daaf",
       "listeners": null,
       "competition": "UEFA Conference League",
       "tv_channel": null,
       "score": null,
       "result": null,
+      "home_away": "?"
+    },
+    {
+      "date": "2026-07-30",
+      "weekday": "Thursday",
+      "time": "20:00",
+      "match_name": "Ajax - FK Vojvodina",
+      "commentators": "Diederik & Corné",
+      "listeners": 33852,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2026-07-26",
+      "weekday": "Sunday",
+      "time": "14:00",
+      "match_name": "Ajax - Burnley",
+      "commentators": "Diederik & Bas",
+      "listeners": 43364,
+      "competition": "Vriendschappelijk",
+      "tv_channel": "ZIGGO",
+      "score": "2-1",
+      "result": "W",
+      "home_away": "Thuis"
+    },
+    {
+      "date": "2026-07-23",
+      "weekday": "Thursday",
+      "time": "20:00",
+      "match_name": "FK Vojvodina - Ajax",
+      "commentators": "Diederik & Corné",
+      "listeners": 24838,
+      "competition": "UEFA Conference League",
+      "tv_channel": "ZIGGO",
+      "score": "1-4",
+      "result": "W",
       "home_away": "Uit"
     },
     {
