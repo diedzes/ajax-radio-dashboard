@@ -36,12 +36,22 @@ jobs:
         TRANSISTOR_API_KEY: ${{ secrets.TRANSISTOR_API_KEY }}
         TRANSISTOR_FEED_URL: https://feeds.transistor.fm/ajax-podcast
         FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
-    
+
+    - name: Process new CDN datadumps (detailweergave per wedstrijd)
+      # Verwerkt eventuele nieuwe ruwe streaminglogs uit de Azure "datadump"-
+      # container tot per-wedstrijd detail-json (concurrency, platform, geo,
+      # kwaliteit, pre-roll). Faalt niet de hele run als dit misgaat (bv. SAS-
+      # token nog niet gezet) - de rest van de dashboard blijft dan gewoon werken.
+      run: |
+        python3 process_matchday.py process-all || echo "process_matchday.py overgeslagen of mislukt (zie hierboven)"
+      env:
+        AJAX_SAS_TOKEN: ${{ secrets.AJAX_SAS_TOKEN }}
+
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add dashboard/public/output/*.json
+        git add dashboard/public/output/*.json dashboard/public/output/match_details/*.json
         git commit -m "Auto-update dashboard data" || exit 0
         git push
       env:

@@ -165,6 +165,24 @@
   background-color: #f9f9f9;
 }
 
+.matches-table tbody tr.row-has-detail {
+  cursor: pointer;
+}
+
+.matches-table tbody tr.row-has-detail:hover {
+  background-color: #fdecee;
+}
+
+.detail-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c8102e;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
 .result-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;

@@ -1,9 +1,19 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import ExportPdfButton from './ExportPdfButton'
+import MatchDetailModal from './MatchDetailModal'
 import './AllMatchesOverview.css'
 
 function AllMatchesOverview({ data }) {
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'desc' })
+  const [detailDates, setDetailDates] = useState([])
+  const [selectedMatch, setSelectedMatch] = useState(null)
+
+  useEffect(() => {
+    fetch(`/output/match_details_index.json?t=${Date.now()}`, { cache: 'no-store' })
+      .then((res) => (res.ok ? res.json() : { dates: [] }))
+      .then((json) => setDetailDates(json.dates || []))
+      .catch(() => setDetailDates([]))
+  }, [])
 
   if (!data || !data.matches || data.matches.length === 0) {
     return (
@@ -249,9 +259,18 @@ function AllMatchesOverview({ data }) {
           <tbody>
             {sortedMatches.map((match, index) => {
               const [firstLogoUrl, secondLogoUrl] = getMatchLogoUrls(match.match_name)
+              const hasDetail = detailDates.includes(match.date)
               return (
-              <tr key={index}>
-                <td>{formatDate(match.date)}</td>
+              <tr
+                key={index}
+                className={hasDetail ? 'row-has-detail' : ''}
+                onClick={hasDetail ? () => setSelectedMatch(match) : undefined}
+                title={hasDetail ? 'Klik voor gedetailleerde streamingdata' : undefined}
+              >
+                <td>
+                  {formatDate(match.date)}
+                  {hasDetail ? <span className="detail-dot" aria-hidden="true" /> : null}
+                </td>
                 <td>{match.weekday || 'N/A'}</td>
                 <td>{match.time || 'N/A'}</td>
                 <td className="club-logo-cell">
@@ -297,6 +316,14 @@ function AllMatchesOverview({ data }) {
           </tbody>
         </table>
       </div>
+
+      {selectedMatch ? (
+        <MatchDetailModal
+          date={selectedMatch.date}
+          matchName={selectedMatch.match_name}
+          onClose={() => setSelectedMatch(null)}
+        />
+      ) : null}
     </div>
   )
 }
