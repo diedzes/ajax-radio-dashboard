@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-08-09",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "PEC Zwolle - Ajax",
+      "commentators": "Daaf & Corné",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-08-06",
       "weekday": "Thursday",
       "time": "?",

@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-08-09",
-      "weekday": "Sunday",
-      "time": "14:30",
-      "match_name": "PEC Zwolle - Ajax",
-      "commentators": "Daaf & Corné",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "PEC Zwolle",
-      "opponent_position": 1,
-      "predicted_listeners": 30806
-    },
-    {
       "date": "2026-08-13",
       "weekday": "Thursday",
       "time": "?",
@@ -39,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "sc Heerenveen",
-      "opponent_position": 1,
+      "opponent_position": 7,
       "predicted_listeners": 40956
     },
     {
@@ -81,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Telstar",
-      "opponent_position": 1,
+      "opponent_position": 4,
       "predicted_listeners": 40956
     },
     {
@@ -95,7 +81,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "PSV",
-      "opponent_position": 1,
+      "opponent_position": 5,
       "predicted_listeners": 27873
     },
     {
@@ -109,7 +95,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 1,
+      "opponent_position": 5,
       "predicted_listeners": 27873
     },
     {
@@ -123,7 +109,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Willem II",
-      "opponent_position": 1,
+      "opponent_position": 17,
       "predicted_listeners": 27873
     },
     {
