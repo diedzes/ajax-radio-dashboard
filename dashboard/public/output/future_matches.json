@@ -3,16 +3,16 @@
     {
       "date": "2026-08-13",
       "weekday": "Thursday",
-      "time": "?",
-      "match_name": "3e ronde Q Conference League?",
+      "time": "20:45",
+      "match_name": "Shelbourne FC - Ajax",
       "commentators": "Diederik & Daaf",
       "competition": "UEFA Conference League",
       "tv_channel": null,
       "tv_category": "Unknown",
-      "home_away": "?",
-      "opponent": null,
+      "home_away": "Uit",
+      "opponent": "Shelbourne FC",
       "opponent_position": null,
-      "predicted_listeners": 42586
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-08-16",
@@ -40,7 +40,7 @@
       "home_away": "?",
       "opponent": null,
       "opponent_position": null,
-      "predicted_listeners": 42586
+      "predicted_listeners": 43712
     },
     {
       "date": "2026-08-27",
@@ -54,7 +54,7 @@
       "home_away": "?",
       "opponent": null,
       "opponent_position": null,
-      "predicted_listeners": 42586
+      "predicted_listeners": 43712
     },
     {
       "date": "2026-08-30",
@@ -82,7 +82,7 @@
       "home_away": "Thuis",
       "opponent": "PSV",
       "opponent_position": 9,
-      "predicted_listeners": 27873
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-09-12",
@@ -96,7 +96,7 @@
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
       "opponent_position": 9,
-      "predicted_listeners": 27873
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-09-15",
@@ -110,7 +110,7 @@
       "home_away": "Thuis",
       "opponent": "Willem II",
       "opponent_position": 17,
-      "predicted_listeners": 27873
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-09-19",
@@ -124,7 +124,7 @@
       "home_away": "Thuis",
       "opponent": "Excelsior",
       "opponent_position": 1,
-      "predicted_listeners": 27873
+      "predicted_listeners": 28010
     }
   ]
 }

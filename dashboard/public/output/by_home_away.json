@@ -3,9 +3,9 @@
   "home_away": [
     {
       "home_away": "Thuis",
-      "matches_count": 56,
-      "avg": 35598.29,
-      "median": 32193,
+      "matches_count": 57,
+      "avg": 35503.68,
+      "median": 31466,
       "min": 4670,
       "max": 78753
     },

@@ -10,21 +10,21 @@
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "score": null,
-      "result": null,
+      "result": "W",
       "home_away": "Uit"
     },
     {
       "date": "2026-08-06",
       "weekday": "Thursday",
-      "time": "?",
-      "match_name": "3e ronde Q Conference League?",
+      "time": "20:00",
+      "match_name": "Ajax - Shelbourne FC",
       "commentators": "Diederik & Daaf",
       "listeners": 30206,
       "competition": "UEFA Conference League",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
-      "home_away": "?"
+      "tv_channel": "ZIGGO",
+      "score": "3-1",
+      "result": "W",
+      "home_away": "Thuis"
     },
     {
       "date": "2026-07-30",
@@ -34,9 +34,9 @@
       "commentators": "Diederik & Corné",
       "listeners": 33852,
       "competition": "UEFA Conference League",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ZIGGO",
+      "score": "4-1",
+      "result": "W",
       "home_away": "Thuis"
     },
     {
