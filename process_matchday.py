@@ -348,6 +348,40 @@ def _update_index(output_dir):
         json.dump({"dates": dates}, f, ensure_ascii=False, indent=2)
     print(f"Index bijgewerkt: {index_path} ({len(dates)} datums)")
 
+    _update_summary(output_dir, dates)
+
+
+def _update_summary(output_dir, dates):
+    """Bouwt match_details_summary.json: één klein bestand met de kern-cijfers
+    (zonder de zware concurrency-array per minuut) van alle verwerkte
+    wedstrijden. Hiermee kan de tabel/trend-secties in één keer alle
+    wedstrijden met detaildata inladen, in plaats van per rij een los
+    bestand te moeten ophalen."""
+    summaries = []
+    for date_str in dates:
+        path = os.path.join(output_dir, f"{date_str}.json")
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                full = json.load(f)
+        except Exception:
+            continue
+        summaries.append({
+            "date": full.get("date", date_str),
+            "match_name": full.get("match_name"),
+            "listeners": full.get("listeners"),
+            "peakHour": full.get("peakHour"),
+            "peakValue": full.get("peakValue"),
+            "successRate": full.get("successRate"),
+            "platform": full.get("platform"),
+            "geo": full.get("geo"),
+            "preroll": full.get("preroll"),
+        })
+    summaries.sort(key=lambda m: m["date"])
+    summary_path = os.path.join(os.path.dirname(output_dir.rstrip("/")), "match_details_summary.json")
+    with open(summary_path, "w", encoding="utf-8") as f:
+        json.dump({"matches": summaries}, f, ensure_ascii=False, indent=2)
+    print(f"Samenvatting bijgewerkt: {summary_path} ({len(summaries)} wedstrijden)")
+
 
 def _load_known_match_dates():
     """Datums van echte wedstrijden uit de al bestaande all_matches.json.

@@ -5,14 +5,20 @@ import './AllMatchesOverview.css'
 
 function AllMatchesOverview({ data }) {
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'desc' })
-  const [detailDates, setDetailDates] = useState([])
+  const [detailByDate, setDetailByDate] = useState({})
   const [selectedMatch, setSelectedMatch] = useState(null)
 
   useEffect(() => {
-    fetch(`/output/match_details_index.json?t=${Date.now()}`, { cache: 'no-store' })
-      .then((res) => (res.ok ? res.json() : { dates: [] }))
-      .then((json) => setDetailDates(json.dates || []))
-      .catch(() => setDetailDates([]))
+    fetch(`/output/match_details_summary.json?t=${Date.now()}`, { cache: 'no-store' })
+      .then((res) => (res.ok ? res.json() : { matches: [] }))
+      .then((json) => {
+        const byDate = {}
+        for (const m of json.matches || []) {
+          byDate[m.date] = m
+        }
+        setDetailByDate(byDate)
+      })
+      .catch(() => setDetailByDate({}))
   }, [])
 
   if (!data || !data.matches || data.matches.length === 0) {
@@ -38,92 +44,6 @@ function AllMatchesOverview({ data }) {
     }
   }
 
-  const CLUB_LOGOS = {
-    ajax: 'https://crests.football-data.org/678.svg',
-    psv: 'https://crests.football-data.org/674.svg',
-    feyenoord: 'https://crests.football-data.org/675.svg',
-    twente: 'https://crests.football-data.org/666.svg',
-    az: 'https://crests.football-data.org/682.svg',
-    nec: 'https://crests.football-data.org/1915.svg',
-    heracles: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Heracles_Almelo_logo.svg/120px-Heracles_Almelo_logo.svg.png',
-    groningen: 'https://crests.football-data.org/677.svg',
-    zwolle: 'https://crests.football-data.org/684.svg',
-    excelsior: 'https://crests.football-data.org/676.svg',
-    sparta: 'https://crests.football-data.org/6806.svg',
-    fortuna: 'https://crests.football-data.org/1926.svg',
-    heerenveen: 'https://crests.football-data.org/673.svg',
-    utrecht: 'https://crests.football-data.org/6761.svg',
-    nac: 'https://crests.football-data.org/681.svg',
-    'go ahead eagles': 'https://crests.football-data.org/718.svg',
-    volendam: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/40/FC_Volendam_logo.svg/120px-FC_Volendam_logo.svg.png',
-    olympiacos: 'https://crests.football-data.org/654.svg',
-    villarreal: 'https://crests.football-data.org/94.svg',
-    panathinaikos: 'https://crests.football-data.org/782.svg',
-    vojvodina: 'https://crests.football-data.org/1884.svg',
-    'as monaco': 'https://crests.football-data.org/548.svg',
-    telstar: 'https://crests.football-data.org/7187.svg'
-  }
-
-  const TEAM_ALIASES = {
-    nec: 'nec',
-    'nec nijmegen': 'nec',
-    'n.e.c': 'nec',
-    'n.e.c.': 'nec',
-    psv: 'psv',
-    'psv eindhoven': 'psv',
-    az: 'az',
-    'az alkmaar': 'az',
-    ajax: 'ajax',
-    'afc ajax': 'ajax',
-    feyenoord: 'feyenoord',
-    'feyenoord rotterdam': 'feyenoord',
-    twente: 'twente',
-    'fc twente': 'twente',
-    fortuna: 'fortuna',
-    'fortuna sittard': 'fortuna',
-    'go ahead': 'go ahead eagles',
-    'go ahead eagles': 'go ahead eagles',
-    'go ahead eagles deventer': 'go ahead eagles',
-    sparta: 'sparta',
-    'sparta rotterdam': 'sparta',
-    'fc groningen': 'groningen',
-    'pec zwolle': 'zwolle',
-    'sc heerenveen': 'heerenveen',
-    'fc utrecht': 'utrecht',
-    'fc volendam': 'volendam',
-    'as monaco fc': 'as monaco'
-  }
-
-  const normalizeTeamName = (name = '') => {
-    const normalized = name
-      .toLowerCase()
-      .replace(/\./g, '')
-      .replace(/['’]/g, '')
-      .replace(/\s+/g, ' ')
-      .trim()
-    return TEAM_ALIASES[normalized] || normalized
-  }
-
-  const getMatchTeams = (matchName = '') => {
-    const parts = matchName.split(' - ').map((p) => p.trim()).filter(Boolean)
-    if (parts.length !== 2) return []
-    return parts
-  }
-
-  const getLogoUrlForTeam = (teamName = '') => {
-    const normalized = normalizeTeamName(teamName)
-    if (CLUB_LOGOS[normalized]) return CLUB_LOGOS[normalized]
-    const entry = Object.entries(CLUB_LOGOS).find(([key]) => normalized.includes(key))
-    return entry ? entry[1] : null
-  }
-
-  const getMatchLogoUrls = (matchName = '') => {
-    const [homeTeam, awayTeam] = getMatchTeams(matchName)
-    const homeLogo = homeTeam ? getLogoUrlForTeam(homeTeam) : null
-    const awayLogo = awayTeam ? getLogoUrlForTeam(awayTeam) : null
-    return [homeLogo, awayLogo]
-  }
-
   const getResultClass = (result) => {
     if (result === 'W') return 'result-win'
     if (result === 'D') return 'result-draw'
@@ -138,9 +58,15 @@ function AllMatchesOverview({ data }) {
     return '-'
   }
 
-  const calculateMediaValue = (listeners) => {
-    if (!listeners) return 0
-    return (listeners / 1000) * 25
+  // Media value: gebaseerd op advertentie-bereik (aantal luisteraars dat lang
+  // genoeg luisterde om een pre-roll te kwalificeren) als we die data hebben
+  // voor deze wedstrijd. Anders valt terug op het ruwe dagcijfer, net als
+  // voorheen voor wedstrijden zonder CDN-detaildata.
+  const calculateMediaValue = (match) => {
+    const detail = detailByDate[match.date]
+    const base = detail?.preroll?.bereik ?? match.listeners
+    if (!base) return 0
+    return (base / 1000) * 25
   }
 
   const formatCurrency = (value) => {
@@ -170,28 +96,34 @@ function AllMatchesOverview({ data }) {
       if (sortConfig.key === 'date') {
         aVal = a.date || ''
         bVal = b.date || ''
-        return sortConfig.direction === 'asc' 
+        return sortConfig.direction === 'asc'
           ? aVal.localeCompare(bVal)
           : bVal.localeCompare(aVal)
       }
 
-      // Handle numeric sorting (listeners, media value)
+      // Handle numeric sorting (listeners, media value, peak concurrent)
       if (sortConfig.key === 'listeners' || sortConfig.key === 'mediaValue') {
-        aVal = sortConfig.key === 'mediaValue' 
-          ? calculateMediaValue(a.listeners)
+        aVal = sortConfig.key === 'mediaValue'
+          ? calculateMediaValue(a)
           : (a.listeners || 0)
         bVal = sortConfig.key === 'mediaValue'
-          ? calculateMediaValue(b.listeners)
+          ? calculateMediaValue(b)
           : (b.listeners || 0)
-        return sortConfig.direction === 'asc' 
+        return sortConfig.direction === 'asc'
           ? aVal - bVal
           : bVal - aVal
+      }
+
+      if (sortConfig.key === 'peakValue') {
+        aVal = detailByDate[a.date]?.peakValue ?? -1
+        bVal = detailByDate[b.date]?.peakValue ?? -1
+        return sortConfig.direction === 'asc' ? aVal - bVal : bVal - aVal
       }
 
       // Handle string sorting
       aVal = (aVal || '').toString().toLowerCase()
       bVal = (bVal || '').toString().toLowerCase()
-      
+
       if (sortConfig.direction === 'asc') {
         return aVal.localeCompare(bVal)
       } else {
@@ -199,7 +131,7 @@ function AllMatchesOverview({ data }) {
       }
     })
     return sorted
-  }, [data.matches, sortConfig])
+  }, [data.matches, sortConfig, detailByDate])
 
   const getSortIcon = (columnKey) => {
     if (sortConfig.key !== columnKey) {
@@ -230,9 +162,6 @@ function AllMatchesOverview({ data }) {
               <th className="sortable" onClick={() => handleSort('time')}>
                 Time {getSortIcon('time')}
               </th>
-              <th className="logo-header">
-                Clubs
-              </th>
               <th className="sortable" onClick={() => handleSort('match_name')}>
                 Match {getSortIcon('match_name')}
               </th>
@@ -251,6 +180,9 @@ function AllMatchesOverview({ data }) {
               <th className="sortable" onClick={() => handleSort('listeners')}>
                 Listeners {getSortIcon('listeners')}
               </th>
+              <th className="sortable" onClick={() => handleSort('peakValue')}>
+                Piek gelijktijdig {getSortIcon('peakValue')}
+              </th>
               <th className="sortable" onClick={() => handleSort('mediaValue')}>
                 Media Value {getSortIcon('mediaValue')}
               </th>
@@ -258,8 +190,8 @@ function AllMatchesOverview({ data }) {
           </thead>
           <tbody>
             {sortedMatches.map((match, index) => {
-              const [firstLogoUrl, secondLogoUrl] = getMatchLogoUrls(match.match_name)
-              const hasDetail = detailDates.includes(match.date)
+              const detail = detailByDate[match.date]
+              const hasDetail = Boolean(detail)
               return (
               <tr
                 key={index}
@@ -273,30 +205,6 @@ function AllMatchesOverview({ data }) {
                 </td>
                 <td>{match.weekday || 'N/A'}</td>
                 <td>{match.time || 'N/A'}</td>
-                <td className="club-logo-cell">
-                  <div className="club-logos-stack" aria-hidden="true">
-                    {firstLogoUrl ? (
-                      <img
-                        src={firstLogoUrl}
-                        alt=""
-                        className="club-logo"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <span className="club-logo-placeholder" />
-                    )}
-                    {secondLogoUrl ? (
-                      <img
-                        src={secondLogoUrl}
-                        alt=""
-                        className="club-logo"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <span className="club-logo-placeholder" />
-                    )}
-                  </div>
-                </td>
                 <td>{match.match_name || 'N/A'}</td>
                 <td>{match.commentators || 'N/A'}</td>
                 <td>{match.tv_channel || 'N/A'}</td>
@@ -307,8 +215,13 @@ function AllMatchesOverview({ data }) {
                   </span>
                 </td>
                 <td>{match.listeners ? match.listeners.toLocaleString() : 'N/A'}</td>
+                <td>
+                  {detail?.peakValue
+                    ? `${detail.peakValue.toLocaleString()}${detail.peakHour ? ` (${detail.peakHour})` : ''}`
+                    : 'N/A'}
+                </td>
                 <td className="media-value-cell">
-                  {match.listeners ? formatCurrency(calculateMediaValue(match.listeners)) : 'N/A'}
+                  {calculateMediaValue(match) ? formatCurrency(calculateMediaValue(match)) : 'N/A'}
                 </td>
               </tr>
               )

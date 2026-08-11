@@ -9,6 +9,9 @@ import HomeAwayAnalysisSection from './HomeAwayAnalysisSection'
 import TVCategoryAnalysisSection from './TVCategoryAnalysisSection'
 import KickoffBlocksSection from './KickoffBlocksSection'
 import WeekdaySection from './WeekdaySection'
+import EngagementSection from './EngagementSection'
+import PlatformMixTrendSection from './PlatformMixTrendSection'
+import GeoTrendSection from './GeoTrendSection'
 import './Dashboard.css'
 
 function Dashboard() {
@@ -346,6 +349,15 @@ function Dashboard() {
                   <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
                     Commentator Duos
                   </a>
+                  <a href="#engagement" onClick={(e) => { e.preventDefault(); scrollToSection('engagement') }}>
+                    Doorluisterwaarde
+                  </a>
+                  <a href="#platform-mix-trend" onClick={(e) => { e.preventDefault(); scrollToSection('platform-mix-trend') }}>
+                    Platform-mix
+                  </a>
+                  <a href="#geo-trend" onClick={(e) => { e.preventDefault(); scrollToSection('geo-trend') }}>
+                    NL vs Buitenland
+                  </a>
                 </nav>
               </header>
 
@@ -386,6 +398,18 @@ function Dashboard() {
 
               <section className="dashboard-section" id="commentator-duos">
                 <CommentatorDuosSection data={data.commentatorDuos} />
+              </section>
+
+              <section className="dashboard-section" id="engagement">
+                <EngagementSection />
+              </section>
+
+              <section className="dashboard-section" id="platform-mix-trend">
+                <PlatformMixTrendSection />
+              </section>
+
+              <section className="dashboard-section" id="geo-trend">
+                <GeoTrendSection />
               </section>
             </>
           ) : (
