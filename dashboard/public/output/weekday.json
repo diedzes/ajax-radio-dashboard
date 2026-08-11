@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "weekdays": [
     {
       "weekday": "Tuesday",
@@ -19,10 +19,10 @@
     },
     {
       "weekday": "Thursday",
-      "matches_count": 22,
+      "matches_count": 23,
       "min": 11844,
-      "avg": 21484.27,
-      "median": 19368,
+      "avg": 21863.48,
+      "median": 20042,
       "max": 48549
     },
     {
@@ -35,10 +35,10 @@
     },
     {
       "weekday": "Sunday",
-      "matches_count": 47,
+      "matches_count": 48,
       "min": 5337,
-      "avg": 36995.6,
-      "median": 33951,
+      "avg": 37013.08,
+      "median": 34795,
       "max": 70621
     }
   ]

@@ -1,32 +1,18 @@
 {
   "matches": [
     {
-      "date": "2026-08-09",
-      "weekday": "Sunday",
-      "time": "14:30",
-      "match_name": "PEC Zwolle - Ajax",
-      "commentators": "Daaf & Corné",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "PEC Zwolle",
-      "opponent_position": 1,
-      "predicted_listeners": 30806
-    },
-    {
       "date": "2026-08-13",
       "weekday": "Thursday",
-      "time": "?",
-      "match_name": "3e ronde Q Conference League?",
+      "time": "20:45",
+      "match_name": "Shelbourne FC - Ajax",
       "commentators": "Diederik & Daaf",
       "competition": "UEFA Conference League",
       "tv_channel": null,
       "tv_category": "Unknown",
-      "home_away": "?",
-      "opponent": null,
+      "home_away": "Uit",
+      "opponent": "Shelbourne FC",
       "opponent_position": null,
-      "predicted_listeners": 43712
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-08-16",
@@ -39,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "sc Heerenveen",
-      "opponent_position": 1,
+      "opponent_position": 7,
       "predicted_listeners": 40956
     },
     {
@@ -81,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Telstar",
-      "opponent_position": 1,
+      "opponent_position": 5,
       "predicted_listeners": 40956
     },
     {
@@ -95,8 +81,8 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "PSV",
-      "opponent_position": 1,
-      "predicted_listeners": 27873
+      "opponent_position": 9,
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-09-12",
@@ -109,8 +95,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 1,
-      "predicted_listeners": 27873
+      "opponent_position": 9,
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-09-15",
@@ -123,8 +109,8 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Willem II",
-      "opponent_position": 1,
-      "predicted_listeners": 27873
+      "opponent_position": 17,
+      "predicted_listeners": 28010
     },
     {
       "date": "2026-09-19",
@@ -138,7 +124,7 @@
       "home_away": "Thuis",
       "opponent": "Excelsior",
       "opponent_position": 1,
-      "predicted_listeners": 27873
+      "predicted_listeners": 28010
     }
   ]
 }
