@@ -349,11 +349,41 @@ def _update_index(output_dir):
     print(f"Index bijgewerkt: {index_path} ({len(dates)} datums)")
 
 
+def _load_known_match_dates():
+    """Datums van echte wedstrijden uit de al bestaande all_matches.json.
+    Voorkomt dat we honderden gewone niet-wedstrijddagen gaan downloaden en
+    verwerken nu de datadump-container helemaal terug tot 1 juni 2024 gaat."""
+    dates = set()
+    for path in (
+        os.path.join("dashboard", "public", "output", "all_matches.json"),
+        os.path.join("output", "all_matches.json"),
+    ):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+            for m in payload.get("matches", []):
+                if m.get("date"):
+                    dates.add(m["date"])
+            break
+        except Exception:
+            continue
+    return dates
+
+
 def cmd_list_new(args):
     dates = list_datadump_dates()
+    known_matches = _load_known_match_dates()
+    if known_matches:
+        match_dates = [d for d in dates if d in known_matches]
+        skipped = len(dates) - len(match_dates)
+    else:
+        # Geen all_matches.json gevonden: val terug op alles (oud gedrag).
+        match_dates = dates
+        skipped = 0
     existing = {f[:-5] for f in os.listdir(args.output_dir)} if os.path.isdir(args.output_dir) else set()
-    new_dates = [d for d in dates if d not in existing]
-    print(f"{len(dates)} bestanden gevonden in de container, {len(new_dates)} nog niet verwerkt:")
+    new_dates = [d for d in match_dates if d not in existing]
+    print(f"{len(dates)} bestanden in de container, {skipped} daarvan zijn geen bekende wedstrijddag (overgeslagen), "
+          f"{len(new_dates)} wedstrijddagen nog niet verwerkt:")
     for d in new_dates:
         print(" -", d)
     return new_dates
