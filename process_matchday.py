@@ -386,6 +386,10 @@ def cmd_list_new(args):
           f"{len(new_dates)} wedstrijddagen nog niet verwerkt:")
     for d in new_dates:
         print(" -", d)
+    # Houdt de index ook up-to-date als er (handmatig) bestanden bij- of
+    # weggehaald zijn sinds de laatste keer dat 'process' draaide.
+    if os.path.isdir(args.output_dir):
+        _update_index(args.output_dir)
     return new_dates
 
 
