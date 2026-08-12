@@ -19,9 +19,9 @@
     },
     {
       "category": "Paid",
-      "matches_count": 45,
-      "avg": 34248.02,
-      "median": 30434,
+      "matches_count": 46,
+      "avg": 34326,
+      "median": 30581,
       "min": 10283,
       "max": 78753
     }

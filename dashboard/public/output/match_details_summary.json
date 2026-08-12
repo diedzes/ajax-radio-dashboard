@@ -1,6 +1,5589 @@
 {
   "matches": [
     {
+      "date": "2024-07-25",
+      "match_name": "Ajax - Vojvodina",
+      "listeners": 20042,
+      "peakHour": "22:24u",
+      "peakValue": 3721,
+      "successRate": 83.8,
+      "platform": {
+        "labels": [
+          "Webbrowser",
+          "iOS-app",
+          "Overig",
+          "Android-app"
+        ],
+        "values": [
+          4.1,
+          93.9,
+          0.9,
+          1.1
+        ],
+        "colors": [
+          "#f7c8d0",
+          "#d2122e",
+          "#c8c8c8",
+          "#9ca3af"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          14.1,
+          1.6,
+          1.6,
+          0.8,
+          0.7,
+          81.2
+        ]
+      },
+      "preroll": {
+        "bereik": 16494,
+        "bereikPct": 82.3,
+        "impressies": 45609,
+        "freq": 2.77,
+        "completion": 22.6
+      }
+    },
+    {
+      "date": "2024-08-01",
+      "match_name": "Vojvodina - Ajax",
+      "listeners": 16692,
+      "peakHour": "22:00u",
+      "peakValue": 3604,
+      "successRate": 87.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          92.1,
+          5.0,
+          1.5,
+          0.7,
+          0.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          8.4,
+          2.0,
+          1.9,
+          1.1,
+          0.9,
+          85.6
+        ]
+      },
+      "preroll": {
+        "bereik": 14400,
+        "bereikPct": 86.3,
+        "impressies": 38713,
+        "freq": 2.69,
+        "completion": 20.6
+      }
+    },
+    {
+      "date": "2024-08-08",
+      "match_name": "Panathinaikos - Ajax",
+      "listeners": 17763,
+      "peakHour": "21:59u",
+      "peakValue": 3646,
+      "successRate": 89.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          92.5,
+          1.3,
+          4.0,
+          0.9,
+          1.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          9.3,
+          1.9,
+          1.8,
+          1.0,
+          86.0
+        ]
+      },
+      "preroll": {
+        "bereik": 15586,
+        "bereikPct": 87.7,
+        "impressies": 41845,
+        "freq": 2.68,
+        "completion": 20.9
+      }
+    },
+    {
+      "date": "2024-08-11",
+      "match_name": "Ajax - Heerenveen",
+      "listeners": 51152,
+      "peakHour": "18:32u",
+      "peakValue": 13494,
+      "successRate": 80.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.5,
+          2.6,
+          0.6,
+          0.7,
+          0.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          15.8,
+          1.5,
+          1.4,
+          0.6,
+          80.7
+        ]
+      },
+      "preroll": {
+        "bereik": 43187,
+        "bereikPct": 84.4,
+        "impressies": 146556,
+        "freq": 3.39,
+        "completion": 27.1
+      }
+    },
+    {
+      "date": "2024-08-15",
+      "match_name": "Ajax - Panathinaikos",
+      "listeners": 30524,
+      "peakHour": "23:20u",
+      "peakValue": 11609,
+      "successRate": 92.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          89.5,
+          8.4,
+          0.5,
+          1.3,
+          0.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          2.1,
+          1.3,
+          0.9,
+          95.7
+        ]
+      },
+      "preroll": {
+        "bereik": 28215,
+        "bereikPct": 92.4,
+        "impressies": 93870,
+        "freq": 3.33,
+        "completion": 28.3
+      }
+    },
+    {
+      "date": "2024-08-18",
+      "match_name": "NAC - Ajax",
+      "listeners": 18000,
+      "peakHour": "18:44u",
+      "peakValue": 6116,
+      "successRate": 93.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          89.9,
+          6.3,
+          1.3,
+          1.9,
+          0.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          1.6,
+          1.2,
+          1.0,
+          0.5,
+          95.8
+        ]
+      },
+      "preroll": {
+        "bereik": 16758,
+        "bereikPct": 93.1,
+        "impressies": 46750,
+        "freq": 2.79,
+        "completion": 25.3
+      }
+    },
+    {
+      "date": "2024-08-22",
+      "match_name": "Jagiellonia Białystok - Ajax",
+      "listeners": 17584,
+      "peakHour": "22:39u",
+      "peakValue": 4024,
+      "successRate": 88.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.7,
+          5.1,
+          1.2,
+          0.8,
+          1.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Frankrijk",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          1.7,
+          1.1,
+          0.7,
+          0.6,
+          95.9
+        ]
+      },
+      "preroll": {
+        "bereik": 15602,
+        "bereikPct": 88.7,
+        "impressies": 39665,
+        "freq": 2.54,
+        "completion": 21.7
+      }
+    },
+    {
+      "date": "2024-08-29",
+      "match_name": "Ajax - Jagiellonia Białystok",
+      "listeners": 23189,
+      "peakHour": "20:10u",
+      "peakValue": 4365,
+      "successRate": 86.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.3,
+          2.7,
+          0.7,
+          0.5,
+          0.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          3.2,
+          1.8,
+          0.7,
+          0.5,
+          0.2,
+          93.5
+        ]
+      },
+      "preroll": {
+        "bereik": 19363,
+        "bereikPct": 83.5,
+        "impressies": 54417,
+        "freq": 2.81,
+        "completion": 23.3
+      }
+    },
+    {
+      "date": "2024-09-18",
+      "match_name": "Ajax - Fortuna Sittard",
+      "listeners": 51928,
+      "peakHour": "21:56u",
+      "peakValue": 14787,
+      "successRate": 76.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          98.9,
+          0.6,
+          0.3,
+          0.2,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.4,
+          0.7,
+          0.5,
+          0.3,
+          0.2,
+          88.1
+        ]
+      },
+      "preroll": {
+        "bereik": 41865,
+        "bereikPct": 80.6,
+        "impressies": 129677,
+        "freq": 3.1,
+        "completion": 22.6
+      }
+    },
+    {
+      "date": "2024-09-21",
+      "match_name": "Go Ahead Eagles - Ajax",
+      "listeners": 12541,
+      "peakHour": "21:54u",
+      "peakValue": 2396,
+      "successRate": 94.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.9,
+          0.8,
+          2.6,
+          0.7,
+          5.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          0.9,
+          0.8,
+          0.5,
+          0.3,
+          97.6
+        ]
+      },
+      "preroll": {
+        "bereik": 11622,
+        "bereikPct": 92.7,
+        "impressies": 26709,
+        "freq": 2.3,
+        "completion": 20.4
+      }
+    },
+    {
+      "date": "2024-09-26",
+      "match_name": "Ajax - Besiktas",
+      "listeners": 24075,
+      "peakHour": "22:52u",
+      "peakValue": 3573,
+      "successRate": 69.7,
+      "platform": {
+        "labels": [
+          "Android-app",
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          2.2,
+          87.8,
+          3.7,
+          1.5,
+          4.9
+        ],
+        "colors": [
+          "#9ca3af",
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.6,
+          0.9,
+          0.7,
+          0.5,
+          0.2,
+          87.1
+        ]
+      },
+      "preroll": {
+        "bereik": 16760,
+        "bereikPct": 69.6,
+        "impressies": 41398,
+        "freq": 2.47,
+        "completion": 16.7
+      }
+    },
+    {
+      "date": "2024-09-29",
+      "match_name": "RKC - Ajax",
+      "listeners": 47989,
+      "peakHour": "18:41u",
+      "peakValue": 14044,
+      "successRate": 77.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.7,
+          0.5,
+          2.1,
+          0.6,
+          0.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          5.9,
+          0.7,
+          0.7,
+          0.4,
+          0.2,
+          92.2
+        ]
+      },
+      "preroll": {
+        "bereik": 42320,
+        "bereikPct": 88.2,
+        "impressies": 109731,
+        "freq": 2.59,
+        "completion": 22.9
+      }
+    },
+    {
+      "date": "2024-10-03",
+      "match_name": "Slavia Praag - Ajax",
+      "listeners": 15802,
+      "peakHour": "20:44u",
+      "peakValue": 4003,
+      "successRate": 93.6,
+      "platform": {
+        "labels": [
+          "Webbrowser",
+          "iOS-app",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          5.2,
+          85.5,
+          1.3,
+          1.0,
+          7.0
+        ],
+        "colors": [
+          "#f7c8d0",
+          "#d2122e",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.1,
+          1.2,
+          0.8,
+          0.7,
+          0.4,
+          89.7
+        ]
+      },
+      "preroll": {
+        "bereik": 14723,
+        "bereikPct": 93.2,
+        "impressies": 34606,
+        "freq": 2.35,
+        "completion": 22.0
+      }
+    },
+    {
+      "date": "2024-10-06",
+      "match_name": "Ajax - Groningen",
+      "listeners": 25136,
+      "peakHour": "18:43u",
+      "peakValue": 5535,
+      "successRate": 86.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.1,
+          2.6,
+          0.6,
+          1.0,
+          0.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          12.6,
+          0.9,
+          0.7,
+          0.6,
+          0.2,
+          85.1
+        ]
+      },
+      "preroll": {
+        "bereik": 21369,
+        "bereikPct": 85.0,
+        "impressies": 60589,
+        "freq": 2.84,
+        "completion": 21.6
+      }
+    },
+    {
+      "date": "2024-10-20",
+      "match_name": "Heracles - Ajax",
+      "listeners": 35639,
+      "peakHour": "16:25u",
+      "peakValue": 8078,
+      "successRate": 94.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.0,
+          0.6,
+          2.0,
+          0.9,
+          0.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.1,
+          0.8,
+          0.5,
+          0.4,
+          0.2,
+          91.0
+        ]
+      },
+      "preroll": {
+        "bereik": 33490,
+        "bereikPct": 94.0,
+        "impressies": 91955,
+        "freq": 2.75,
+        "completion": 25.9
+      }
+    },
+    {
+      "date": "2024-10-24",
+      "match_name": "Qarabag - Ajax",
+      "listeners": 15280,
+      "peakHour": "20:41u",
+      "peakValue": 3783,
+      "successRate": 87.0,
+      "platform": {
+        "labels": [
+          "Relay/herdistributie",
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app"
+        ],
+        "values": [
+          9.9,
+          83.2,
+          4.7,
+          1.1,
+          1.1
+        ],
+        "colors": [
+          "#f4a6b3",
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.3,
+          1.2,
+          0.9,
+          0.7,
+          0.3,
+          89.6
+        ]
+      },
+      "preroll": {
+        "bereik": 13265,
+        "bereikPct": 86.8,
+        "impressies": 32413,
+        "freq": 2.44,
+        "completion": 20.8
+      }
+    },
+    {
+      "date": "2024-10-27",
+      "match_name": "Ajax - Willem II",
+      "listeners": 48968,
+      "peakHour": "19:30u",
+      "peakValue": 14356,
+      "successRate": 79.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.4,
+          1.6,
+          0.6,
+          0.4,
+          1.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          11.2,
+          1.3,
+          0.7,
+          0.2,
+          0.0,
+          86.6
+        ]
+      },
+      "preroll": {
+        "bereik": 41115,
+        "bereikPct": 84.0,
+        "impressies": 128812,
+        "freq": 3.13,
+        "completion": 23.9
+      }
+    },
+    {
+      "date": "2024-10-30",
+      "match_name": "Feyenoord - Ajax",
+      "listeners": 46557,
+      "peakHour": "20:57u",
+      "peakValue": 9425,
+      "successRate": 82.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.7,
+          2.6,
+          0.7,
+          0.5,
+          0.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          6.9,
+          1.2,
+          0.7,
+          0.5,
+          0.3,
+          90.5
+        ]
+      },
+      "preroll": {
+        "bereik": 40962,
+        "bereikPct": 88.0,
+        "impressies": 95171,
+        "freq": 2.32,
+        "completion": 19.4
+      }
+    },
+    {
+      "date": "2024-11-02",
+      "match_name": "Ajax - PSV",
+      "listeners": 53728,
+      "peakHour": "21:29u",
+      "peakValue": 17537,
+      "successRate": 71.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.2,
+          2.5,
+          0.6,
+          1.3,
+          0.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "VK",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          9.4,
+          1.6,
+          0.8,
+          0.5,
+          0.2,
+          87.5
+        ]
+      },
+      "preroll": {
+        "bereik": 43881,
+        "bereikPct": 81.7,
+        "impressies": 147374,
+        "freq": 3.36,
+        "completion": 25.5
+      }
+    },
+    {
+      "date": "2024-11-07",
+      "match_name": "Ajax - Maccabi Tel Aviv",
+      "listeners": 25240,
+      "peakHour": "23:08u",
+      "peakValue": 3243,
+      "successRate": 89.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.3,
+          2.1,
+          0.6,
+          0.3,
+          1.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.4,
+          0.8,
+          0.5,
+          0.4,
+          0.2,
+          87.7
+        ]
+      },
+      "preroll": {
+        "bereik": 21752,
+        "bereikPct": 86.2,
+        "impressies": 56389,
+        "freq": 2.59,
+        "completion": 19.3
+      }
+    },
+    {
+      "date": "2024-11-10",
+      "match_name": "FC Twente - Ajax",
+      "listeners": 20612,
+      "peakHour": "17:27u",
+      "peakValue": 6519,
+      "successRate": 86.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.8,
+          1.6,
+          5.4,
+          1.1,
+          0.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          7.7,
+          0.8,
+          0.6,
+          0.4,
+          0.4,
+          90.1
+        ]
+      },
+      "preroll": {
+        "bereik": 18066,
+        "bereikPct": 87.6,
+        "impressies": 46633,
+        "freq": 2.58,
+        "completion": 23.0
+      }
+    },
+    {
+      "date": "2024-11-17",
+      "match_name": "Ajax Legends - Real Madrid Legends",
+      "listeners": 51757,
+      "peakHour": "17:52u",
+      "peakValue": 9986,
+      "successRate": 88.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.8,
+          0.6,
+          0.0,
+          0.2,
+          2.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          9.8,
+          0.7,
+          0.6,
+          0.3,
+          0.2,
+          88.4
+        ]
+      },
+      "preroll": {
+        "bereik": 43637,
+        "bereikPct": 84.3,
+        "impressies": 125930,
+        "freq": 2.89,
+        "completion": 20.5
+      }
+    },
+    {
+      "date": "2024-11-24",
+      "match_name": "Ajax - PEC Zwolle",
+      "listeners": 45101,
+      "peakHour": "19:34u",
+      "peakValue": 12149,
+      "successRate": 71.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          92.4,
+          2.3,
+          2.3,
+          1.8,
+          1.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.8,
+          0.8,
+          0.4,
+          0.2,
+          0.2,
+          90.5
+        ]
+      },
+      "preroll": {
+        "bereik": 37119,
+        "bereikPct": 82.3,
+        "impressies": 108712,
+        "freq": 2.93,
+        "completion": 21.8
+      }
+    },
+    {
+      "date": "2024-11-28",
+      "match_name": "Real Sociedad - Ajax",
+      "listeners": 11844,
+      "peakHour": "23:55u",
+      "peakValue": 2341,
+      "successRate": 94.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.0,
+          0.6,
+          3.3,
+          1.1,
+          4.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          4.9,
+          0.9,
+          0.7,
+          0.5,
+          0.3,
+          92.8
+        ]
+      },
+      "preroll": {
+        "bereik": 11181,
+        "bereikPct": 94.4,
+        "impressies": 25387,
+        "freq": 2.27,
+        "completion": 19.9
+      }
+    },
+    {
+      "date": "2024-12-01",
+      "match_name": "NEC - Ajax",
+      "listeners": 39016,
+      "peakHour": "19:43u",
+      "peakValue": 8443,
+      "successRate": 82.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.9,
+          1.4,
+          0.8,
+          0.4,
+          3.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "VK",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          4.5,
+          2.7,
+          0.8,
+          0.3,
+          0.1,
+          91.5
+        ]
+      },
+      "preroll": {
+        "bereik": 34565,
+        "bereikPct": 88.6,
+        "impressies": 74576,
+        "freq": 2.16,
+        "completion": 15.0
+      }
+    },
+    {
+      "date": "2024-12-04",
+      "match_name": "Ajax - FC Utrecht",
+      "listeners": 38609,
+      "peakHour": "22:51u",
+      "peakValue": 10871,
+      "successRate": 94.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.0,
+          1.6,
+          0.2,
+          0.4,
+          1.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.9,
+          0.7,
+          0.5,
+          0.3,
+          0.2,
+          90.5
+        ]
+      },
+      "preroll": {
+        "bereik": 35817,
+        "bereikPct": 92.8,
+        "impressies": 110521,
+        "freq": 3.09,
+        "completion": 24.8
+      }
+    },
+    {
+      "date": "2024-12-08",
+      "match_name": "AZ - Ajax",
+      "listeners": 15686,
+      "peakHour": "17:28u",
+      "peakValue": 4740,
+      "successRate": 92.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.8,
+          1.7,
+          5.2,
+          0.9,
+          1.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          7.0,
+          0.8,
+          0.6,
+          0.3,
+          0.3,
+          91.1
+        ]
+      },
+      "preroll": {
+        "bereik": 14487,
+        "bereikPct": 92.4,
+        "impressies": 36730,
+        "freq": 2.54,
+        "completion": 23.8
+      }
+    },
+    {
+      "date": "2024-12-12",
+      "match_name": "Ajax - Lazio",
+      "listeners": 17436,
+      "peakHour": "23:06u",
+      "peakValue": 3192,
+      "successRate": 94.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.6,
+          2.6,
+          0.6,
+          0.5,
+          0.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          9.4,
+          1.2,
+          0.5,
+          0.4,
+          0.2,
+          88.3
+        ]
+      },
+      "preroll": {
+        "bereik": 16322,
+        "bereikPct": 93.6,
+        "impressies": 40252,
+        "freq": 2.47,
+        "completion": 22.0
+      }
+    },
+    {
+      "date": "2024-12-15",
+      "match_name": "Ajax - Almere",
+      "listeners": 55373,
+      "peakHour": "19:39u",
+      "peakValue": 14131,
+      "successRate": 62.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.0,
+          0.6,
+          0.8,
+          0.3,
+          1.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          8.6,
+          0.8,
+          0.6,
+          0.2,
+          0.1,
+          89.7
+        ]
+      },
+      "preroll": {
+        "bereik": 38645,
+        "bereikPct": 69.8,
+        "impressies": 132840,
+        "freq": 3.44,
+        "completion": 20.0
+      }
+    },
+    {
+      "date": "2024-12-19",
+      "match_name": "Ajax - Telstar",
+      "listeners": 20503,
+      "peakHour": "22:17u",
+      "peakValue": 3950,
+      "successRate": 92.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.3,
+          1.9,
+          0.4,
+          0.7,
+          0.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          11.2,
+          1.4,
+          0.3,
+          0.3,
+          0.2,
+          86.6
+        ]
+      },
+      "preroll": {
+        "bereik": 18951,
+        "bereikPct": 92.4,
+        "impressies": 51622,
+        "freq": 2.72,
+        "completion": 23.7
+      }
+    },
+    {
+      "date": "2024-12-22",
+      "match_name": "Sparta - Ajax",
+      "listeners": 47067,
+      "peakHour": "15:10u",
+      "peakValue": 14977,
+      "successRate": 80.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.5,
+          2.0,
+          0.9,
+          0.3,
+          2.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          7.3,
+          1.2,
+          0.5,
+          0.4,
+          0.3,
+          90.4
+        ]
+      },
+      "preroll": {
+        "bereik": 40433,
+        "bereikPct": 85.9,
+        "impressies": 128810,
+        "freq": 3.19,
+        "completion": 26.8
+      }
+    },
+    {
+      "date": "2025-01-11",
+      "match_name": "Ajax - RKC",
+      "listeners": 39734,
+      "peakHour": "21:41u",
+      "peakValue": 12477,
+      "successRate": 85.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          98.4,
+          0.7,
+          0.4,
+          0.2,
+          0.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.7,
+          1.2,
+          0.9,
+          0.3,
+          0.2,
+          86.7
+        ]
+      },
+      "preroll": {
+        "bereik": 33544,
+        "bereikPct": 84.4,
+        "impressies": 79553,
+        "freq": 2.37,
+        "completion": 18.5
+      }
+    },
+    {
+      "date": "2025-01-14",
+      "match_name": "AZ - Ajax",
+      "listeners": 16685,
+      "peakHour": "21:38u",
+      "peakValue": 5416,
+      "successRate": 91.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          86.5,
+          1.9,
+          6.4,
+          1.1,
+          4.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          5.1,
+          1.1,
+          0.7,
+          0.4,
+          0.4,
+          92.2
+        ]
+      },
+      "preroll": {
+        "bereik": 15284,
+        "bereikPct": 91.6,
+        "impressies": 39917,
+        "freq": 2.61,
+        "completion": 23.2
+      }
+    },
+    {
+      "date": "2025-01-19",
+      "match_name": "Heerenveen - Ajax",
+      "listeners": 32886,
+      "peakHour": "17:30u",
+      "peakValue": 11285,
+      "successRate": 86.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.0,
+          2.8,
+          0.4,
+          0.9,
+          0.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "VK",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          6.7,
+          0.8,
+          0.5,
+          0.4,
+          0.4,
+          91.3
+        ]
+      },
+      "preroll": {
+        "bereik": 28993,
+        "bereikPct": 88.2,
+        "impressies": 70848,
+        "freq": 2.44,
+        "completion": 17.2
+      }
+    },
+    {
+      "date": "2025-01-23",
+      "match_name": "RFS - Ajax",
+      "listeners": 12804,
+      "peakHour": "23:56u",
+      "peakValue": 2492,
+      "successRate": 92.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.0,
+          3.3,
+          1.0,
+          0.6,
+          5.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          5.3,
+          1.6,
+          0.6,
+          0.4,
+          0.3,
+          91.8
+        ]
+      },
+      "preroll": {
+        "bereik": 11851,
+        "bereikPct": 92.6,
+        "impressies": 25956,
+        "freq": 2.19,
+        "completion": 17.8
+      }
+    },
+    {
+      "date": "2025-01-30",
+      "match_name": "Ajax - Galataray",
+      "listeners": 18125,
+      "peakHour": "23:09u",
+      "peakValue": 4020,
+      "successRate": 87.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.0,
+          0.7,
+          2.9,
+          0.4,
+          3.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.6,
+          1.4,
+          0.7,
+          0.4,
+          0.3,
+          86.7
+        ]
+      },
+      "preroll": {
+        "bereik": 15822,
+        "bereikPct": 87.3,
+        "impressies": 39775,
+        "freq": 2.51,
+        "completion": 19.4
+      }
+    },
+    {
+      "date": "2025-02-02",
+      "match_name": "Ajax - Feyenoord",
+      "listeners": 33951,
+      "peakHour": "17:32u",
+      "peakValue": 11651,
+      "successRate": 85.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.6,
+          1.4,
+          6.2,
+          0.5,
+          1.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          11.5,
+          1.3,
+          0.7,
+          0.3,
+          0.3,
+          85.9
+        ]
+      },
+      "preroll": {
+        "bereik": 28774,
+        "bereikPct": 84.8,
+        "impressies": 90933,
+        "freq": 3.16,
+        "completion": 24.1
+      }
+    },
+    {
+      "date": "2025-02-09",
+      "match_name": "Fortuna Sittard - Ajax",
+      "listeners": 62602,
+      "peakHour": "17:30u",
+      "peakValue": 12523,
+      "successRate": 54.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.9,
+          1.4,
+          0.5,
+          0.1,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          6.4,
+          1.5,
+          0.6,
+          0.3,
+          0.3,
+          90.8
+        ]
+      },
+      "preroll": {
+        "bereik": 38364,
+        "bereikPct": 61.3,
+        "impressies": 108565,
+        "freq": 2.83,
+        "completion": 15.0
+      }
+    },
+    {
+      "date": "2025-02-13",
+      "match_name": "Union SG - Ajax",
+      "listeners": 20291,
+      "peakHour": "21:42u",
+      "peakValue": 4200,
+      "successRate": 86.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.0,
+          2.3,
+          1.0,
+          0.4,
+          5.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          5.5,
+          1.6,
+          0.7,
+          0.6,
+          0.3,
+          91.4
+        ]
+      },
+      "preroll": {
+        "bereik": 17814,
+        "bereikPct": 87.8,
+        "impressies": 41333,
+        "freq": 2.32,
+        "completion": 18.1
+      }
+    },
+    {
+      "date": "2025-02-16",
+      "match_name": "Ajax - Heracles",
+      "listeners": 54094,
+      "peakHour": "19:24u",
+      "peakValue": 19148,
+      "successRate": 74.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.2,
+          0.2,
+          1.5,
+          0.8,
+          0.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.0,
+          1.4,
+          0.5,
+          0.5,
+          0.3,
+          87.2
+        ]
+      },
+      "preroll": {
+        "bereik": 46914,
+        "bereikPct": 86.7,
+        "impressies": 174685,
+        "freq": 3.72,
+        "completion": 26.6
+      }
+    },
+    {
+      "date": "2025-02-20",
+      "match_name": "Ajax - Union SG",
+      "listeners": 48549,
+      "peakHour": "00:43u",
+      "peakValue": 5854,
+      "successRate": 51.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Relay/herdistributie",
+          "Overig"
+        ],
+        "values": [
+          97.2,
+          0.6,
+          1.7,
+          0.4,
+          0.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#f4a6b3",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          8.4,
+          1.4,
+          0.7,
+          0.7,
+          0.5,
+          88.3
+        ]
+      },
+      "preroll": {
+        "bereik": 24498,
+        "bereikPct": 50.5,
+        "impressies": 69862,
+        "freq": 2.85,
+        "completion": 12.1
+      }
+    },
+    {
+      "date": "2025-02-23",
+      "match_name": "Ajax - Go Ahead Eagles",
+      "listeners": 57684,
+      "peakHour": "17:10u",
+      "peakValue": 22195,
+      "successRate": 75.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.7,
+          1.0,
+          0.6,
+          0.1,
+          0.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          11.9,
+          1.1,
+          0.6,
+          0.4,
+          0.3,
+          85.6
+        ]
+      },
+      "preroll": {
+        "bereik": 49547,
+        "bereikPct": 85.9,
+        "impressies": 187084,
+        "freq": 3.78,
+        "completion": 25.9
+      }
+    },
+    {
+      "date": "2025-03-02",
+      "match_name": "Almere - Ajax",
+      "listeners": 48366,
+      "peakHour": "17:15u",
+      "peakValue": 17506,
+      "successRate": 80.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.5,
+          1.1,
+          0.7,
+          0.0,
+          0.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          8.1,
+          1.2,
+          0.6,
+          0.4,
+          0.4,
+          89.3
+        ]
+      },
+      "preroll": {
+        "bereik": 42196,
+        "bereikPct": 87.2,
+        "impressies": 149956,
+        "freq": 3.55,
+        "completion": 25.5
+      }
+    },
+    {
+      "date": "2025-03-06",
+      "match_name": "Ajax - Eintracht Frankfurt",
+      "listeners": 18695,
+      "peakHour": "23:55u",
+      "peakValue": 3258,
+      "successRate": 93.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.6,
+          2.4,
+          0.9,
+          0.0,
+          0.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.7,
+          1.8,
+          0.9,
+          0.5,
+          0.4,
+          85.8
+        ]
+      },
+      "preroll": {
+        "bereik": 17264,
+        "bereikPct": 92.3,
+        "impressies": 40487,
+        "freq": 2.35,
+        "completion": 21.0
+      }
+    },
+    {
+      "date": "2025-03-09",
+      "match_name": "PEC Zwolle - Ajax",
+      "listeners": 22295,
+      "peakHour": "17:24u",
+      "peakValue": 7826,
+      "successRate": 86.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          85.7,
+          3.5,
+          2.1,
+          0.0,
+          8.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          8.2,
+          1.8,
+          0.7,
+          0.4,
+          0.1,
+          88.7
+        ]
+      },
+      "preroll": {
+        "bereik": 19349,
+        "bereikPct": 86.8,
+        "impressies": 50278,
+        "freq": 2.6,
+        "completion": 20.4
+      }
+    },
+    {
+      "date": "2025-03-13",
+      "match_name": "Eintracht Frankurt - Ajax",
+      "listeners": 17098,
+      "peakHour": "21:39u",
+      "peakValue": 2042,
+      "successRate": 88.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.1,
+          1.9,
+          0.9,
+          0.0,
+          6.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Belgie",
+          "Overig"
+        ],
+        "values": [
+          4.8,
+          0.8,
+          0.4,
+          0.2,
+          0.0,
+          93.8
+        ]
+      },
+      "preroll": {
+        "bereik": 15281,
+        "bereikPct": 89.4,
+        "impressies": 35681,
+        "freq": 2.33,
+        "completion": 17.9
+      }
+    },
+    {
+      "date": "2025-03-16",
+      "match_name": "Ajax - AZ",
+      "listeners": 38829,
+      "peakHour": "19:57u",
+      "peakValue": 11312,
+      "successRate": 92.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.6,
+          4.1,
+          1.3,
+          0.0,
+          1.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.7,
+          1.7,
+          0.6,
+          0.4,
+          0.3,
+          89.3
+        ]
+      },
+      "preroll": {
+        "bereik": 35750,
+        "bereikPct": 92.1,
+        "impressies": 115298,
+        "freq": 3.23,
+        "completion": 23.9
+      }
+    },
+    {
+      "date": "2025-03-30",
+      "match_name": "PSV - Ajax",
+      "listeners": 52327,
+      "peakHour": "16:12u",
+      "peakValue": 28668,
+      "successRate": 76.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.6,
+          4.3,
+          1.4,
+          0.0,
+          0.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          1.6,
+          0.6,
+          0.5,
+          0.3,
+          0.3,
+          96.7
+        ]
+      },
+      "preroll": {
+        "bereik": 45967,
+        "bereikPct": 87.8,
+        "impressies": 159518,
+        "freq": 3.47,
+        "completion": 28.7
+      }
+    },
+    {
+      "date": "2025-04-06",
+      "match_name": "Ajax - NAC",
+      "listeners": 59441,
+      "peakHour": "18:36u",
+      "peakValue": 19511,
+      "successRate": 63.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.0,
+          1.7,
+          0.9,
+          0.0,
+          0.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          1.2,
+          0.7,
+          0.4,
+          0.2,
+          0.0,
+          97.5
+        ]
+      },
+      "preroll": {
+        "bereik": 43243,
+        "bereikPct": 72.7,
+        "impressies": 161610,
+        "freq": 3.74,
+        "completion": 23.4
+      }
+    },
+    {
+      "date": "2025-04-13",
+      "match_name": "Willem II - Ajax",
+      "listeners": 22283,
+      "peakHour": "18:43u",
+      "peakValue": 7576,
+      "successRate": 82.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.1,
+          4.5,
+          2.2,
+          0.1,
+          3.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          1.4,
+          0.9,
+          0.6,
+          0.4,
+          0.2,
+          96.4
+        ]
+      },
+      "preroll": {
+        "bereik": 18795,
+        "bereikPct": 84.3,
+        "impressies": 52874,
+        "freq": 2.81,
+        "completion": 21.7
+      }
+    },
+    {
+      "date": "2025-04-20",
+      "match_name": "FC Utrecht - Ajax",
+      "listeners": 22982,
+      "peakHour": "14:10u",
+      "peakValue": 4976,
+      "successRate": 88.8,
+      "platform": {
+        "labels": [
+          "Relay/herdistributie",
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          3.5,
+          92.0,
+          2.9,
+          1.5,
+          0.0
+        ],
+        "colors": [
+          "#f4a6b3",
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          2.0,
+          1.0,
+          0.7,
+          0.7,
+          0.6,
+          95.0
+        ]
+      },
+      "preroll": {
+        "bereik": 18913,
+        "bereikPct": 82.3,
+        "impressies": 50147,
+        "freq": 2.65,
+        "completion": 19.3
+      }
+    },
+    {
+      "date": "2025-04-27",
+      "match_name": "Ajax - Sparta",
+      "listeners": 31466,
+      "peakHour": "16:29u",
+      "peakValue": 12572,
+      "successRate": 87.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          89.9,
+          5.0,
+          2.2,
+          0.0,
+          2.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          16.9,
+          1.7,
+          1.0,
+          0.8,
+          0.0,
+          79.6
+        ]
+      },
+      "preroll": {
+        "bereik": 27193,
+        "bereikPct": 86.4,
+        "impressies": 83560,
+        "freq": 3.07,
+        "completion": 26.4
+      }
+    },
+    {
+      "date": "2025-05-11",
+      "match_name": "Ajax - NEC",
+      "listeners": 21162,
+      "peakHour": "18:44u",
+      "peakValue": 4466,
+      "successRate": 93.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          81.6,
+          4.0,
+          1.4,
+          0.0,
+          12.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Spanje",
+          "VK",
+          "Belgie",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          14.3,
+          0.7,
+          0.4,
+          0.2,
+          0.0,
+          84.4
+        ]
+      },
+      "preroll": {
+        "bereik": 18888,
+        "bereikPct": 89.3,
+        "impressies": 52830,
+        "freq": 2.8,
+        "completion": 23.7
+      }
+    },
+    {
+      "date": "2025-05-14",
+      "match_name": "FC Groningen - Ajax",
+      "listeners": 53547,
+      "peakHour": "21:52u",
+      "peakValue": 22487,
+      "successRate": 83.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.6,
+          4.1,
+          1.3,
+          0.0,
+          1.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.3,
+          1.6,
+          0.6,
+          0.6,
+          0.0,
+          90.0
+        ]
+      },
+      "preroll": {
+        "bereik": 49035,
+        "bereikPct": 91.6,
+        "impressies": 186298,
+        "freq": 3.8,
+        "completion": 31.8
+      }
+    },
+    {
+      "date": "2025-05-18",
+      "match_name": "Ajax - FC Twente",
+      "listeners": 61284,
+      "peakHour": "16:17u",
+      "peakValue": 25647,
+      "successRate": 76.0,
+      "platform": {
+        "labels": [
+          "Webbrowser",
+          "iOS-app",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          2.2,
+          93.5,
+          0.7,
+          0.0,
+          3.6
+        ],
+        "colors": [
+          "#f7c8d0",
+          "#d2122e",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          14.5,
+          1.8,
+          0.6,
+          0.4,
+          0.2,
+          82.5
+        ]
+      },
+      "preroll": {
+        "bereik": 51225,
+        "bereikPct": 83.6,
+        "impressies": 200717,
+        "freq": 3.92,
+        "completion": 31.1
+      }
+    },
+    {
+      "date": "2025-08-03",
+      "match_name": "Ajax - AS Monaco",
+      "listeners": 28311,
+      "peakHour": "15:57u",
+      "peakValue": 4409,
+      "successRate": 85.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.3,
+          1.7,
+          0.9,
+          0.0,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          12.7,
+          1.9,
+          1.3,
+          0.8,
+          0.8,
+          82.5
+        ]
+      },
+      "preroll": {
+        "bereik": 22533,
+        "bereikPct": 79.6,
+        "impressies": 67304,
+        "freq": 2.99,
+        "completion": 21.9
+      }
+    },
+    {
+      "date": "2025-08-10",
+      "match_name": "Ajax - Telstar",
+      "listeners": 63480,
+      "peakHour": "16:25u",
+      "peakValue": 20526,
+      "successRate": 82.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.7,
+          0.7,
+          1.1,
+          0.0,
+          3.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          15.9,
+          2.0,
+          1.3,
+          0.8,
+          0.6,
+          79.3
+        ]
+      },
+      "preroll": {
+        "bereik": 54537,
+        "bereikPct": 85.9,
+        "impressies": 222922,
+        "freq": 4.09,
+        "completion": 34.1
+      }
+    },
+    {
+      "date": "2025-08-17",
+      "match_name": "Go Ahead Eagles - Ajax",
+      "listeners": 41566,
+      "peakHour": "14:14u",
+      "peakValue": 11301,
+      "successRate": 92.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.8,
+          4.1,
+          1.9,
+          0.0,
+          0.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          12.0,
+          2.1,
+          1.1,
+          0.8,
+          0.6,
+          83.3
+        ]
+      },
+      "preroll": {
+        "bereik": 37791,
+        "bereikPct": 90.9,
+        "impressies": 110483,
+        "freq": 2.92,
+        "completion": 26.7
+      }
+    },
+    {
+      "date": "2025-08-24",
+      "match_name": "Ajax - Heracles Almelo",
+      "listeners": 70621,
+      "peakHour": "18:27u",
+      "peakValue": 21809,
+      "successRate": 72.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.1,
+          1.4,
+          0.9,
+          0.0,
+          0.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          13.3,
+          2.9,
+          0.7,
+          0.6,
+          0.4,
+          82.2
+        ]
+      },
+      "preroll": {
+        "bereik": 60906,
+        "bereikPct": 86.2,
+        "impressies": 201100,
+        "freq": 3.3,
+        "completion": 28.1
+      }
+    },
+    {
+      "date": "2025-08-30",
+      "match_name": "FC Volendam - Ajax",
+      "listeners": 29971,
+      "peakHour": "18:27u",
+      "peakValue": 7406,
+      "successRate": 93.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.0,
+          1.8,
+          3.7,
+          0.0,
+          0.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          10.3,
+          3.1,
+          0.7,
+          0.6,
+          0.3,
+          85.0
+        ]
+      },
+      "preroll": {
+        "bereik": 27389,
+        "bereikPct": 91.4,
+        "impressies": 67608,
+        "freq": 2.47,
+        "completion": 25.1
+      }
+    },
+    {
+      "date": "2025-09-13",
+      "match_name": "Ajax - PEC Zwolle",
+      "listeners": 78753,
+      "peakHour": "18:10u",
+      "peakValue": 23721,
+      "successRate": 68.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.0,
+          1.6,
+          1.4,
+          0.0,
+          2.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          13.5,
+          3.2,
+          0.7,
+          0.5,
+          0.3,
+          81.7
+        ]
+      },
+      "preroll": {
+        "bereik": 65431,
+        "bereikPct": 83.1,
+        "impressies": 198412,
+        "freq": 3.03,
+        "completion": 27.5
+      }
+    },
+    {
+      "date": "2025-09-17",
+      "match_name": "Ajax - Inter",
+      "listeners": 20218,
+      "peakHour": "22:03u",
+      "peakValue": 3129,
+      "successRate": 91.8,
+      "platform": {
+        "labels": [
+          "Relay/herdistributie",
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app"
+        ],
+        "values": [
+          1.8,
+          94.6,
+          0.0,
+          2.6,
+          0.9
+        ],
+        "colors": [
+          "#f4a6b3",
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          11.0,
+          3.5,
+          1.0,
+          0.9,
+          0.4,
+          83.1
+        ]
+      },
+      "preroll": {
+        "bereik": 17445,
+        "bereikPct": 86.3,
+        "impressies": 39651,
+        "freq": 2.27,
+        "completion": 21.1
+      }
+    },
+    {
+      "date": "2025-09-21",
+      "match_name": "PSV - Ajax",
+      "listeners": 33752,
+      "peakHour": "16:36u",
+      "peakValue": 6277,
+      "successRate": 79.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.2,
+          1.3,
+          2.7,
+          0.1,
+          0.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          9.6,
+          3.0,
+          0.7,
+          0.7,
+          0.5,
+          85.5
+        ]
+      },
+      "preroll": {
+        "bereik": 25245,
+        "bereikPct": 74.8,
+        "impressies": 63958,
+        "freq": 2.53,
+        "completion": 19.1
+      }
+    },
+    {
+      "date": "2025-09-27",
+      "match_name": "Ajax - NAC Breda",
+      "listeners": 71250,
+      "peakHour": "18:13u",
+      "peakValue": 22510,
+      "successRate": 81.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.9,
+          1.2,
+          0.8,
+          0.0,
+          0.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          11.0,
+          2.9,
+          0.7,
+          0.6,
+          0.3,
+          84.5
+        ]
+      },
+      "preroll": {
+        "bereik": 64735,
+        "bereikPct": 90.9,
+        "impressies": 218270,
+        "freq": 3.37,
+        "completion": 28.4
+      }
+    },
+    {
+      "date": "2025-09-30",
+      "match_name": "Olympique Marseille - Ajax",
+      "listeners": 40187,
+      "peakHour": "21:13u",
+      "peakValue": 6811,
+      "successRate": 95.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          98.8,
+          0.8,
+          0.4,
+          0.0,
+          0.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          5.5,
+          2.3,
+          0.7,
+          0.3,
+          0.2,
+          91.0
+        ]
+      },
+      "preroll": {
+        "bereik": 36941,
+        "bereikPct": 91.9,
+        "impressies": 70730,
+        "freq": 1.91,
+        "completion": 16.8
+      }
+    },
+    {
+      "date": "2025-10-04",
+      "match_name": "Sparta Rotterdam - Ajax",
+      "listeners": 28074,
+      "peakHour": "18:34u",
+      "peakValue": 4932,
+      "successRate": 90.4,
+      "platform": {
+        "labels": [
+          "Webbrowser",
+          "iOS-app",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          1.9,
+          96.6,
+          1.1,
+          0.0,
+          0.3
+        ],
+        "colors": [
+          "#f7c8d0",
+          "#d2122e",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          7.6,
+          2.8,
+          0.8,
+          0.7,
+          0.5,
+          87.7
+        ]
+      },
+      "preroll": {
+        "bereik": 24245,
+        "bereikPct": 86.4,
+        "impressies": 56847,
+        "freq": 2.34,
+        "completion": 20.5
+      }
+    },
+    {
+      "date": "2025-10-18",
+      "match_name": "Ajax - AZ",
+      "listeners": 25215,
+      "peakHour": "21:07u",
+      "peakValue": 5137,
+      "successRate": 92.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.0,
+          0.7,
+          1.7,
+          0.0,
+          7.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          8.1,
+          3.7,
+          0.7,
+          0.6,
+          0.3,
+          86.6
+        ]
+      },
+      "preroll": {
+        "bereik": 22576,
+        "bereikPct": 89.5,
+        "impressies": 63905,
+        "freq": 2.83,
+        "completion": 22.6
+      }
+    },
+    {
+      "date": "2025-10-22",
+      "match_name": "Chelsea - Ajax",
+      "listeners": 15682,
+      "peakHour": "22:58u",
+      "peakValue": 1782,
+      "successRate": 92.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.8,
+          1.8,
+          0.8,
+          0.0,
+          0.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          3.4,
+          2.9,
+          1.4,
+          0.9,
+          0.5,
+          91.0
+        ]
+      },
+      "preroll": {
+        "bereik": 14231,
+        "bereikPct": 90.8,
+        "impressies": 31353,
+        "freq": 2.2,
+        "completion": 17.4
+      }
+    },
+    {
+      "date": "2025-10-26",
+      "match_name": "FC Twente - Ajax",
+      "listeners": 56499,
+      "peakHour": "14:57u",
+      "peakValue": 21953,
+      "successRate": 80.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.9,
+          1.1,
+          0.6,
+          0.0,
+          3.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          4.5,
+          1.3,
+          0.8,
+          0.5,
+          0.3,
+          92.5
+        ]
+      },
+      "preroll": {
+        "bereik": 49293,
+        "bereikPct": 87.2,
+        "impressies": 175193,
+        "freq": 3.55,
+        "completion": 25.9
+      }
+    },
+    {
+      "date": "2025-11-01",
+      "match_name": "Ajax - sc Heerenveen",
+      "listeners": 37630,
+      "peakHour": "17:39u",
+      "peakValue": 7507,
+      "successRate": 94.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.3,
+          1.9,
+          1.0,
+          0.0,
+          0.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          4.4,
+          3.8,
+          3.0,
+          1.0,
+          0.5,
+          87.3
+        ]
+      },
+      "preroll": {
+        "bereik": 34118,
+        "bereikPct": 90.7,
+        "impressies": 99523,
+        "freq": 2.92,
+        "completion": 23.6
+      }
+    },
+    {
+      "date": "2025-11-05",
+      "match_name": "Ajax - Galatasaray",
+      "listeners": 19979,
+      "peakHour": "23:02u",
+      "peakValue": 2723,
+      "successRate": 91.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.9,
+          0.0,
+          1.6,
+          0.8,
+          0.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          1.6,
+          1.0,
+          0.6,
+          0.6,
+          0.5,
+          95.7
+        ]
+      },
+      "preroll": {
+        "bereik": 17490,
+        "bereikPct": 87.5,
+        "impressies": 39324,
+        "freq": 2.25,
+        "completion": 19.0
+      }
+    },
+    {
+      "date": "2025-11-08",
+      "match_name": "Ajax - PSV (vrouwen)",
+      "listeners": 4670,
+      "peakHour": "16:04u",
+      "peakValue": 378,
+      "successRate": 82.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.5,
+          0.7,
+          0.5,
+          0.2,
+          7.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VK",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          1.7,
+          0.8,
+          0.8,
+          0.4,
+          0.1,
+          96.2
+        ]
+      },
+      "preroll": {
+        "bereik": 3241,
+        "bereikPct": 69.4,
+        "impressies": 7828,
+        "freq": 2.42,
+        "completion": 17.1
+      }
+    },
+    {
+      "date": "2025-11-09",
+      "match_name": "FC Utrecht - Ajax",
+      "listeners": 24587,
+      "peakHour": "15:12u",
+      "peakValue": 5501,
+      "successRate": 92.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.3,
+          2.5,
+          1.3,
+          0.0,
+          1.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VK",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          1.8,
+          0.8,
+          0.7,
+          0.5,
+          0.5,
+          95.7
+        ]
+      },
+      "preroll": {
+        "bereik": 21807,
+        "bereikPct": 88.7,
+        "impressies": 50642,
+        "freq": 2.32,
+        "completion": 19.9
+      }
+    },
+    {
+      "date": "2025-11-22",
+      "match_name": "Ajax - Excelsior",
+      "listeners": 32921,
+      "peakHour": "21:23u",
+      "peakValue": 4884,
+      "successRate": 94.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.0,
+          1.3,
+          0.5,
+          0.0,
+          1.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          0.9,
+          0.8,
+          0.6,
+          0.4,
+          0.3,
+          97.0
+        ]
+      },
+      "preroll": {
+        "bereik": 30203,
+        "bereikPct": 91.7,
+        "impressies": 76924,
+        "freq": 2.55,
+        "completion": 19.4
+      }
+    },
+    {
+      "date": "2025-11-25",
+      "match_name": "Ajax - Benfica",
+      "listeners": 21518,
+      "peakHour": "20:00u",
+      "peakValue": 4559,
+      "successRate": 92.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          93.5,
+          4.2,
+          1.5,
+          0.7,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VK",
+          "VS",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          1.9,
+          0.6,
+          0.6,
+          0.4,
+          0.3,
+          96.3
+        ]
+      },
+      "preroll": {
+        "bereik": 18786,
+        "bereikPct": 87.3,
+        "impressies": 50879,
+        "freq": 2.71,
+        "completion": 22.6
+      }
+    },
+    {
+      "date": "2025-11-30",
+      "match_name": "Ajax - FC Groningen",
+      "listeners": 27561,
+      "peakHour": "20:55u",
+      "peakValue": 8103,
+      "successRate": 78.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          93.3,
+          4.7,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Duitsland",
+          "Belgie",
+          "VK",
+          "VS",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          1.5,
+          1.4,
+          0.5,
+          0.2,
+          0.2,
+          96.1
+        ]
+      },
+      "preroll": {
+        "bereik": 20474,
+        "bereikPct": 74.3,
+        "impressies": 63704,
+        "freq": 3.11,
+        "completion": 20.3
+      }
+    },
+    {
+      "date": "2025-12-06",
+      "match_name": "Fortuna Sittard - Ajax",
+      "listeners": 30434,
+      "peakHour": "21:17u",
+      "peakValue": 4606,
+      "successRate": 95.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.8,
+          0.7,
+          1.1,
+          0.0,
+          2.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "VS",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          1.8,
+          0.7,
+          0.5,
+          0.4,
+          0.3,
+          96.3
+        ]
+      },
+      "preroll": {
+        "bereik": 27072,
+        "bereikPct": 89.0,
+        "impressies": 75204,
+        "freq": 2.78,
+        "completion": 18.1
+      }
+    },
+    {
+      "date": "2025-12-10",
+      "match_name": "Qarabag FK - Ajax",
+      "listeners": 16165,
+      "peakHour": "21:38u",
+      "peakValue": 3560,
+      "successRate": 91.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          90.6,
+          5.6,
+          2.4,
+          1.2,
+          0.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VS",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          2.5,
+          0.8,
+          0.7,
+          0.3,
+          0.3,
+          95.5
+        ]
+      },
+      "preroll": {
+        "bereik": 12290,
+        "bereikPct": 76.0,
+        "impressies": 31348,
+        "freq": 2.55,
+        "completion": 18.2
+      }
+    },
+    {
+      "date": "2025-12-14",
+      "match_name": "Ajax - Feyenoord",
+      "listeners": 40295,
+      "peakHour": "17:33u",
+      "peakValue": 8186,
+      "successRate": 93.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Android-app",
+          "Webbrowser",
+          "Overig"
+        ],
+        "values": [
+          92.6,
+          5.2,
+          0.6,
+          1.6,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VS",
+          "VK",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          2.1,
+          0.9,
+          0.4,
+          0.3,
+          0.3,
+          96.0
+        ]
+      },
+      "preroll": {
+        "bereik": 34138,
+        "bereikPct": 84.7,
+        "impressies": 100405,
+        "freq": 2.94,
+        "completion": 20.1
+      }
+    },
+    {
+      "date": "2025-12-17",
+      "match_name": "Excelsior Maassluis - Ajax",
+      "listeners": 23210,
+      "peakHour": "21:35u",
+      "peakValue": 4300,
+      "successRate": 93.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          93.6,
+          4.0,
+          1.4,
+          1.0,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "VK",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          8.6,
+          2.1,
+          1.9,
+          0.4,
+          0.2,
+          86.7
+        ]
+      },
+      "preroll": {
+        "bereik": 20245,
+        "bereikPct": 87.2,
+        "impressies": 52665,
+        "freq": 2.6,
+        "completion": 17.4
+      }
+    },
+    {
+      "date": "2025-12-20",
+      "match_name": "N.E.C. - Ajax",
+      "listeners": 19555,
+      "peakHour": "22:01u",
+      "peakValue": 3850,
+      "successRate": 95.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.2,
+          0.7,
+          1.4,
+          0.0,
+          2.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VS",
+          "VK",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          2.2,
+          1.0,
+          0.7,
+          0.6,
+          0.6,
+          94.9
+        ]
+      },
+      "preroll": {
+        "bereik": 16695,
+        "bereikPct": 85.4,
+        "impressies": 46633,
+        "freq": 2.79,
+        "completion": 19.0
+      }
+    },
+    {
+      "date": "2026-01-11",
+      "match_name": "Telstar - Ajax",
+      "listeners": 29624,
+      "peakHour": "17:34u",
+      "peakValue": 6276,
+      "successRate": 94.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Overig",
+          "Webbrowser",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.2,
+          1.2,
+          0.3,
+          2.1,
+          2.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VS",
+          "VK",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          1.7,
+          0.8,
+          0.5,
+          0.5,
+          0.5,
+          96.1
+        ]
+      },
+      "preroll": {
+        "bereik": 27004,
+        "bereikPct": 91.2,
+        "impressies": 75438,
+        "freq": 2.79,
+        "completion": 20.1
+      }
+    },
+    {
+      "date": "2026-01-14",
+      "match_name": "AZ - Ajax",
+      "listeners": 14361,
+      "peakHour": "22:49u",
+      "peakValue": 1259,
+      "successRate": 92.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Relay/herdistributie",
+          "Android-app",
+          "Webbrowser"
+        ],
+        "values": [
+          95.4,
+          0.0,
+          2.3,
+          0.7,
+          1.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f4a6b3",
+          "#9ca3af",
+          "#f7c8d0"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VS",
+          "Duitsland",
+          "VK",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          1.8,
+          0.7,
+          0.6,
+          0.5,
+          0.5,
+          95.9
+        ]
+      },
+      "preroll": {
+        "bereik": 10341,
+        "bereikPct": 72.0,
+        "impressies": 25101,
+        "freq": 2.43,
+        "completion": 17.6
+      }
+    },
+    {
+      "date": "2026-01-17",
+      "match_name": "Ajax - Go Ahead Eagles",
+      "listeners": 39147,
+      "peakHour": "17:34u",
+      "peakValue": 7217,
+      "successRate": 91.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.2,
+          0.9,
+          1.8,
+          0.0,
+          2.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "VS",
+          "VK",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          1.3,
+          0.7,
+          0.5,
+          0.5,
+          0.4,
+          96.5
+        ]
+      },
+      "preroll": {
+        "bereik": 32703,
+        "bereikPct": 83.5,
+        "impressies": 103134,
+        "freq": 3.15,
+        "completion": 23.2
+      }
+    },
+    {
+      "date": "2026-01-20",
+      "match_name": "Villarreal CF - Ajax",
+      "listeners": 16199,
+      "peakHour": "23:57u",
+      "peakValue": 3054,
+      "successRate": 92.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.1,
+          0.3,
+          2.0,
+          1.0,
+          1.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VS",
+          "VK",
+          "Duitsland",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          2.0,
+          0.9,
+          0.8,
+          0.8,
+          0.7,
+          94.9
+        ]
+      },
+      "preroll": {
+        "bereik": 12309,
+        "bereikPct": 76.0,
+        "impressies": 29067,
+        "freq": 2.36,
+        "completion": 17.9
+      }
+    },
+    {
+      "date": "2026-01-24",
+      "match_name": "Ajax - FC Volendam",
+      "listeners": 35974,
+      "peakHour": "19:15u",
+      "peakValue": 6426,
+      "successRate": 93.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app"
+        ],
+        "values": [
+          94.8,
+          0.0,
+          3.3,
+          1.0,
+          0.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "VS",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          1.6,
+          1.0,
+          0.9,
+          0.5,
+          0.4,
+          95.7
+        ]
+      },
+      "preroll": {
+        "bereik": 30769,
+        "bereikPct": 85.5,
+        "impressies": 91703,
+        "freq": 2.98,
+        "completion": 21.7
+      }
+    },
+    {
+      "date": "2026-01-28",
+      "match_name": "Ajax - Olympiacos FC",
+      "listeners": 20927,
+      "peakHour": "22:05u",
+      "peakValue": 3330,
+      "successRate": 92.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Overig",
+          "Webbrowser",
+          "Android-app"
+        ],
+        "values": [
+          92.0,
+          4.3,
+          0.5,
+          2.2,
+          1.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#c8c8c8",
+          "#f7c8d0",
+          "#9ca3af"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "VS",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          2.5,
+          1.7,
+          1.3,
+          0.5,
+          0.5,
+          93.6
+        ]
+      },
+      "preroll": {
+        "bereik": 15595,
+        "bereikPct": 74.5,
+        "impressies": 43938,
+        "freq": 2.82,
+        "completion": 22.4
+      }
+    },
+    {
+      "date": "2026-02-01",
+      "match_name": "Excelsior - Ajax",
+      "listeners": 30728,
+      "peakHour": "15:07u",
+      "peakValue": 6672,
+      "successRate": 92.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          92.9,
+          2.4,
+          1.6,
+          0.0,
+          3.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "VS",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          1.5,
+          0.7,
+          0.6,
+          0.5,
+          0.4,
+          96.3
+        ]
+      },
+      "preroll": {
+        "bereik": 25464,
+        "bereikPct": 82.9,
+        "impressies": 68423,
+        "freq": 2.69,
+        "completion": 20.6
+      }
+    },
+    {
+      "date": "2026-02-08",
+      "match_name": "AZ - Ajax",
+      "listeners": 17579,
+      "peakHour": "17:27u",
+      "peakValue": 5627,
+      "successRate": 93.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          88.6,
+          4.5,
+          4.5,
+          2.3,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          1.5,
+          0.8,
+          0.7,
+          0.6,
+          0.6,
+          95.8
+        ]
+      },
+      "preroll": {
+        "bereik": 14485,
+        "bereikPct": 82.4,
+        "impressies": 41035,
+        "freq": 2.83,
+        "completion": 23.0
+      }
+    },
+    {
+      "date": "2026-02-14",
+      "match_name": "Ajax - Fortuna Sittard",
+      "listeners": 25820,
+      "peakHour": "22:57u",
+      "peakValue": 3364,
+      "successRate": 95.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.4,
+          0.9,
+          0.4,
+          0.0,
+          3.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "VK",
+          "Spanje",
+          "Duitsland",
+          "Overig"
+        ],
+        "values": [
+          91.2,
+          1.9,
+          0.7,
+          0.6,
+          0.6,
+          4.9
+        ]
+      },
+      "preroll": {
+        "bereik": 22262,
+        "bereikPct": 86.2,
+        "impressies": 58483,
+        "freq": 2.63,
+        "completion": 19.7
+      }
+    },
+    {
+      "date": "2026-02-21",
+      "match_name": "Ajax - NEC",
+      "listeners": 27534,
+      "peakHour": "23:03u",
+      "peakValue": 5790,
+      "successRate": 94.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Overig",
+          "Relay/herdistributie",
+          "Webbrowser",
+          "Android-app"
+        ],
+        "values": [
+          94.0,
+          0.0,
+          3.2,
+          2.0,
+          0.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#c8c8c8",
+          "#f4a6b3",
+          "#f7c8d0",
+          "#9ca3af"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          89.5,
+          1.2,
+          1.1,
+          0.9,
+          0.7,
+          6.5
+        ]
+      },
+      "preroll": {
+        "bereik": 24035,
+        "bereikPct": 87.3,
+        "impressies": 70138,
+        "freq": 2.92,
+        "completion": 21.8
+      }
+    },
+    {
+      "date": "2026-03-01",
+      "match_name": "PEC Zwolle - Ajax",
+      "listeners": 13343,
+      "peakHour": "15:11u",
+      "peakValue": 4172,
+      "successRate": 92.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          82.7,
+          3.8,
+          2.2,
+          0.0,
+          11.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          90.8,
+          1.9,
+          1.2,
+          0.6,
+          0.6,
+          4.9
+        ]
+      },
+      "preroll": {
+        "bereik": 11083,
+        "bereikPct": 83.1,
+        "impressies": 28883,
+        "freq": 2.61,
+        "completion": 22.6
+      }
+    },
+    {
+      "date": "2026-03-07",
+      "match_name": "FC Groningen - Ajax",
+      "listeners": 18336,
+      "peakHour": "18:24u",
+      "peakValue": 3491,
+      "successRate": 95.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          88.0,
+          3.2,
+          1.7,
+          0.0,
+          7.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "VK",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          91.9,
+          1.8,
+          0.8,
+          0.6,
+          0.6,
+          4.4
+        ]
+      },
+      "preroll": {
+        "bereik": 16408,
+        "bereikPct": 89.5,
+        "impressies": 42423,
+        "freq": 2.59,
+        "completion": 22.0
+      }
+    },
+    {
+      "date": "2026-03-14",
+      "match_name": "Ajax - Sparta",
+      "listeners": 33231,
+      "peakHour": "23:53u",
+      "peakValue": 7130,
+      "successRate": 92.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.7,
+          0.7,
+          1.1,
+          0.0,
+          0.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Duitsland",
+          "Overig"
+        ],
+        "values": [
+          93.3,
+          1.7,
+          0.6,
+          0.6,
+          0.6,
+          3.3
+        ]
+      },
+      "preroll": {
+        "bereik": 29274,
+        "bereikPct": 88.1,
+        "impressies": 87128,
+        "freq": 2.98,
+        "completion": 20.3
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "match_name": "Feyenoord - Ajax",
+      "listeners": 29813,
+      "peakHour": "17:31u",
+      "peakValue": 10578,
+      "successRate": 95.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          87.6,
+          4.7,
+          1.9,
+          0.0,
+          5.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "VK",
+          "Duitsland",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          92.2,
+          1.7,
+          0.7,
+          0.6,
+          0.6,
+          4.1
+        ]
+      },
+      "preroll": {
+        "bereik": 26313,
+        "bereikPct": 88.3,
+        "impressies": 85514,
+        "freq": 3.25,
+        "completion": 22.9
+      }
+    },
+    {
+      "date": "2026-04-04",
+      "match_name": "Ajax - FC Twente",
+      "listeners": 23334,
+      "peakHour": "21:09u",
+      "peakValue": 4548,
+      "successRate": 93.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.9,
+          1.8,
+          0.8,
+          0.0,
+          0.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          92.9,
+          1.8,
+          1.2,
+          0.7,
+          0.5,
+          2.9
+        ]
+      },
+      "preroll": {
+        "bereik": 20147,
+        "bereikPct": 86.3,
+        "impressies": 59515,
+        "freq": 2.95,
+        "completion": 22.0
+      }
+    },
+    {
+      "date": "2026-04-11",
+      "match_name": "Heracles - Ajax",
+      "listeners": 21923,
+      "peakHour": "22:57u",
+      "peakValue": 3289,
+      "successRate": 96.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.8,
+          0.6,
+          1.0,
+          0.0,
+          0.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          92.6,
+          1.7,
+          0.8,
+          0.5,
+          0.5,
+          3.8
+        ]
+      },
+      "preroll": {
+        "bereik": 20105,
+        "bereikPct": 91.7,
+        "impressies": 56954,
+        "freq": 2.83,
+        "completion": 16.8
+      }
+    },
+    {
+      "date": "2026-04-25",
+      "match_name": "NAC - Ajax",
+      "listeners": 24233,
+      "peakHour": "21:02u",
+      "peakValue": 3582,
+      "successRate": 96.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          97.1,
+          1.4,
+          0.8,
+          0.0,
+          0.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          89.0,
+          2.4,
+          1.6,
+          1.2,
+          1.0,
+          4.7
+        ]
+      },
+      "preroll": {
+        "bereik": 22247,
+        "bereikPct": 91.8,
+        "impressies": 61173,
+        "freq": 2.75,
+        "completion": 18.9
+      }
+    },
+    {
+      "date": "2026-04-26",
+      "match_name": "Ajax Vrouwen - Feyenoord Vrouwen",
+      "listeners": 5337,
+      "peakHour": "12:24u",
+      "peakValue": 585,
+      "successRate": 89.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.1,
+          0.2,
+          0.9,
+          0.1,
+          3.8
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          92.9,
+          1.9,
+          1.2,
+          0.7,
+          0.4,
+          2.9
+        ]
+      },
+      "preroll": {
+        "bereik": 3466,
+        "bereikPct": 65.0,
+        "impressies": 8871,
+        "freq": 2.56,
+        "completion": 18.9
+      }
+    },
+    {
+      "date": "2026-05-02",
+      "match_name": "Ajax - PSV",
+      "listeners": 25457,
+      "peakHour": "21:57u",
+      "peakValue": 3430,
+      "successRate": 87.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.1,
+          0.7,
+          1.2,
+          0.0,
+          3.9
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "VK",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          89.3,
+          2.4,
+          1.5,
+          1.1,
+          0.9,
+          4.8
+        ]
+      },
+      "preroll": {
+        "bereik": 20490,
+        "bereikPct": 80.5,
+        "impressies": 57506,
+        "freq": 2.81,
+        "completion": 19.3
+      }
+    },
+    {
       "date": "2026-05-10",
       "match_name": "Ajax - FC Utrecht",
       "listeners": 21749,
@@ -51,6 +5634,174 @@
         "impressies": 54239,
         "freq": 2.92,
         "completion": 23.8
+      }
+    },
+    {
+      "date": "2026-05-17",
+      "match_name": "sc Heerenveen - Ajax",
+      "listeners": 10283,
+      "peakHour": "16:27u",
+      "peakValue": 3758,
+      "successRate": 92.9,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie",
+          "Overig"
+        ],
+        "values": [
+          79.7,
+          3.5,
+          2.2,
+          14.5,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          90.7,
+          2.3,
+          1.2,
+          0.8,
+          0.7,
+          4.3
+        ]
+      },
+      "preroll": {
+        "bereik": 8667,
+        "bereikPct": 84.3,
+        "impressies": 24191,
+        "freq": 2.79,
+        "completion": 23.4
+      }
+    },
+    {
+      "date": "2026-05-21",
+      "match_name": "Ajax - FC Groningen",
+      "listeners": 22428,
+      "peakHour": "20:25u",
+      "peakValue": 3068,
+      "successRate": 95.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          90.7,
+          1.1,
+          1.9,
+          0.0,
+          6.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          91.9,
+          2.0,
+          1.3,
+          0.7,
+          0.5,
+          3.5
+        ]
+      },
+      "preroll": {
+        "bereik": 20229,
+        "bereikPct": 90.2,
+        "impressies": 52881,
+        "freq": 2.61,
+        "completion": 21.3
+      }
+    },
+    {
+      "date": "2026-05-24",
+      "match_name": "Ajax - FC Utrecht",
+      "listeners": 27151,
+      "peakHour": "15:11u",
+      "peakValue": 9618,
+      "successRate": 93.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          85.9,
+          5.2,
+          2.2,
+          0.0,
+          6.7
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          89.9,
+          2.9,
+          1.5,
+          0.9,
+          0.7,
+          4.1
+        ]
+      },
+      "preroll": {
+        "bereik": 24373,
+        "bereikPct": 89.8,
+        "impressies": 77057,
+        "freq": 3.16,
+        "completion": 25.2
       }
     },
     {
