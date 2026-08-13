@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-08-13",
-      "weekday": "Thursday",
-      "time": "20:45",
-      "match_name": "Shelbourne FC - Ajax",
-      "commentators": "Diederik & Daaf",
-      "competition": "UEFA Conference League",
-      "tv_channel": "ZIGGO",
-      "tv_category": "Half-open",
-      "home_away": "Uit",
-      "opponent": "Shelbourne FC",
-      "opponent_position": null,
-      "predicted_listeners": 28010
-    },
-    {
       "date": "2026-08-16",
       "weekday": "Sunday",
       "time": "16:45",
