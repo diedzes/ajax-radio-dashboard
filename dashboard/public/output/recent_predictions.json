@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-05-02",
-      "match_name": "Ajax - PSV",
-      "listeners": 25457,
-      "predicted_listeners": 28010
-    },
-    {
       "date": "2026-05-10",
       "match_name": "Ajax - FC Utrecht",
       "listeners": 21751,
@@ -34,7 +28,7 @@
       "date": "2026-07-23",
       "match_name": "FK Vojvodina - Ajax",
       "listeners": 24838,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     },
     {
       "date": "2026-07-26",
@@ -46,19 +40,25 @@
       "date": "2026-07-30",
       "match_name": "Ajax - FK Vojvodina",
       "listeners": 33852,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     },
     {
       "date": "2026-08-06",
       "match_name": "Ajax - Shelbourne FC",
       "listeners": 30206,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     },
     {
       "date": "2026-08-09",
       "match_name": "PEC Zwolle - Ajax",
       "listeners": 37835,
       "predicted_listeners": 31087
+    },
+    {
+      "date": "2026-08-13",
+      "match_name": "Shelbourne FC - Ajax",
+      "listeners": 20489,
+      "predicted_listeners": 27593
     }
   ]
 }

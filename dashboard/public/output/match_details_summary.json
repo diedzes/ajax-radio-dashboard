@@ -6080,6 +6080,62 @@
         "freq": 3.02,
         "completion": 15.5
       }
+    },
+    {
+      "date": "2026-08-13",
+      "match_name": "Shelbourne FC - Ajax",
+      "listeners": 20489,
+      "peakHour": "22:42u",
+      "peakValue": 3236,
+      "successRate": 88.6,
+      "platform": {
+        "labels": [
+          "Relay/herdistributie",
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig"
+        ],
+        "values": [
+          10.8,
+          86.0,
+          2.2,
+          1.0,
+          0.1
+        ],
+        "colors": [
+          "#f4a6b3",
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          79.4,
+          6.6,
+          3.8,
+          1.3,
+          1.2,
+          7.6
+        ]
+      },
+      "preroll": {
+        "bereik": 16997,
+        "bereikPct": 83.0,
+        "impressies": 45657,
+        "freq": 2.69,
+        "completion": 18.7
+      }
     }
   ]
 }

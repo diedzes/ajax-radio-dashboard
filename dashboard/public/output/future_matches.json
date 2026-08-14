@@ -61,28 +61,28 @@
       "weekday": "Saturday",
       "time": "20:00",
       "match_name": "Ajax - PSV",
-      "commentators": "Diederik",
+      "commentators": "Diederik & Daaf",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "PSV",
       "opponent_position": 9,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     },
     {
       "date": "2026-09-12",
       "weekday": "Saturday",
       "time": "20:00",
       "match_name": "Fortuna Sittard - Ajax",
-      "commentators": "Diederik",
+      "commentators": "Diederik & Daaf",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
       "opponent_position": 9,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     },
     {
       "date": "2026-09-15",
@@ -96,21 +96,21 @@
       "home_away": "Thuis",
       "opponent": "Willem II",
       "opponent_position": 17,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     },
     {
       "date": "2026-09-19",
       "weekday": "Saturday",
       "time": "20:00",
       "match_name": "Ajax - Excelsior",
-      "commentators": "Diederik",
+      "commentators": "Diederik & Daaf",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Excelsior",
       "opponent_position": 1,
-      "predicted_listeners": 28010
+      "predicted_listeners": 27593
     }
   ]
 }
