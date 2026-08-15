@@ -47,13 +47,13 @@
       "weekday": "Sunday",
       "time": "16:45",
       "match_name": "Telstar - Ajax",
-      "commentators": "Diederik & Corné",
+      "commentators": "Diederik & Daaf",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Telstar",
-      "opponent_position": 5,
+      "opponent_position": 9,
       "predicted_listeners": 40956
     },
     {
@@ -67,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "PSV",
-      "opponent_position": 9,
+      "opponent_position": 10,
       "predicted_listeners": 27593
     },
     {
@@ -75,13 +75,13 @@
       "weekday": "Saturday",
       "time": "20:00",
       "match_name": "Fortuna Sittard - Ajax",
-      "commentators": "Diederik & Daaf",
+      "commentators": "Diederik & Corné",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 9,
+      "opponent_position": 10,
       "predicted_listeners": 27593
     },
     {
@@ -103,7 +103,7 @@
       "weekday": "Saturday",
       "time": "20:00",
       "match_name": "Ajax - Excelsior",
-      "commentators": "Diederik & Daaf",
+      "commentators": "Diederik & ?",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
