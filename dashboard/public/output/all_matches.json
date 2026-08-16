@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-08-16",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "Ajax - sc Heerenveen",
+      "commentators": "Diederik & Daaf",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-08-13",
       "weekday": "Thursday",
       "time": "20:45",
