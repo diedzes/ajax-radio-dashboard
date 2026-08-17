@@ -6136,6 +6136,62 @@
         "freq": 2.69,
         "completion": 18.7
       }
+    },
+    {
+      "date": "2026-08-16",
+      "match_name": "Ajax - sc Heerenveen",
+      "listeners": 39282,
+      "peakHour": "18:40u",
+      "peakValue": 7426,
+      "successRate": 94.6,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          89.9,
+          1.0,
+          2.1,
+          0.0,
+          7.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          77.9,
+          10.7,
+          4.0,
+          1.3,
+          1.1,
+          5.1
+        ]
+      },
+      "preroll": {
+        "bereik": 33874,
+        "bereikPct": 86.2,
+        "impressies": 100558,
+        "freq": 2.97,
+        "completion": 22.4
+      }
     }
   ]
 }

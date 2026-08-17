@@ -1,12 +1,12 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "kickoff_blocks": [
     {
       "kickoff_block": "15:00-17:59",
-      "matches_count": 21,
+      "matches_count": 22,
       "min": 18000,
-      "avg": 40955.86,
-      "median": 39147,
+      "avg": 40879.77,
+      "median": 39214,
       "max": 71250
     },
     {

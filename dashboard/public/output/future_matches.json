@@ -39,8 +39,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Telstar",
-      "opponent_position": 12,
-      "predicted_listeners": 40956
+      "opponent_position": 13,
+      "predicted_listeners": 40880
     },
     {
       "date": "2026-09-05",
@@ -53,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "PSV",
-      "opponent_position": 3,
+      "opponent_position": 6,
       "predicted_listeners": 27593
     },
     {
@@ -67,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 2,
+      "opponent_position": 4,
       "predicted_listeners": 27593
     },
     {
@@ -95,7 +95,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Excelsior",
-      "opponent_position": 4,
+      "opponent_position": 9,
       "predicted_listeners": 27593
     }
   ]

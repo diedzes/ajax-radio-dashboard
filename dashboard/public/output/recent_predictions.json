@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-05-10",
-      "match_name": "Ajax - FC Utrecht",
-      "listeners": 21751,
-      "predicted_listeners": 40956
-    },
-    {
       "date": "2026-05-17",
       "match_name": "sc Heerenveen - Ajax",
       "listeners": 10283,
@@ -59,6 +53,12 @@
       "match_name": "Shelbourne FC - Ajax",
       "listeners": 20489,
       "predicted_listeners": 27593
+    },
+    {
+      "date": "2026-08-16",
+      "match_name": "Ajax - sc Heerenveen",
+      "listeners": 39282,
+      "predicted_listeners": 40880
     }
   ]
 }
