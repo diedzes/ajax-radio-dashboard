@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-08-20",
+      "weekday": "Thursday",
+      "time": "?",
+      "match_name": "Play-off Conference League?",
+      "commentators": "Frank & Corné",
+      "listeners": null,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "?"
+    },
+    {
       "date": "2026-08-16",
       "weekday": "Sunday",
       "time": "16:45",
