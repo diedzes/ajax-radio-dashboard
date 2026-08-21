@@ -3,16 +3,16 @@
     {
       "date": "2026-08-27",
       "weekday": "Thursday",
-      "time": "?",
-      "match_name": "Play-off Conference League?",
+      "time": "20:00",
+      "match_name": "Ajax - FC Sion",
       "commentators": "Diederik & Corné",
       "competition": "UEFA Conference League",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "?",
-      "opponent": null,
+      "tv_channel": "ZIGGO",
+      "tv_category": "Half-open",
+      "home_away": "Thuis",
+      "opponent": "FC Sion",
       "opponent_position": null,
-      "predicted_listeners": 43712
+      "predicted_listeners": 29220
     },
     {
       "date": "2026-08-30",
@@ -40,7 +40,7 @@
       "home_away": "Thuis",
       "opponent": "PSV",
       "opponent_position": 6,
-      "predicted_listeners": 27593
+      "predicted_listeners": 29220
     },
     {
       "date": "2026-09-12",
@@ -54,7 +54,7 @@
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
       "opponent_position": 4,
-      "predicted_listeners": 27593
+      "predicted_listeners": 29220
     },
     {
       "date": "2026-09-15",
@@ -68,7 +68,7 @@
       "home_away": "Thuis",
       "opponent": "Willem II",
       "opponent_position": 17,
-      "predicted_listeners": 27593
+      "predicted_listeners": 29220
     },
     {
       "date": "2026-09-19",
@@ -82,7 +82,7 @@
       "home_away": "Thuis",
       "opponent": "Excelsior",
       "opponent_position": 9,
-      "predicted_listeners": 27593
+      "predicted_listeners": 29220
     }
   ]
 }

@@ -6192,6 +6192,62 @@
         "freq": 2.97,
         "completion": 22.4
       }
+    },
+    {
+      "date": "2026-08-20",
+      "match_name": "FC Sion - Ajax",
+      "listeners": 58514,
+      "peakHour": "22:09u",
+      "peakValue": 24257,
+      "successRate": 89.4,
+      "platform": {
+        "labels": [
+          "Webbrowser",
+          "Overig",
+          "Android-app",
+          "iOS-app",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          6.4,
+          0.8,
+          3.0,
+          86.8,
+          3.0
+        ],
+        "colors": [
+          "#f7c8d0",
+          "#c8c8c8",
+          "#9ca3af",
+          "#d2122e",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          86.2,
+          5.3,
+          2.6,
+          0.9,
+          0.7,
+          4.2
+        ]
+      },
+      "preroll": {
+        "bereik": 53820,
+        "bereikPct": 92.0,
+        "impressies": 205197,
+        "freq": 3.81,
+        "completion": 29.0
+      }
     }
   ]
 }
