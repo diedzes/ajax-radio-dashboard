@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-08-27",
-      "weekday": "Thursday",
-      "time": "20:00",
-      "match_name": "Ajax - FC Sion",
-      "commentators": "Diederik & Corné",
-      "competition": "UEFA Conference League",
-      "tv_channel": "ZIGGO",
-      "tv_category": "Half-open",
-      "home_away": "Thuis",
-      "opponent": "FC Sion",
-      "opponent_position": null,
-      "predicted_listeners": 29220
-    },
-    {
       "date": "2026-08-30",
       "weekday": "Sunday",
       "time": "16:45",
@@ -75,7 +61,7 @@
       "weekday": "Saturday",
       "time": "20:00",
       "match_name": "Ajax - Excelsior",
-      "commentators": "Diederik & ?",
+      "commentators": "Diederik & Bas",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",
