@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-05-21",
-      "match_name": "Ajax - FC Groningen",
-      "listeners": 22428,
-      "predicted_listeners": 26561
-    },
-    {
       "date": "2026-05-24",
       "match_name": "Ajax - FC Utrecht",
       "listeners": 27151,
@@ -16,7 +10,7 @@
       "date": "2026-07-23",
       "match_name": "FK Vojvodina - Ajax",
       "listeners": 24838,
-      "predicted_listeners": 29220
+      "predicted_listeners": 29366
     },
     {
       "date": "2026-07-26",
@@ -28,13 +22,13 @@
       "date": "2026-07-30",
       "match_name": "Ajax - FK Vojvodina",
       "listeners": 33852,
-      "predicted_listeners": 29220
+      "predicted_listeners": 29366
     },
     {
       "date": "2026-08-06",
       "match_name": "Ajax - Shelbourne FC",
       "listeners": 30206,
-      "predicted_listeners": 29220
+      "predicted_listeners": 29366
     },
     {
       "date": "2026-08-09",
@@ -46,7 +40,7 @@
       "date": "2026-08-13",
       "match_name": "Shelbourne FC - Ajax",
       "listeners": 20489,
-      "predicted_listeners": 29220
+      "predicted_listeners": 29366
     },
     {
       "date": "2026-08-16",
@@ -58,7 +52,13 @@
       "date": "2026-08-20",
       "match_name": "FC Sion - Ajax",
       "listeners": 58514,
-      "predicted_listeners": 29220
+      "predicted_listeners": 29366
+    },
+    {
+      "date": "2026-08-27",
+      "match_name": "Ajax - FC Sion",
+      "listeners": 32134,
+      "predicted_listeners": 29366
     }
   ]
 }

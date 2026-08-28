@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "duos": [
     {
       "duo": "Corné & Frank",
@@ -45,9 +45,9 @@
     },
     {
       "duo": "Corné & Diederik",
-      "matches_count": 30,
-      "avg": 32359.1,
-      "median": 30581,
+      "matches_count": 31,
+      "avg": 32351.84,
+      "median": 30728,
       "max": 70621
     },
     {
