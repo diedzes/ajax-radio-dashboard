@@ -2,8 +2,8 @@
   "show_id": "62011",
   "feed_url": "https://feeds.transistor.fm/ajax-podcast",
   "window": {
-    "start_date": "29-08-2024",
-    "end_date": "29-08-2026"
+    "start_date": "30-08-2024",
+    "end_date": "30-08-2026"
   },
   "episodes": [
     {
@@ -12,7 +12,7 @@
       "published_at": "2026-08-14T08:30:00.000Z",
       "duration_in_mmss": "38:50",
       "share_url": "https://share.transistor.fm/s/ad71a153",
-      "total_downloads": 1140
+      "total_downloads": 1147
     },
     {
       "id": "3248331",
@@ -20,7 +20,7 @@
       "published_at": "2026-05-15T04:00:00.000Z",
       "duration_in_mmss": "17:54",
       "share_url": "https://share.transistor.fm/s/3060cc9d",
-      "total_downloads": 1720
+      "total_downloads": 1722
     },
     {
       "id": "3207217",
@@ -36,7 +36,7 @@
       "published_at": "2026-04-17T04:00:00.000Z",
       "duration_in_mmss": "16:11",
       "share_url": "https://share.transistor.fm/s/7cf24d91",
-      "total_downloads": 1349
+      "total_downloads": 1351
     },
     {
       "id": "3142346",
@@ -140,7 +140,7 @@
       "published_at": "2025-10-24T04:00:00.000Z",
       "duration_in_mmss": "17:17",
       "share_url": "https://share.transistor.fm/s/9d809353",
-      "total_downloads": 1936
+      "total_downloads": 1937
     },
     {
       "id": "2763334",
@@ -148,7 +148,7 @@
       "published_at": "2025-10-10T04:00:00.000Z",
       "duration_in_mmss": "17:14",
       "share_url": "https://share.transistor.fm/s/9f8d830f",
-      "total_downloads": 2370
+      "total_downloads": 2371
     },
     {
       "id": "2760171",
@@ -164,7 +164,7 @@
       "published_at": "2025-03-12T00:28:00.000Z",
       "duration_in_mmss": "38:00",
       "share_url": "https://share.transistor.fm/s/05285b5f",
-      "total_downloads": 5783
+      "total_downloads": 5784
     },
     {
       "id": "2373139",
@@ -364,7 +364,7 @@
       "published_at": "2023-11-23T16:41:18.000Z",
       "duration_in_mmss": "13:16",
       "share_url": "https://share.transistor.fm/s/7d32551b",
-      "total_downloads": 87
+      "total_downloads": 88
     },
     {
       "id": "2366404",
