@@ -25,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 5,
+      "opponent_position": 6,
       "predicted_listeners": 29366
     },
     {
@@ -39,7 +39,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Willem II",
-      "opponent_position": 16,
+      "opponent_position": 15,
       "predicted_listeners": 29366
     },
     {
@@ -53,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Excelsior",
-      "opponent_position": 7,
+      "opponent_position": 8,
       "predicted_listeners": 29366
     }
   ]
