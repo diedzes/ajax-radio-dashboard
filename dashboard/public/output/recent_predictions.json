@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-05-24",
-      "match_name": "Ajax - FC Utrecht",
-      "listeners": 27151,
-      "predicted_listeners": 31087
-    },
-    {
       "date": "2026-07-23",
       "match_name": "FK Vojvodina - Ajax",
       "listeners": 24838,
@@ -46,7 +40,7 @@
       "date": "2026-08-16",
       "match_name": "Ajax - sc Heerenveen",
       "listeners": 39282,
-      "predicted_listeners": 40880
+      "predicted_listeners": 40689
     },
     {
       "date": "2026-08-20",
@@ -59,6 +53,12 @@
       "match_name": "Ajax - FC Sion",
       "listeners": 32134,
       "predicted_listeners": 29366
+    },
+    {
+      "date": "2026-08-30",
+      "match_name": "Telstar - Ajax",
+      "listeners": 36501,
+      "predicted_listeners": 40689
     }
   ]
 }

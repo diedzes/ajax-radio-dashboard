@@ -6304,6 +6304,62 @@
         "freq": 3.07,
         "completion": 23.6
       }
+    },
+    {
+      "date": "2026-08-30",
+      "match_name": "Telstar - Ajax",
+      "listeners": 36501,
+      "peakHour": "18:38u",
+      "peakValue": 8553,
+      "successRate": 91.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          88.7,
+          0.9,
+          1.9,
+          0.0,
+          8.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          85.2,
+          6.9,
+          3.2,
+          0.8,
+          0.7,
+          3.3
+        ]
+      },
+      "preroll": {
+        "bereik": 31138,
+        "bereikPct": 85.3,
+        "impressies": 87361,
+        "freq": 2.81,
+        "completion": 19.9
+      }
     }
   ]
 }
