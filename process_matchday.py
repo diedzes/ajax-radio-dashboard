@@ -31,6 +31,7 @@ import argparse
 import csv
 import json
 import os
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
@@ -450,6 +451,80 @@ def cmd_process_all(args):
             print(f"FOUT bij {d}: {e}", file=sys.stderr)
 
 
+def _run_git(args_list, check=True):
+    """Voert een git-commando uit en print stdout/stderr direct door, zodat
+    alles zichtbaar is in de Action-log (niks wordt stilletjes geslikt)."""
+    print(f"$ git {' '.join(args_list)}")
+    result = subprocess.run(["git"] + args_list, capture_output=True, text=True)
+    if result.stdout.strip():
+        print(result.stdout.rstrip())
+    if result.stderr.strip():
+        print(result.stderr.rstrip())
+    if check and result.returncode != 0:
+        raise RuntimeError(f"git {' '.join(args_list)} gaf exit code {result.returncode}")
+    return result
+
+
+def cmd_backfill(args):
+    """Verwerkt een batch historische wedstrijden en commit + pusht na ELKE
+    afzonderlijke wedstrijd (niet pas aan het eind), zodat voortgang nooit
+    verloren gaat als deze run ergens vastloopt of de tijdslimiet raakt.
+    Bedoeld om vanuit een los te starten GitHub Action-workflow te draaien;
+    doet zijn eigen git add/commit/pull/push in Python i.p.v. een losse
+    bash-loop, zodat fouten hier duidelijk zichtbaar worden i.p.v. stil
+    weggeslikt."""
+    print(f"AJAX_SAS_TOKEN aanwezig: {'ja' if os.environ.get('AJAX_SAS_TOKEN') else 'NEE - dit gaat dus overal op stuklopen'}")
+
+    new_dates = cmd_list_new(argparse.Namespace(output_dir=args.output_dir))
+    if args.limit:
+        new_dates = new_dates[: args.limit]
+    print(f"\n=== Backfill start: {len(new_dates)} wedstrijden deze run "
+          f"({'geen limiet' if not args.limit else f'limiet {args.limit}'}) ===\n")
+
+    index_path = os.path.join(os.path.dirname(args.output_dir.rstrip("/")), "match_details_index.json")
+    summary_path = os.path.join(os.path.dirname(args.output_dir.rstrip("/")), "match_details_summary.json")
+
+    done, failed, skipped = [], [], []
+    for i, d in enumerate(new_dates, 1):
+        print(f"\n--- [{i}/{len(new_dates)}] {d} ---")
+        try:
+            cmd_process(argparse.Namespace(date=d, output_dir=args.output_dir))
+        except Exception as e:
+            print(f"FOUT bij verwerken van {d}: {e}", file=sys.stderr)
+            failed.append(d)
+            continue
+
+        try:
+            _run_git(["add", args.output_dir, index_path, summary_path])
+            commit = _run_git(["commit", "-m", f"Wedstrijddetail toegevoegd: {d}"], check=False)
+            if commit.returncode != 0:
+                print(f"Niets te committen voor {d} (waarschijnlijk ongewijzigd), ga door")
+                skipped.append(d)
+                continue
+
+            _run_git(["pull", "--no-edit", "--quiet", "origin", "main"], check=False)
+            push = _run_git(["push", "origin", "HEAD:main"], check=False)
+            if push.returncode != 0:
+                print(f"Eerste push mislukt voor {d}, probeer na nog een pull opnieuw")
+                _run_git(["pull", "--no-edit", "--quiet", "origin", "main"], check=False)
+                push2 = _run_git(["push", "origin", "HEAD:main"], check=False)
+                if push2.returncode != 0:
+                    print(f"Push blijft mislukken voor {d}", file=sys.stderr)
+                    failed.append(d)
+                    continue
+            done.append(d)
+        except Exception as e:
+            print(f"FOUT bij git-stap voor {d}: {e}", file=sys.stderr)
+            failed.append(d)
+            continue
+
+    print(f"\n=== Klaar: {len(done)} verwerkt en gepusht, {len(skipped)} overgeslagen (niets gewijzigd), "
+          f"{len(failed)} mislukt, van {len(new_dates)} geprobeerd ===")
+    if failed:
+        print(f"Mislukte datums: {failed}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -468,6 +543,17 @@ def main():
     p_all = sub.add_parser("process-all", help="Verwerk alle nog niet verwerkte dagen")
     p_all.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
     p_all.set_defaults(func=cmd_process_all)
+
+    p_backfill = sub.add_parser(
+        "backfill",
+        help="Verwerk een batch historische wedstrijden en commit+push na elke wedstrijd apart"
+    )
+    p_backfill.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
+    p_backfill.add_argument(
+        "--limit", type=int, default=20,
+        help="Max. aantal wedstrijden deze run (0 = geen limiet). Standaard 20, zodat een run behapbaar en makkelijk te debuggen blijft."
+    )
+    p_backfill.set_defaults(func=cmd_backfill)
 
     args = parser.parse_args()
     args.func(args)
