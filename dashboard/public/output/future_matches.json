@@ -11,8 +11,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Fortuna Sittard",
-      "opponent_position": 6,
-      "predicted_listeners": 29366
+      "opponent_position": 7,
+      "predicted_listeners": 29117
     },
     {
       "date": "2026-09-15",
@@ -25,8 +25,8 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Willem II",
-      "opponent_position": 15,
-      "predicted_listeners": 29366
+      "opponent_position": 17,
+      "predicted_listeners": 29117
     },
     {
       "date": "2026-09-19",
@@ -39,8 +39,8 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Excelsior",
-      "opponent_position": 8,
-      "predicted_listeners": 29366
+      "opponent_position": 4,
+      "predicted_listeners": 29117
     }
   ]
 }

@@ -6360,6 +6360,62 @@
         "freq": 2.81,
         "completion": 19.9
       }
+    },
+    {
+      "date": "2026-09-05",
+      "match_name": "Ajax - PSV",
+      "listeners": 24150,
+      "peakHour": "22:00u",
+      "peakValue": 4049,
+      "successRate": 92.8,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Relay/herdistributie",
+          "Overig",
+          "Android-app",
+          "Webbrowser"
+        ],
+        "values": [
+          92.1,
+          4.2,
+          0.0,
+          1.1,
+          2.6
+        ],
+        "colors": [
+          "#d2122e",
+          "#f4a6b3",
+          "#c8c8c8",
+          "#9ca3af",
+          "#f7c8d0"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "VK",
+          "Belgie",
+          "Duitsland",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          79.7,
+          9.2,
+          4.6,
+          1.2,
+          0.8,
+          4.4
+        ]
+      },
+      "preroll": {
+        "bereik": 20412,
+        "bereikPct": 84.5,
+        "impressies": 57958,
+        "freq": 2.84,
+        "completion": 23.4
+      }
     }
   ]
 }
