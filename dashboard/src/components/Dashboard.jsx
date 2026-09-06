@@ -229,7 +229,8 @@ function Dashboard() {
     )
   }
 
-  const radioSeasonStart = '2024-07-01'
+  const currentSeason = '26/27'
+  const radioSeasonStart = '2026-07-01'
   const radioListenersTotal = data.allMatches?.matches
     ? data.allMatches.matches.reduce((sum, match) => {
         if (!match?.date || match.date < radioSeasonStart) return sum
@@ -237,7 +238,7 @@ function Dashboard() {
       }, 0)
     : 0
 
-  const podcastSeasonStart = '2024-07'
+  const podcastSeasonStart = '2026-07'
   const podcastListenersTotal = data.podcastMonthly?.months
     ? data.podcastMonthly.months.reduce((sum, month) => {
         if (!month?.month || month.month < podcastSeasonStart) return sum
@@ -306,17 +307,17 @@ function Dashboard() {
                   <div className="dashboard-metrics">
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(radioListenersTotal)} />
-                      <div className="metric-clock-label">RADIO LISTENERS 25/26</div>
+                      <div className="metric-clock-label">RADIO LISTENERS {currentSeason}</div>
                       <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
                     </div>
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(podcastListenersTotal)} />
-                      <div className="metric-clock-label">PODCAST LISTENERS 25/26</div>
+                      <div className="metric-clock-label">PODCAST LISTENERS {currentSeason}</div>
                       <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
                     </div>
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
-                      <div className="metric-clock-label">TOTAL LISTENERS 25/26</div>
+                      <div className="metric-clock-label">TOTAL LISTENERS {currentSeason}</div>
                       <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
                     </div>
                   </div>
@@ -420,17 +421,17 @@ function Dashboard() {
                   <div className="dashboard-metrics">
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(radioListenersTotal)} />
-                      <div className="metric-clock-label">RADIO LISTENERS 25/26</div>
+                      <div className="metric-clock-label">RADIO LISTENERS {currentSeason}</div>
                       <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
                     </div>
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(podcastListenersTotal)} />
-                      <div className="metric-clock-label">PODCAST LISTENERS 25/26</div>
+                      <div className="metric-clock-label">PODCAST LISTENERS {currentSeason}</div>
                       <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
                     </div>
                     <div className="metric-clock">
                       <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
-                      <div className="metric-clock-label">TOTAL LISTENERS 25/26</div>
+                      <div className="metric-clock-label">TOTAL LISTENERS {currentSeason}</div>
                       <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
                     </div>
                   </div>
