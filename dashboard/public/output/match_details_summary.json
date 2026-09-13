@@ -6416,6 +6416,62 @@
         "freq": 2.84,
         "completion": 23.4
       }
+    },
+    {
+      "date": "2026-09-12",
+      "match_name": "Fortuna Sittard - Ajax",
+      "listeners": 29225,
+      "peakHour": "22:00u",
+      "peakValue": 4699,
+      "successRate": 91.3,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          95.3,
+          1.0,
+          0.6,
+          0.0,
+          3.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          84.6,
+          7.2,
+          2.8,
+          0.8,
+          0.7,
+          3.9
+        ]
+      },
+      "preroll": {
+        "bereik": 25765,
+        "bereikPct": 88.2,
+        "impressies": 70177,
+        "freq": 2.72,
+        "completion": 17.2
+      }
     }
   ]
 }
