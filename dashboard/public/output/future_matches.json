@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-09-15",
-      "weekday": "Tuesday",
-      "time": "20:00",
-      "match_name": "Ajax - Willem II",
-      "commentators": "Diederik & Corné",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "Willem II",
-      "opponent_position": 17,
-      "predicted_listeners": 29122
-    },
-    {
       "date": "2026-09-19",
       "weekday": "Saturday",
       "time": "20:00",
