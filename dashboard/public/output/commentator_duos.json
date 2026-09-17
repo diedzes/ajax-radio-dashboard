@@ -2,18 +2,18 @@
   "excluded_null_listeners": 0,
   "duos": [
     {
-      "duo": "Corné & Frank",
-      "matches_count": 1,
-      "avg": 58514,
-      "median": 58514,
-      "max": 58514
-    },
-    {
       "duo": "Diederik & Errol",
       "matches_count": 1,
       "avg": 51757,
       "median": 51757,
       "max": 51757
+    },
+    {
+      "duo": "Corné & Daaf",
+      "matches_count": 2,
+      "avg": 48174.5,
+      "median": 48174,
+      "max": 58514
     },
     {
       "duo": "Bas & Sjors",
@@ -28,13 +28,6 @@
       "avg": 38538,
       "median": 38538,
       "max": 54094
-    },
-    {
-      "duo": "Corné & Daaf",
-      "matches_count": 1,
-      "avg": 37835,
-      "median": 37835,
-      "max": 37835
     },
     {
       "duo": "Bas & Diederik",
