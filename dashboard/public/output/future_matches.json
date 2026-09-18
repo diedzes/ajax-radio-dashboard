@@ -13,6 +13,20 @@
       "opponent": "Excelsior",
       "opponent_position": 6,
       "predicted_listeners": 29729
+    },
+    {
+      "date": "2026-10-22",
+      "weekday": "Thursday",
+      "time": "21:00",
+      "match_name": "Ajax - Atalanta",
+      "commentators": "Sjors",
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "tv_category": "Unknown",
+      "home_away": "Thuis",
+      "opponent": "Atalanta",
+      "opponent_position": null,
+      "predicted_listeners": 22315
     }
   ]
 }
