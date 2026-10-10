@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-10-10",
-      "weekday": "Saturday",
-      "time": "21:00",
-      "match_name": "Ajax - N.E.C.",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "N.E.C.",
-      "opponent_position": null,
-      "predicted_listeners": 22315
-    },
-    {
       "date": "2026-10-15",
       "weekday": "Thursday",
       "time": "18:45",
@@ -81,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "AZ",
-      "opponent_position": 1,
+      "opponent_position": 2,
       "predicted_listeners": 22315
     },
     {
@@ -151,7 +137,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Feyenoord",
-      "opponent_position": 2,
+      "opponent_position": 3,
       "predicted_listeners": 31087
     },
     {
