@@ -25,7 +25,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "FC Groningen",
-      "opponent_position": 8,
+      "opponent_position": 9,
       "predicted_listeners": 40689
     },
     {
@@ -40,7 +40,7 @@
       "home_away": "Thuis",
       "opponent": "Atalanta",
       "opponent_position": null,
-      "predicted_listeners": 22315
+      "predicted_listeners": 22226
     },
     {
       "date": "2026-10-25",
@@ -67,8 +67,8 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "AZ",
-      "opponent_position": 2,
-      "predicted_listeners": 22315
+      "opponent_position": 3,
+      "predicted_listeners": 22226
     },
     {
       "date": "2026-11-05",
@@ -137,7 +137,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Feyenoord",
-      "opponent_position": 3,
+      "opponent_position": 1,
       "predicted_listeners": 31087
     },
     {
@@ -166,7 +166,7 @@
       "home_away": "Uit",
       "opponent": "STVV",
       "opponent_position": null,
-      "predicted_listeners": 22315
+      "predicted_listeners": 22226
     },
     {
       "date": "2026-12-13",
@@ -194,7 +194,7 @@
       "home_away": "Thuis",
       "opponent": "Getafe",
       "opponent_position": null,
-      "predicted_listeners": 22315
+      "predicted_listeners": 22226
     },
     {
       "date": "2026-12-20",
@@ -207,7 +207,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Go Ahead Eagles",
-      "opponent_position": 9,
+      "opponent_position": 8,
       "predicted_listeners": 40689
     },
     {
