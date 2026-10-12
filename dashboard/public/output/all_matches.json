@@ -8,9 +8,9 @@
       "commentators": "Diederik & Daaf",
       "listeners": 20355,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "score": null,
-      "result": null,
+      "tv_channel": "ESPN1",
+      "score": "1-1",
+      "result": "D",
       "home_away": "Thuis"
     },
     {
@@ -47,7 +47,7 @@
       "commentators": "Diederik & Corné",
       "listeners": 29225,
       "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": "EPSN1",
+      "tv_channel": "ESPN1",
       "score": "1-5",
       "result": "W",
       "home_away": "Uit"
