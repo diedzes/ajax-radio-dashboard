@@ -1,25 +1,11 @@
 {
   "matches": [
     {
-      "date": "2026-10-15",
-      "weekday": "Thursday",
-      "time": "18:45",
-      "match_name": "Hajduk Split - Ajax",
-      "commentators": "Diederik & Frank",
-      "competition": "UEFA Conference League",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "Hajduk Split",
-      "opponent_position": null,
-      "predicted_listeners": 26561
-    },
-    {
       "date": "2026-10-18",
       "weekday": "Sunday",
       "time": "16:45",
       "match_name": "FC Groningen - Ajax",
-      "commentators": "Diederik/Frank & Daaf",
+      "commentators": "Frank & Daaf",
       "competition": "VriendenLoterij Eredivisie",
       "tv_channel": null,
       "tv_category": "Unknown",

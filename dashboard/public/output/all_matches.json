@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "time": "18:45",
+      "match_name": "Hajduk Split - Ajax",
+      "commentators": "Diederik & Frank",
+      "listeners": null,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-10-10",
       "weekday": "Saturday",
       "time": "21:00",
