@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-08-13",
-      "match_name": "Shelbourne FC - Ajax",
-      "listeners": 20489,
-      "predicted_listeners": 29776
-    },
-    {
       "date": "2026-08-16",
       "match_name": "Ajax - sc Heerenveen",
       "listeners": 39282,
@@ -59,6 +53,12 @@
       "match_name": "Ajax - N.E.C.",
       "listeners": 20355,
       "predicted_listeners": 22226
+    },
+    {
+      "date": "2026-10-15",
+      "match_name": "Hajduk Split - Ajax",
+      "listeners": 15656,
+      "predicted_listeners": 25834
     }
   ]
 }

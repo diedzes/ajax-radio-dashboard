@@ -6640,6 +6640,62 @@
         "freq": 2.68,
         "completion": 18.5
       }
+    },
+    {
+      "date": "2026-10-15",
+      "match_name": "Hajduk Split - Ajax",
+      "listeners": 15656,
+      "peakHour": "20:55u",
+      "peakValue": 2614,
+      "successRate": 93.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Relay/herdistributie",
+          "Overig"
+        ],
+        "values": [
+          89.5,
+          2.8,
+          1.3,
+          6.4,
+          0.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#f4a6b3",
+          "#c8c8c8"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          83.3,
+          6.4,
+          3.7,
+          1.1,
+          0.7,
+          4.9
+        ]
+      },
+      "preroll": {
+        "bereik": 13552,
+        "bereikPct": 86.6,
+        "impressies": 34961,
+        "freq": 2.58,
+        "completion": 20.1
+      }
     }
   ]
 }
