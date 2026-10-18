@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-10-18",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "FC Groningen - Ajax",
+      "commentators": "Frank & Daaf",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-10-15",
       "weekday": "Thursday",
       "time": "18:45",
