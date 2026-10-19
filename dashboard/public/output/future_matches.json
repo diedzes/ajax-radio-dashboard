@@ -25,8 +25,8 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Sparta Rotterdam",
-      "opponent_position": 12,
-      "predicted_listeners": 40689
+      "opponent_position": 13,
+      "predicted_listeners": 40391
     },
     {
       "date": "2026-10-31",
@@ -39,7 +39,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "AZ",
-      "opponent_position": 3,
+      "opponent_position": 2,
       "predicted_listeners": 22226
     },
     {
@@ -67,7 +67,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "FC Twente",
-      "opponent_position": 4,
+      "opponent_position": 5,
       "predicted_listeners": 31087
     },
     {
@@ -123,7 +123,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 14,
+      "opponent_position": 11,
       "predicted_listeners": 31087
     },
     {
@@ -180,7 +180,7 @@
       "home_away": "Uit",
       "opponent": "Go Ahead Eagles",
       "opponent_position": 9,
-      "predicted_listeners": 40689
+      "predicted_listeners": 40391
     },
     {
       "date": "2027-01-09",
