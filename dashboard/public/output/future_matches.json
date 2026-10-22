@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-10-22",
-      "weekday": "Thursday",
-      "time": "21:00",
-      "match_name": "Ajax - Atalanta",
-      "commentators": "Diederik & Sjors",
-      "competition": "UEFA Conference League",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "Atalanta",
-      "opponent_position": null,
-      "predicted_listeners": 22226
-    },
-    {
       "date": "2026-10-25",
       "weekday": "Sunday",
       "time": "16:45",
