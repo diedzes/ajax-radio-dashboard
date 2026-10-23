@@ -6752,6 +6752,62 @@
         "freq": 2.97,
         "completion": 16.7
       }
+    },
+    {
+      "date": "2026-10-22",
+      "match_name": "Ajax - Atalanta",
+      "listeners": 22983,
+      "peakHour": "22:53u",
+      "peakValue": 3525,
+      "successRate": 79.1,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          93.2,
+          1.7,
+          0.8,
+          0.0,
+          4.3
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          82.0,
+          9.0,
+          3.5,
+          0.8,
+          0.7,
+          3.9
+        ]
+      },
+      "preroll": {
+        "bereik": 15781,
+        "bereikPct": 68.7,
+        "impressies": 42921,
+        "freq": 2.72,
+        "completion": 17.3
+      }
     }
   ]
 }
