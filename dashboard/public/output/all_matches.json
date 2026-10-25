@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-10-25",
+      "weekday": "Sunday",
+      "time": "16:45",
+      "match_name": "Sparta Rotterdam - Ajax",
+      "commentators": "Diederik & Daaf",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-10-22",
       "weekday": "Thursday",
       "time": "21:00",
