@@ -1,16 +1,10 @@
 {
   "matches": [
     {
-      "date": "2026-08-27",
-      "match_name": "Ajax - FC Sion",
-      "listeners": 32134,
-      "predicted_listeners": 29776
-    },
-    {
       "date": "2026-08-30",
       "match_name": "Telstar - Ajax",
       "listeners": 36501,
-      "predicted_listeners": 40391
+      "predicted_listeners": 40076
     },
     {
       "date": "2026-09-05",
@@ -52,13 +46,19 @@
       "date": "2026-10-18",
       "match_name": "FC Groningen - Ajax",
       "listeners": 33531,
-      "predicted_listeners": 40391
+      "predicted_listeners": 40076
     },
     {
       "date": "2026-10-22",
       "match_name": "Ajax - Atalanta",
       "listeners": 22983,
       "predicted_listeners": 22259
+    },
+    {
+      "date": "2026-10-25",
+      "match_name": "Sparta Rotterdam - Ajax",
+      "listeners": 32519,
+      "predicted_listeners": 40076
     }
   ]
 }

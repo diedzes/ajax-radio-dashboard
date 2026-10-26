@@ -11,7 +11,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "AZ",
-      "opponent_position": 2,
+      "opponent_position": 5,
       "predicted_listeners": 22259
     },
     {
@@ -39,7 +39,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "FC Twente",
-      "opponent_position": 5,
+      "opponent_position": 4,
       "predicted_listeners": 31087
     },
     {
@@ -152,7 +152,7 @@
       "home_away": "Uit",
       "opponent": "Go Ahead Eagles",
       "opponent_position": 9,
-      "predicted_listeners": 40391
+      "predicted_listeners": 40076
     },
     {
       "date": "2027-01-09",

@@ -6808,6 +6808,62 @@
         "freq": 2.72,
         "completion": 17.3
       }
+    },
+    {
+      "date": "2026-10-25",
+      "match_name": "Sparta Rotterdam - Ajax",
+      "listeners": 32519,
+      "peakHour": "19:42u",
+      "peakValue": 7004,
+      "successRate": 92.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          96.0,
+          1.8,
+          1.0,
+          0.1,
+          1.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          87.0,
+          5.8,
+          2.8,
+          0.8,
+          0.6,
+          3.0
+        ]
+      },
+      "preroll": {
+        "bereik": 27979,
+        "bereikPct": 86.0,
+        "impressies": 75914,
+        "freq": 2.71,
+        "completion": 17.0
+      }
     }
   ]
 }
