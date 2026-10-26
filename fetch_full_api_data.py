@@ -11,7 +11,6 @@ from datetime import datetime
 from typing import List, Dict, Any
 
 PRIMARY_API_URL = 'https://stajaxradioprod.blob.core.windows.net/luistercijfers/luistercijfers.csv'
-FALLBACK_API_URL = 'http://ajaxradio.westeurope.azurecontainer.io/all_shows/'
 
 
 def fetch_api_data(url: str) -> str:
@@ -103,20 +102,15 @@ if __name__ == '__main__':
         payload = fetch_api_data(PRIMARY_API_URL)
         source_url = PRIMARY_API_URL
     except requests.RequestException as exc:
-        print(f"Warning: failed to fetch primary API data ({exc}). Trying fallback URL.")
+        print(f"Warning: failed to fetch API data ({exc}). Using cached file if available.")
         try:
-            payload = fetch_api_data(FALLBACK_API_URL)
-            source_url = FALLBACK_API_URL
-        except requests.RequestException as fallback_exc:
-            print(f"Warning: failed to fetch fallback API data ({fallback_exc}). Using cached file if available.")
-            try:
-                with open('api_data_full.json', 'r', encoding='utf-8') as f:
-                    json.load(f)
-                print("Found cached api_data_full.json; continuing.")
-                exit(0)
-            except (FileNotFoundError, json.JSONDecodeError):
-                print("No cached api_data_full.json available.")
-                exit(0)
+            with open('api_data_full.json', 'r', encoding='utf-8') as f:
+                json.load(f)
+            print("Found cached api_data_full.json; continuing.")
+            exit(0)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("No cached api_data_full.json available.")
+            exit(0)
     
     print(f"Parsing API data from {source_url}...")
     data = parse_api_data(payload)

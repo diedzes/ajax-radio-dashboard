@@ -151,6 +151,18 @@ function Dashboard() {
   }
 
   const triggerDataUpdate = async () => {
+    const storageKey = 'refreshSecret'
+    let secret = ''
+    try {
+      secret = localStorage.getItem(storageKey) || ''
+    } catch {
+      // localStorage niet beschikbaar; dan elke keer vragen
+    }
+    if (!secret) {
+      secret = (window.prompt('Refresh-code') || '').trim()
+      if (!secret) return
+    }
+
     setUpdating(true)
     setUpdateMessage('')
 
@@ -158,9 +170,20 @@ function Dashboard() {
       const response = await fetch('/api/refresh-data', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'X-Refresh-Secret': secret
         }
       })
+
+      try {
+        if (response.status === 401) {
+          localStorage.removeItem(storageKey)
+        } else {
+          localStorage.setItem(storageKey, secret)
+        }
+      } catch {
+        // negeren
+      }
 
       if (!response.ok) {
         let errorMessage = 'Failed to start data update'

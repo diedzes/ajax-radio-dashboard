@@ -31,8 +31,10 @@ import argparse
 import csv
 import json
 import os
+import re
 import subprocess
 import sys
+import traceback
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
@@ -80,6 +82,16 @@ def _sas():
     if not token:
         sys.exit("Zet eerst AJAX_SAS_TOKEN als environment variable (de query string van Frank, met of zonder leidende '?').")
     return token.lstrip("?")
+
+
+def _redact(text):
+    """Haalt de SAS-token uit tekst die gelogd wordt. requests zet de volledige
+    URL (inclusief sig=) in foutmeldingen, en de Action-logs zijn leesbaar."""
+    text = re.sub(r"(https?://[^\s?'\"]+)\?[^\s'\"]*", r"\1?<SAS verborgen>", str(text))
+    token = os.environ.get("AJAX_SAS_TOKEN", "").lstrip("?")
+    if token:
+        text = text.replace(token, "<SAS verborgen>")
+    return text
 
 
 def _url(container, blob_name=None, extra_query=None):
@@ -448,7 +460,7 @@ def cmd_process_all(args):
         try:
             cmd_process(argparse.Namespace(date=d, output_dir=args.output_dir))
         except Exception as e:
-            print(f"FOUT bij {d}: {e}", file=sys.stderr)
+            print(f"FOUT bij {d}: {_redact(e)}", file=sys.stderr)
 
 
 def _run_git(args_list, check=True):
@@ -490,7 +502,7 @@ def cmd_backfill(args):
         try:
             cmd_process(argparse.Namespace(date=d, output_dir=args.output_dir))
         except Exception as e:
-            print(f"FOUT bij verwerken van {d}: {e}", file=sys.stderr)
+            print(f"FOUT bij verwerken van {d}: {_redact(e)}", file=sys.stderr)
             failed.append(d)
             continue
 
@@ -514,7 +526,7 @@ def cmd_backfill(args):
                     continue
             done.append(d)
         except Exception as e:
-            print(f"FOUT bij git-stap voor {d}: {e}", file=sys.stderr)
+            print(f"FOUT bij git-stap voor {d}: {_redact(e)}", file=sys.stderr)
             failed.append(d)
             continue
 
@@ -556,7 +568,12 @@ def main():
     p_backfill.set_defaults(func=cmd_backfill)
 
     args = parser.parse_args()
-    args.func(args)
+    try:
+        args.func(args)
+    except Exception:
+        # Volledige traceback, maar zonder SAS-token erin.
+        print(_redact(traceback.format_exc()), file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

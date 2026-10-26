@@ -11,7 +11,6 @@ from datetime import datetime
 from typing import List, Dict, Any
 
 PRIMARY_API_URL = 'https://stajaxradioprod.blob.core.windows.net/luistercijfers/luistercijfers.csv'
-FALLBACK_API_URL = 'http://ajaxradio.westeurope.azurecontainer.io/all_shows/'
 
 
 def fetch_api_data(url: str) -> str:
@@ -123,13 +122,8 @@ if __name__ == '__main__':
     print("Fetching data from API...")
     payload = None
     source_url = None
-    try:
-        payload = fetch_api_data(PRIMARY_API_URL)
-        source_url = PRIMARY_API_URL
-    except requests.RequestException as exc:
-        print(f"Warning: failed to fetch primary API data ({exc}). Trying fallback URL.")
-        payload = fetch_api_data(FALLBACK_API_URL)
-        source_url = FALLBACK_API_URL
+    payload = fetch_api_data(PRIMARY_API_URL)
+    source_url = PRIMARY_API_URL
     
     print(f"Parsing API data from {source_url}...")
     data = parse_api_data(payload)

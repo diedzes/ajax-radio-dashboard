@@ -12,7 +12,6 @@ from typing import List, Dict, Any, Optional, Tuple
 import requests
 
 PRIMARY_API_URL = 'https://stajaxradioprod.blob.core.windows.net/luistercijfers/luistercijfers.csv'
-FALLBACK_API_URL = 'http://ajaxradio.westeurope.azurecontainer.io/all_shows/'
 
 MANUAL_LISTENER_OVERRIDES_BY_KEY = {
     ("2026-02-08", "AZ - Ajax"): 17579,
@@ -91,10 +90,7 @@ def fetch_fresh_api_data() -> Dict[str, int]:
     try:
         from explore_api import fetch_api_data, parse_api_data
         print("Fetching fresh API data...")
-        try:
-            payload = fetch_api_data(PRIMARY_API_URL)
-        except requests.RequestException:
-            payload = fetch_api_data(FALLBACK_API_URL)
+        payload = fetch_api_data(PRIMARY_API_URL)
         data = parse_api_data(payload)
         
         date_listeners = {}
