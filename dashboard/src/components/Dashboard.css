@@ -366,3 +366,16 @@
     white-space: nowrap;
   }
 }
+
+/* Sorteerpijltje in tabelkoppen: grijs, rood bij de actieve kolom. */
+.sort-icon {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.8em;
+  font-family: Arial, sans-serif;
+  color: #b5b5b5;
+}
+
+.sort-icon.is-active {
+  color: var(--ajax-red);
+}

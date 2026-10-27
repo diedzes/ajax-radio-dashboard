@@ -49,9 +49,9 @@ function CommentatorDuosSection({ data }) {
 
   const getSortIcon = (columnKey) => {
     if (sortConfig.key !== columnKey) {
-      return '↕️'
+      return <span className="sort-icon" aria-hidden="true">↕&#xFE0E;</span>
     }
-    return sortConfig.direction === 'asc' ? '↑' : '↓'
+    return <span className="sort-icon is-active" aria-hidden="true">{sortConfig.direction === 'asc' ? '↑' : '↓'}</span>
   }
 
   // Top 15 for chart
