@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect } from 'react'
-import ExportPdfButton from './ExportPdfButton'
 import MatchDetailModal from './MatchDetailModal'
 import './AllMatchesOverview.css'
 
@@ -147,7 +146,6 @@ function AllMatchesOverview({ data }) {
           <h2>All Matches Overview</h2>
           <p className="section-subtitle">from july 2024</p>
         </div>
-        <ExportPdfButton targetId="all-matches-table" filename="all-matches.pdf" />
       </div>
       <div className="matches-table-container" id="all-matches-table">
         <table className="matches-table">

@@ -12,7 +12,43 @@ import WeekdaySection from './WeekdaySection'
 import EngagementSection from './EngagementSection'
 import PlatformMixTrendSection from './PlatformMixTrendSection'
 import GeoTrendSection from './GeoTrendSection'
+import { exportElementToPdf } from '../utils/exportPdf'
+import sportSoundsLogo from '../assets/sport-sounds-wordmark-black.png'
 import './Dashboard.css'
+
+const RADIO_TABS = [
+  { id: 'overzicht', label: 'Overzicht', title: 'Ajax Radio' },
+  { id: 'wedstrijden', label: 'Wedstrijden', title: 'Wedstrijden' },
+  { id: 'analyse', label: 'Analyse', title: 'Analyse' },
+  { id: 'streaming', label: 'Streaming', title: 'Streaming' }
+]
+
+// Oude ankerlinks (van vóór de tabbladen) blijven werken: ze openen het juiste tabblad.
+const LEGACY_ANCHORS = {
+  'all-matches': 'wedstrijden',
+  'future-matches': 'wedstrijden',
+  'top5-games': 'overzicht',
+  'by-result': 'analyse',
+  'by-home-away': 'analyse',
+  'by-tv-category': 'analyse',
+  'kickoff-blocks': 'analyse',
+  weekday: 'analyse',
+  'commentator-duos': 'analyse',
+  engagement: 'streaming',
+  'platform-mix-trend': 'streaming',
+  'geo-trend': 'streaming'
+}
+
+function readHash(lastRadioTab = 'overzicht') {
+  const hash = window.location.hash.slice(1)
+  if (hash === 'podcast') return { product: 'podcast', tab: lastRadioTab, lastRadioTab, anchor: null }
+  if (RADIO_TABS.some((tab) => tab.id === hash)) return { product: 'radio', tab: hash, lastRadioTab: hash, anchor: null }
+  if (LEGACY_ANCHORS[hash]) {
+    const tab = LEGACY_ANCHORS[hash]
+    return { product: 'radio', tab, lastRadioTab: tab, anchor: hash }
+  }
+  return { product: 'radio', tab: lastRadioTab, lastRadioTab, anchor: null }
+}
 
 function Dashboard() {
   const [data, setData] = useState({
@@ -36,7 +72,31 @@ function Dashboard() {
   const [updating, setUpdating] = useState(false)
   const [updateMessage, setUpdateMessage] = useState('')
   const [error, setError] = useState(null)
-  const [activeTab, setActiveTab] = useState('radio')
+  const [view, setView] = useState(() => readHash())
+  const [exporting, setExporting] = useState(false)
+
+  const goTo = (target) => {
+    window.location.hash = target
+  }
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setView((current) => readHash(current.lastRadioTab))
+      window.scrollTo(0, 0)
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  // Na het laden naar een oud anker scrollen, zodat bestaande links blijven kloppen.
+  useEffect(() => {
+    if (!view.anchor || loading) return
+    // Sommige secties laden hun eigen data en worden pas later hoog; daarom nog eens na een korte pauze.
+    const scroll = () => document.getElementById(view.anchor)?.scrollIntoView({ block: 'start' })
+    scroll()
+    const timer = setTimeout(scroll, 700)
+    return () => clearTimeout(timer)
+  }, [view, loading])
 
   const loadData = async ({ isRefresh = false } = {}) => {
     if (isRefresh) {
@@ -254,12 +314,12 @@ function Dashboard() {
 
   const currentSeason = '26/27'
   const radioSeasonStart = '2026-07-01'
-  const radioListenersTotal = data.allMatches?.matches
-    ? data.allMatches.matches.reduce((sum, match) => {
-        if (!match?.date || match.date < radioSeasonStart) return sum
-        return sum + (match.listeners || 0)
-      }, 0)
-    : 0
+  const radioSeasonMatches = (data.allMatches?.matches || []).filter(
+    (match) => match?.date && match.date >= radioSeasonStart
+  )
+  const radioListenersTotal = radioSeasonMatches.reduce((sum, match) => sum + (match.listeners || 0), 0)
+  const radioMatchesWithListeners = radioSeasonMatches.filter((match) => match.listeners).length
+  const radioAverage = radioMatchesWithListeners ? radioListenersTotal / radioMatchesWithListeners : 0
 
   const podcastSeasonStart = '2026-07'
   const podcastListenersTotal = data.podcastMonthly?.months
@@ -270,226 +330,195 @@ function Dashboard() {
     : 0
 
   const totalListeners = radioListenersTotal + podcastListenersTotal
-  const maxMetricValue = Math.max(radioListenersTotal, podcastListenersTotal, totalListeners, 1)
-  const getMetricStyle = (value) => {
-    const percent = Math.round((value / maxMetricValue) * 100)
-    return {
-      '--fill-percent': `${percent}%`,
-      '--needle-rotation': `${percent * 3.6}deg`
+  const nextMatch = data.futureMatches?.matches?.[0] || null
+  const formatNumber = (value) => Math.round(value || 0).toLocaleString('nl-NL')
+  const formatDate = (iso) =>
+    new Date(`${iso}T12:00:00`).toLocaleDateString('nl-NL', { weekday: 'short', day: 'numeric', month: 'short' })
+
+  const activeRadioTab = RADIO_TABS.find((tab) => tab.id === view.tab) || RADIO_TABS[0]
+  const pageTitle = view.product === 'podcast' ? 'Ajax Podcast' : activeRadioTab.title
+  const kicker = view.product === 'podcast' ? `Podcast · ${currentSeason}` : `Radio · ${currentSeason}`
+
+  const handleExport = async () => {
+    const element = document.getElementById('dashboard-content')
+    if (!element) return
+    setExporting(true)
+    try {
+      const name = view.product === 'podcast' ? 'podcast' : view.tab
+      const today = new Date().toISOString().slice(0, 10)
+      await exportElementToPdf(element, `ajax-radio-${name}-${today}.pdf`)
+    } finally {
+      setExporting(false)
     }
   }
-  const formatTotal = (value) => (value ? value.toLocaleString() : '0')
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const renderRadioTab = () => {
+    switch (view.tab) {
+      case 'wedstrijden':
+        return (
+          <>
+            <section className="dashboard-section" id="all-matches">
+              <AllMatchesOverview data={data.allMatches} />
+            </section>
+            <section className="dashboard-section" id="future-matches">
+              <FutureMatchesSection data={data.futureMatches} recentPredictions={data.recentPredictions} />
+            </section>
+          </>
+        )
+      case 'analyse':
+        return (
+          <>
+            <section className="dashboard-section" id="by-result">
+              <ResultAnalysisSection data={data.byResult} />
+            </section>
+            <section className="dashboard-section" id="by-home-away">
+              <HomeAwayAnalysisSection data={data.byHomeAway} />
+            </section>
+            <section className="dashboard-section" id="by-tv-category">
+              <TVCategoryAnalysisSection data={data.byTVCategory} />
+            </section>
+            <section className="dashboard-section" id="kickoff-blocks">
+              <KickoffBlocksSection data={data.kickoffBlocks} />
+            </section>
+            <section className="dashboard-section" id="weekday">
+              <WeekdaySection data={data.weekday} />
+            </section>
+            <section className="dashboard-section" id="commentator-duos">
+              <CommentatorDuosSection data={data.commentatorDuos} />
+            </section>
+          </>
+        )
+      case 'streaming':
+        return (
+          <>
+            <section className="dashboard-section" id="engagement">
+              <EngagementSection />
+            </section>
+            <section className="dashboard-section" id="platform-mix-trend">
+              <PlatformMixTrendSection />
+            </section>
+            <section className="dashboard-section" id="geo-trend">
+              <GeoTrendSection />
+            </section>
+          </>
+        )
+      default:
+        return (
+          <>
+            <div className="kpi-grid">
+              <div className="kpi-tile">
+                <div className="kpi-label">Totaal bereik {currentSeason}</div>
+                <div className="kpi-value">{formatNumber(totalListeners)}</div>
+                <div className="kpi-meta">Radio + podcast</div>
+              </div>
+              <div className="kpi-tile">
+                <div className="kpi-label">Radio-luisteraars</div>
+                <div className="kpi-value">{formatNumber(radioListenersTotal)}</div>
+                <div className="kpi-meta">
+                  {radioMatchesWithListeners} wedstrijden · gem. {formatNumber(radioAverage)}
+                </div>
+              </div>
+              <div className="kpi-tile">
+                <div className="kpi-label">Podcast-downloads</div>
+                <div className="kpi-value">{formatNumber(podcastListenersTotal)}</div>
+                <div className="kpi-meta">Sinds juli 2026</div>
+              </div>
+              <a className="kpi-tile kpi-tile-link" href="#wedstrijden">
+                <div className="kpi-label">Volgende wedstrijd</div>
+                <div className="kpi-value">{nextMatch ? formatNumber(nextMatch.predicted_listeners) : '—'}</div>
+                <div className="kpi-meta">
+                  {nextMatch ? `${nextMatch.match_name} · ${formatDate(nextMatch.date)} · voorspeld` : 'Geen wedstrijd gepland'}
+                </div>
+              </a>
+            </div>
+            <section className="dashboard-section" id="top5-games">
+              <Top5GamesSection data={data.top5Games} />
+            </section>
+          </>
+        )
     }
   }
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-layout">
-        <aside className="dashboard-sidebar">
-          <div className="dashboard-logos">
+      <header className="topbar">
+        <div className="topbar-inner">
+          <div className="topbar-brand">
+            <img className="topbar-logo-ss" src={sportSoundsLogo} alt="Sport Sounds" />
+            <span className="topbar-x" aria-hidden="true">×</span>
             <img
-              className="dashboard-logo"
-              src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/01/zessenlogo-zwart.png"
-              alt="Zessen Media logo"
-            />
-            <img
-              className="dashboard-logo"
+              className="topbar-logo-ajax"
               src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/02/AFC_Ajax_crest.svg.png"
-              alt="AFC Ajax crest"
+              alt="AFC Ajax"
             />
           </div>
-          <nav className="dashboard-side-nav">
-            <button
-              type="button"
-              className={activeTab === 'radio' ? 'is-active' : ''}
-              onClick={() => setActiveTab('radio')}
-            >
+
+          <div className="segmented topbar-product" role="group" aria-label="Product">
+            <button type="button" aria-pressed={view.product === 'radio'} onClick={() => goTo(view.lastRadioTab)}>
               Radio
             </button>
-            <button
-              type="button"
-              className={activeTab === 'podcast' ? 'is-active' : ''}
-              onClick={() => setActiveTab('podcast')}
-            >
+            <button type="button" aria-pressed={view.product === 'podcast'} onClick={() => goTo('podcast')}>
               Podcast
             </button>
-          </nav>
-        </aside>
+          </div>
 
-        <div className="dashboard-main">
-          {activeTab === 'radio' ? (
-            <>
-              <header>
-                <div className="dashboard-header-top">
-                  <h1 className="dashboard-title">Ajax Radio Dashboard</h1>
-                  <div className="dashboard-metrics">
-                    <div className="metric-clock">
-                      <div className="metric-clock-face" style={getMetricStyle(radioListenersTotal)} />
-                      <div className="metric-clock-label">RADIO LISTENERS {currentSeason}</div>
-                      <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
-                    </div>
-                    <div className="metric-clock">
-                      <div className="metric-clock-face" style={getMetricStyle(podcastListenersTotal)} />
-                      <div className="metric-clock-label">PODCAST LISTENERS {currentSeason}</div>
-                      <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
-                    </div>
-                    <div className="metric-clock">
-                      <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
-                      <div className="metric-clock-label">TOTAL LISTENERS {currentSeason}</div>
-                      <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
-                    </div>
-                  </div>
-                </div>
-                <nav className="dashboard-nav">
-                  <a href="#all-matches" onClick={(e) => { e.preventDefault(); scrollToSection('all-matches') }}>
-                    All Matches
-                  </a>
-                  <a href="#future-matches" onClick={(e) => { e.preventDefault(); scrollToSection('future-matches') }}>
-                    Future Matches
-                  </a>
-                  <a href="#top5-games" onClick={(e) => { e.preventDefault(); scrollToSection('top5-games') }}>
-                    Top 5 Games
-                  </a>
-                  <a href="#by-result" onClick={(e) => { e.preventDefault(); scrollToSection('by-result') }}>
-                    By Result
-                  </a>
-                  <a href="#by-home-away" onClick={(e) => { e.preventDefault(); scrollToSection('by-home-away') }}>
-                    Home/Away
-                  </a>
-                  <a href="#by-tv-category" onClick={(e) => { e.preventDefault(); scrollToSection('by-tv-category') }}>
-                    TV Categories
-                  </a>
-                  <a href="#kickoff-blocks" onClick={(e) => { e.preventDefault(); scrollToSection('kickoff-blocks') }}>
-                    Kickoff Blocks
-                  </a>
-                  <a href="#weekday" onClick={(e) => { e.preventDefault(); scrollToSection('weekday') }}>
-                    Weekday
-                  </a>
-                  <a href="#commentator-duos" onClick={(e) => { e.preventDefault(); scrollToSection('commentator-duos') }}>
-                    Commentator Duos
-                  </a>
-                  <a href="#engagement" onClick={(e) => { e.preventDefault(); scrollToSection('engagement') }}>
-                    Doorluisterwaarde
-                  </a>
-                  <a href="#platform-mix-trend" onClick={(e) => { e.preventDefault(); scrollToSection('platform-mix-trend') }}>
-                    Platform-mix
-                  </a>
-                  <a href="#geo-trend" onClick={(e) => { e.preventDefault(); scrollToSection('geo-trend') }}>
-                    NL vs Buitenland
-                  </a>
-                </nav>
-              </header>
-
-              <section className="dashboard-section" id="all-matches">
-                <AllMatchesOverview data={data.allMatches} />
-              </section>
-
-              <section className="dashboard-section" id="future-matches">
-                <FutureMatchesSection
-                  data={data.futureMatches}
-                  recentPredictions={data.recentPredictions}
-                />
-              </section>
-
-              <section className="dashboard-section" id="top5-games">
-                <Top5GamesSection data={data.top5Games} />
-              </section>
-
-              <section className="dashboard-section" id="by-result">
-                <ResultAnalysisSection data={data.byResult} />
-              </section>
-
-              <section className="dashboard-section" id="by-home-away">
-                <HomeAwayAnalysisSection data={data.byHomeAway} />
-              </section>
-
-              <section className="dashboard-section" id="by-tv-category">
-                <TVCategoryAnalysisSection data={data.byTVCategory} />
-              </section>
-
-              <section className="dashboard-section" id="kickoff-blocks">
-                <KickoffBlocksSection data={data.kickoffBlocks} />
-              </section>
-
-              <section className="dashboard-section" id="weekday">
-                <WeekdaySection data={data.weekday} />
-              </section>
-
-              <section className="dashboard-section" id="commentator-duos">
-                <CommentatorDuosSection data={data.commentatorDuos} />
-              </section>
-
-              <section className="dashboard-section" id="engagement">
-                <EngagementSection />
-              </section>
-
-              <section className="dashboard-section" id="platform-mix-trend">
-                <PlatformMixTrendSection />
-              </section>
-
-              <section className="dashboard-section" id="geo-trend">
-                <GeoTrendSection />
-              </section>
-            </>
-          ) : (
-            <>
-              <header>
-                <div className="dashboard-header-top">
-                  <h1 className="dashboard-title">Ajax Podcast Dashboard</h1>
-                  <div className="dashboard-metrics">
-                    <div className="metric-clock">
-                      <div className="metric-clock-face" style={getMetricStyle(radioListenersTotal)} />
-                      <div className="metric-clock-label">RADIO LISTENERS {currentSeason}</div>
-                      <div className="metric-clock-value">{formatTotal(radioListenersTotal)}</div>
-                    </div>
-                    <div className="metric-clock">
-                      <div className="metric-clock-face" style={getMetricStyle(podcastListenersTotal)} />
-                      <div className="metric-clock-label">PODCAST LISTENERS {currentSeason}</div>
-                      <div className="metric-clock-value">{formatTotal(podcastListenersTotal)}</div>
-                    </div>
-                    <div className="metric-clock">
-                      <div className="metric-clock-face" style={getMetricStyle(totalListeners)} />
-                      <div className="metric-clock-label">TOTAL LISTENERS {currentSeason}</div>
-                      <div className="metric-clock-value">{formatTotal(totalListeners)}</div>
-                    </div>
-                  </div>
-                </div>
-              </header>
-
-              <section className="dashboard-section" id="podcast">
-                <PodcastSection
-                  episodes={data.podcastEpisodes}
-                  monthly={data.podcastMonthly}
-                  apps={data.podcastApps}
-                />
-              </section>
-            </>
-          )}
-
-          <div className="dashboard-refresh-footer">
+          <div className="topbar-actions">
             <button
               type="button"
-              className="refresh-button"
+              className="topbar-button"
+              onClick={handleExport}
+              disabled={exporting}
+              title="Huidige tab opslaan als PDF"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" /></svg>
+              <span className="topbar-button-label">{exporting ? 'Bezig…' : 'Exporteer'}</span>
+            </button>
+            <button
+              type="button"
+              className="topbar-button topbar-button-primary"
               onClick={triggerDataUpdate}
               disabled={loading || refreshing || updating}
               aria-busy={updating || refreshing}
+              title="Nieuwe cijfers ophalen"
             >
-              {updating ? 'Starting Update...' : 'Refresh Data'}
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 10-2.3 5.7M20 4v7h-7" /></svg>
+              <span className="topbar-button-label">{updating ? 'Starten…' : 'Ververs'}</span>
             </button>
-            {error ? <p className="error">Refresh failed: {error}</p> : null}
-            {updateMessage ? (
-              <p className={`status-message ${updateMessage.startsWith('Failed') ? 'error' : ''}`}>
-                {updateMessage}
-              </p>
-            ) : null}
           </div>
         </div>
-      </div>
+
+        {view.product === 'radio' ? (
+          <nav className="subnav" aria-label="Radio">
+            {RADIO_TABS.map((tab) => (
+              <a key={tab.id} href={`#${tab.id}`} aria-current={view.tab === tab.id ? 'page' : undefined}>
+                {tab.label}
+              </a>
+            ))}
+          </nav>
+        ) : null}
+      </header>
+
+      {error || updateMessage ? (
+        <div className="status-bar" role="status">
+          {error ? <p className="error">Laden mislukt: {error}</p> : null}
+          {updateMessage ? <p className="status-message">{updateMessage}</p> : null}
+        </div>
+      ) : null}
+
+      <main className="dashboard-main" id="dashboard-content">
+        <div className="page-head">
+          <p className="page-kicker">{kicker}</p>
+          <h1 className="page-title">{pageTitle}</h1>
+        </div>
+
+        {view.product === 'podcast' ? (
+          <section className="dashboard-section" id="podcast">
+            <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} apps={data.podcastApps} />
+          </section>
+        ) : (
+          renderRadioTab()
+        )}
+      </main>
     </div>
   )
 }

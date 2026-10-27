@@ -1,6 +1,5 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import ExportPdfButton from './ExportPdfButton'
 import './FutureMatchesSection.css'
 
 function FutureMatchesSection({ data, recentPredictions }) {
@@ -42,7 +41,6 @@ function FutureMatchesSection({ data, recentPredictions }) {
           <h2>Future Matches</h2>
           <p className="section-subtitle">predicted listeners</p>
         </div>
-        <ExportPdfButton targetId="future-matches-table" filename="future-matches.pdf" />
       </div>
       <div className="matches-table-container" id="future-matches-table">
         <table className="matches-table">

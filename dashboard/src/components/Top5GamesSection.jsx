@@ -1,5 +1,4 @@
 import React from 'react'
-import ExportPdfButton from './ExportPdfButton'
 import './Top5GamesSection.css'
 
 function Top5GamesSection({ data }) {
@@ -56,10 +55,6 @@ function Top5GamesSection({ data }) {
       <div className="season-section">
         <div className="section-header-row">
           <h3>{season}</h3>
-          <ExportPdfButton
-            targetId={`top5-${safeSeason}-table`}
-            filename={`top5-games-${safeSeason}.pdf`}
-          />
         </div>
         <table className="top5-table" id={`top5-${safeSeason}-table`}>
           <thead>

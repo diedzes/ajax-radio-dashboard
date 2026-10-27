@@ -1,6 +1,5 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import ExportPdfButton from './ExportPdfButton'
 import './TVCategoryAnalysisSection.css'
 
 function TVCategoryAnalysisSection({ data }) {
@@ -27,7 +26,6 @@ function TVCategoryAnalysisSection({ data }) {
     <div className="section tv-category-analysis-section">
       <div className="section-header-row">
         <h2>Average Listeners by TV Channel Category</h2>
-        <ExportPdfButton targetId="tv-category-analysis-table" filename="tv-category-analysis.pdf" />
       </div>
       <p className="section-description">
         Categorization: Half-open (ZIGGO), Open (ESPN/ESPN1), Paid (all other)
