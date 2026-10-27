@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import AllMatchesOverview from './AllMatchesOverview'
 import FutureMatchesSection from './FutureMatchesSection'
 import PodcastSection from './PodcastSection'
@@ -12,10 +12,14 @@ import WeekdaySection from './WeekdaySection'
 import EngagementSection from './EngagementSection'
 import PlatformMixTrendSection from './PlatformMixTrendSection'
 import GeoTrendSection from './GeoTrendSection'
-import { exportElementToPdf } from '../utils/exportPdf'
+import { analyzeMatches, top5BySeason } from '../utils/analysis'
+import { ALL_SEASONS, currentSeason as getCurrentSeason, isInSeason, seasonShort, seasonsInData } from '../utils/season'
+import { formatDateWithDay, formatNumber } from '../utils/format'
 import sportSoundsLogo from '../assets/sport-sounds-wordmark-black.png'
 import ajaxCrest from '../assets/ajax-crest.png'
 import './Dashboard.css'
+
+const SEASON_STORAGE_KEY = 'dashboardSeason'
 
 const RADIO_TABS = [
   { id: 'overzicht', label: 'Overzicht', title: 'Ajax Radio' },
@@ -54,19 +58,12 @@ function readHash(lastRadioTab = 'overzicht') {
 function Dashboard() {
   const [data, setData] = useState({
     allMatches: null,
-    top5Games: null,
-    commentatorDuos: null,
-    byResult: null,
-    byHomeAway: null,
-    byTVCategory: null,
-    commentators: null,
-    kickoffBlocks: null,
-    weekday: null,
     futureMatches: null,
     recentPredictions: null,
     podcastEpisodes: null,
     podcastMonthly: null,
-    podcastApps: null
+    podcastApps: null,
+    meta: null
   })
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
@@ -75,6 +72,22 @@ function Dashboard() {
   const [error, setError] = useState(null)
   const [view, setView] = useState(() => readHash())
   const [exporting, setExporting] = useState(false)
+  const [season, setSeason] = useState(() => {
+    try {
+      return localStorage.getItem(SEASON_STORAGE_KEY) || getCurrentSeason()
+    } catch {
+      return getCurrentSeason()
+    }
+  })
+
+  const chooseSeason = (value) => {
+    setSeason(value)
+    try {
+      localStorage.setItem(SEASON_STORAGE_KEY, value)
+    } catch {
+      // niet opslaan is geen probleem
+    }
+  }
 
   const goTo = (target) => {
     window.location.hash = target
@@ -108,98 +121,27 @@ function Dashboard() {
     setError(null)
 
     const cacheBuster = `?t=${Date.now()}`
+    const getJson = async (file) => {
+      const response = await fetch(`/output/${file}${cacheBuster}`, { cache: 'no-store' })
+      if (!response.ok) throw new Error(`${file} kon niet worden geladen`)
+      return response.json()
+    }
 
     try {
-      const [
-        allMatchesRes,
-        top5GamesRes,
-        commentatorDuosRes,
-        byResultRes,
-        byHomeAwayRes,
-        byTVCategoryRes,
-        commentatorsRes,
-        kickoffRes,
-        weekdayRes,
-        futureMatchesRes,
-        recentPredictionsRes,
-        podcastEpisodesRes,
-        podcastMonthlyRes,
-        podcastAppsRes
-      ] = await Promise.all([
-        fetch(`/output/all_matches.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/top5_games.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/commentator_duos.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/by_result.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/by_home_away.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/by_tv_category.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/commentators_full_credit.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/kickoff_blocks.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/weekday.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/future_matches.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/recent_predictions.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/podcast_episodes.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/podcast_monthly.json${cacheBuster}`, { cache: 'no-store' }),
-        fetch(`/output/podcast_apps.json${cacheBuster}`, { cache: 'no-store' })
-      ])
+      // Analyses en top 5 rekent de app zelf uit all_matches.json, zodat ze per seizoen kunnen.
+      const [allMatches, futureMatches, recentPredictions, podcastEpisodes, podcastMonthly, podcastApps] =
+        await Promise.all([
+          getJson('all_matches.json'),
+          getJson('future_matches.json'),
+          getJson('recent_predictions.json'),
+          getJson('podcast_episodes.json'),
+          getJson('podcast_monthly.json'),
+          getJson('podcast_apps.json')
+        ])
+      // meta.json (tijdstip van de laatste pipeline-run) is optioneel.
+      const meta = await getJson('meta.json').catch(() => null)
 
-      if (!allMatchesRes.ok || !top5GamesRes.ok || !commentatorDuosRes.ok ||
-          !byResultRes.ok || !byHomeAwayRes.ok || !byTVCategoryRes.ok ||
-          !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok || !futureMatchesRes.ok ||
-          !recentPredictionsRes.ok) {
-        throw new Error('De databestanden konden niet worden geladen')
-      }
-      if (!podcastEpisodesRes.ok || !podcastMonthlyRes.ok || !podcastAppsRes.ok) {
-        throw new Error('De podcastbestanden konden niet worden geladen')
-      }
-
-      const [
-        allMatchesData,
-        top5GamesData,
-        commentatorDuosData,
-        byResultData,
-        byHomeAwayData,
-        byTVCategoryData,
-        commentatorsData,
-        kickoffData,
-        weekdayData,
-        futureMatchesData,
-        recentPredictionsData,
-        podcastEpisodesData,
-        podcastMonthlyData,
-        podcastAppsData
-      ] = await Promise.all([
-        allMatchesRes.json(),
-        top5GamesRes.json(),
-        commentatorDuosRes.json(),
-        byResultRes.json(),
-        byHomeAwayRes.json(),
-        byTVCategoryRes.json(),
-        commentatorsRes.json(),
-        kickoffRes.json(),
-        weekdayRes.json(),
-        futureMatchesRes.json(),
-        recentPredictionsRes.json(),
-        podcastEpisodesRes.json(),
-        podcastMonthlyRes.json(),
-        podcastAppsRes.json()
-      ])
-
-      setData({
-        allMatches: allMatchesData,
-        top5Games: top5GamesData,
-        commentatorDuos: commentatorDuosData,
-        byResult: byResultData,
-        byHomeAway: byHomeAwayData,
-        byTVCategory: byTVCategoryData,
-        commentators: commentatorsData.commentators || [],
-        kickoffBlocks: kickoffData.kickoff_blocks || [],
-        weekday: weekdayData.weekdays || [],
-        futureMatches: futureMatchesData,
-        recentPredictions: recentPredictionsData,
-        podcastEpisodes: podcastEpisodesData,
-        podcastMonthly: podcastMonthlyData,
-        podcastApps: podcastAppsData
-      })
+      setData({ allMatches, futureMatches, recentPredictions, podcastEpisodes, podcastMonthly, podcastApps, meta })
     } catch (err) {
       setError(err.message)
     } finally {
@@ -277,16 +219,23 @@ function Dashboard() {
     loadData()
   }, [])
 
+  const allMatchList = data.allMatches?.matches || []
+  const seasonOptions = useMemo(() => seasonsInData(allMatchList.map((match) => match.date)), [allMatchList])
+  const thisSeason = getCurrentSeason()
+  const activeSeason = season === ALL_SEASONS || seasonOptions.includes(season) ? season : thisSeason
+
+  const seasonMatches = useMemo(
+    () => allMatchList.filter((match) => isInSeason(match.date, activeSeason)),
+    [allMatchList, activeSeason]
+  )
+  const analyses = useMemo(() => analyzeMatches(seasonMatches), [seasonMatches])
+  const top5 = useMemo(() => {
+    const all = top5BySeason(allMatchList)
+    return activeSeason === ALL_SEASONS ? all : { [activeSeason]: all[activeSeason] || [] }
+  }, [allMatchList, activeSeason])
+
   const hasData = Boolean(
     data.allMatches &&
-    data.top5Games &&
-    data.commentatorDuos &&
-    data.byResult &&
-    data.byHomeAway &&
-    data.byTVCategory &&
-    data.commentators &&
-    data.kickoffBlocks &&
-    data.weekday &&
     data.futureMatches &&
     data.recentPredictions &&
     data.podcastEpisodes &&
@@ -313,41 +262,42 @@ function Dashboard() {
     )
   }
 
-  const currentSeason = '26/27'
-  const radioSeasonStart = '2026-07-01'
-  const radioSeasonMatches = (data.allMatches?.matches || []).filter(
-    (match) => match?.date && match.date >= radioSeasonStart
-  )
-  const radioListenersTotal = radioSeasonMatches.reduce((sum, match) => sum + (match.listeners || 0), 0)
-  const radioMatchesWithListeners = radioSeasonMatches.filter((match) => match.listeners).length
+  const seasonLabel = seasonShort(activeSeason)
+  const radioListenersTotal = seasonMatches.reduce((sum, match) => sum + (match.listeners || 0), 0)
+  const radioMatchesWithListeners = seasonMatches.filter((match) => match.listeners).length
   const radioAverage = radioMatchesWithListeners ? radioListenersTotal / radioMatchesWithListeners : 0
+  const bestMatch = seasonMatches.reduce((best, match) => ((match.listeners || 0) > (best?.listeners || 0) ? match : best), null)
 
-  const podcastSeasonStart = '2026-07'
-  const podcastListenersTotal = data.podcastMonthly?.months
-    ? data.podcastMonthly.months.reduce((sum, month) => {
-        if (!month?.month || month.month < podcastSeasonStart) return sum
-        return sum + (month.downloads || 0)
-      }, 0)
-    : 0
+  const podcastListenersTotal = (data.podcastMonthly?.months || []).reduce(
+    (sum, month) => (isInSeason(month?.month, activeSeason) ? sum + (month.downloads || 0) : sum),
+    0
+  )
 
   const totalListeners = radioListenersTotal + podcastListenersTotal
-  const nextMatch = data.futureMatches?.matches?.[0] || null
-  const formatNumber = (value) => Math.round(value || 0).toLocaleString('nl-NL')
-  const formatDate = (iso) =>
-    new Date(`${iso}T12:00:00`).toLocaleDateString('nl-NL', { weekday: 'short', day: 'numeric', month: 'short' })
+  const isCurrentSeason = activeSeason === thisSeason || activeSeason === ALL_SEASONS
+  const nextMatch = isCurrentSeason ? data.futureMatches?.matches?.[0] || null : null
+
+  const updatedAt = data.meta?.generated_at ? new Date(data.meta.generated_at) : null
+  const updatedLabel =
+    updatedAt && !Number.isNaN(updatedAt.getTime())
+      ? updatedAt.toLocaleString('nl-NL', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+      : null
 
   const activeRadioTab = RADIO_TABS.find((tab) => tab.id === view.tab) || RADIO_TABS[0]
   const pageTitle = view.product === 'podcast' ? 'Ajax Podcast' : activeRadioTab.title
-  const kicker = view.product === 'podcast' ? `Podcast · ${currentSeason}` : `Radio · ${currentSeason}`
+  const kicker = `${view.product === 'podcast' ? 'Podcast' : 'Radio'} · ${seasonLabel}`
 
   const handleExport = async () => {
     const element = document.getElementById('dashboard-content')
     if (!element) return
     setExporting(true)
     try {
+      // PDF-bibliotheken pas laden bij de eerste export; dat scheelt laadtijd voor iedereen.
+      const { exportElementToPdf } = await import('../utils/exportPdf')
       const name = view.product === 'podcast' ? 'podcast' : view.tab
+      const seasonPart = activeSeason === ALL_SEASONS ? 'alle-seizoenen' : seasonLabel.replace('/', '-')
       const today = new Date().toISOString().slice(0, 10)
-      await exportElementToPdf(element, `ajax-radio-${name}-${today}.pdf`)
+      await exportElementToPdf(element, `ajax-radio-${name}-${seasonPart}-${today}.pdf`)
     } finally {
       setExporting(false)
     }
@@ -359,33 +309,35 @@ function Dashboard() {
         return (
           <>
             <section className="dashboard-section" id="all-matches">
-              <AllMatchesOverview data={data.allMatches} />
+              <AllMatchesOverview data={{ matches: seasonMatches }} seasonLabel={seasonLabel} />
             </section>
-            <section className="dashboard-section" id="future-matches">
-              <FutureMatchesSection data={data.futureMatches} recentPredictions={data.recentPredictions} />
-            </section>
+            {isCurrentSeason ? (
+              <section className="dashboard-section" id="future-matches">
+                <FutureMatchesSection data={data.futureMatches} recentPredictions={data.recentPredictions} />
+              </section>
+            ) : null}
           </>
         )
       case 'analyse':
         return (
           <>
             <section className="dashboard-section" id="by-result">
-              <ResultAnalysisSection data={data.byResult} />
+              <ResultAnalysisSection data={analyses.byResult} />
             </section>
             <section className="dashboard-section" id="by-home-away">
-              <HomeAwayAnalysisSection data={data.byHomeAway} />
+              <HomeAwayAnalysisSection data={analyses.byHomeAway} />
             </section>
             <section className="dashboard-section" id="by-tv-category">
-              <TVCategoryAnalysisSection data={data.byTVCategory} />
+              <TVCategoryAnalysisSection data={analyses.byTVCategory} />
             </section>
             <section className="dashboard-section" id="kickoff-blocks">
-              <KickoffBlocksSection data={data.kickoffBlocks} />
+              <KickoffBlocksSection data={analyses.kickoffBlocks} />
             </section>
             <section className="dashboard-section" id="weekday">
-              <WeekdaySection data={data.weekday} />
+              <WeekdaySection data={analyses.weekday} />
             </section>
             <section className="dashboard-section" id="commentator-duos">
-              <CommentatorDuosSection data={data.commentatorDuos} />
+              <CommentatorDuosSection data={analyses.commentatorDuos} />
             </section>
           </>
         )
@@ -393,13 +345,13 @@ function Dashboard() {
         return (
           <>
             <section className="dashboard-section" id="engagement">
-              <EngagementSection />
+              <EngagementSection season={activeSeason} />
             </section>
             <section className="dashboard-section" id="platform-mix-trend">
-              <PlatformMixTrendSection />
+              <PlatformMixTrendSection season={activeSeason} />
             </section>
             <section className="dashboard-section" id="geo-trend">
-              <GeoTrendSection />
+              <GeoTrendSection season={activeSeason} />
             </section>
           </>
         )
@@ -408,9 +360,9 @@ function Dashboard() {
           <>
             <div className="kpi-grid">
               <div className="kpi-tile">
-                <div className="kpi-label">Totaal bereik {currentSeason}</div>
+                <div className="kpi-label">Totaal bereik</div>
                 <div className="kpi-value">{formatNumber(totalListeners)}</div>
-                <div className="kpi-meta">Radio + podcast</div>
+                <div className="kpi-meta">Radio + podcast · {seasonLabel}</div>
               </div>
               <div className="kpi-tile">
                 <div className="kpi-label">Radio-luisteraars</div>
@@ -422,18 +374,28 @@ function Dashboard() {
               <div className="kpi-tile">
                 <div className="kpi-label">Podcast-downloads</div>
                 <div className="kpi-value">{formatNumber(podcastListenersTotal)}</div>
-                <div className="kpi-meta">Sinds juli 2026</div>
+                <div className="kpi-meta">{seasonLabel}</div>
               </div>
-              <a className="kpi-tile kpi-tile-link" href="#wedstrijden">
-                <div className="kpi-label">Volgende wedstrijd</div>
-                <div className="kpi-value">{nextMatch ? formatNumber(nextMatch.predicted_listeners) : '—'}</div>
-                <div className="kpi-meta">
-                  {nextMatch ? `${nextMatch.match_name} · ${formatDate(nextMatch.date)} · voorspeld` : 'Geen wedstrijd gepland'}
+              {nextMatch ? (
+                <a className="kpi-tile kpi-tile-link" href="#wedstrijden">
+                  <div className="kpi-label">Volgende wedstrijd</div>
+                  <div className="kpi-value">{formatNumber(nextMatch.predicted_listeners)}</div>
+                  <div className="kpi-meta">
+                    {nextMatch.match_name} · {formatDateWithDay(nextMatch.date)} · voorspeld
+                  </div>
+                </a>
+              ) : (
+                <div className="kpi-tile">
+                  <div className="kpi-label">Beste wedstrijd</div>
+                  <div className="kpi-value">{formatNumber(bestMatch?.listeners)}</div>
+                  <div className="kpi-meta">
+                    {bestMatch ? `${bestMatch.match_name} · ${formatDateWithDay(bestMatch.date)}` : 'Geen wedstrijden'}
+                  </div>
                 </div>
-              </a>
+              )}
             </div>
             <section className="dashboard-section" id="top5-games">
-              <Top5GamesSection data={data.top5Games} />
+              <Top5GamesSection data={top5} />
             </section>
           </>
         )
@@ -462,6 +424,26 @@ function Dashboard() {
               Podcast
             </button>
           </div>
+
+          <select
+            className="season-select"
+            value={activeSeason}
+            onChange={(event) => chooseSeason(event.target.value)}
+            aria-label="Seizoen"
+          >
+            {seasonOptions.map((option) => (
+              <option key={option} value={option}>
+                Seizoen {seasonShort(option)}
+              </option>
+            ))}
+            <option value={ALL_SEASONS}>Alle seizoenen</option>
+          </select>
+
+          {updatedLabel ? (
+            <span className="topbar-updated" title="Laatste keer dat de cijfers zijn opgehaald">
+              Bijgewerkt {updatedLabel}
+            </span>
+          ) : null}
 
           <div className="topbar-actions">
             <button
@@ -514,7 +496,7 @@ function Dashboard() {
 
         {view.product === 'podcast' ? (
           <section className="dashboard-section" id="podcast">
-            <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} apps={data.podcastApps} />
+            <PodcastSection episodes={data.podcastEpisodes} monthly={data.podcastMonthly} apps={data.podcastApps} season={activeSeason} />
           </section>
         ) : (
           renderRadioTab()

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import './EngagementSection.css'
 import { formatDate, formatNumber } from '../utils/format'
+import { ALL_SEASONS, isInSeason } from '../utils/season'
 
-function EngagementSection() {
-  const [matches, setMatches] = useState(null)
+function EngagementSection({ season = ALL_SEASONS }) {
+  const [allMatches, setAllMatches] = useState(null)
 
   useEffect(() => {
     fetch(`/output/match_details_summary.json?t=${Date.now()}`, { cache: 'no-store' })
       .then((res) => (res.ok ? res.json() : { matches: [] }))
-      .then((json) => setMatches(json.matches || []))
-      .catch(() => setMatches([]))
+      .then((json) => setAllMatches(json.matches || []))
+      .catch(() => setAllMatches([]))
   }, [])
+
+  const matches = allMatches === null ? null : allMatches.filter((m) => isInSeason(m.date, season))
 
   if (matches === null) {
     return (
@@ -31,7 +34,7 @@ function EngagementSection() {
       <div className="section engagement-section">
         <h2>Beste doorluisterwaarde</h2>
         <p className="section-subtitle">% luisteraars dat minstens 5 seconden bleef hangen (pre-roll simulatie)</p>
-        <p>Nog geen wedstrijden met CDN-detaildata verwerkt.</p>
+        <p>Geen wedstrijden met streamingdata in deze selectie.</p>
       </div>
     )
   }

@@ -7,7 +7,7 @@ import json
 import csv
 import os
 import re
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
 from statistics import median, mean
@@ -1152,6 +1152,8 @@ def main():
     save_json(by_tv_category, f'{output_dir}/by_tv_category.json')
     save_json({'matches': future_matches}, f'{output_dir}/future_matches.json')
     save_json({'matches': recent_predictions}, f'{output_dir}/recent_predictions.json')
+    # Tijdstip van deze run; het dashboard toont dit als 'Bijgewerkt ...'.
+    save_json({'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds')}, f'{output_dir}/meta.json')
     
     # Save CSV files
     save_csv(commentators_full, f'{output_dir}/commentators_full_credit.csv', 'commentators')

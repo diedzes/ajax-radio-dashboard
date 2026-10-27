@@ -3,6 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './PlatformMixTrendSection.css'
 import { PLATFORM_COLORS } from '../theme'
 import { formatDate } from '../utils/format'
+import { ALL_SEASONS, isInSeason } from '../utils/season'
 
 const SERIES = [
   { key: 'iOS-app', color: PLATFORM_COLORS['iOS-app'] },
@@ -12,15 +13,17 @@ const SERIES = [
   { key: 'Overig', color: PLATFORM_COLORS['Overig'] }
 ]
 
-function PlatformMixTrendSection() {
-  const [matches, setMatches] = useState(null)
+function PlatformMixTrendSection({ season = ALL_SEASONS }) {
+  const [allMatches, setAllMatches] = useState(null)
 
   useEffect(() => {
     fetch(`/output/match_details_summary.json?t=${Date.now()}`, { cache: 'no-store' })
       .then((res) => (res.ok ? res.json() : { matches: [] }))
-      .then((json) => setMatches(json.matches || []))
-      .catch(() => setMatches([]))
+      .then((json) => setAllMatches(json.matches || []))
+      .catch(() => setAllMatches([]))
   }, [])
+
+  const matches = allMatches === null ? null : allMatches.filter((m) => isInSeason(m.date, season))
 
   if (matches === null) {
     return (
@@ -37,7 +40,7 @@ function PlatformMixTrendSection() {
     return (
       <div className="section platform-mix-trend-section">
         <h2>Platform-mix per wedstrijd</h2>
-        <p>Nog geen wedstrijden met CDN-detaildata verwerkt.</p>
+        <p>Geen wedstrijden met streamingdata in deze selectie.</p>
       </div>
     )
   }

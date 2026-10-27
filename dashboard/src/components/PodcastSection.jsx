@@ -2,12 +2,14 @@ import React, { useMemo, useState } from 'react'
 import './PodcastSection.css'
 import { SERIES } from '../theme'
 import { formatDate as formatIsoDate, formatMonth, formatNumber } from '../utils/format'
+import { ALL_SEASONS, isInSeason } from '../utils/season'
 
 const APP_COLORS = SERIES
 
-function PodcastSection({ episodes, monthly, apps }) {
-  const episodeList = episodes?.episodes || []
-  const monthlyList = monthly?.months || []
+function PodcastSection({ episodes, monthly, apps, season = ALL_SEASONS }) {
+  // Afleveringen en maanden van het gekozen seizoen; app-cijfers gaan over de hele periode.
+  const episodeList = (episodes?.episodes || []).filter((episode) => isInSeason(episode.published_at, season))
+  const monthlyList = (monthly?.months || []).filter((month) => isInSeason(month.month, season))
   const appList = apps?.apps || []
   const [episodeSort, setEpisodeSort] = useState({ key: 'published_at', direction: 'desc' })
   const [monthlySort, setMonthlySort] = useState({ key: 'month', direction: 'desc' })
@@ -156,7 +158,7 @@ function PodcastSection({ episodes, monthly, apps }) {
             <h3>Afleveringen</h3>
           </div>
           {sortedEpisodes.length === 0 ? (
-            <p>Nog geen afleveringen beschikbaar.</p>
+            <p>Geen afleveringen gepubliceerd in dit seizoen.</p>
           ) : (
             <div className="matches-table-container" id="podcast-episodes-table">
               <table className="matches-table">

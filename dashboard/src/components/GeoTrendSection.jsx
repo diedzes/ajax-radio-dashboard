@@ -3,16 +3,19 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './GeoTrendSection.css'
 import { COLORS } from '../theme'
 import { formatDate } from '../utils/format'
+import { ALL_SEASONS, isInSeason } from '../utils/season'
 
-function GeoTrendSection() {
-  const [matches, setMatches] = useState(null)
+function GeoTrendSection({ season = ALL_SEASONS }) {
+  const [allMatches, setAllMatches] = useState(null)
 
   useEffect(() => {
     fetch(`/output/match_details_summary.json?t=${Date.now()}`, { cache: 'no-store' })
       .then((res) => (res.ok ? res.json() : { matches: [] }))
-      .then((json) => setMatches(json.matches || []))
-      .catch(() => setMatches([]))
+      .then((json) => setAllMatches(json.matches || []))
+      .catch(() => setAllMatches([]))
   }, [])
+
+  const matches = allMatches === null ? null : allMatches.filter((m) => isInSeason(m.date, season))
 
   if (matches === null) {
     return (
@@ -30,7 +33,7 @@ function GeoTrendSection() {
     return (
       <div className="section geo-trend-section">
         <h2>Nederland vs. buitenland</h2>
-        <p>Nog geen wedstrijden met CDN-detaildata verwerkt.</p>
+        <p>Geen wedstrijden met streamingdata in deze selectie.</p>
       </div>
     )
   }

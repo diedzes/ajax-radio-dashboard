@@ -11,7 +11,7 @@ import {
 } from '../utils/format'
 import './AllMatchesOverview.css'
 
-function AllMatchesOverview({ data }) {
+function AllMatchesOverview({ data, seasonLabel }) {
   const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'desc' })
   const [detailByDate, setDetailByDate] = useState({})
   const [selectedMatch, setSelectedMatch] = useState(null)
@@ -33,7 +33,7 @@ function AllMatchesOverview({ data }) {
     return (
       <div className="section">
         <h2>Alle wedstrijden</h2>
-        <p>Nog geen wedstrijddata beschikbaar.</p>
+        <p>Nog geen wedstrijden met luistercijfers in dit seizoen.</p>
       </div>
     )
   }
@@ -136,7 +136,7 @@ function AllMatchesOverview({ data }) {
         <div>
           <h2>Alle wedstrijden</h2>
           <p className="section-subtitle">
-            Sinds juli 2024 · klik op een wedstrijd met <span className="detail-dot" aria-hidden="true" /> voor streamingdetails
+            {seasonLabel === 'Alle seizoenen' ? 'Sinds juli 2024' : `Seizoen ${seasonLabel}`} · {data.matches.length} wedstrijden · klik op een wedstrijd met <span className="detail-dot" aria-hidden="true" /> voor streamingdetails
           </p>
         </div>
       </div>
