@@ -5,6 +5,7 @@ import {
 } from 'recharts'
 import './MatchDetailModal.css'
 import { COLORS, SERIES, PLATFORM_COLORS } from '../theme'
+import { formatDateWithDay } from '../utils/format'
 
 const PLATFORM_FALLBACK_COLORS = SERIES
 const QUALITY_FALLBACK_COLORS = [COLORS.win, COLORS.draw, COLORS.loss, COLORS.grey]
@@ -12,7 +13,7 @@ const QUALITY_FALLBACK_COLORS = [COLORS.win, COLORS.draw, COLORS.loss, COLORS.gr
 const QUALITY_COLORS = { '200': COLORS.win, '404': COLORS.draw, '000': COLORS.loss }
 
 function formatNum(value) {
-  return typeof value === 'number' ? value.toLocaleString('nl-NL') : 'N/A'
+  return typeof value === 'number' ? value.toLocaleString('nl-NL') : '—'
 }
 
 function MatchDetailModal({ date, matchName, onClose }) {
@@ -73,7 +74,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
         <div className="match-detail-header">
           <div>
             <h2>{matchName || 'Wedstrijddetail'}</h2>
-            <p className="match-detail-sub">{date}</p>
+            <p className="match-detail-sub">{formatDateWithDay(date)}</p>
           </div>
           <button type="button" className="match-detail-close" onClick={onClose} aria-label="Sluiten">
             &times;
@@ -99,7 +100,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
                 </div>
                 <div className="kpi-card">
                   <div className="kpi-label">Piekmoment</div>
-                  <div className="kpi-value">{detail.peakHour || 'N/A'}</div>
+                  <div className="kpi-value">{detail.peakHour || '—'}</div>
                 </div>
                 <div className="kpi-card">
                   <div className="kpi-label">Piek gelijktijdig</div>
@@ -107,11 +108,11 @@ function MatchDetailModal({ date, matchName, onClose }) {
                 </div>
                 <div className="kpi-card">
                   <div className="kpi-label">Succesratio</div>
-                  <div className="kpi-value">{detail.successRate != null ? `${detail.successRate}%` : 'N/A'}</div>
+                  <div className="kpi-value">{detail.successRate != null ? `${detail.successRate}%` : '—'}</div>
                 </div>
                 <div className="kpi-card">
                   <div className="kpi-label">Bandbreedte</div>
-                  <div className="kpi-value">{detail.bandwidth || 'N/A'}</div>
+                  <div className="kpi-value">{detail.bandwidth || '—'}</div>
                 </div>
               </div>
 
@@ -120,7 +121,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
                 <ResponsiveContainer width="100%" height={260}>
                   <AreaChart data={concurrencyData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="label" interval={Math.max(0, Math.floor(concurrencyData.length / 12) - 1)} />
+                    <XAxis dataKey="label" interval="preserveStartEnd" minTickGap={24} />
                     <YAxis />
                     <Tooltip formatter={(value) => [formatNum(value), 'Gelijktijdig']} />
                     <Area type="monotone" dataKey="value" stroke={COLORS.red} fill={COLORS.red} fillOpacity={0.25} />
@@ -193,7 +194,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
                       <div className="kpi-value">{detail.preroll.freq}x</div>
                     </div>
                     <div className="kpi-card">
-                      <div className="kpi-label">Completion rate</div>
+                      <div className="kpi-label">Doorluisterwaarde</div>
                       <div className="kpi-value">{detail.preroll.completion}%</div>
                     </div>
                   </div>

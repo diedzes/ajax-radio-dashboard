@@ -146,10 +146,10 @@ function Dashboard() {
           !byResultRes.ok || !byHomeAwayRes.ok || !byTVCategoryRes.ok ||
           !commentatorsRes.ok || !kickoffRes.ok || !weekdayRes.ok || !futureMatchesRes.ok ||
           !recentPredictionsRes.ok) {
-        throw new Error('Failed to load data files')
+        throw new Error('De databestanden konden niet worden geladen')
       }
       if (!podcastEpisodesRes.ok || !podcastMonthlyRes.ok || !podcastAppsRes.ok) {
-        throw new Error('Failed to load podcast data files')
+        throw new Error('De podcastbestanden konden niet worden geladen')
       }
 
       const [
@@ -247,7 +247,7 @@ function Dashboard() {
       }
 
       if (!response.ok) {
-        let errorMessage = 'Failed to start data update'
+        let errorMessage = 'Starten van de update is mislukt.'
         try {
           const payload = await response.json()
           if (payload && payload.message) {
@@ -260,7 +260,7 @@ function Dashboard() {
       }
 
       const payload = await response.json().catch(() => ({}))
-      const message = payload.message || 'Update started. Data will refresh shortly.'
+      const message = payload.message || 'Update gestart. De nieuwe cijfers staan over een paar minuten live.'
       setUpdateMessage(message)
 
       setTimeout(() => {
@@ -296,19 +296,19 @@ function Dashboard() {
 
   if (loading && !hasData) {
     return (
-      <div className="dashboard-container">
+      <div className="dashboard-container dashboard-message">
         <h1>Ajax Radio Dashboard</h1>
-        <p>Loading data...</p>
+        <p>Cijfers laden…</p>
       </div>
     )
   }
 
   if (error && !hasData) {
     return (
-      <div className="dashboard-container">
+      <div className="dashboard-container dashboard-message">
         <h1>Ajax Radio Dashboard</h1>
-        <p className="error">Error: {error}</p>
-        <p>Make sure the JSON files are in the /output directory</p>
+        <p className="error">Fout: {error}</p>
+        <p>Controleer of de JSON-bestanden in /output staan.</p>
       </div>
     )
   }

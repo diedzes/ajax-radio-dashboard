@@ -1,5 +1,14 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import MatchDetailModal from './MatchDetailModal'
+import {
+  formatDateWithDay,
+  formatNumber,
+  formatEuro,
+  shortCompetition,
+  RESULT_SHORT,
+  RESULT_LABEL,
+  RESULT_CLASS
+} from '../utils/format'
 import './AllMatchesOverview.css'
 
 function AllMatchesOverview({ data }) {
@@ -23,38 +32,10 @@ function AllMatchesOverview({ data }) {
   if (!data || !data.matches || data.matches.length === 0) {
     return (
       <div className="section">
-        <h2>All Matches Overview</h2>
-        <p>No match data available</p>
+        <h2>Alle wedstrijden</h2>
+        <p>Nog geen wedstrijddata beschikbaar.</p>
       </div>
     )
-  }
-
-  const formatDate = (dateStr) => {
-    if (!dateStr) return 'N/A'
-    try {
-      const date = new Date(dateStr + 'T00:00:00')
-      return date.toLocaleDateString('nl-NL', {
-        day: '2-digit',
-        month: '2-digit',
-        year: '2-digit'
-      })
-    } catch {
-      return dateStr
-    }
-  }
-
-  const getResultClass = (result) => {
-    if (result === 'W') return 'result-win'
-    if (result === 'D') return 'result-draw'
-    if (result === 'L') return 'result-loss'
-    return ''
-  }
-
-  const getResultLabel = (result) => {
-    if (result === 'W') return 'W'
-    if (result === 'D') return 'D'
-    if (result === 'L') return 'L'
-    return '-'
   }
 
   // Media value: gebaseerd op advertentie-bereik (aantal luisteraars dat lang
@@ -68,19 +49,12 @@ function AllMatchesOverview({ data }) {
     return (base / 1000) * 25
   }
 
-  const formatCurrency = (value) => {
-    return new Intl.NumberFormat('nl-NL', {
-      style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
-    }).format(value)
-  }
-
   const handleSort = (key) => {
-    let direction = 'asc'
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc'
+    // Getallen en datum eerst van hoog naar laag, tekst eerst A-Z.
+    const numeric = ['date', 'listeners', 'mediaValue'].includes(key)
+    let direction = numeric ? 'desc' : 'asc'
+    if (sortConfig.key === key) {
+      direction = sortConfig.direction === 'asc' ? 'desc' : 'asc'
     }
     setSortConfig({ key, direction })
   }
@@ -113,12 +87,6 @@ function AllMatchesOverview({ data }) {
           : bVal - aVal
       }
 
-      if (sortConfig.key === 'peakValue') {
-        aVal = detailByDate[a.date]?.peakValue ?? -1
-        bVal = detailByDate[b.date]?.peakValue ?? -1
-        return sortConfig.direction === 'asc' ? aVal - bVal : bVal - aVal
-      }
-
       // Handle string sorting
       aVal = (aVal || '').toString().toLowerCase()
       bVal = (bVal || '').toString().toLowerCase()
@@ -139,94 +107,125 @@ function AllMatchesOverview({ data }) {
     return <span className="sort-icon is-active" aria-hidden="true">{sortConfig.direction === 'asc' ? '↑' : '↓'}</span>
   }
 
+  const maxListeners = Math.max(...data.matches.map((m) => m.listeners || 0), 1)
+
+  const sortHeader = (key, label, className = '') => (
+    <th
+      className={`sortable ${className}`}
+      onClick={() => handleSort(key)}
+      aria-sort={sortConfig.key === key ? (sortConfig.direction === 'asc' ? 'ascending' : 'descending') : undefined}
+    >
+      {label}
+      {getSortIcon(key)}
+    </th>
+  )
+
+  const resultBadge = (match) =>
+    match.result ? (
+      <span className={`result-badge ${RESULT_CLASS[match.result] || ''}`} title={RESULT_LABEL[match.result]}>
+        {RESULT_SHORT[match.result] || match.result}
+        {match.score ? <span className="result-score">{match.score}</span> : null}
+      </span>
+    ) : (
+      <span className="muted">{match.score || '—'}</span>
+    )
+
   return (
     <div className="section all-matches-overview">
       <div className="section-header-row">
         <div>
-          <h2>All Matches Overview</h2>
-          <p className="section-subtitle">from july 2024</p>
+          <h2>Alle wedstrijden</h2>
+          <p className="section-subtitle">
+            Sinds juli 2024 · klik op een wedstrijd met <span className="detail-dot" aria-hidden="true" /> voor streamingdetails
+          </p>
         </div>
       </div>
+
       <div className="matches-table-container" id="all-matches-table">
         <table className="matches-table">
           <thead>
             <tr>
-              <th className="sortable" onClick={() => handleSort('date')}>
-                Date {getSortIcon('date')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('weekday')}>
-                Day {getSortIcon('weekday')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('time')}>
-                Time {getSortIcon('time')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('match_name')}>
-                Match {getSortIcon('match_name')}
-              </th>
-              <th>
-                Commentators
-              </th>
-              <th className="sortable" onClick={() => handleSort('tv_channel')}>
-                TV Channel {getSortIcon('tv_channel')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('score')}>
-                Score {getSortIcon('score')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('result')}>
-                Result {getSortIcon('result')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('listeners')}>
-                Listeners {getSortIcon('listeners')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('peakValue')}>
-                Piek gelijktijdig {getSortIcon('peakValue')}
-              </th>
-              <th className="sortable" onClick={() => handleSort('mediaValue')}>
-                Media Value {getSortIcon('mediaValue')}
-              </th>
+              {sortHeader('date', 'Datum')}
+              {sortHeader('match_name', 'Wedstrijd')}
+              {sortHeader('result', 'Uitslag')}
+              <th>Commentatoren</th>
+              {sortHeader('tv_channel', 'Zender')}
+              {sortHeader('listeners', 'Luisteraars', 'num')}
+              {sortHeader('mediaValue', 'Mediawaarde', 'num')}
             </tr>
           </thead>
           <tbody>
-            {sortedMatches.map((match, index) => {
-              const detail = detailByDate[match.date]
-              const hasDetail = Boolean(detail)
+            {sortedMatches.map((match) => {
+              const hasDetail = Boolean(detailByDate[match.date])
+              const mediaValue = calculateMediaValue(match)
               return (
-              <tr
-                key={index}
-                className={hasDetail ? 'row-has-detail' : ''}
-                onClick={hasDetail ? () => setSelectedMatch(match) : undefined}
-                title={hasDetail ? 'Klik voor gedetailleerde streamingdata' : undefined}
-              >
-                <td>
-                  {formatDate(match.date)}
-                  {hasDetail ? <span className="detail-dot" aria-hidden="true" /> : null}
-                </td>
-                <td>{match.weekday || 'N/A'}</td>
-                <td>{match.time || 'N/A'}</td>
-                <td>{match.match_name || 'N/A'}</td>
-                <td>{match.commentators || 'N/A'}</td>
-                <td>{match.tv_channel || 'N/A'}</td>
-                <td>{match.score || 'N/A'}</td>
-                <td>
-                  <span className={`result-badge ${getResultClass(match.result)}`}>
-                    {getResultLabel(match.result)}
-                  </span>
-                </td>
-                <td>{match.listeners ? match.listeners.toLocaleString() : 'N/A'}</td>
-                <td>
-                  {detail?.peakValue
-                    ? `${detail.peakValue.toLocaleString()}${detail.peakHour ? ` (${detail.peakHour})` : ''}`
-                    : 'N/A'}
-                </td>
-                <td className="media-value-cell">
-                  {calculateMediaValue(match) ? formatCurrency(calculateMediaValue(match)) : 'N/A'}
-                </td>
-              </tr>
+                <tr
+                  key={`${match.date}-${match.match_name}`}
+                  className={hasDetail ? 'row-has-detail' : ''}
+                  onClick={hasDetail ? () => setSelectedMatch(match) : undefined}
+                  title={hasDetail ? 'Klik voor streamingdetails' : undefined}
+                >
+                  <td className="date-cell">
+                    {formatDateWithDay(match.date)}
+                    {match.time ? <span className="cell-sub">{match.time}</span> : null}
+                  </td>
+                  <td className="match-cell">
+                    <span className="match-name">
+                      {match.match_name || '—'}
+                      {hasDetail ? <span className="detail-dot" aria-label="streamingdetails beschikbaar" /> : null}
+                    </span>
+                    <span className="cell-sub">
+                      {shortCompetition(match.competition)}
+                      {match.home_away ? ` · ${match.home_away}` : ''}
+                    </span>
+                  </td>
+                  <td>{resultBadge(match)}</td>
+                  <td className="commentators-cell">{match.commentators || '—'}</td>
+                  <td>{match.tv_channel || '—'}</td>
+                  <td className="num">
+                    <div className="listeners-value">{formatNumber(match.listeners)}</div>
+                    {match.listeners ? (
+                      <div className="listeners-bar" aria-hidden="true">
+                        <div style={{ width: `${(match.listeners / maxListeners) * 100}%` }} />
+                      </div>
+                    ) : null}
+                  </td>
+                  <td className="num media-value-cell">{formatEuro(mediaValue)}</td>
+                </tr>
               )
             })}
           </tbody>
         </table>
       </div>
+
+      {/* Op mobiel: kaartjes in plaats van de tabel */}
+      <ul className="match-cards">
+        {sortedMatches.map((match) => {
+          const hasDetail = Boolean(detailByDate[match.date])
+          return (
+            <li
+              key={`${match.date}-${match.match_name}`}
+              className={hasDetail ? 'has-detail' : ''}
+              onClick={hasDetail ? () => setSelectedMatch(match) : undefined}
+            >
+              <div className="match-card-main">
+                <span className="match-name">
+                  {match.match_name || '—'}
+                  {hasDetail ? <span className="detail-dot" aria-hidden="true" /> : null}
+                </span>
+                <span className="cell-sub">
+                  {formatDateWithDay(match.date)} · {shortCompetition(match.competition)}
+                </span>
+                <span className="cell-sub">{match.commentators || ''}</span>
+              </div>
+              <div className="match-card-side">
+                {resultBadge(match)}
+                <span className="listeners-value">{formatNumber(match.listeners)}</span>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
 
       {selectedMatch ? (
         <MatchDetailModal

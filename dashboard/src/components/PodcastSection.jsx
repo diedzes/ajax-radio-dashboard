@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import './PodcastSection.css'
 import { SERIES } from '../theme'
+import { formatDate as formatIsoDate, formatMonth, formatNumber } from '../utils/format'
 
 const APP_COLORS = SERIES
 
@@ -60,7 +61,7 @@ function PodcastSection({ episodes, monthly, apps }) {
 
   const getSortIndicator = (current, key) => {
     if (current.key !== key) return ''
-    return current.direction === 'asc' ? '▲' : '▼'
+    return current.direction === 'asc' ? '↑' : '↓'
   }
 
   const sortedEpisodes = useMemo(() => {
@@ -92,16 +93,7 @@ function PodcastSection({ episodes, monthly, apps }) {
     return Math.max(...sortedMonthly.map((item) => item.downloads || 0))
   }, [sortedMonthly])
 
-  const formatDate = (dateStr) => {
-    if (!dateStr) return 'N/A'
-    const parsed = Date.parse(dateStr)
-    if (Number.isNaN(parsed)) return dateStr
-    return new Date(parsed).toLocaleDateString('nl-NL', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    })
-  }
+  const formatDate = (dateStr) => formatIsoDate(dateStr)
 
   const appTotal = useMemo(() => {
     return appList.reduce((sum, item) => sum + (item.downloads || 0), 0)
@@ -116,7 +108,7 @@ function PodcastSection({ episodes, monthly, apps }) {
       const end = current + percentage
       current = end
       return {
-        name: item.name || 'Unknown',
+        name: item.name || 'Onbekend',
         downloads: item.downloads || 0,
         percentage,
         start,
@@ -144,27 +136,27 @@ function PodcastSection({ episodes, monthly, apps }) {
   return (
     <div className="section podcast-section">
       <h2>Podcast</h2>
-      <p className="section-subtitle">episodes and monthly results</p>
+      <p className="section-subtitle">Afleveringen, downloads per maand en apps</p>
 
       <nav className="podcast-top-nav">
         <button type="button" onClick={() => scrollToSection('podcast-episodes')}>
-          Episodes
+          Afleveringen
         </button>
         <button type="button" onClick={() => scrollToSection('podcast-monthly')}>
-          Monthly results
+          Per maand
         </button>
         <button type="button" onClick={() => scrollToSection('podcast-apps')}>
-          Podcast app
+          Apps
         </button>
       </nav>
 
       <div className="podcast-stack">
         <div className="podcast-panel" id="podcast-episodes">
           <div className="section-header-row">
-            <h3>Episodes</h3>
+            <h3>Afleveringen</h3>
           </div>
           {sortedEpisodes.length === 0 ? (
-            <p>No episode data available</p>
+            <p>Nog geen afleveringen beschikbaar.</p>
           ) : (
             <div className="matches-table-container" id="podcast-episodes-table">
               <table className="matches-table">
@@ -178,7 +170,7 @@ function PodcastSection({ episodes, monthly, apps }) {
                         className="podcast-sort-button"
                         onClick={() => toggleEpisodeSort('title')}
                       >
-                        Title
+                        Titel
                         <span className="sort-indicator">{getSortIndicator(episodeSort, 'title')}</span>
                       </button>
                     </th>
@@ -190,7 +182,7 @@ function PodcastSection({ episodes, monthly, apps }) {
                         className="podcast-sort-button"
                         onClick={() => toggleEpisodeSort('published_at', 'desc')}
                       >
-                        Published
+                        Gepubliceerd
                         <span className="sort-indicator">
                           {getSortIndicator(episodeSort, 'published_at')}
                         </span>
@@ -204,7 +196,7 @@ function PodcastSection({ episodes, monthly, apps }) {
                         className="podcast-sort-button"
                         onClick={() => toggleEpisodeSort('duration', 'desc')}
                       >
-                        Duration
+                        Duur
                         <span className="sort-indicator">{getSortIndicator(episodeSort, 'duration')}</span>
                       </button>
                     </th>
@@ -216,7 +208,7 @@ function PodcastSection({ episodes, monthly, apps }) {
                         className="podcast-sort-button"
                         onClick={() => toggleEpisodeSort('downloads', 'desc')}
                       >
-                        Downloads (24m)
+                        Downloads (24 mnd)
                         <span className="sort-indicator">{getSortIndicator(episodeSort, 'downloads')}</span>
                       </button>
                     </th>
@@ -225,11 +217,11 @@ function PodcastSection({ episodes, monthly, apps }) {
                 <tbody>
                   {sortedEpisodes.map((episode) => (
                     <tr key={episode.id}>
-                      <td>{episode.title || 'N/A'}</td>
+                      <td>{episode.title?.trim() || '—'}</td>
                       <td>{formatDate(episode.published_at)}</td>
-                      <td>{episode.duration_in_mmss || 'N/A'}</td>
+                      <td>{episode.duration_in_mmss || '—'}</td>
                       <td className="downloads-cell">
-                        {episode.total_downloads?.toLocaleString() || '0'}
+                        {formatNumber(episode.total_downloads || 0)}
                       </td>
                     </tr>
                   ))}
@@ -241,10 +233,10 @@ function PodcastSection({ episodes, monthly, apps }) {
 
         <div className="podcast-panel" id="podcast-monthly">
           <div className="section-header-row">
-            <h3>Monthly Results</h3>
+            <h3>Downloads per maand</h3>
           </div>
           {sortedMonthly.length === 0 ? (
-            <p>No monthly analytics available</p>
+            <p>Nog geen maandcijfers beschikbaar.</p>
           ) : (
             <div className="matches-table-container" id="podcast-monthly-table">
               <table className="matches-table podcast-monthly-table">
@@ -258,7 +250,7 @@ function PodcastSection({ episodes, monthly, apps }) {
                         className="podcast-sort-button"
                         onClick={() => toggleMonthlySort('month', 'desc')}
                       >
-                        Month
+                        Maand
                         <span className="sort-indicator">{getSortIndicator(monthlySort, 'month')}</span>
                       </button>
                     </th>
@@ -283,14 +275,14 @@ function PodcastSection({ episodes, monthly, apps }) {
                       : 0
                     return (
                       <tr key={month.month}>
-                        <td className="podcast-month-label">{month.month}</td>
+                        <td className="podcast-month-label">{formatMonth(month.month)}</td>
                         <td>
                           <div className="podcast-monthly-cell">
                             <div className="podcast-month-bar">
                               <span style={{ width: `${width}%` }} />
                             </div>
                             <div className="podcast-month-value">
-                              {month.downloads?.toLocaleString() || '0'}
+                              {formatNumber(month.downloads || 0)}
                             </div>
                           </div>
                         </td>
@@ -304,19 +296,19 @@ function PodcastSection({ episodes, monthly, apps }) {
         </div>
 
         <div className="podcast-panel" id="podcast-apps">
-          <h3>Podcast app</h3>
+          <h3>Apps</h3>
           {appSegments.length === 0 ? (
-            <p>No app analytics available</p>
+            <p>Nog geen app-cijfers beschikbaar.</p>
           ) : (
             <div className="podcast-apps-grid">
               <div className="podcast-apps-chart">
                 <div
                   className="podcast-apps-circle"
                   style={{ background: appGradient }}
-                  aria-label="Podcast app usage chart"
+                  aria-label="Verdeling over podcast-apps"
                 />
                 <div className="podcast-apps-total">
-                  {appTotal.toLocaleString()} listens
+                  {formatNumber(appTotal)} luisterbeurten
                 </div>
               </div>
               <div className="podcast-apps-legend">
@@ -325,10 +317,10 @@ function PodcastSection({ episodes, monthly, apps }) {
                     <span className="podcast-apps-dot" style={{ background: segment.color }} />
                     <span className="podcast-apps-name">{segment.name}</span>
                     <span className="podcast-apps-percent">
-                      {segment.percentage.toFixed(1)}%
+                      {segment.percentage.toFixed(1).replace('.', ',')}%
                     </span>
                     <span className="podcast-apps-value">
-                      {segment.downloads.toLocaleString()}
+                      {formatNumber(segment.downloads)}
                     </span>
                   </div>
                 ))}

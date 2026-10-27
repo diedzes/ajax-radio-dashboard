@@ -88,3 +88,7 @@
     padding: 0.5rem;
   }
 }
+
+.top5-table .num {
+  text-align: right;
+}

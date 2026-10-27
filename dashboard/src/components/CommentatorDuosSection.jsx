@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './CommentatorDuosSection.css'
 import { COLORS, TOOLTIP_LABEL_STYLE } from '../theme'
+import { formatNumber } from '../utils/format'
 
 function CommentatorDuosSection({ data }) {
   const [sortConfig, setSortConfig] = useState({ key: 'avg', direction: 'desc' })
@@ -9,15 +10,10 @@ function CommentatorDuosSection({ data }) {
   if (!data || !data.duos || data.duos.length === 0) {
     return (
       <div className="section">
-        <h2>Commentator Duos Performance</h2>
-        <p>No commentator duo data available</p>
+        <h2>Commentatorenduo's</h2>
+        <p>Nog geen data beschikbaar.</p>
       </div>
     )
-  }
-
-  // Format number with commas
-  const formatNumber = (num) => {
-    return new Intl.NumberFormat('en-US').format(num)
   }
 
   const handleSort = (key) => {
@@ -60,10 +56,10 @@ function CommentatorDuosSection({ data }) {
   return (
     <div className="section commentator-duos-section">
       <div className="section-header-row">
-        <h2>Commentator Duos Performance</h2>
+        <h2>Commentatorenduo's</h2>
       </div>
       <p className="section-description">
-        Average listeners per commentator duo (order doesn't matter)
+        Gemiddeld aantal luisteraars per duo (volgorde van de namen maakt niet uit)
       </p>
       
       <div className="section-content">
@@ -75,16 +71,16 @@ function CommentatorDuosSection({ data }) {
                   Duo {getSortIcon('duo')}
                 </th>
                 <th className="sortable" onClick={() => handleSort('matches_count')}>
-                  Matches {getSortIcon('matches_count')}
+                  Wedstrijden {getSortIcon('matches_count')}
                 </th>
                 <th className="sortable" onClick={() => handleSort('avg')}>
-                  Avg Listeners {getSortIcon('avg')}
+                  Gem. luisteraars {getSortIcon('avg')}
                 </th>
                 <th className="sortable" onClick={() => handleSort('median')}>
-                  Median {getSortIcon('median')}
+                  Mediaan {getSortIcon('median')}
                 </th>
                 <th className="sortable" onClick={() => handleSort('max')}>
-                  Max {getSortIcon('max')}
+                  Hoogste {getSortIcon('max')}
                 </th>
               </tr>
             </thead>
@@ -103,7 +99,7 @@ function CommentatorDuosSection({ data }) {
         </div>
 
         <div className="chart-container">
-          <h3>Top 15 Commentator Duos - Average Listeners</h3>
+          <h3>Top 15 duo's: gemiddeld aantal luisteraars</h3>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={top15} margin={{ top: 20, right: 30, left: 20, bottom: 80 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -114,9 +110,9 @@ function CommentatorDuosSection({ data }) {
                 height={120}
                 interval={0}
               />
-              <YAxis />
+              <YAxis tickFormatter={formatNumber} />
               <Tooltip 
-                formatter={(value) => formatNumber(value)}
+                formatter={(value) => [formatNumber(value), 'Gem. luisteraars']}
                 labelStyle={TOOLTIP_LABEL_STYLE}
               />
               <Bar dataKey="avg" fill={COLORS.red} />

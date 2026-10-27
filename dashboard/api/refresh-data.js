@@ -77,7 +77,7 @@ export default async function handler(req, res) {
     }
 
     return res.status(200).json({
-      message: 'Update started. It can take a few minutes to deploy.'
+      message: 'Update gestart. De nieuwe cijfers staan over een paar minuten live.'
     })
   } catch (error) {
     console.error('Refresh error', error)

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import './PlatformMixTrendSection.css'
 import { PLATFORM_COLORS } from '../theme'
+import { formatDate } from '../utils/format'
 
 const SERIES = [
   { key: 'iOS-app', color: PLATFORM_COLORS['iOS-app'] },
@@ -21,19 +22,10 @@ function PlatformMixTrendSection() {
       .catch(() => setMatches([]))
   }, [])
 
-  const formatDate = (dateStr) => {
-    try {
-      const date = new Date(dateStr + 'T00:00:00')
-      return date.toLocaleDateString('nl-NL', { month: 'short', day: 'numeric' })
-    } catch {
-      return dateStr
-    }
-  }
-
   if (matches === null) {
     return (
       <div className="section platform-mix-trend-section">
-        <h2>Platform-mix per Wedstrijd</h2>
+        <h2>Platform-mix per wedstrijd</h2>
         <p>Laden...</p>
       </div>
     )
@@ -44,7 +36,7 @@ function PlatformMixTrendSection() {
   if (withData.length === 0) {
     return (
       <div className="section platform-mix-trend-section">
-        <h2>Platform-mix per Wedstrijd</h2>
+        <h2>Platform-mix per wedstrijd</h2>
         <p>Nog geen wedstrijden met CDN-detaildata verwerkt.</p>
       </div>
     )
@@ -60,7 +52,7 @@ function PlatformMixTrendSection() {
 
   return (
     <div className="section platform-mix-trend-section">
-      <h2>Platform-mix per Wedstrijd</h2>
+      <h2>Platform-mix per wedstrijd</h2>
       <p className="section-subtitle">% van de luisteraars per platform, chronologisch (alleen wedstrijden met CDN-detaildata)</p>
       <ResponsiveContainer width="100%" height={320}>
         <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
@@ -70,7 +62,7 @@ function PlatformMixTrendSection() {
           <Tooltip
             formatter={(value) => `${value}%`}
             labelFormatter={(label, items) =>
-              items && items[0] ? `${label} • ${items[0].payload.matchName}` : label
+              items && items[0] ? `${label} · ${items[0].payload.matchName}` : label
             }
           />
           <Legend />

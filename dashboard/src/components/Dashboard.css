@@ -379,3 +379,14 @@
 .sort-icon.is-active {
   color: var(--ajax-red);
 }
+
+.dashboard-message {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.dashboard-message h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}

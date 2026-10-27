@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import './GeoTrendSection.css'
 import { COLORS } from '../theme'
+import { formatDate } from '../utils/format'
 
 function GeoTrendSection() {
   const [matches, setMatches] = useState(null)
@@ -13,38 +14,29 @@ function GeoTrendSection() {
       .catch(() => setMatches([]))
   }, [])
 
-  const formatDate = (dateStr) => {
-    try {
-      const date = new Date(dateStr + 'T00:00:00')
-      return date.toLocaleDateString('nl-NL', { month: 'short', day: 'numeric' })
-    } catch {
-      return dateStr
-    }
-  }
-
   if (matches === null) {
     return (
       <div className="section geo-trend-section">
-        <h2>Nederland vs. Buitenland</h2>
+        <h2>Nederland vs. buitenland</h2>
         <p>Laden...</p>
       </div>
     )
   }
 
-  const withData = matches.filter((m) => m.geo && m.geo.labels)
+  // Alleen wedstrijden waar Nederland in de landenlijst staat; anders zou de lijn onterecht op 0% NL vallen.
+  const withData = matches.filter((m) => m.geo && m.geo.labels && m.geo.labels.includes('Nederland'))
 
   if (withData.length === 0) {
     return (
       <div className="section geo-trend-section">
-        <h2>Nederland vs. Buitenland</h2>
+        <h2>Nederland vs. buitenland</h2>
         <p>Nog geen wedstrijden met CDN-detaildata verwerkt.</p>
       </div>
     )
   }
 
   const chartData = withData.map((m) => {
-    const nlIndex = m.geo.labels.indexOf('Nederland')
-    const nlPct = nlIndex >= 0 ? m.geo.values[nlIndex] : 0
+    const nlPct = m.geo.values[m.geo.labels.indexOf('Nederland')]
     return {
       label: formatDate(m.date),
       matchName: m.match_name,
@@ -55,8 +47,8 @@ function GeoTrendSection() {
 
   return (
     <div className="section geo-trend-section">
-      <h2>Nederland vs. Buitenland</h2>
-      <p className="section-subtitle">% luisteraars uit Nederland t.o.v. buitenland, chronologisch (alleen wedstrijden met CDN-detaildata)</p>
+      <h2>Nederland vs. buitenland</h2>
+      <p className="section-subtitle">% luisteraars uit Nederland t.o.v. buitenland, chronologisch (alleen wedstrijden met CDN-detaildata waarin Nederland apart is gemeten)</p>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -65,7 +57,7 @@ function GeoTrendSection() {
           <Tooltip
             formatter={(value) => `${value}%`}
             labelFormatter={(label, items) =>
-              items && items[0] ? `${label} • ${items[0].payload.matchName}` : label
+              items && items[0] ? `${label} · ${items[0].payload.matchName}` : label
             }
           />
           <Legend />

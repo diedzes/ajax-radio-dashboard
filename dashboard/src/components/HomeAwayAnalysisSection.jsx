@@ -2,19 +2,16 @@ import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './HomeAwayAnalysisSection.css'
 import { COLORS, TOOLTIP_LABEL_STYLE } from '../theme'
+import { formatNumber } from '../utils/format'
 
 function HomeAwayAnalysisSection({ data }) {
   if (!data || !data.home_away || data.home_away.length === 0) {
     return (
       <div className="section">
-        <h2>Average Listeners by Home/Away</h2>
-        <p>No home/away data available</p>
+        <h2>Luisteraars thuis en uit</h2>
+        <p>Nog geen data beschikbaar.</p>
       </div>
     )
-  }
-
-  const formatNumber = (num) => {
-    return new Intl.NumberFormat('en-US').format(num)
   }
 
   const chartData = data.home_away.map(item => ({
@@ -26,7 +23,7 @@ function HomeAwayAnalysisSection({ data }) {
   return (
     <div className="section home-away-analysis-section">
       <div className="section-header-row">
-        <h2>Average Listeners by Home/Away</h2>
+        <h2>Luisteraars thuis en uit</h2>
       </div>
       
       <div className="section-content">
@@ -34,12 +31,12 @@ function HomeAwayAnalysisSection({ data }) {
           <table className="data-table">
             <thead>
               <tr>
-                <th>Type</th>
-                <th>Matches</th>
-                <th>Avg Listeners</th>
-                <th>Median</th>
-                <th>Min</th>
-                <th>Max</th>
+                <th>Thuis/uit</th>
+                <th>Wedstrijden</th>
+                <th>Gem. luisteraars</th>
+                <th>Mediaan</th>
+                <th>Laagste</th>
+                <th>Hoogste</th>
               </tr>
             </thead>
             <tbody>
@@ -58,14 +55,13 @@ function HomeAwayAnalysisSection({ data }) {
         </div>
 
         <div className="chart-container">
-          <h3>Average Listeners by Home/Away</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="home_away" />
-              <YAxis />
+              <YAxis tickFormatter={formatNumber} />
               <Tooltip 
-                formatter={(value) => formatNumber(value)}
+                formatter={(value) => [formatNumber(value), 'Gem. luisteraars']}
                 labelStyle={TOOLTIP_LABEL_STYLE}
               />
               <Bar dataKey="avg" fill={COLORS.red} />

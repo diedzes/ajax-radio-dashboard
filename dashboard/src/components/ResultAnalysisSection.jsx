@@ -2,25 +2,19 @@ import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './ResultAnalysisSection.css'
 import { COLORS, TOOLTIP_LABEL_STYLE } from '../theme'
+import { formatNumber, RESULT_LABEL, RESULT_SHORT } from '../utils/format'
 
 function ResultAnalysisSection({ data }) {
   if (!data || !data.results || data.results.length === 0) {
     return (
       <div className="section">
-        <h2>Average Listeners by Result</h2>
-        <p>No result data available</p>
+        <h2>Luisteraars per uitslag</h2>
+        <p>Nog geen data beschikbaar.</p>
       </div>
     )
   }
 
-  const formatNumber = (num) => {
-    return new Intl.NumberFormat('en-US').format(num)
-  }
-
-  const getResultLabel = (result) => {
-    const labels = { 'W': 'Win', 'D': 'Draw', 'L': 'Loss' }
-    return labels[result] || result
-  }
+  const getResultLabel = (result) => RESULT_LABEL[result] || result
 
   const chartData = data.results.map(item => ({
     result: getResultLabel(item.result),
@@ -31,7 +25,7 @@ function ResultAnalysisSection({ data }) {
   return (
     <div className="section result-analysis-section">
       <div className="section-header-row">
-        <h2>Average Listeners by Result</h2>
+        <h2>Luisteraars per uitslag</h2>
       </div>
       
       <div className="section-content">
@@ -39,12 +33,12 @@ function ResultAnalysisSection({ data }) {
           <table className="data-table">
             <thead>
               <tr>
-                <th>Result</th>
-                <th>Matches</th>
-                <th>Avg Listeners</th>
-                <th>Median</th>
-                <th>Min</th>
-                <th>Max</th>
+                <th>Uitslag</th>
+                <th>Wedstrijden</th>
+                <th>Gem. luisteraars</th>
+                <th>Mediaan</th>
+                <th>Laagste</th>
+                <th>Hoogste</th>
               </tr>
             </thead>
             <tbody>
@@ -52,7 +46,7 @@ function ResultAnalysisSection({ data }) {
                 <tr key={index}>
                   <td className="result-cell">
                     <span className={`result-badge result-${item.result.toLowerCase()}`}>
-                      {item.result}
+                      {RESULT_SHORT[item.result] || item.result}
                     </span>
                   </td>
                   <td>{item.matches_count}</td>
@@ -67,14 +61,13 @@ function ResultAnalysisSection({ data }) {
         </div>
 
         <div className="chart-container">
-          <h3>Average Listeners by Result</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="result" />
-              <YAxis />
+              <YAxis tickFormatter={formatNumber} />
               <Tooltip 
-                formatter={(value) => formatNumber(value)}
+                formatter={(value) => [formatNumber(value), 'Gem. luisteraars']}
                 labelStyle={TOOLTIP_LABEL_STYLE}
               />
               <Bar dataKey="avg" fill={COLORS.red} />

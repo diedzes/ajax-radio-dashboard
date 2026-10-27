@@ -1,108 +1,91 @@
 import React from 'react'
 import './Top5GamesSection.css'
+import {
+  formatDateWithDay,
+  formatNumber,
+  shortCompetition,
+  RESULT_SHORT,
+  RESULT_LABEL,
+  RESULT_CLASS
+} from '../utils/format'
+
+// "2026/2027" -> "Seizoen 26/27"
+const seasonLabel = (season) => {
+  const [start, end] = season.split('/')
+  return end ? `Seizoen ${start.slice(-2)}/${end.slice(-2)}` : season
+}
 
 function Top5GamesSection({ data }) {
-  if (!data || (!data['2024/2025'] && !data['2025/2026'])) {
+  // Nieuwste seizoen bovenaan; nieuwe seizoenen uit de pipeline verschijnen vanzelf.
+  const seasons = Object.keys(data || {})
+    .filter((season) => Array.isArray(data[season]))
+    .sort()
+    .reverse()
+
+  if (seasons.length === 0) {
     return (
       <div className="section">
-        <h2>Top 5 Games by Season</h2>
-        <p>No data available</p>
+        <h2>Top 5 per seizoen</h2>
+        <p>Nog geen data beschikbaar.</p>
       </div>
     )
   }
 
-  const formatDate = (dateStr) => {
-    if (!dateStr) return 'N/A'
-    try {
-      const date = new Date(dateStr + 'T00:00:00')
-      return date.toLocaleDateString('nl-NL', { 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric' 
-      })
-    } catch {
-      return dateStr
-    }
-  }
-
-  const getResultClass = (result) => {
-    if (result === 'W') return 'result-win'
-    if (result === 'D') return 'result-draw'
-    if (result === 'L') return 'result-loss'
-    return ''
-  }
-
-  const getResultLabel = (result) => {
-    if (result === 'W') return 'W'
-    if (result === 'D') return 'D'
-    if (result === 'L') return 'L'
-    return '-'
-  }
-
-  const renderSeasonTable = (season, matches) => {
-    if (!matches || matches.length === 0) {
-      return (
-        <div className="season-section">
-          <h3>{season}</h3>
-          <p>No data available for this season</p>
-        </div>
-      )
-    }
-
-    const safeSeason = season.replace('/', '-')
-
-    return (
-      <div className="season-section">
-        <div className="section-header-row">
-          <h3>{season}</h3>
-        </div>
-        <table className="top5-table" id={`top5-${safeSeason}-table`}>
+  const renderSeasonTable = (season, matches) => (
+    <div className="season-section" key={season}>
+      <h3>{seasonLabel(season)}</h3>
+      {matches.length === 0 ? (
+        <p className="muted">Nog geen wedstrijden met luistercijfers in dit seizoen.</p>
+      ) : (
+        <table className="top5-table" id={`top5-${season.replace('/', '-')}-table`}>
           <thead>
             <tr>
-              <th>Rank</th>
-              <th>Date</th>
-              <th>Day</th>
-              <th>Time</th>
-              <th>Match</th>
-              <th>Commentators</th>
-              <th>TV Channel</th>
-              <th>Score</th>
-              <th>Result</th>
-              <th>Listeners</th>
+              <th>#</th>
+              <th>Datum</th>
+              <th>Wedstrijd</th>
+              <th>Uitslag</th>
+              <th>Commentatoren</th>
+              <th>Zender</th>
+              <th className="num">Luisteraars</th>
             </tr>
           </thead>
           <tbody>
             {matches.map((match, index) => (
-              <tr key={index}>
+              <tr key={`${match.date}-${match.match_name}`}>
                 <td className="rank-cell">{index + 1}</td>
-                <td>{formatDate(match.date)}</td>
-                <td>{match.weekday || 'N/A'}</td>
-                <td>{match.time || 'N/A'}</td>
-                <td>{match.match_name || 'N/A'}</td>
-                <td>{match.commentators || 'N/A'}</td>
-                <td>{match.tv_channel || 'N/A'}</td>
-                <td>{match.score || 'N/A'}</td>
                 <td>
-                  <span className={`result-badge ${getResultClass(match.result)}`}>
-                    {getResultLabel(match.result)}
-                  </span>
+                  {formatDateWithDay(match.date)}
+                  {match.time ? <span className="cell-sub">{match.time}</span> : null}
                 </td>
-                <td className="listeners-cell">{match.listeners ? match.listeners.toLocaleString() : 'N/A'}</td>
+                <td>
+                  <span className="match-name">{match.match_name || '—'}</span>
+                  <span className="cell-sub">{shortCompetition(match.competition)}</span>
+                </td>
+                <td>
+                  {match.result ? (
+                    <span className={`result-badge ${RESULT_CLASS[match.result] || ''}`} title={RESULT_LABEL[match.result]}>
+                      {RESULT_SHORT[match.result] || match.result}
+                      {match.score ? <span className="result-score">{match.score}</span> : null}
+                    </span>
+                  ) : (
+                    match.score || '—'
+                  )}
+                </td>
+                <td>{match.commentators || '—'}</td>
+                <td>{match.tv_channel || '—'}</td>
+                <td className="listeners-cell num">{formatNumber(match.listeners)}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </div>
-    )
-  }
+      )}
+    </div>
+  )
 
   return (
     <div className="section top5-games-section">
-      <h2>Top 5 Games by Season</h2>
-      <div className="seasons-container">
-        {data['2024/2025'] && renderSeasonTable('2024/2025', data['2024/2025'])}
-        {data['2025/2026'] && renderSeasonTable('2025/2026', data['2025/2026'])}
-      </div>
+      <h2>Top 5 per seizoen</h2>
+      <div className="seasons-container">{seasons.map((season) => renderSeasonTable(season, data[season]))}</div>
     </div>
   )
 }

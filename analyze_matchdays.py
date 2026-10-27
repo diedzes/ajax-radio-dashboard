@@ -757,23 +757,32 @@ def prepare_all_matches(data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return matches
 
 
+def season_date_range(season: str):
+    """'2025/2026' -> ('2025-07-01', '2026-06-30'); onbekend formaat -> (None, None)."""
+    try:
+        start_year, end_year = (int(part) for part in season.split('/'))
+    except (ValueError, AttributeError):
+        return None, None
+    return f"{start_year}-07-01", f"{end_year}-06-30"
+
+
+def season_for_date(date: str) -> Optional[str]:
+    """'2026-10-25' -> '2026/2027'."""
+    try:
+        year, month = int(date[:4]), int(date[5:7])
+    except (ValueError, TypeError):
+        return None
+    start_year = year if month >= 7 else year - 1
+    return f"{start_year}/{start_year + 1}"
+
+
 def get_top5_games(data: List[Dict[str, Any]], season: Optional[str] = None) -> List[Dict[str, Any]]:
     """Get top 5 games by listeners for a season"""
     # Filter by season if provided
     filtered_data = data
     if season:
-        # Determine date range based on season
-        # 2024/2025: dates from 2024-07-01 to 2025-06-30
-        # 2025/2026: dates from 2025-07-01 to 2026-06-30
-        if season == "2024/2025":
-            start_date = "2024-07-01"
-            end_date = "2025-06-30"
-        elif season == "2025/2026":
-            start_date = "2025-07-01"
-            end_date = "2026-06-30"
-        else:
-            start_date = None
-            end_date = None
+        # Seizoen "YYYY/YYYY" loopt van 1 juli t/m 30 juni.
+        start_date, end_date = season_date_range(season)
         
         if start_date and end_date:
             filtered_data = [
@@ -1051,12 +1060,12 @@ def main():
     
     # E) Top 5 games by season
     print("  - Preparing top 5 games...")
-    top5_2024_2025 = get_top5_games(past_records, "2024/2025")
-    top5_2025_2026 = get_top5_games(past_records, "2025/2026")
-    top5_games = {
-        '2024/2025': top5_2024_2025,
-        '2025/2026': top5_2025_2026
-    }
+    # Top 5 voor elk seizoen vanaf 24/25 dat in de data zit (nieuwe seizoenen komen er vanzelf bij).
+    seasons = sorted({
+        season for season in (season_for_date(r.get('date', '')) for r in past_records)
+        if season and season >= '2024/2025'
+    })
+    top5_games = {season: get_top5_games(past_records, season) for season in seasons}
     
     # F) Analyze by result (W/D/L)
     print("  - Analyzing by result (W/D/L)...")
