@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import './PlatformMixTrendSection.css'
+import { PLATFORM_COLORS } from '../theme'
 
 const SERIES = [
-  { key: 'iOS-app', color: '#d2122e' },
-  { key: 'Android-app', color: '#9ca3af' },
-  { key: 'Webbrowser', color: '#f7c8d0' },
-  { key: 'Relay/herdistributie', color: '#111111' },
-  { key: 'Overig', color: '#c8c8c8' }
+  { key: 'iOS-app', color: PLATFORM_COLORS['iOS-app'] },
+  { key: 'Android-app', color: PLATFORM_COLORS['Android-app'] },
+  { key: 'Webbrowser', color: PLATFORM_COLORS['Webbrowser'] },
+  { key: 'Relay/herdistributie', color: PLATFORM_COLORS['Relay/herdistributie'] },
+  { key: 'Overig', color: PLATFORM_COLORS['Overig'] }
 ]
 
 function PlatformMixTrendSection() {

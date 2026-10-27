@@ -45,7 +45,7 @@
 
 .avg-cell {
   font-weight: 600;
-  color: #9c27b0;
+  color: var(--ajax-red);
 }
 
 .chart-container {

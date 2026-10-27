@@ -31,7 +31,7 @@
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  border-bottom: 2px solid #c8102e;
+  border-bottom: 2px solid var(--ajax-red);
   white-space: nowrap;
   background-color: #f8f8f8;
 }
@@ -120,7 +120,7 @@
 
 .media-value-cell {
   font-weight: 600;
-  color: #0a5b2a;
+  color: var(--ink);
 }
 
 .matches-table td {
@@ -137,7 +137,7 @@
 }
 
 .matches-table tbody tr.row-has-detail:hover {
-  background-color: #fdecee;
+  background-color: var(--ajax-red-tint);
 }
 
 .detail-dot {
@@ -145,7 +145,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #c8102e;
+  background: var(--ajax-red);
   margin-left: 5px;
   vertical-align: middle;
 }
@@ -161,17 +161,17 @@
 }
 
 .result-win {
-  background-color: #4caf50;
+  background-color: var(--win);
   color: white;
 }
 
 .result-draw {
-  background-color: #ff9800;
+  background-color: var(--draw);
   color: white;
 }
 
 .result-loss {
-  background-color: #f44336;
+  background-color: var(--loss);
   color: white;
 }
 

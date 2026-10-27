@@ -114,14 +114,14 @@
 }
 
 .topbar-button-primary {
-  background: #c8102e;
-  border-color: #c8102e;
+  background: var(--ajax-red);
+  border-color: var(--ajax-red);
   color: #fff;
 }
 
 .topbar-button-primary:hover:not(:disabled) {
-  background: #a60d25;
-  border-color: #a60d25;
+  background: var(--ajax-red-dark);
+  border-color: var(--ajax-red-dark);
 }
 
 /* ---------- tabbladen ---------- */
@@ -155,7 +155,7 @@
 
 .subnav a[aria-current='page'] {
   color: #111;
-  border-bottom-color: #c8102e;
+  border-bottom-color: var(--ajax-red);
 }
 
 .status-bar {
@@ -182,7 +182,7 @@
 
 .page-kicker {
   margin: 0 0 4px;
-  color: #c8102e;
+  color: var(--ajax-red);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -215,7 +215,7 @@
 }
 
 .kpi-tile-link:hover {
-  border-color: #c8102e;
+  border-color: var(--ajax-red);
 }
 
 .kpi-label {
@@ -274,7 +274,7 @@
 }
 
 .error {
-  color: #d32f2f;
+  color: var(--loss);
   font-weight: 500;
 }
 

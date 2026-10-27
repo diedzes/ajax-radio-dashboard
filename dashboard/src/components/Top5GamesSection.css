@@ -50,7 +50,7 @@
 
 .listeners-cell {
   font-weight: 600;
-  color: #2196F3;
+  color: var(--ajax-red);
 }
 
 .result-badge {
@@ -64,17 +64,17 @@
 }
 
 .result-win {
-  background-color: #4caf50;
+  background-color: var(--win);
   color: white;
 }
 
 .result-draw {
-  background-color: #ff9800;
+  background-color: var(--draw);
   color: white;
 }
 
 .result-loss {
-  background-color: #f44336;
+  background-color: var(--loss);
   color: white;
 }
 

@@ -14,6 +14,7 @@ import PlatformMixTrendSection from './PlatformMixTrendSection'
 import GeoTrendSection from './GeoTrendSection'
 import { exportElementToPdf } from '../utils/exportPdf'
 import sportSoundsLogo from '../assets/sport-sounds-wordmark-black.png'
+import ajaxCrest from '../assets/ajax-crest.png'
 import './Dashboard.css'
 
 const RADIO_TABS = [
@@ -448,7 +449,7 @@ function Dashboard() {
             <span className="topbar-x" aria-hidden="true">×</span>
             <img
               className="topbar-logo-ajax"
-              src="https://burobros.nl/klanten/sportsounds/wp-content/uploads/2026/02/AFC_Ajax_crest.svg.png"
+              src={ajaxCrest}
               alt="AFC Ajax"
             />
           </div>

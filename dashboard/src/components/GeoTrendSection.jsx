@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import './GeoTrendSection.css'
+import { COLORS } from '../theme'
 
 function GeoTrendSection() {
   const [matches, setMatches] = useState(null)
@@ -68,8 +69,8 @@ function GeoTrendSection() {
             }
           />
           <Legend />
-          <Line type="monotone" dataKey="Nederland" stroke="#c8102e" strokeWidth={2} />
-          <Line type="monotone" dataKey="Buitenland" stroke="#111111" strokeWidth={2} />
+          <Line type="monotone" dataKey="Nederland" stroke={COLORS.red} strokeWidth={2} />
+          <Line type="monotone" dataKey="Buitenland" stroke={COLORS.ink} strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
     </div>

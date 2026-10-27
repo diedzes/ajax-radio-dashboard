@@ -1,18 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import './PodcastSection.css'
+import { SERIES } from '../theme'
 
-const APP_COLORS = [
-  '#c8102e',
-  '#111111',
-  '#e0a500',
-  '#3b82f6',
-  '#10b981',
-  '#8b5cf6',
-  '#f97316',
-  '#14b8a6',
-  '#ef4444',
-  '#64748b'
-]
+const APP_COLORS = SERIES
 
 function PodcastSection({ episodes, monthly, apps }) {
   const episodeList = episodes?.episodes || []

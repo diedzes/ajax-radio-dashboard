@@ -4,9 +4,12 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts'
 import './MatchDetailModal.css'
+import { COLORS, SERIES, PLATFORM_COLORS } from '../theme'
 
-const PLATFORM_FALLBACK_COLORS = ['#d2122e', '#f4a6b3', '#f7c8d0', '#9ca3af', '#111111']
-const QUALITY_FALLBACK_COLORS = ['#2e9e5b', '#e2a13a', '#d2122e', '#9ca3af']
+const PLATFORM_FALLBACK_COLORS = SERIES
+const QUALITY_FALLBACK_COLORS = [COLORS.win, COLORS.draw, COLORS.loss, COLORS.grey]
+// HTTP-status → kleur: 200 goed, 404 niet gevonden, 000 time-out.
+const QUALITY_COLORS = { '200': COLORS.win, '404': COLORS.draw, '000': COLORS.loss }
 
 function formatNum(value) {
   return typeof value === 'number' ? value.toLocaleString('nl-NL') : 'N/A'
@@ -52,7 +55,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
   const platformData = detail?.platform?.labels?.map((label, i) => ({
     name: label,
     value: detail.platform.values[i],
-    color: detail.platform.colors?.[i] || PLATFORM_FALLBACK_COLORS[i % PLATFORM_FALLBACK_COLORS.length]
+    color: PLATFORM_COLORS[label] || PLATFORM_FALLBACK_COLORS[i % PLATFORM_FALLBACK_COLORS.length]
   })) || []
   const geoData = detail?.geo?.labels?.map((label, i) => ({
     name: label,
@@ -61,7 +64,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
   const qualityData = detail?.quality?.labels?.map((label, i) => ({
     name: label,
     value: detail.quality.values[i],
-    color: detail.quality.colors?.[i] || QUALITY_FALLBACK_COLORS[i % QUALITY_FALLBACK_COLORS.length]
+    color: QUALITY_COLORS[String(label).slice(0, 3)] || QUALITY_FALLBACK_COLORS[i % QUALITY_FALLBACK_COLORS.length]
   })) || []
 
   return (
@@ -120,7 +123,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
                     <XAxis dataKey="label" interval={Math.max(0, Math.floor(concurrencyData.length / 12) - 1)} />
                     <YAxis />
                     <Tooltip formatter={(value) => [formatNum(value), 'Gelijktijdig']} />
-                    <Area type="monotone" dataKey="value" stroke="#c8102e" fill="#c8102e" fillOpacity={0.25} />
+                    <Area type="monotone" dataKey="value" stroke={COLORS.red} fill={COLORS.red} fillOpacity={0.25} />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -149,7 +152,7 @@ function MatchDetailModal({ date, matchName, onClose }) {
                       <XAxis type="number" unit="%" />
                       <YAxis type="category" dataKey="name" width={90} />
                       <Tooltip formatter={(value) => `${value}%`} />
-                      <Bar dataKey="value" fill="#111111" />
+                      <Bar dataKey="value" fill={COLORS.ink} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

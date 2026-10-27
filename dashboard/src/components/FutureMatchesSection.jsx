@@ -1,6 +1,7 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './FutureMatchesSection.css'
+import { COLORS } from '../theme'
 
 function FutureMatchesSection({ data, recentPredictions }) {
   if (!data || !data.matches || data.matches.length === 0) {
@@ -89,8 +90,8 @@ function FutureMatchesSection({ data, recentPredictions }) {
                   items && items[0] ? `${label} • ${items[0].payload.matchName}` : label
                 }
               />
-              <Line type="monotone" dataKey="predicted" stroke="#c8102e" strokeWidth={2} />
-              <Line type="monotone" dataKey="actual" stroke="#111111" strokeWidth={2} />
+              <Line type="monotone" dataKey="predicted" stroke={COLORS.red} strokeWidth={2} />
+              <Line type="monotone" dataKey="actual" stroke={COLORS.ink} strokeWidth={2} />
             </LineChart>
           </ResponsiveContainer>
         </div>

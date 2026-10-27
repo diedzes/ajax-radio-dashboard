@@ -1,6 +1,7 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './HomeAwayAnalysisSection.css'
+import { COLORS, TOOLTIP_LABEL_STYLE } from '../theme'
 
 function HomeAwayAnalysisSection({ data }) {
   if (!data || !data.home_away || data.home_away.length === 0) {
@@ -65,9 +66,9 @@ function HomeAwayAnalysisSection({ data }) {
               <YAxis />
               <Tooltip 
                 formatter={(value) => formatNumber(value)}
-                labelStyle={{ color: '#333' }}
+                labelStyle={TOOLTIP_LABEL_STYLE}
               />
-              <Bar dataKey="avg" fill="#9c27b0" />
+              <Bar dataKey="avg" fill={COLORS.red} />
             </BarChart>
           </ResponsiveContainer>
         </div>

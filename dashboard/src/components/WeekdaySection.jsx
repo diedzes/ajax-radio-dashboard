@@ -1,6 +1,7 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './WeekdaySection.css'
+import { COLORS, TOOLTIP_LABEL_STYLE } from '../theme'
 
 function WeekdaySection({ data }) {
   if (!data || data.length === 0) {
@@ -34,9 +35,9 @@ function WeekdaySection({ data }) {
             <YAxis />
             <Tooltip 
               formatter={(value) => formatNumber(value)}
-              labelStyle={{ color: '#333' }}
+              labelStyle={TOOLTIP_LABEL_STYLE}
             />
-            <Bar dataKey="avg" fill="#ed6c02" />
+            <Bar dataKey="avg" fill={COLORS.red} />
           </BarChart>
         </ResponsiveContainer>
       </div>

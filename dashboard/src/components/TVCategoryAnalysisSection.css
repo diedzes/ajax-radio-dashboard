@@ -58,23 +58,23 @@
 }
 
 .category-halfopen {
-  background-color: #ff9800;
+  background-color: var(--grey);
   color: white;
 }
 
 .category-open {
-  background-color: #4caf50;
+  background-color: var(--ink);
   color: white;
 }
 
 .category-paid {
-  background-color: #2196F3;
+  background-color: var(--ajax-red);
   color: white;
 }
 
 .avg-cell {
   font-weight: 600;
-  color: #2196F3;
+  color: var(--ajax-red);
 }
 
 .chart-container {

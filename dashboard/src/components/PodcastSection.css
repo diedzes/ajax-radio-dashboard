@@ -42,8 +42,8 @@
 }
 
 .podcast-top-nav button:hover {
-  background: #c8102e;
-  border-color: #c8102e;
+  background: var(--ajax-red);
+  border-color: var(--ajax-red);
 }
 
 .podcast-month-label {
@@ -61,7 +61,7 @@
 .podcast-month-bar span {
   display: block;
   height: 100%;
-  background: #c8102e;
+  background: var(--ajax-red);
 }
 
 .podcast-month-value {
@@ -94,7 +94,7 @@
 }
 
 .podcast-sort-button:hover {
-  color: #c8102e;
+  color: var(--ajax-red);
 }
 
 .sort-indicator {
