@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-10-31",
+      "weekday": "Saturday",
+      "time": "21:00",
+      "match_name": "Ajax - AZ",
+      "commentators": "Diederik & Bas",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-10-25",
       "weekday": "Sunday",
       "time": "16:45",
