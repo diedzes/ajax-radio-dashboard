@@ -1,11 +1,11 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "home_away": [
     {
       "home_away": "Thuis",
-      "matches_count": 64,
-      "avg": 34945.97,
-      "median": 31163,
+      "matches_count": 65,
+      "avg": 34863.8,
+      "median": 30861,
       "min": 4670,
       "max": 78753
     },

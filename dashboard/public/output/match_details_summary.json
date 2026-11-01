@@ -6864,6 +6864,62 @@
         "freq": 2.71,
         "completion": 17.0
       }
+    },
+    {
+      "date": "2026-10-31",
+      "match_name": "Ajax - AZ",
+      "listeners": 29605,
+      "peakHour": "23:56u",
+      "peakValue": 5944,
+      "successRate": 89.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          91.1,
+          2.0,
+          0.8,
+          0.0,
+          6.1
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Spanje",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          84.2,
+          8.6,
+          3.0,
+          0.7,
+          0.6,
+          3.0
+        ]
+      },
+      "preroll": {
+        "bereik": 24033,
+        "bereikPct": 81.2,
+        "impressies": 63388,
+        "freq": 2.64,
+        "completion": 18.9
+      }
     }
   ]
 }
