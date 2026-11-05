@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-11-05",
+      "weekday": "Thursday",
+      "time": "18:45",
+      "match_name": "FC Midtjylland - Ajax",
+      "commentators": "Diederik & Daaf",
+      "listeners": null,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Uit"
+    },
+    {
       "date": "2026-10-31",
       "weekday": "Saturday",
       "time": "21:00",

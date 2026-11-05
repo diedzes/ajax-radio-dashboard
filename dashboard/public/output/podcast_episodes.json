@@ -2,8 +2,8 @@
   "show_id": "62011",
   "feed_url": "https://feeds.transistor.fm/ajax-podcast",
   "window": {
-    "start_date": "04-11-2024",
-    "end_date": "04-11-2026"
+    "start_date": "05-11-2024",
+    "end_date": "05-11-2026"
   },
   "episodes": [
     {
@@ -12,7 +12,7 @@
       "published_at": "2026-08-14T08:30:00.000Z",
       "duration_in_mmss": "38:50",
       "share_url": "https://share.transistor.fm/s/ad71a153",
-      "total_downloads": 1491
+      "total_downloads": 1494
     },
     {
       "id": "3248331",
@@ -20,7 +20,7 @@
       "published_at": "2026-05-15T04:00:00.000Z",
       "duration_in_mmss": "17:54",
       "share_url": "https://share.transistor.fm/s/3060cc9d",
-      "total_downloads": 1807
+      "total_downloads": 1808
     },
     {
       "id": "3207217",
@@ -132,7 +132,7 @@
       "published_at": "2025-11-07T05:00:00.000Z",
       "duration_in_mmss": "15:54",
       "share_url": "https://share.transistor.fm/s/c944bf17",
-      "total_downloads": 1623
+      "total_downloads": 1624
     },
     {
       "id": "2783685",
@@ -140,7 +140,7 @@
       "published_at": "2025-10-24T04:00:00.000Z",
       "duration_in_mmss": "17:17",
       "share_url": "https://share.transistor.fm/s/9d809353",
-      "total_downloads": 1947
+      "total_downloads": 1948
     },
     {
       "id": "2763334",
@@ -148,7 +148,7 @@
       "published_at": "2025-10-10T04:00:00.000Z",
       "duration_in_mmss": "17:14",
       "share_url": "https://share.transistor.fm/s/9f8d830f",
-      "total_downloads": 2391
+      "total_downloads": 2392
     },
     {
       "id": "2760171",
@@ -156,7 +156,7 @@
       "published_at": "2025-10-08T15:07:55.818Z",
       "duration_in_mmss": "00:24",
       "share_url": "https://share.transistor.fm/s/821dcfbf",
-      "total_downloads": 1145
+      "total_downloads": 1146
     },
     {
       "id": "2373144",
@@ -164,7 +164,7 @@
       "published_at": "2025-03-12T00:28:00.000Z",
       "duration_in_mmss": "38:00",
       "share_url": "https://share.transistor.fm/s/05285b5f",
-      "total_downloads": 5808
+      "total_downloads": 5809
     },
     {
       "id": "2373139",
@@ -932,7 +932,7 @@
       "published_at": "2019-05-12T22:15:00.000Z",
       "duration_in_mmss": "63:49",
       "share_url": "https://share.transistor.fm/s/0ff574df",
-      "total_downloads": 53
+      "total_downloads": 54
     },
     {
       "id": "2366333",
@@ -1036,7 +1036,7 @@
       "published_at": "2019-02-10T23:02:00.000Z",
       "duration_in_mmss": "43:39",
       "share_url": "https://share.transistor.fm/s/3e7df57c",
-      "total_downloads": 73
+      "total_downloads": 74
     },
     {
       "id": "2366320",
@@ -1052,7 +1052,7 @@
       "published_at": "2019-01-27T23:49:00.000Z",
       "duration_in_mmss": "70:13",
       "share_url": "https://share.transistor.fm/s/42a719f3",
-      "total_downloads": 85
+      "total_downloads": 86
     },
     {
       "id": "2366318",
