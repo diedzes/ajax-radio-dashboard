@@ -6920,6 +6920,62 @@
         "freq": 2.64,
         "completion": 18.9
       }
+    },
+    {
+      "date": "2026-11-05",
+      "match_name": "FC Midtjylland - Ajax",
+      "listeners": 14934,
+      "peakHour": "21:52u",
+      "peakValue": 2791,
+      "successRate": 90.2,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          88.2,
+          3.1,
+          1.6,
+          0.1,
+          7.0
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "VS",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          85.8,
+          5.7,
+          3.2,
+          0.8,
+          0.6,
+          3.9
+        ]
+      },
+      "preroll": {
+        "bereik": 12129,
+        "bereikPct": 81.2,
+        "impressies": 30286,
+        "freq": 2.5,
+        "completion": 19.6
+      }
     }
   ]
 }

@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-09-05",
-      "match_name": "Ajax - PSV",
-      "listeners": 24150,
-      "predicted_listeners": 29776
-    },
-    {
       "date": "2026-09-12",
       "match_name": "Fortuna Sittard - Ajax",
       "listeners": 29225,
@@ -34,7 +28,7 @@
       "date": "2026-10-15",
       "match_name": "Hajduk Split - Ajax",
       "listeners": 15656,
-      "predicted_listeners": 25834
+      "predicted_listeners": 25153
     },
     {
       "date": "2026-10-18",
@@ -59,6 +53,12 @@
       "match_name": "Ajax - AZ",
       "listeners": 29605,
       "predicted_listeners": 22565
+    },
+    {
+      "date": "2026-11-05",
+      "match_name": "FC Midtjylland - Ajax",
+      "listeners": 14934,
+      "predicted_listeners": 25153
     }
   ]
 }
