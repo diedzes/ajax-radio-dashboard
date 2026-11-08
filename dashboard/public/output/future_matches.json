@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-11-08",
-      "weekday": "Sunday",
-      "time": "14:30",
-      "match_name": "FC Twente - Ajax",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Uit",
-      "opponent": "FC Twente",
-      "opponent_position": 4,
-      "predicted_listeners": 31087
-    },
-    {
       "date": "2026-11-15",
       "weekday": "Sunday",
       "time": "14:30",
@@ -137,7 +123,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Go Ahead Eagles",
-      "opponent_position": 10,
+      "opponent_position": 8,
       "predicted_listeners": 40076
     },
     {
