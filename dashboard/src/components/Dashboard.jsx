@@ -12,6 +12,7 @@ import WeekdaySection from './WeekdaySection'
 import EngagementSection from './EngagementSection'
 import PlatformMixTrendSection from './PlatformMixTrendSection'
 import GeoTrendSection from './GeoTrendSection'
+import LatestMatchSection from './LatestMatchSection'
 import { analyzeMatches, top5BySeason } from '../utils/analysis'
 import { ALL_SEASONS, currentSeason as getCurrentSeason, isInSeason, seasonShort, seasonsInData } from '../utils/season'
 import { formatDateWithDay, formatNumber } from '../utils/format'
@@ -358,6 +359,9 @@ function Dashboard() {
       default:
         return (
           <>
+            <section id="latest-match">
+              <LatestMatchSection matches={allMatchList} recentPredictions={data.recentPredictions} />
+            </section>
             <div className="kpi-grid">
               <div className="kpi-tile">
                 <div className="kpi-label">Totaal bereik</div>
