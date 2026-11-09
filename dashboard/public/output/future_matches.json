@@ -5,14 +5,14 @@
       "weekday": "Sunday",
       "time": "14:30",
       "match_name": "Ajax - Barcelona Legends",
-      "commentators": "Diederik & Erol?",
+      "commentators": "Diederik & Erol",
       "competition": "Vriendschappelijk",
       "tv_channel": null,
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "Barcelona Legends",
       "opponent_position": null,
-      "predicted_listeners": 31087
+      "predicted_listeners": 30843
     },
     {
       "date": "2026-11-22",
@@ -26,7 +26,7 @@
       "home_away": "Thuis",
       "opponent": "ADO Den Haag",
       "opponent_position": null,
-      "predicted_listeners": 31087
+      "predicted_listeners": 30843
     },
     {
       "date": "2026-11-26",
@@ -53,8 +53,22 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Feyenoord",
-      "opponent_position": 1,
-      "predicted_listeners": 31087
+      "opponent_position": 2,
+      "predicted_listeners": 30843
+    },
+    {
+      "date": "2026-12-03",
+      "weekday": "Thursday",
+      "time": null,
+      "match_name": "Ajax - FC Den Bosch",
+      "commentators": "Diederik & Daaf",
+      "competition": "KNVB Beker",
+      "tv_channel": null,
+      "tv_category": "Unknown",
+      "home_away": "Thuis",
+      "opponent": "FC Den Bosch",
+      "opponent_position": null,
+      "predicted_listeners": 43712
     },
     {
       "date": "2026-12-06",
@@ -67,8 +81,8 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 13,
-      "predicted_listeners": 31087
+      "opponent_position": 14,
+      "predicted_listeners": 30843
     },
     {
       "date": "2026-12-10",

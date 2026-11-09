@@ -6976,6 +6976,62 @@
         "freq": 2.5,
         "completion": 19.6
       }
+    },
+    {
+      "date": "2026-11-08",
+      "match_name": "FC Twente - Ajax",
+      "listeners": 24723,
+      "peakHour": "17:31u",
+      "peakValue": 5937,
+      "successRate": 92.7,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          94.5,
+          2.9,
+          1.3,
+          0.1,
+          1.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Frankrijk",
+          "VS",
+          "Overig"
+        ],
+        "values": [
+          84.4,
+          7.4,
+          2.9,
+          0.7,
+          0.7,
+          4.0
+        ]
+      },
+      "preroll": {
+        "bereik": 21638,
+        "bereikPct": 87.5,
+        "impressies": 58172,
+        "freq": 2.69,
+        "completion": 20.1
+      }
     }
   ]
 }
