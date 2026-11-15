@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-11-15",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "Ajax - Barcelona Legends",
+      "commentators": "Diederik & Erol",
+      "listeners": null,
+      "competition": "Vriendschappelijk",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-11-08",
       "weekday": "Sunday",
       "time": "14:30",
