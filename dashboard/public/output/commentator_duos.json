@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "duos": [
     {
       "duo": "Diederik & Errol",
@@ -105,6 +105,13 @@
       "avg": 5337,
       "median": 5337,
       "max": 5337
+    },
+    {
+      "duo": "Diederik & Erol",
+      "matches_count": 1,
+      "avg": 3589,
+      "median": 3589,
+      "max": 3589
     }
   ]
 }

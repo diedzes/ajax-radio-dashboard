@@ -7032,6 +7032,62 @@
         "freq": 2.69,
         "completion": 20.1
       }
+    },
+    {
+      "date": "2026-11-15",
+      "match_name": "Ajax - Barcelona Legends",
+      "listeners": 3589,
+      "peakHour": "16:32u",
+      "peakValue": 394,
+      "successRate": 89.0,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          85.8,
+          4.3,
+          8.6,
+          0.2,
+          1.2
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "Frankrijk",
+          "Spanje",
+          "Overig"
+        ],
+        "values": [
+          87.7,
+          7.1,
+          2.6,
+          0.6,
+          0.4,
+          1.6
+        ]
+      },
+      "preroll": {
+        "bereik": 2999,
+        "bereikPct": 83.6,
+        "impressies": 6907,
+        "freq": 2.3,
+        "completion": 30.0
+      }
     }
   ]
 }

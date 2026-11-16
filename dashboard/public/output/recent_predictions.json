@@ -1,12 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-09-15",
-      "match_name": "Ajax - Willem II",
-      "listeners": 43067,
-      "predicted_listeners": 29776
-    },
-    {
       "date": "2026-09-19",
       "match_name": "Ajax - Excelsior",
       "listeners": 30861,
@@ -58,7 +52,13 @@
       "date": "2026-11-08",
       "match_name": "FC Twente - Ajax",
       "listeners": 24723,
-      "predicted_listeners": 30843
+      "predicted_listeners": 29833
+    },
+    {
+      "date": "2026-11-15",
+      "match_name": "Ajax - Barcelona Legends",
+      "listeners": 3589,
+      "predicted_listeners": 29833
     }
   ]
 }
