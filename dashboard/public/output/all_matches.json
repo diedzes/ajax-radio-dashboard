@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-11-22",
+      "weekday": "Sunday",
+      "time": "14:30",
+      "match_name": "Ajax - ADO Den Haag",
+      "commentators": "Diederik & Daaf",
+      "listeners": null,
+      "competition": "VriendenLoterij Eredivisie",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-11-15",
       "weekday": "Sunday",
       "time": "14:30",

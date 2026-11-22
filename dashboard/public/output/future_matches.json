@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "date": "2026-11-22",
-      "weekday": "Sunday",
-      "time": "14:30",
-      "match_name": "Ajax - ADO Den Haag",
-      "commentators": "Diederik & Daaf",
-      "competition": "VriendenLoterij Eredivisie",
-      "tv_channel": null,
-      "tv_category": "Unknown",
-      "home_away": "Thuis",
-      "opponent": "ADO Den Haag",
-      "opponent_position": null,
-      "predicted_listeners": 29833
-    },
-    {
       "date": "2026-11-26",
       "weekday": "Thursday",
       "time": "18:45",
@@ -67,7 +53,7 @@
       "tv_category": "Unknown",
       "home_away": "Thuis",
       "opponent": "FC Utrecht",
-      "opponent_position": 14,
+      "opponent_position": 15,
       "predicted_listeners": 29833
     },
     {
@@ -123,7 +109,7 @@
       "tv_category": "Unknown",
       "home_away": "Uit",
       "opponent": "Go Ahead Eagles",
-      "opponent_position": 8,
+      "opponent_position": 9,
       "predicted_listeners": 40076
     },
     {
