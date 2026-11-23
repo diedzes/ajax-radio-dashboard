@@ -7088,6 +7088,62 @@
         "freq": 2.3,
         "completion": 30.0
       }
+    },
+    {
+      "date": "2026-11-22",
+      "match_name": "Ajax - ADO Den Haag",
+      "listeners": 8110,
+      "peakHour": "17:24u",
+      "peakValue": 3130,
+      "successRate": 76.5,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Webbrowser",
+          "Android-app",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          61.2,
+          24.0,
+          4.2,
+          0.1,
+          10.5
+        ],
+        "colors": [
+          "#d2122e",
+          "#f7c8d0",
+          "#9ca3af",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Duitsland",
+          "Belgie",
+          "VS",
+          "Frankrijk",
+          "Overig"
+        ],
+        "values": [
+          88.8,
+          4.7,
+          1.8,
+          0.7,
+          0.7,
+          3.4
+        ]
+      },
+      "preroll": {
+        "bereik": 7388,
+        "bereikPct": 91.1,
+        "impressies": 19583,
+        "freq": 2.65,
+        "completion": 32.3
+      }
     }
   ]
 }
