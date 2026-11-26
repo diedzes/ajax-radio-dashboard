@@ -1,6 +1,19 @@
 {
   "matches": [
     {
+      "date": "2026-11-26",
+      "weekday": "Thursday",
+      "time": "18:45",
+      "match_name": "Ajax - FC Thun",
+      "commentators": "Diederik & Corné",
+      "listeners": null,
+      "competition": "UEFA Conference League",
+      "tv_channel": null,
+      "score": null,
+      "result": null,
+      "home_away": "Thuis"
+    },
+    {
       "date": "2026-11-22",
       "weekday": "Sunday",
       "time": "14:30",
