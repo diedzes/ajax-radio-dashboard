@@ -1,5 +1,5 @@
 {
-  "excluded_null_listeners": 1,
+  "excluded_null_listeners": 0,
   "commentators": [
     {
       "commentator": "Errol",
@@ -27,10 +27,10 @@
     },
     {
       "commentator": "Corné",
-      "matches_count": 42,
-      "min": 5922,
-      "avg": 16354.08,
-      "median": 15290,
+      "matches_count": 43,
+      "min": 2821,
+      "avg": 16039.37,
+      "median": 15217,
       "max": 35310
     },
     {
@@ -50,20 +50,20 @@
       "max": 31740
     },
     {
-      "commentator": "Frank",
-      "matches_count": 12,
-      "min": 5141,
-      "avg": 13497.92,
-      "median": 11011,
-      "max": 35625
-    },
-    {
       "commentator": "Anne",
       "matches_count": 8,
       "min": 7901,
       "avg": 12889.88,
       "median": 11816,
       "max": 25964
+    },
+    {
+      "commentator": "Frank",
+      "matches_count": 13,
+      "min": 2821,
+      "avg": 12676.65,
+      "median": 10875,
+      "max": 35625
     },
     {
       "commentator": "Tom",

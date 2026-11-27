@@ -7144,6 +7144,62 @@
         "freq": 2.65,
         "completion": 32.3
       }
+    },
+    {
+      "date": "2026-11-26",
+      "match_name": "Ajax - FC Thun",
+      "listeners": 5643,
+      "peakHour": "21:41u",
+      "peakValue": 1854,
+      "successRate": 60.4,
+      "platform": {
+        "labels": [
+          "iOS-app",
+          "Android-app",
+          "Webbrowser",
+          "Overig",
+          "Relay/herdistributie"
+        ],
+        "values": [
+          53.9,
+          3.0,
+          41.6,
+          0.1,
+          1.4
+        ],
+        "colors": [
+          "#d2122e",
+          "#9ca3af",
+          "#f7c8d0",
+          "#c8c8c8",
+          "#f4a6b3"
+        ]
+      },
+      "geo": {
+        "labels": [
+          "Nederland",
+          "Belgie",
+          "Duitsland",
+          "VS",
+          "VK",
+          "Overig"
+        ],
+        "values": [
+          93.2,
+          1.7,
+          0.8,
+          0.6,
+          0.6,
+          3.1
+        ]
+      },
+      "preroll": {
+        "bereik": 5169,
+        "bereikPct": 91.6,
+        "impressies": 14255,
+        "freq": 2.76,
+        "completion": 26.0
+      }
     }
   ]
 }
